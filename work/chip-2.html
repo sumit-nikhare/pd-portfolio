@@ -201,72 +201,56 @@
                     <!-- Layout A: Problem -->
                     <section id="layout-a" data-section class="scroll-mt-24 space-y-8">
 
-                            <div class="space-y-3">
-                                <p class="text-sm uppercase tracking-[0.16em] text-gray-600">Problem</p>
-                                <h2 class="text-3xl font-semibold">UI and RBAC failed to scale</h2>
-                            </div>
+                        <!-- Heading -->
+                        <div class="space-y-3">
+                            <p class="text-sm uppercase tracking-[0.16em] text-gray-600">Problem</p>
+                            <h2 class="text-3xl font-semibold">UI and RBAC failed to scale</h2>
+                        </div>
 
-                            <p class="text-gray-700">
-                                As CHIP expanded across programs, states, and partner organizations, the
-                                existing
-                                product architecture began to show structural cracks. What worked for a smaller
-                                deployment became increasingly fragile at scale.
-                            </p>
+                        <!-- Problem Description -->
+                        <p class="text-gray-700">As CHIP expanded across programs, states, and partner organizations, the existing product architecture began to show structural cracks. What worked for a smaller deployment became increasingly fragile at scale.</p>
 
-                            <div class="space-y-4">
-                                
-                                <h2 class="text-xl text-gray-900 font-semibold">Key problems included:</h2>
-                                <ul class="space-y-4 text-gray-700">
-                                    <li class="space-y-2">
-                                        <p class="font-semibold text-gray-900">Inconsistent user experience across modules</p>
-                                        <p>Similar tasks behaved differently in DHS, Family Planning, and other modules, forcing users to relearn flows and increasing errors.</p>
-                                        <img src="../assets/chip-2/demo-img.png" alt="">
-                                    </li>
-                                    <li>
-                                        <p class="font-semibold text-gray-900">RBAC implemented as backend logic
-                                            only
-                                        </p>
-                                        <p>Roles and permissions were handled at the data layer, but the interface
-                                            was
-                                            not designed around them, leading to cluttered screens, hidden actions,
-                                            and
-                                            frequent development rework.</p>
-                                    </li>
-                                    <li>
-                                        <p class="font-semibold text-gray-900">High cognitive load for frontline
-                                            users
-                                        </p>
-                                        <p>Field workers were exposed to unnecessary information and options,
-                                            slowing
-                                            down task completion in time-sensitive, real-world conditions.</p>
-                                    </li>
-                                    <li>
-                                        <p class="font-semibold text-gray-900">Duplication in design and development
-                                        </p>
-                                        <p>Lack of a shared design system and role-aware patterns meant new features
-                                            were repeatedly redesigned and rebuilt for different roles.</p>
-                                    </li>
-                                    <li>
-                                        <p class="font-semibold text-gray-900">Poor performance on low-end devices
-                                            and
-                                            networks</p>
-                                        <p>Heavy screens, long forms, and unclear offline states made the system
-                                            unreliable in rural and low-connectivity environments.</p>
-                                    </li>
-                                    <li>
-                                        <p class="font-semibold text-gray-900">Limited scalability for new states
-                                            and
-                                            programs</p>
-                                        <p>Adding a new module or onboarding a new state required disproportionate
-                                            effort due to fragmented UI patterns and rigid workflows.</p>
-                                    </li>
-                                </ul>
-                            </div>
+                        <!-- Problem Details -->
+                        <div class="space-y-4">
+                            
+                            <h2 class="text-xl text-gray-900 font-semibold">Key problems included:</h2>
+                            <ul class="space-y-8 text-gray-700">
+                                <li class="space-y-2">
+                                    <p class="font-semibold text-gray-900">Inconsistent user experience across modules</p>
+                                    <p>Similar tasks behaved differently in DHS, Family Planning, and other modules, forcing users to relearn flows and increasing errors.</p>
+                                    <img src="../assets/chip-2/demo-img.png" alt="Inconsistent user experience across modules" class="w-full rounded-2xl">
+                                </li>
+                                <li class="space-y-2">
+                                    <p class="font-semibold text-gray-900">RBAC implemented as backend logic only</p>
+                                    <p>Roles and permissions were handled at the data layer, but the interface was not designed around them, leading to cluttered screens, hidden actions, and frequent development rework.</p>
+                                    <img src="../assets/chip-2/demo-img.png" alt="RBAC implemented as backend logic only" class="w-full rounded-2xl">
+                                </li>
+                                <li class="space-y-2">
+                                    <p class="font-semibold text-gray-900">High cognitive load for frontline users</p>
+                                    <p>Field workers were exposed to unnecessary information and options, slowing down task completion in time-sensitive, real-world conditions.</p>
+                                    <img src="../assets/chip-2/demo-img.png" alt="High cognitive load for frontline users" class="w-full rounded-2xl">
+                                </li>
+                                <li class="space-y-2">
+                                    <p class="font-semibold text-gray-900">Duplication in design and development
+                                    </p>
+                                    <p>Lack of a shared design system and role-aware patterns meant new features were repeatedly redesigned and rebuilt for different roles.</p>
+                                    <img src="../assets/chip-2/demo-img.png" alt="Duplication in design and development" class="w-full rounded-2xl">
+                                </li>
+                                <li class="space-y-2">
+                                    <p class="font-semibold text-gray-900">Poor performance on low-end devices and networks</p>
+                                    <p>Heavy screens, long forms, and unclear offline states made the system unreliable in rural and low-connectivity environments.</p>
+                                    <img src="../assets/chip-2/demo-img.png" alt="Poor performance on low-end devices and networks" class="w-full rounded-2xl">
+                                </li>
+                                <li class="space-y-2">
+                                    <p class="font-semibold text-gray-900">Limited scalability for new states and programs</p>
+                                    <p>Adding a new module or onboarding a new state required disproportionate effort due to fragmented UI patterns and rigid workflows.</p>
+                                    <img src="../assets/chip-2/demo-img.png" alt="Limited scalability for new states and programs" class="w-full rounded-2xl">
+                                </li>
+                            </ul>
+                        </div>
 
-                            <p class="text-gray-700">
-                                Together, these issues increased training dependency, slowed rollouts, and reduced
-                                confidence in the system’s ability to scale sustainably.
-                            </p>
+                        <!-- Problem Details -->
+                        <p class="font-semibold text-gray-900">Together, these issues increased <span class="underline-offset-4 underline">training dependency</span>, <span class="underline-offset-4 underline">slowed rollouts</span>, and <span class="underline-offset-4 underline">reduced confidence</span> in the system’s ability to scale sustainably.</p>
 
                     </section>
 
@@ -282,13 +266,11 @@
                             </h2>
                         </div>
 
+                        <p class="text-base text-gray-700">I led the end-to-end design of CHIP 2.0, owning the product experience across modules, platforms, and user roles. Working closely with engineering and program stakeholders, I translated complex healthcare workflows and RBAC requirements into a scalable, usable system.</p>
+
                         <div class="space-y-4">
-                            <p class="text-base text-gray-700">I led the end-to-end design of CHIP 2.0, owning the product experience across modules, platforms, and user roles. Working closely with engineering and program stakeholders, I
-                            translated complex healthcare workflows and RBAC requirements into a scalable, usable
-                            system.
-                            </p>
                             <h2 class="text-xl text-gray-800 font-semibold">My responsibilities included:</h2>
-                            <ul class="list-disc list-inside space-y-3 text-gray-700">
+                            <ul class="space-y-3 text-gray-700">
                                 <li><span class="font-semibold text-gray-900">End-to-end product design</span> — defined
                                     user flows, interaction models, and visual design across all healthcare modules,
                                     from frontline task execution to administrative oversight.</li>
@@ -313,7 +295,7 @@
                             </ul>
                         </div>
                         
-                        <p class="text-base text-gray-700">
+                        <p class="font-semibold text-gray-900">
                             I acted as the single point of design ownership, ensuring CHIP 2.0 could scale without
                             sacrificing usability or consistency.
                         </p>
@@ -326,23 +308,20 @@
                     <!-- Layout C: Users & Operational Context -->
                     <section id="layout-c" data-section class="scroll-mt-24 space-y-8">
 
+                        <!-- Heading -->
                         <div class="space-y-3">
                             <p class="text-sm uppercase tracking-[0.16em] text-gray-600">Users & Operational
                                 Context</p>
                             <h2 class="text-3xl font-semibold">Multi-layered public healthcare ecosystem</h2>
                         </div>
 
-                        <div>
-                            <p class="text-gray-700">CHIP 2.0 operates within a multi-layered public healthcare ecosystem where users differ not only in access levels, but in responsibilities, frequency of use, and decision-making
-                            authority. The platform serves both frontline health workers operating in the field and
-                            administrative users managing programs at scale.
-                            </p>
-                        </div>
+                        <p class="text-gray-700">CHIP 2.0 operates within a multi-layered public healthcare ecosystem where users differ not only in access levels, but in responsibilities, frequency of use, and decision-making authority. The platform serves both frontline health workers operating in the field and administrative users managing programs at scale.</p>
 
-                        <div
-                            class="p-5 rounded-2xl bg-white/60 backdrop-blur border border-white/40 shadow-sm space-y-4">
+                        <!-- User Groups -->
+                        <div class="space-y-4">
                             <h3 class="text-xl font-semibold text-gray-900">Primary user groups</h3>
-                            <div class="space-y-3">
+
+                            <div class="p-5 rounded-2xl bg-white/60 backdrop-blur border border-white/40 shadow-sm space-y-4">
                                 <h4 class="font-semibold text-gray-900">Frontline & Facility-Level Users</h4>
                                 <p class="text-gray-700">These users interact with the system daily and are responsible
                                     for data collection, service delivery, and on-ground execution.</p>
@@ -356,10 +335,11 @@
                                     <li><span class="font-semibold text-gray-900">PHC Staff</span>: facility operations,
                                         reporting, cross-program coordination.</li>
                                 </ul>
-                                <p class="text-gray-700">Needs: speed, clarity, error prevention, minimal cognitive
-                                    load.</p>
+
+                                <p class="font-semibold text-gray-900">Needs: speed, clarity, error prevention, minimal cognitive load.</p>
                             </div>
-                            <div class="space-y-3">
+
+                            <div class="p-5 rounded-2xl bg-white/60 backdrop-blur border border-white/40 shadow-sm space-y-4">
                                 <h4 class="font-semibold text-gray-900">Supervisory & Administrative Users</h4>
                                 <p class="text-gray-700">Oversight, planning, and performance monitoring across
                                     geographies and programs.</p>
@@ -372,15 +352,15 @@
                                         oversee implementation, manage access, ensure data quality across deployments.
                                     </li>
                                 </ul>
-                                <p class="text-gray-700">Needs: data aggregation, comparability, actionable insights
-                                    over task execution.</p>
+
+                                <p class="font-semibold text-gray-900">Needs: data aggregation, comparability, actionable insights over task execution.</p>
                             </div>
                         </div>
 
-                        <div
-                            class="p-5 rounded-2xl bg-white/60 backdrop-blur border border-white/40 shadow-sm space-y-3">
+                        <!-- Operational realities -->
+                        <div class="space-y-4">
                             <h3 class="text-xl font-semibold text-gray-900">Operational realities</h3>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <ul class="pl-2 list-disc list-inside space-y-2 text-gray-700">
                                 <li>Unreliable internet; offline-first interactions and clear sync feedback</li>
                                 <li>Low-end Android devices; performance-aware UI and lightweight components</li>
                                 <li>Varying digital literacy, especially among frontline workers</li>
@@ -390,60 +370,57 @@
                             </ul>
                         </div>
 
-                        <div
-                            class="p-5 rounded-2xl bg-white/60 backdrop-blur border border-white/40 shadow-sm space-y-3">
+                        <!-- Design implications -->
+                        <div class="space-y-4">
                             <h3 class="text-xl font-semibold text-gray-900">Design implications</h3>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <ul class="pl-2 list-disc list-inside space-y-2 text-gray-700">
                                 <li>Role-aware without being role-heavy</li>
                                 <li>Flexible enough to support diverse workflows</li>
                                 <li>Strict where compliance and data integrity mattered</li>
                                 <li>Forgiving where real-world constraints demanded it</li>
                             </ul>
-                            <p class="text-gray-700">
-                                This understanding directly informed decisions around navigation, component behavior,
-                                information hierarchy, and role-based interaction patterns throughout the platform.
+                            <p class="font-semibold text-gray-900">
+                                This understanding directly informed decisions around <span class="underline-offset-4 underline">navigation</span>, <span class="underline-offset-4 underline">component behavior</span>,
+                                <span class="underline-offset-4 underline">information hierarchy</span>, and <span class="underline-offset-4 underline">role-based interaction patterns</span> throughout the platform.
                             </p>
                         </div>
                     </section>
 
-                    <!-- Layout D: Design Approach -->
-                    <section id="layout-d" data-section class="space-y-6 border-b border-orange-200 py-10 scroll-mt-24">
-                        <div class="flex items-start gap-3">
-                            <span
-                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white font-semibold">D</span>
-                            <div class="space-y-1">
-                                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 mb-1">Design Approach</p>
-                                <h2 class="text-3xl font-semibold">Design for scale, reality, and roles</h2>
-                            </div>
-                        </div>
-                        <p class="text-gray-700">
-                            The design approach for CHIP 2.0 was driven by one core principle: design for scale,
-                            reality, and roles, not for ideal conditions or isolated screens. Every decision had to hold
-                            up across modules, states, devices, and user types.
-                        </p>
+                    <!-- Divider -->
+                    <div class="border-t border-gray-300"></div>
 
-                        <div class="space-y-4">
-                            <div class="bg-transparent border border-orange-100/70 rounded-2xl p-5 space-y-3">
-                            <h3 class="text-xl font-semibold text-gray-900">System-first, not screen-first</h3>
-                            <p class="text-gray-700">
+                    <!-- Layout D: Design Approach -->
+                    <section id="layout-d" data-section class="space-y-8 scroll-mt-24">
+
+                        <div class="space-y-3">
+                            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 mb-1">Design Approach</p>
+                            <h2 class="text-3xl font-semibold">Design for scale, reality, and roles</h2>
+                        </div>
+
+                        <p class="text-gray-700">The design approach for CHIP 2.0 was driven by one core principle: design for scale, reality, and roles, not for ideal conditions or isolated screens. Every decision had to hold up across modules, states, devices, and user types.</p>
+
+                        <div class="space-y-8">
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-semibold text-gray-900">System-first, not screen-first</h3>
+                                <p class="text-gray-700">
                                     Treated the product as a connected ecosystem; shared workflows and patterns were
                                     foundations, not one-offs. New modules slot in without reinventing navigation or
                                     interaction logic.
                                 </p>
                             </div>
 
-                            <div class="bg-transparent border border-orange-100/70 rounded-2xl p-5 space-y-3">
-                            <h3 class="text-xl font-semibold text-gray-900">Role-aware by design</h3>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Role-aware by design</h3>
+                                <ul class="pl-2 list-disc list-inside space-y-2 text-gray-700">
                                     <li>Task-focused views for frontline workers</li>
                                     <li>Summaries and exceptions for supervisory roles</li>
                                     <li>Progressive disclosure based on responsibility level</li>
                                 </ul>
                             </div>
 
-                            <div class="bg-transparent border border-orange-100/70 rounded-2xl p-5 space-y-3">
-                            <h3 class="text-xl font-semibold text-gray-900">Constraint-driven decisions</h3>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Constraint-driven decisions</h3>
+                                <ul class="pl-2 list-disc list-inside space-y-2 text-gray-700">
                                     <li>Low digital literacy and offline/poor connectivity</li>
                                     <li>Older Android devices, performance-aware UI</li>
                                     <li>Long, repetitive data entry; program-mandated structures</li>
@@ -451,72 +428,70 @@
                                 <p class="text-gray-700">Favored clarity, predictability, and error prevention over
                                     novelty.</p>
                             </div>
-
-                            <div class="bg-transparent border border-orange-100/70 rounded-2xl p-5 space-y-3">
-                            <h3 class="text-xl font-semibold text-gray-900">Mobile-first, cross-platform</h3>
-                            <p class="text-gray-700">
+                            
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Mobile-first, cross-platform</h3>
+                                <p class="text-gray-700">
                                     Designed frontline workflows for small screens and limited attention first; extended
                                     patterns to web for supervisory/admin users without forcing mobile constraints onto
                                     desktop.
                                 </p>
                             </div>
 
-                            <div class="bg-transparent border border-orange-100/70 rounded-2xl p-5 space-y-3">
-                            <h3 class="text-xl font-semibold text-gray-900">Reuse over reinvention</h3>
-                            <p class="text-gray-700">
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Reuse over reinvention</h3>
+                                <p class="text-gray-700">
                                     Standardized forms, approvals, validations, status indicators, and patterns to
                                     reduce cognitive load and speed up design/development for new modules.
                                 </p>
                             </div>
 
-                            <div class="bg-transparent border border-orange-100/70 rounded-2xl p-5 space-y-3">
-                            <h3 class="text-xl font-semibold text-gray-900">Collaboration & iteration</h3>
-                            <p class="text-gray-700">
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Collaboration & iteration</h3>
+                                <p class="text-gray-700">
                                     Continuous validation with engineering and program stakeholders; field realities and
                                     rollout needs shaped iterations to keep design intent aligned with implementation.
                                 </p>
                             </div>
                         </div>
 
-                        <div class="mt-8 space-y-3">
-                            <h3 class="text-xl font-semibold text-gray-900">Outcome</h3>
-                            <p class="text-gray-700">
-                                By focusing on systems, roles, and constraints, CHIP 2.0 evolved into a platform that
-                                could grow in complexity without becoming harder to use—enabling faster scaling, clearer
-                                ownership, and a more resilient foundation.
-                            </p>
-                        </div>
+                        <p class="font-semibold text-gray-900">
+                            By focusing on systems, roles, and constraints, CHIP 2.0 evolved into a platform that
+                            could grow in complexity without becoming harder to use—enabling faster scaling, clearer
+                            ownership, and a more resilient foundation.
+                        </p>
 
                     </section>
 
+                    <!-- Divider -->
+                    <div class="border-t border-gray-300"></div>
+
                     <!-- Layout E: Design system in practice -->
-                    <section id="layout-e" data-section class="space-y-6 border-b border-orange-200 py-10 scroll-mt-24">
-                        <div class="flex items-start gap-3">
-                            <span
-                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white font-semibold">E</span>
-                            <div class="space-y-1">
-                                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 mb-1">Design System in
-                                    Practice</p>
-                                <h2 class="text-3xl font-semibold">A living system for scale and clarity</h2>
-                            </div>
+                    <section id="layout-e" data-section class="space-y-8 scroll-mt-24">
+
+                        <div class="space-y-3">
+                            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 mb-1">Design System in
+                                Practice</p>
+                            <h2 class="text-3xl font-semibold">A living system for scale and clarity</h2>
                         </div>
+
                         <p class="text-gray-700">
                             The design system was built as a shared foundation for a role-driven healthcare platform
                             across mobile and web—focused on scalability, clarity, and operational reliability over
                             decoration.
                         </p>
 
-                        <div class="space-y-4">
-                            <div class="bg-transparent border border-orange-100/70 rounded-2xl p-5 space-y-3">
-                            <h3 class="text-xl font-semibold text-gray-900">Foundations for heavy workflows</h3>
-                            <p class="text-gray-700">
+                        <div class="space-y-8">
+
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Foundations for heavy workflows</h3>
+                                <p class="text-gray-700">
                                     Typography, spacing, and color tuned for prolonged use and dense data. Conservative
                                     spacing keeps long forms readable; color remains functional for status and feedback.
                                 </p>
                             </div>
-
-                            <div
-                                class="bg-white/60 backdrop-blur border border-white/40 rounded-2xl shadow-sm p-5 space-y-3">
+                            
+                            <div class="space-y-2">
                                 <h3 class="text-xl font-semibold text-gray-900">Components for variation</h3>
                                 <p class="text-gray-700">
                                     Forms scale from quick capture to multi-step workflows with validation, partial
@@ -526,9 +501,8 @@
                                 <p class="text-gray-700">Status indicators handle eligibility, approval, sync, and
                                     errors with states for loading, disabled, restricted, and offline.</p>
                             </div>
-
-                            <div
-                                class="bg-white/60 backdrop-blur border border-white/40 rounded-2xl shadow-sm p-5 space-y-3">
+                            
+                            <div class="space-y-2">
                                 <h3 class="text-xl font-semibold text-gray-900">Patterns that reduce errors</h3>
                                 <p class="text-gray-700">
                                     Standardized interactions: long tasks split into resumable steps; intentional
@@ -536,18 +510,16 @@
                                     saved/pending/synced states.
                                 </p>
                             </div>
-
-                            <div
-                                class="bg-white/60 backdrop-blur border border-white/40 rounded-2xl shadow-sm p-5 space-y-3">
+                            
+                            <div class="space-y-2">
                                 <h3 class="text-xl font-semibold text-gray-900">Role-aware components</h3>
                                 <p class="text-gray-700">
                                     Same component adapts by role—editable for field, limited updates for supervisors,
                                     read-only for admins—permissions drive behavior while visuals stay consistent.
                                 </p>
                             </div>
-
-                            <div
-                                class="bg-white/60 backdrop-blur border border-white/40 rounded-2xl shadow-sm p-5 space-y-3">
+                            
+                            <div class="space-y-2">
                                 <h3 class="text-xl font-semibold text-gray-900">Cross-platform consistency</h3>
                                 <p class="text-gray-700">
                                     Core components and interaction logic align across Android and web; density,
@@ -556,8 +528,7 @@
                                 </p>
                             </div>
 
-                            <div
-                                class="bg-white/60 backdrop-blur border border-white/40 rounded-2xl shadow-sm p-5 space-y-3">
+                            <div class="space-y-2">
                                 <h3 class="text-xl font-semibold text-gray-900">Reuse over reinvention</h3>
                                 <p class="text-gray-700">
                                     Standardized forms, approvals, validations, and indicators reduced effort to add
@@ -565,50 +536,47 @@
                                     one-offs.
                                 </p>
                             </div>
+
                         </div>
 
-                        <div class="mt-8 space-y-3">
-                            <h3 class="text-xl font-semibold text-gray-900">Outcome</h3>
-                            <p class="text-gray-700">
-                                The design system became a living framework aligning design, development, and
-                                operations—making CHIP 2.0 easier to build, use, and extend without accruing design
-                                debt.
-                            </p>
-                        </div>
-
+                        <p class="font-semibold text-gray-900">
+                            The design system became a living framework aligning design, development, and
+                            operations—making CHIP 2.0 easier to build, use, and extend without accruing design
+                            debt.
+                        </p>
 
                     </section>
 
+                    <!-- Divider -->
+                    <div class="border-t border-gray-300"></div>
+
                     <!-- Layout F: RBAC as UX -->
-                    <section id="layout-f" data-section class="space-y-6 border-b border-orange-200 py-10 scroll-mt-24">
-                        <div class="flex items-start gap-3">
-                            <span
-                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white font-semibold">F</span>
-                            <div class="space-y-1">
-                                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 mb-1">RBAC as a UX Problem
-                                </p>
-                                <h2 class="text-3xl font-semibold">Designing for intent, visibility, and trust</h2>
-                            </div>
+                    <section id="layout-f" data-section class="space-y-8 scroll-mt-24">
+
+                        <div class="space-y-1">
+                            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 mb-1">RBAC as a UX Problem
+                            </p>
+                            <h2 class="text-3xl font-semibold">Designing for intent, visibility, and trust</h2>
                         </div>
+
                         <p class="text-gray-700">
                             RBAC was treated as a core UX challenge, not an afterthought. Multiple roles with different
                             authority and data sensitivity shaped interaction, visibility, and cognitive load—not just
                             backend permissions.
                         </p>
 
-                        <div class="space-y-4">
-                            <div
-                                class="bg-white/60 backdrop-blur border border-white/40 rounded-2xl shadow-sm p-5 space-y-3">
-                            <h3 class="text-xl font-semibold text-gray-900">Designing for intent</h3>
-                            <p class="text-gray-700">
+                        <div class="space-y-8">
+
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Designing for intent</h3>
+                                <p class="text-gray-700">
                                     Interfaces centered on what each role does most often: frontline users see
                                     task-driven flows; supervisors see overviews, exceptions, and trends; admins manage
                                     configuration and access.
                                 </p>
                             </div>
 
-                            <div
-                                class="bg-white/60 backdrop-blur border border-white/40 rounded-2xl shadow-sm p-5 space-y-3">
+                            <div class="space-y-2">
                                 <h3 class="text-xl font-semibold text-gray-900">Visibility by design</h3>
                                 <p class="text-gray-700">
                                     Information density, component visibility, and navigation structure shift by role.
@@ -617,8 +585,7 @@
                                 </p>
                             </div>
 
-                            <div
-                                class="bg-white/60 backdrop-blur border border-white/40 rounded-2xl shadow-sm p-5 space-y-3">
+                            <div class="space-y-2">
                                 <h3 class="text-xl font-semibold text-gray-900">Action-level control & feedback</h3>
                                 <p class="text-gray-700">
                                     Actions like edit, approve, assign, or escalate carry clear affordances tied to role
@@ -627,8 +594,7 @@
                                 </p>
                             </div>
 
-                            <div
-                                class="bg-white/60 backdrop-blur border border-white/40 rounded-2xl shadow-sm p-5 space-y-3">
+                            <div class="space-y-2">
                                 <h3 class="text-xl font-semibold text-gray-900">Data depth & navigation</h3>
                                 <p class="text-gray-700">
                                     Field users work at record/task depth; supervisors move between summaries and
@@ -637,8 +603,7 @@
                                 </p>
                             </div>
 
-                            <div
-                                class="bg-white/60 backdrop-blur border border-white/40 rounded-2xl shadow-sm p-5 space-y-3">
+                            <div class="space-y-2">
                                 <h3 class="text-xl font-semibold text-gray-900">Consistency across modules</h3>
                                 <p class="text-gray-700">
                                     RBAC behavior stays predictable across DHS, Family Planning, and other programs,
@@ -646,37 +611,36 @@
                                 </p>
                             </div>
 
-                            <div
-                                class="bg-white/60 backdrop-blur border border-white/40 rounded-2xl shadow-sm p-5 space-y-3">
+                            <div class="space-y-2">
                                 <h3 class="text-xl font-semibold text-gray-900">Backend alignment</h3>
                                 <p class="text-gray-700">
                                     Close alignment with backend roles, facilities, and hierarchies kept permission
                                     logic and UI behavior in sync, reducing ambiguity and role-specific UI bugs.
                                 </p>
                             </div>
+
                         </div>
 
-                        <div class="mt-8 space-y-3">
-                            <h3 class="text-xl font-semibold text-gray-900">Outcome</h3>
-                            <p class="text-gray-700">
-                                RBAC became an enabler of clarity and trust: users see interfaces matched to their
-                                responsibilities, developers work with a clearer permission model, and the system scales
-                                without added friction.
-                            </p>
-                        </div>
+                        <p class="font-semibold text-gray-900">
+                            RBAC became an enabler of clarity and trust: users see interfaces matched to their
+                            responsibilities, developers work with a clearer permission model, and the system scales
+                            without added friction.
+                        </p>
+
                     </section>
 
+                    <!-- Divider -->
+                    <div class="border-t border-gray-300"></div>
+
                     <!-- Layout G: Constraints & Tradeoffs -->
-                    <section id="layout-g" data-section class="space-y-6 border-b border-orange-200 py-10 scroll-mt-24">
-                        <div class="flex items-start gap-3">
-                            <span
-                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white font-semibold">G</span>
-                            <div class="space-y-1">
-                                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 mb-1">Constraints &
-                                    Tradeoffs</p>
-                                <h2 class="text-3xl font-semibold">Designing within real-world limits</h2>
-                            </div>
+                    <section id="layout-g" data-section class="space-y-8 scroll-mt-24">
+
+                        <div class="space-y-3">
+                            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 mb-1">Constraints &
+                                Tradeoffs</p>
+                            <h2 class="text-3xl font-semibold">Designing within real-world limits</h2>
                         </div>
+
                         <p class="text-gray-700">
                             CHIP 2.0 was designed inside structural and environmental constraints—these were everyday
                             realities, not edge cases. Each limitation shaped specific tradeoffs to keep the platform
@@ -802,6 +766,9 @@
                             </p>
                         </div>
                     </section>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-300"></div>
 
                     <!-- Layout H: Modules -->
                     <section id="layout-modules" data-section
@@ -1013,6 +980,9 @@
                         </div>
                     </section>
 
+                    <!-- Divider -->
+                    <div class="border-t border-gray-300"></div>
+
                     <!-- Layout I: Impact -->
                     <section id="layout-i" data-section class="space-y-6 border-b border-orange-200 py-10 scroll-mt-24">
                         <div class="flex items-start gap-3">
@@ -1100,6 +1070,9 @@
                             </p>
                         </div>
                     </section>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-300"></div>
 
                     <!-- Layout J: What this project demonstrates -->
                     <section id="layout-j" data-section class="space-y-6 border-b border-orange-200 py-10 scroll-mt-24">

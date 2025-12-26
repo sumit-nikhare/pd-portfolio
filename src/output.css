@@ -1260,6 +1260,9 @@
   .decoration-\[3px\] {
     text-decoration-thickness: 3px;
   }
+  .underline-offset-1 {
+    text-underline-offset: 1px;
+  }
   .underline-offset-2 {
     text-underline-offset: 2px;
   }
