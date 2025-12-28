@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHIP 2.0 — Onboarding</title>
+    <title>CHIP 2.0 — ABHA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -132,30 +132,30 @@
             <div class="space-y-6 lg:w-4/5">
 
                 <h1 class="font-heading text-4xl font-semibold text-gray-900 dark:text-gray-100">
-                    Onboarding that respects roles, approvals, and reality
+                    ABHA workflows that hold up in the field
                 </h1>
 
-                <p class="text-gray-700 dark:text-gray-300">A role-aware onboarding and day-start experience designed
-                    for multi-program operations, where identity, posting, and permissions are governance constraints,
-                    not profile preferences.</p>
+                <p class="text-gray-700 dark:text-gray-300">
+                    A field-ready ABHA flow inside CHIP 2.0 that supports search, verification, creation, and updates using Aadhaar OTP / Mobile OTP, explicit consent capture, and online/offline paths.
+                </p>
             </div>
 
             <div class="flex flex-wrap gap-2 my-2">
                 <span
                     class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">
-                    Mobile-first
+                    ABHA search + scan
                 </span>
                 <span
                     class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">
-                    RBAC-driven UX
+                    Aadhaar OTP / Mobile OTP
                 </span>
                 <span
                     class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">
-                    Approval states
+                    Consent gating
                 </span>
                 <span
                     class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">
-                    Posting & facility mapping
+                    Online + offline flows
                 </span>
             </div>
 
@@ -167,7 +167,7 @@
         <!-- Hero image (optional) -->
         <div>
             <img loading="eager" decoding="async" fetchpriority="high" src="../../assets/common/demo-img-1920.png"
-                alt="Onboarding flow overview" class="w-full rounded-3xl" />
+                alt="ABHA flow overview" class="w-full rounded-3xl" />
         </div>
 
     </section>
@@ -176,132 +176,104 @@
 
     <!-- Reusable section wrapper: glass card -->
     <section class="space-y-8">
-
         <div class="space-y-3">
             <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Scope</p>
-            <h2 class="text-3xl font-semibold">What the onboarding system covers</h2>
+            <h2 class="text-3xl font-semibold">What the ABHA module covers</h2>
         </div>
-
         <div class="space-y-8">
-
             <div class="space-y-4">
+                <div class="space-y-4">
 
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Entry paths</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400">Two ways in, depending on whether governance already
-                    exists.</p>
+    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Beneficiary identification</h3>
+    <p class="text-sm text-gray-600 dark:text-gray-400">Start by determining whether a beneficiary already has an ABHA.</p>
 
-                <div
-                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+    <div
+        class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
 
-                    <h4 class="font-semibold text-gray-900 dark:text-gray-100">Credentials login</h4>
+        <h4 class="font-semibold text-gray-900 dark:text-gray-100">Does beneficiary have ABHA?</h4>
 
-                    <p class="text-gray-700 dark:text-gray-300">Fast path for already-approved users, optimized for
-                        repeat daily usage.</p>
+        <p class="text-gray-700 dark:text-gray-300">The first decision splits the flow into lookup (Yes) or creation (No) to avoid duplicates and wasted verification steps.</p>
 
-                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Design intent:</span> reduce
-                            friction for operational users who return every day.</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Enables:</span> quick access to
-                            role-scoped work without re-onboarding.</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Prevents:</span> accidental
-                            re-registration and support loops.</li>
-                    </ul>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Design intent:</span> make the entry decision explicit instead of mixing search and creation.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Enables:</span> faster routing to the correct path with fewer retries.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Prevents:</span> accidental re-creation of ABHA and split records.</li>
+        </ul>
 
-                    <p class="font-semibold text-gray-900 dark:text-gray-100">Outcome: faster entry with fewer retries
-                        and less confusion between “login” and “register”.</p>
-                </div>
+        <p class="font-semibold text-gray-900 dark:text-gray-100">Outcome: clearer entry decision and fewer duplicate attempts.</p>
+    </div>
 
-                <div
-                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+    <div
+        class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
 
-                    <h4 class="font-semibold text-gray-900 dark:text-gray-100">Mobile + OTP registration</h4>
+        <h4 class="font-semibold text-gray-900 dark:text-gray-100">Search + scan inputs</h4>
 
-                    <p class="text-gray-700 dark:text-gray-300">Mobile-first identity capture for onboarding at scale
-                        when email or institutional IDs aren’t reliable.</p>
+        <p class="text-gray-700 dark:text-gray-300">Lookup supports Mobile Number, ABHA Number, ABHA Address, and Scan ABHA Card so field teams can work with whatever the beneficiary has.</p>
 
-                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Design intent:</span> make
-                            identity entry possible on shared/low-end devices and inconsistent networks.</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Enables:</span> controlled
-                            creation of a new account before role and scope are applied.</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Prevents:</span> ghost
-                            accounts, mismatched identities, and partial sign-ups.</li>
-                    </ul>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Design intent:</span> reduce dependency on a single identifier in real-world conditions.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Enables:</span> reliable retrieval across programs and facilities.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Prevents:</span> abandoned verification due to missing/incorrect ID formats.</li>
+        </ul>
 
-                    <p class="font-semibold text-gray-900 dark:text-gray-100">Note: OTP is identity entry before
-                        governance applies.</p>
-                </div>
+        <p class="font-semibold text-gray-900 dark:text-gray-100">Result: higher lookup success with fewer restarts.</p>
+    </div>
+</div>
             </div>
-
             <div class="space-y-4">
+                <div class="space-y-4">
 
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Governance handoff</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400">Registration creates identity, posting, and approval
-                    state in one controlled chain.</p>
+    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Verification + updates</h3>
+    <p class="text-sm text-gray-600 dark:text-gray-400">Verification method and post-link maintenance are treated as governed actions.</p>
 
-                <div
-                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+    <div
+        class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
 
-                    <h4 class="font-semibold text-gray-900 dark:text-gray-100">Role + posting + facility mapping</h4>
+        <h4 class="font-semibold text-gray-900 dark:text-gray-100">Verification by OTP</h4>
 
-                    <p class="text-gray-700 dark:text-gray-300">Captures role and posting context as governance inputs,
-                        not profile decoration.</p>
+        <p class="text-gray-700 dark:text-gray-300">Users choose Aadhaar OTP or Mobile OTP depending on what’s available. The UI makes the destination explicit (Aadhaar-linked vs ABHA-linked mobile).</p>
 
-                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Design intent:</span> establish
-                            scope and supervisory chain at the moment identity is created.</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Enables:</span> role-scoped
-                            navigation, assignment eligibility, and data visibility boundaries
-                            (district/block/facility).</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Prevents:</span> incorrect
-                            access, cross-facility data leakage, and admin clean-up work.</li>
-                    </ul>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Design intent:</span> avoid silent failures by clarifying where OTP is sent.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Enables:</span> predictable verification in mixed connectivity and device contexts.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Prevents:</span> resend loops driven by confusion and delayed delivery.</li>
+        </ul>
 
-                    <p class="font-semibold text-gray-900 dark:text-gray-100">Result: permissions shape what users see,
-                        not what they fail at later.</p>
-                </div>
+        <p class="font-semibold text-gray-900 dark:text-gray-100">Result: fewer retries and cleaner verification trails.</p>
+    </div>
 
-                <div
-                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+    <div
+        class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
 
-                    <h4 class="font-semibold text-gray-900 dark:text-gray-100">Approval states</h4>
+        <h4 class="font-semibold text-gray-900 dark:text-gray-100">Consent + ABHA creation</h4>
 
-                    <p class="text-gray-700 dark:text-gray-300">Registration does not equal access. Pending / approved /
-                        duplicate are explicit UX states.</p>
+        <p class="text-gray-700 dark:text-gray-300">ABHA creation captures beneficiary consent before verification. Creation supports Aadhaar Details and Demographic Details, with Online and Offline paths.</p>
 
-                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Design intent:</span> make
-                            “waiting” explainable instead of looking like failure.</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Enables:</span> request
-                            traceability (ID + details), controlled activation, accountable approvals.</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Prevents:</span> duplicate
-                            registrations, repeated OTP attempts, and “app is broken” perception.</li>
-                    </ul>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Design intent:</span> treat consent as a first-class step, not a buried checkbox.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Enables:</span> compliant creation in assisted workflows.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Prevents:</span> creation without clear acknowledgement in the moment.</li>
+        </ul>
 
-                    <p class="font-semibold text-gray-900 dark:text-gray-100">Result: fewer retries and cleaner identity
-                        records.</p>
-                </div>
+        <p class="font-semibold text-gray-900 dark:text-gray-100">Outcome: governed creation with fewer disputes and rework.</p>
+    </div>
 
-                <div
-                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+    <div
+        class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
 
-                    <h4 class="font-semibold text-gray-900 dark:text-gray-100">Day-start surface</h4>
+        <h4 class="font-semibold text-gray-900 dark:text-gray-100">ABHA address + mobile maintenance</h4>
 
-                    <p class="text-gray-700 dark:text-gray-300">Post-approval landing prioritizes execution: punch-in
-                        establishes daily state, work plan answers “what next”.</p>
+        <p class="text-gray-700 dark:text-gray-300">Post-link actions include creating/editing ABHA Address (with rules + suggestions) and updating the linked mobile number via OTP with attempt tracking.</p>
 
-                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Design intent:</span> shift
-                            users from navigation to action within the first screen.</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Enables:</span> consistent
-                            day-start flow across modules without exposing everything at once.</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Prevents:</span> menu
-                            wandering, missed activities, and inconsistent task completion.</li>
-                    </ul>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Design intent:</span> prevent downstream failures by validating formats and limiting attempts.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Enables:</span> controlled updates without breaking identity integrity.</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Prevents:</span> invalid address creation and repeated OTP abuse.</li>
+        </ul>
 
-                    <p class="font-semibold text-gray-900 dark:text-gray-100">Result: faster time-to-first-task and
-                        higher day compliance.</p>
-                </div>
+        <p class="font-semibold text-gray-900 dark:text-gray-100">Result: fewer correction tickets and cleaner records.</p>
+    </div>
+</div>
             </div>
         </div>
     </section>
@@ -312,11 +284,9 @@
     <section class="space-y-8">
         <div class="space-y-3">
             <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Flow</p>
-            <h2 class="text-3xl font-semibold">From “unknown” to “operational”</h2>
+            <h2 class="text-3xl font-semibold">From lookup to verified ABHA</h2>
             <p class="max-w-3xl text-gray-700 dark:text-gray-300">
-                The flow is intentionally linear: users either authenticate or register, then move through approval
-                before gaining access
-                to role-scoped features. No permission surprises, no dead ends.
+                The flow starts with a clear branch: verify an existing ABHA or create a new one. Search inputs, OTP method, consent, and maintenance actions are handled as predictable states so field teams don’t get stuck in loops.
             </p>
         </div>
 
@@ -325,26 +295,26 @@
             <div
                 class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
                 <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 01</p>
-                <p class="font-semibold text-gray-900 dark:text-gray-100">Login</p>
-                <p class="text-sm text-gray-700 dark:text-gray-300">Approved users authenticate quickly.</p>
+                <p class="font-semibold text-gray-900 dark:text-gray-100">Decide path</p>
+                <p class="text-sm text-gray-700 dark:text-gray-300">Does beneficiary already have ABHA?</p>
             </div>
             <div
                 class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
                 <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 02</p>
-                <p class="font-semibold text-gray-900 dark:text-gray-100">OTP</p>
-                <p class="text-sm text-gray-700 dark:text-gray-300">Mobile verification with resend guardrails.</p>
+                <p class="font-semibold text-gray-900 dark:text-gray-100">Search / scan</p>
+                <p class="text-sm text-gray-700 dark:text-gray-300">Mobile, ABHA number, ABHA address, or scan card.</p>
             </div>
             <div
                 class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
                 <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 03</p>
-                <p class="font-semibold text-gray-900 dark:text-gray-100">Registration wizard</p>
-                <p class="text-sm text-gray-700 dark:text-gray-300">Role + posting + facility scope.</p>
+                <p class="font-semibold text-gray-900 dark:text-gray-100">Verify + consent</p>
+                <p class="text-sm text-gray-700 dark:text-gray-300">Aadhaar OTP / Mobile OTP with explicit consent.</p>
             </div>
             <div
                 class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
                 <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 04</p>
-                <p class="font-semibold text-gray-900 dark:text-gray-100">Approval → Day start</p>
-                <p class="text-sm text-gray-700 dark:text-gray-300">State-based access + execution entry.</p>
+                <p class="font-semibold text-gray-900 dark:text-gray-100">View + maintain</p>
+                <p class="text-sm text-gray-700 dark:text-gray-300">View card, manage ABHA address, update linked mobile.</p>
             </div>
         </div>
 
@@ -355,7 +325,7 @@
                 <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
                     alt="Credentials login screen" class="w-full rounded-2xl" />
                 <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                    Credentials login stays minimal to reduce retries and support dependency.
+                    Entry starts with an explicit branch to separate lookup from creation.
                 </figcaption>
             </figure>
 
@@ -364,7 +334,7 @@
                 <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
                     alt="OTP verification screen with resend timer" class="w-full rounded-2xl" />
                 <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                    OTP includes resend timing + clear affordances for low-connectivity behavior.
+                    OTP screens clarify where the code is sent and enforce resend timing.
                 </figcaption>
             </figure>
 
@@ -373,7 +343,7 @@
                 <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
                     alt="Registration wizard for role and posting mapping" class="w-full rounded-2xl" />
                 <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                    Registration collects only what’s needed for governance: role, posting location, facility scope.
+                    Creation captures consent and supports Aadhaar or demographic inputs (online/offline).
                 </figcaption>
             </figure>
 
@@ -382,8 +352,7 @@
                 <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
                     alt="Pending approval and approved state leading to day-start surface" class="w-full rounded-2xl" />
                 <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                    Approval is a UX state (not a silent backend step), followed by day-start entry (punch-in + work
-                    plan).
+                    Post-link maintenance supports ABHA address creation and mobile updates with guardrails.
                 </figcaption>
             </figure>
         </div>
@@ -393,70 +362,59 @@
 
     <!-- Decisions -->
     <section class="space-y-8">
-        <div class="space-y-3">
-            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Design decisions</p>
-            <h2 class="text-3xl font-semibold">Built to scale across roles and programs</h2>
-            <p class="max-w-3xl text-gray-700 dark:text-gray-300">
-                These decisions keep onboarding scalable across programs, geographies, and partner organizations without
-                turning the UI into a permission minefield. I established role, scope, and approval state early so
-                governance is enforced through predictable UI states instead of late-stage access errors.
-            </p>
+      <div class="space-y-3">
+        <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Design decisions</p>
+        <h2 class="text-3xl font-semibold">Built to scale ABHA verification at the point of care</h2>
+        <p class="max-w-3xl text-gray-700 dark:text-gray-300">
+          These decisions keep ABHA flows reliable under assisted usage, inconsistent identifiers, and weak networks. I treated identity, consent, and verification as governed states so the UI prevents duplicates and confusion instead of relying on cleanup later.
+        </p>
+      </div>
+
+      <div class="grid gap-4 md:grid-cols-2">
+        <div class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">1) Branch early: lookup vs create</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            I made “Does beneficiary have ABHA?” the first step so users don’t mix search and creation. This reduces duplicate identities and wasted OTP cycles.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
+            <li>Cleaner flow: the UI matches the beneficiary’s real state</li>
+            <li>Fewer duplicates and restarts when an ABHA already exists</li>
+          </ul>
         </div>
-    
-        <div class="space-y-8">
-            <div
-                class="space-y-4">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">1) Split entry paths early</h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                    I separated authentication (approved users) from onboarding (new users) so each path stays fast,
-                    predictable, and explainable. Combining them creates ambiguity and increases repeat attempts.
-                </p>
-                <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                    <li>Users see only the path relevant to their account state</li>
-                    <li>Reduces accidental re-registration and OTP retry loops</li>
-                </ul>
-            </div>
-    
-            <div
-                class="space-y-4">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">2) Treat posting as governance</h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                    Posting and facility mapping aren’t profile fields. They define data boundaries, approval routing, and
-                    assignment eligibility. I designed posting selection as a governance step so scope is correct before
-                    users enter operational surfaces.
-                </p>
-                <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                    <li>Prevents cross-facility visibility and wrong-task eligibility</li>
-                    <li>Reduces reassignment and “fix my posting” escalations</li>
-                </ul>
-            </div>
-    
-            <div
-                class="space-y-4">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">3) Make approval states visible</h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                    Approval is a legitimate system state, not a backend delay. I surfaced pending/approved/duplicate as
-                    explicit UI states with traceability so users understand what’s happening and what to do next.
-                </p>
-                <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                    <li>Waiting becomes explainable and trackable</li>
-                    <li>Fewer repeat submissions and support escalations</li>
-                </ul>
-            </div>
-    
-            <div
-                class="space-y-4">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">4) Day-start over navigation</h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                    After approval, users need execution, not exploration. I prioritized day-start actions (punch-in + work
-                    plan) so the first screen answers “what now” based on role and daily state.
-                </p>
-                <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                    <li>Fewer irrelevant actions and less menu wandering</li>
-                    <li>Consistent entry into work across modules</li>
-                </ul>
-            </div>
+
+        <div class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">2) Support multiple identifiers</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            Search supports Mobile Number, ABHA Number, ABHA Address, and Scan ABHA Card. Field teams can proceed even when beneficiaries only have one form of ID.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
+            <li>Higher lookup success without “come back later” failures</li>
+            <li>Less dependency on perfect data entry and memorized formats</li>
+          </ul>
         </div>
+
+        <div class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">3) Make consent and verification explicit</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            Consent is surfaced as a visible step, and OTP method clarifies where the code is sent. The UI treats “waiting” and “retrying” as predictable states.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
+            <li>Less OTP confusion and fewer resend loops</li>
+            <li>Lower risk of assisted actions happening without clarity</li>
+          </ul>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">4) Treat maintenance as part of the flow</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            ABHA Address creation and mobile updates include validation rules, suggestions, resend timers, and attempt tracking so records stay clean after onboarding.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
+            <li>Fewer invalid addresses and correction cycles</li>
+            <li>Controlled updates without breaking identity continuity</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
@@ -464,11 +422,10 @@
     <!-- RBAC logic without tables -->
     <section class="space-y-6">
         <div class="space-y-3">
-            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">RBAC as UX</p>
-            <h2 class="text-3xl font-semibold">Permissions influence what users see, not what they fail at</h2>
+            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Governance as UX</p>
+            <h2 class="text-3xl font-semibold">Identity, verification, and consent are treated as governed states</h2>
             <p class="max-w-3xl text-gray-700 dark:text-gray-300">
-                Instead of showing everything and letting permissions break later, onboarding sets role + scope early so
-                navigation and actions are scoped from the first operational screen.
+                Instead of treating ABHA as a single “create” action, the UI scopes what’s possible by identity inputs, verification method, and state (online/offline, attempts remaining). That keeps assisted flows predictable and reduces data cleanup.
             </p>
         </div>
 
@@ -476,27 +433,27 @@
             <div
                 class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
                 <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Signal 01</p>
-                <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Role</p>
+                <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Identifier</p>
                 <p class="text-sm text-gray-700 dark:text-gray-300">
-                    Determines module visibility and action-level permissions (create/edit/approve/assign).
+                    Search by Mobile Number, ABHA Number, ABHA Address, or Scan ABHA Card to locate the right record.
                 </p>
             </div>
 
             <div
                 class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
                 <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Signal 02</p>
-                <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Scope</p>
+                <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Verification method</p>
                 <p class="text-sm text-gray-700 dark:text-gray-300">
-                    Posting + facility mapping sets data boundaries and drill depth.
+                    Aadhaar OTP or Mobile OTP determines where verification happens and how the UI explains delays.
                 </p>
             </div>
 
             <div
                 class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
                 <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Signal 03</p>
-                <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">State</p>
+                <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">State + consent</p>
                 <p class="text-sm text-gray-700 dark:text-gray-300">
-                    Approval + punch-in states gate actions and keep the experience explainable.
+                    Consent, resend timing, attempts remaining, and online/offline mode gate actions and keep the flow explainable.
                 </p>
             </div>
         </div>
@@ -522,45 +479,45 @@
             <!-- Card -->
             <div class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
                 <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">OTP</p>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Weak network / resend loops</h3>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Delayed OTP / resend loops</h3>
                 <p class="text-gray-700 dark:text-gray-300">
-                    Resend timer + explicit affordance prevents panic tapping and repeated OTP requests, especially in low-connectivity zones where delivery is delayed and users retry by instinct.
+                    Resend timer + explicit messaging reduces panic tapping when OTP delivery is slow. The UI clarifies whether the OTP is sent to Aadhaar-linked or ABHA-linked mobile.
                 </p>
                 <p class="text-sm text-gray-600 dark:text-gray-400">
-                    Constraint addressed: intermittent connectivity + shared devices + low tolerance for waiting. System effect: reduces OTP flooding, verification churn, and “stuck onboarding” support calls.
+                    Constraint addressed: intermittent connectivity + assisted usage. System effect: fewer retries and cleaner verification trails.
                 </p>
             </div>
 
             <div class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
                 <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Identity</p>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Mobile already registered</h3>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">ABHA already exists</h3>
                 <p class="text-gray-700 dark:text-gray-300">
-                    Clear messaging + recovery/escalation path routes users to account recovery or supervisor help instead of creating duplicates that split identity and records across facilities.
+                    The entry branch and multi-identifier search help confirm an existing ABHA before creation, reducing duplicate identities and split records across facilities.
                 </p>
                 <p class="text-sm text-gray-600 dark:text-gray-400">
-                    Constraint addressed: data integrity + governance ownership for account activation. System effect: prevents duplicate identities, conflicting posting scopes, and reconciliation work.
+                    Constraint addressed: incomplete identifiers + data integrity. System effect: fewer duplicates and less reconciliation work.
                 </p>
             </div>
 
             <div class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Wizard</p>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Exit mid-registration</h3>
+                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Address</p>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Invalid ABHA address format</h3>
                 <p class="text-gray-700 dark:text-gray-300">
-                    Exit confirmation prevents accidental abandonment of multi-step onboarding during interruptions (calls, travel, network drops), treating interruption as expected behavior.
+                    Address creation includes rules (length, allowed special characters) and suggestions so users can succeed without trial-and-error.
                 </p>
                 <p class="text-sm text-gray-600 dark:text-gray-400">
-                    Constraint addressed: fatigue + interruptions + form length on mobile. System effect: reduces partial submissions, repeated starts, and supervisor corrections.
+                    Constraint addressed: strict format requirements. System effect: fewer invalid addresses and fewer support tickets.
                 </p>
             </div>
 
             <div class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Approval</p>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Pending approval</h3>
+                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Mode</p>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Offline creation when connectivity fails</h3>
                 <p class="text-gray-700 dark:text-gray-300">
-                    Request ID + “view details” makes waiting explainable and traceable, letting users verify what they submitted and understand approval is the gate.
+                    Creation supports demographic details and offline capture so field teams can continue work and complete verification when connectivity returns.
                 </p>
                 <p class="text-sm text-gray-600 dark:text-gray-400">
-                    Constraint addressed: supervisor-dependent workflows + asynchronous activation. System effect: reduces repeat submissions, duplicate requests, and workaround behavior.
+                    Constraint addressed: rural networks + continuity of service. System effect: fewer abandoned sessions and better task completion.
                 </p>
             </div>
         </div>
@@ -572,33 +529,32 @@
     <section class="space-y-6">
         <div class="space-y-3">
             <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Outcomes</p>
-            <h2 class="text-3xl font-semibold">Operational progress (replace with your verified numbers)</h2>
+            <h2 class="text-3xl font-semibold">Operational snapshot (example counters from the system)</h2>
             <p class="max-w-3xl text-gray-700 dark:text-gray-300">
-                Drop your real metrics here. If you paste fake numbers, someone will ask about methodology and you’ll
-                spiritually leave your body.
+                The UI exposes operational counters so supervisors and field teams can see what happened today without exporting data. Replace these with your verified program numbers if needed.
             </p>
         </div>
 
         <div class="grid gap-4 md:grid-cols-3">
             <div
                 class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Completion</p>
-                <p class="text-4xl font-bold text-gray-900 dark:text-gray-100">__%</p>
-                <p class="text-sm text-gray-700 dark:text-gray-300">OTP start → registration submitted for approval.</p>
+                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Lookup modes</p>
+                <p class="text-4xl font-bold text-gray-900 dark:text-gray-100">3</p>
+                <p class="text-sm text-gray-700 dark:text-gray-300">Mobile Number, ABHA Number, ABHA Address (plus scan).</p>
             </div>
 
             <div
                 class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Approval</p>
-                <p class="text-4xl font-bold text-gray-900 dark:text-gray-100">__ hrs</p>
-                <p class="text-sm text-gray-700 dark:text-gray-300">Median time from request → approved.</p>
+                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Verification methods</p>
+                <p class="text-4xl font-bold text-gray-900 dark:text-gray-100">2</p>
+                <p class="text-sm text-gray-700 dark:text-gray-300">Aadhaar OTP and Mobile OTP paths.</p>
             </div>
 
             <div
                 class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Support load</p>
-                <p class="text-4xl font-bold text-gray-900 dark:text-gray-100">__%</p>
-                <p class="text-sm text-gray-700 dark:text-gray-300">Reduction in onboarding-related queries.</p>
+                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Day activity</p>
+                <p class="text-4xl font-bold text-gray-900 dark:text-gray-100">21 / 18</p>
+                <p class="text-sm text-gray-700 dark:text-gray-300">Linked / Created counters shown in day view.</p>
             </div>
         </div>
 
