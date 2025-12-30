@@ -757,89 +757,257 @@
                             Each module page below focuses on decisions, constraints, and patterns used to keep workflows consistent.
                         </p>
                     
-                        <div class="grid gap-4 md:grid-cols-2">
+                        <div class="space-y-4">
                     
-                            <a href="./samasta/beneficiary-registration.html"
-                                class="group relative block overflow-hidden rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 transition duration-200 hover:shadow-md focus-visible:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
-                                <div class="relative z-10 space-y-3">
-                                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Beneficiary Registration</h3>
-                                    <p class="text-gray-700 dark:text-gray-300">Create and manage beneficiary records with role-aware
-                                        editing and clean handoff into service workflows.</p>
+                            <!-- Beneficiary Registration -->
+                            <a href="./samasta/registration.html"
+                                class="group relative block overflow-hidden rounded-2xl
+                                                                    bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                                                                    transition duration-200 hover:shadow-md focus-visible:shadow-md
+                                                                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                            
+                                <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
+                                <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
+                                                                      group-hover:opacity-100 group-focus-visible:opacity-100">
                                     <span
-                                        class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg text-xs font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900 mt-1 transition-colors duration-200 group-hover:bg-gray-300 dark:group-hover:bg-gray-700">View
-                                        details</span>
+                                        class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
+                                    <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                                    <span
+                                        class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
+                                </div>
+                            
+                                <!-- Content above glow -->
+                                <div class="relative z-10 space-y-4">
+                                    <img loading="lazy" decoding="async" src="../assets/chip-2/demo-img.png"
+                                        alt="Onboarding (Login, Registration) placeholder"
+                                        class="w-full h-auto object-cover rounded-xl border border-orange-100/70 bg-gray-200 dark:border-orange-400/20 dark:bg-gray-800" />
+                            
+                                    <div class="space-y-2">
+                                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Onboarding (Login, Registration)</h3>
+                            
+                                        <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    </div>
+                            
+                            
+                                    <!-- Less emphasis “button” (since card is clickable) -->
+                                    <span
+                                        class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg text-xs font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900 mt-2
+                                                                          transition-colors duration-200
+                                                                          group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
+                                        View Details
+                                    </span>
                                 </div>
                             </a>
                     
+                            <!-- Facial Recognition -->
                             <a href="./samasta/facial-recognition.html"
-                                class="group relative block overflow-hidden rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 transition duration-200 hover:shadow-md focus-visible:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
-                                <div class="relative z-10 space-y-3">
-                                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Facial Recognition</h3>
-                                    <p class="text-gray-700 dark:text-gray-300">Identity entry flow with consent gating, capture guidance,
-                                        online search, and fallbacks into registration.</p>
+                                class="group relative block overflow-hidden rounded-2xl
+                                                                    bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                                                                    transition duration-200 hover:shadow-md focus-visible:shadow-md
+                                                                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                            
+                                <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
+                                <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
+                                                                      group-hover:opacity-100 group-focus-visible:opacity-100">
                                     <span
-                                        class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg text-xs font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900 mt-1 transition-colors duration-200 group-hover:bg-gray-300 dark:group-hover:bg-gray-700">View
-                                        details</span>
+                                        class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
+                                    <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                                    <span
+                                        class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
+                                </div>
+                            
+                                <!-- Content above glow -->
+                                <div class="relative z-10 space-y-4">
+                                    <img loading="lazy" decoding="async" src="../assets/chip-2/demo-img.png"
+                                        alt="Onboarding (Login, Registration) placeholder"
+                                        class="w-full h-auto object-cover rounded-xl border border-orange-100/70 bg-gray-200 dark:border-orange-400/20 dark:bg-gray-800" />
+                            
+                                    <div class="space-y-2">
+                                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Onboarding (Login, Registration)</h3>
+                            
+                                        <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    </div>
+                            
+                            
+                                    <!-- Less emphasis “button” (since card is clickable) -->
+                                    <span
+                                        class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg text-xs font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900 mt-2
+                                                                          transition-colors duration-200
+                                                                          group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
+                                        View Details
+                                    </span>
                                 </div>
                             </a>
-                    
+
+                            <!-- OPD Services -->
                             <a href="./samasta/opd.html"
-                                class="group relative block overflow-hidden rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 transition duration-200 hover:shadow-md focus-visible:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
-                                <div class="relative z-10 space-y-3">
-                                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">OPD Services</h3>
-                                    <p class="text-gray-700 dark:text-gray-300">Visit workflow from vitals and complaints to diagnosis,
-                                        prescription, and follow-ups with role-aware ownership.</p>
+                                class="group relative block overflow-hidden rounded-2xl
+                                                                    bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                                                                    transition duration-200 hover:shadow-md focus-visible:shadow-md
+                                                                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                            
+                                <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
+                                <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
+                                                                      group-hover:opacity-100 group-focus-visible:opacity-100">
                                     <span
-                                        class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg text-xs font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900 mt-1 transition-colors duration-200 group-hover:bg-gray-300 dark:group-hover:bg-gray-700">View
-                                        details</span>
+                                        class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
+                                    <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                                    <span
+                                        class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
+                                </div>
+                            
+                                <!-- Content above glow -->
+                                <div class="relative z-10 space-y-4">
+                                    <img loading="lazy" decoding="async" src="../assets/chip-2/demo-img.png"
+                                        alt="Onboarding (Login, Registration) placeholder"
+                                        class="w-full h-auto object-cover rounded-xl border border-orange-100/70 bg-gray-200 dark:border-orange-400/20 dark:bg-gray-800" />
+                            
+                                    <div class="space-y-2">
+                                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Onboarding (Login, Registration)</h3>
+                            
+                                        <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    </div>
+                            
+                            
+                                    <!-- Less emphasis “button” (since card is clickable) -->
+                                    <span
+                                        class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg text-xs font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900 mt-2
+                                                                          transition-colors duration-200
+                                                                          group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
+                                        View Details
+                                    </span>
                                 </div>
                             </a>
-                    
+
+                            <!-- Inventory -->
                             <a href="./samasta/inventory.html"
-                                class="group relative block overflow-hidden rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 transition duration-200 hover:shadow-md focus-visible:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
-                                <div class="relative z-10 space-y-3">
-                                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Inventory</h3>
-                                    <p class="text-gray-700 dark:text-gray-300">Stock visibility and movement tracking
-                                        (inward/outward/issued) designed for accountability and operational reality.</p>
+                                class="group relative block overflow-hidden rounded-2xl
+                                                                    bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                                                                    transition duration-200 hover:shadow-md focus-visible:shadow-md
+                                                                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                            
+                                <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
+                                <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
+                                                                      group-hover:opacity-100 group-focus-visible:opacity-100">
                                     <span
-                                        class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg text-xs font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900 mt-1 transition-colors duration-200 group-hover:bg-gray-300 dark:group-hover:bg-gray-700">View
-                                        details</span>
+                                        class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
+                                    <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                                    <span
+                                        class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
+                                </div>
+                            
+                                <!-- Content above glow -->
+                                <div class="relative z-10 space-y-4">
+                                    <img loading="lazy" decoding="async" src="../assets/chip-2/demo-img.png"
+                                        alt="Onboarding (Login, Registration) placeholder"
+                                        class="w-full h-auto object-cover rounded-xl border border-orange-100/70 bg-gray-200 dark:border-orange-400/20 dark:bg-gray-800" />
+                            
+                                    <div class="space-y-2">
+                                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Onboarding (Login, Registration)</h3>
+                            
+                                        <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    </div>
+                            
+                            
+                                    <!-- Less emphasis “button” (since card is clickable) -->
+                                    <span
+                                        class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg text-xs font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900 mt-2
+                                                                          transition-colors duration-200
+                                                                          group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
+                                        View Details
+                                    </span>
                                 </div>
                             </a>
-                    
-                            <a href="./samasta/outreach-activities.html"
-                                class="group relative block overflow-hidden rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 transition duration-200 hover:shadow-md focus-visible:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
-                                <div class="relative z-10 space-y-3">
-                                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Outreach Activities</h3>
-                                    <p class="text-gray-700 dark:text-gray-300">Follow-up planning and execution flows that connect field
-                                        work back into facility continuity.</p>
+
+                            <!-- Outreach Activities -->
+                            <a href="./samasta/outreach.html"
+                                class="group relative block overflow-hidden rounded-2xl
+                                                                    bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                                                                    transition duration-200 hover:shadow-md focus-visible:shadow-md
+                                                                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                            
+                                <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
+                                <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
+                                                                      group-hover:opacity-100 group-focus-visible:opacity-100">
                                     <span
-                                        class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg text-xs font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900 mt-1 transition-colors duration-200 group-hover:bg-gray-300 dark:group-hover:bg-gray-700">View
-                                        details</span>
+                                        class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
+                                    <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                                    <span
+                                        class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
+                                </div>
+                            
+                                <!-- Content above glow -->
+                                <div class="relative z-10 space-y-4">
+                                    <img loading="lazy" decoding="async" src="../assets/chip-2/demo-img.png"
+                                        alt="Onboarding (Login, Registration) placeholder"
+                                        class="w-full h-auto object-cover rounded-xl border border-orange-100/70 bg-gray-200 dark:border-orange-400/20 dark:bg-gray-800" />
+                            
+                                    <div class="space-y-2">
+                                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Onboarding (Login, Registration)</h3>
+                            
+                                        <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    </div>
+                            
+                            
+                                    <!-- Less emphasis “button” (since card is clickable) -->
+                                    <span
+                                        class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg text-xs font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900 mt-2
+                                                                          transition-colors duration-200
+                                                                          group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
+                                        View Details
+                                    </span>
                                 </div>
                             </a>
-                    
-                            <a href="./samasta/admin.html"
-                                class="group relative block overflow-hidden rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 transition duration-200 hover:shadow-md focus-visible:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
-                                <div class="relative z-10 space-y-3">
-                                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Admin</h3>
-                                    <p class="text-gray-700 dark:text-gray-300">User, facility, and geography management with
-                                        permission-safe operations and oversight-friendly structure.</p>
+
+                            <!-- Dashbaord - Admin + Stats -->
+                            <a href="./samasta/management.html"
+                                class="group relative block overflow-hidden rounded-2xl
+                                                                    bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                                                                    transition duration-200 hover:shadow-md focus-visible:shadow-md
+                                                                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                            
+                                <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
+                                <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
+                                                                      group-hover:opacity-100 group-focus-visible:opacity-100">
                                     <span
-                                        class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg text-xs font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900 mt-1 transition-colors duration-200 group-hover:bg-gray-300 dark:group-hover:bg-gray-700">View
-                                        details</span>
+                                        class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
+                                    <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                                    <span
+                                        class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
                                 </div>
-                            </a>
-                    
-                            <a href="./samasta/dashboard.html"
-                                class="group relative block overflow-hidden rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 transition duration-200 hover:shadow-md focus-visible:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
-                                <div class="relative z-10 space-y-3">
-                                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Dashboard</h3>
-                                    <p class="text-gray-700 dark:text-gray-300">Operational visibility for oversight users through stats,
-                                        trends, and exception-driven drill-down.</p>
+                            
+                                <!-- Content above glow -->
+                                <div class="relative z-10 space-y-4">
+                                    <img loading="lazy" decoding="async" src="../assets/chip-2/demo-img.png"
+                                        alt="Onboarding (Login, Registration) placeholder"
+                                        class="w-full h-auto object-cover rounded-xl border border-orange-100/70 bg-gray-200 dark:border-orange-400/20 dark:bg-gray-800" />
+                            
+                                    <div class="space-y-2">
+                                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Onboarding (Login, Registration)</h3>
+                            
+                                        <p class="text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    </div>
+                            
+                            
+                                    <!-- Less emphasis “button” (since card is clickable) -->
                                     <span
-                                        class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg text-xs font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900 mt-1 transition-colors duration-200 group-hover:bg-gray-300 dark:group-hover:bg-gray-700">View
-                                        details</span>
+                                        class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg text-xs font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900 mt-2
+                                                                          transition-colors duration-200
+                                                                          group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
+                                        View Details
+                                    </span>
                                 </div>
                             </a>
                     
@@ -971,7 +1139,7 @@
                     <div class="sticky top-24 space-y-4">
                         <p class="text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">On this page</p>
                 
-                        <nav aria-label="Case study sections"
+                        <nav data-side-index aria-label="Case study sections"
                             class="rounded-2xl border border-gray-200/70 bg-white/70 p-4 shadow-sm backdrop-blur dark:border-gray-800/70 dark:bg-gray-900/50">
                             <ul class="space-y-1 text-sm">
                                 <li>
@@ -1042,38 +1210,140 @@
         </div>
     </section>
 
+    <!-- divider -->
+    <hr class="border-t border-gray-300 dark:border-gray-700 my-12">
+
     <!-- Footer -->
-    <footer class="w-full pb-10 pt-6">
-        <div class="grid gap-3 px-4 text-sm text-gray-600 dark:text-gray-300 md:grid-cols-3 md:items-center">
-            <div class="hidden md:block"></div>
-
-            <div class="flex flex-wrap items-center justify-center gap-3">
+    <footer class="w-full pb-10 space-y-8">
+        <div class="rounded-4xl border border-gray-200 bg-white p-6 md:p-10 dark:border-gray-800 dark:bg-gray-900">
+            <!-- Top row -->
+            <div class="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+                <div>
+                    <h2 class="text-4xl font-semibold text-gray-900 dark:text-gray-100">Let’s connect</h2>
+                    <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                        Open to product roles, freelance projects, and collaborations. If you want a walkthrough of any case
+                        study, I’m happy to share details live.
+                    </p>
+    
+                    <a href="mailto:sumit.v.nikhare@gmail.com"
+                        class="mt-6 inline-flex items-center rounded-full border-2 border-gray-900 bg-white px-7 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-900 hover:text-white transition duration-300 dark:border-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-100 dark:hover:text-gray-900">
+                        Let's Talk
+                    </a>
+                </div>
+    
+                <!-- Logo -->
+                <div class="flex justify-start md:justify-end">
+                    <span class="font-heading text-3xl font-semibold">sumit.design</span>
+                </div>
+            </div>
+    
+            <!-- Bottom grid -->
+            <div class="mt-14 grid gap-12 md:grid-cols-3">
+    
+                <!-- Navigation -->
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Navigation</p>
+                    <ul class="mt-5 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li><a href="../index.html" class="link-brand">Home</a></li>
+                        <li><a href="../about.html" class="link-brand">About</a></li>
+                        <li><a href="../work.html" class="link-brand">Work</a></li>
+                        <li><a href="../resume.html" class="link-brand">Resume</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Case studies -->
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Case studies</p>
+                    <ul class="mt-5 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li><a href="./work/chip-2.html" class="link-brand">CHIP 2.0</a></li>
+                        <li><a class="underline underline-offset-4">Samasta</a></li>
+                        <li><a href="./work/cho-soft.html" class="link-brand">CHO Soft</a></li>
+                        <li><a href="./work.html" class="link-brand">View All</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Elsewhere -->
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Elsewhere</p>
+    
+                    <div class="mt-5 space-y-2">
+    
+                        <!-- Card -->
+                        <a href="https://www.linkedin.com/in/sumit-nikhare-482058215/" target="_blank" rel="noreferrer"
+                            class="flex items-center justify-between rounded-2xl bg-gradient-to-r bg-violet-100 py-2 pl-2 pr-4 dark:bg-violet-900/30">
+                            <div class="flex items-center gap-4">
+                                <div class="grid h-12 w-12 place-items-center rounded-2xl bg-white/70 dark:bg-gray-900/60">
+                                    <span class="text-sm font-semibold">in</span>
+                                </div>
+                                <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">LinkedIn</p>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">↗</span>
+                        </a>
+    
+                        <!-- Card -->
+                        <!-- <a href="mailto:sumit.v.nikhare@gmail.com"
+                                class="flex items-center justify-between rounded-2xl bg-gradient-to-r bg-emerald-100 py-2 pl-2 pr-4 dark:bg-emerald-900/30">
+                                <div class="flex items-center gap-4">
+                                    <div class="grid h-12 w-12 place-items-center rounded-2xl bg-white/70 dark:bg-gray-900/60">
+                                        <span class="text-sm font-semibold">G</span>
+                                    </div>
+                                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Email</p>
+                                </div>
+                                <span class="text-gray-700 dark:text-gray-300">↗</span>
+                            </a> -->
+    
+                        <!-- Card -->
+                        <!-- <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"
+                                class="flex items-center justify-between rounded-2xl bg-gradient-to-r bg-rose-100 py-2 pl-2 pr-4 dark:bg-rose-900/30">
+                                <div class="flex items-center gap-4">
+                                    <div class="grid h-12 w-12 place-items-center rounded-2xl bg-white/70 dark:bg-gray-900/60">
+                                        <span class="text-sm font-semibold">in</span>
+                                    </div>
+                                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Instagram</p>
+                                </div>
+                                <span class="text-gray-700 dark:text-gray-300">↗</span>
+                            </a> -->
+    
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    
+        <div class="flex flex-col space-y-4 items-center">
+    
+    
+            <div class="flex flex-col items-center gap-3">
                 <p class="text-center">© 2025 – sumit.design</p>
-
-                <button
-                  type="button"
-                  data-theme-toggle
-                  aria-pressed="false"
-                  class="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-xs font-semibold text-slate-600 shadow-sm transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400"
-                >
-                  <span class="text-xs font-semibold text-slate-800/90 dark:text-slate-500">Light</span>
-                  <span class="relative inline-flex h-7 w-14 items-center rounded-full bg-gradient-to-r from-sky-200 via-sky-300 to-sky-500 shadow-inner ring-1 ring-inset ring-white/40 transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 dark:ring-white/10">
-                    <span class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 dark:translate-x-7 dark:bg-slate-100">
-                      <span class="absolute -right-0.5 top-1 h-3 w-3 rounded-full bg-slate-900 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+    
+                <button type="button" data-theme-toggle aria-pressed="false"
+                    class="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-4 py-1 text-xs font-semibold text-slate-600 shadow-sm transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400">
+                    <span class="text-xs font-semibold text-slate-800/90 dark:text-slate-500">Light</span>
+                    <span
+                        class="relative inline-flex h-7 w-14 items-center rounded-full bg-gradient-to-r from-sky-200 via-sky-300 to-sky-500 shadow-inner ring-1 ring-inset ring-white/40 transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 dark:ring-white/10">
+                        <span
+                            class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 dark:translate-x-7 dark:bg-slate-100">
+                            <span
+                                class="absolute -right-0.5 top-1 h-3 w-3 rounded-full bg-slate-900 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        </span>
+                        <span
+                            class="absolute right-4 top-2 h-1.5 w-1.5 rounded-full bg-white/90 transition-opacity duration-300 dark:opacity-0"></span>
+                        <span
+                            class="absolute right-2 top-4 h-1 w-1 rounded-full bg-white/80 transition-opacity duration-300 dark:opacity-0"></span>
+                        <span
+                            class="absolute left-3 top-2 h-1 w-1 rounded-full bg-white/80 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        <span
+                            class="absolute left-6 top-4 h-1.5 w-1.5 rounded-full bg-white/70 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        <span
+                            class="absolute left-8 top-1 h-1 w-1 rounded-full bg-white/60 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
                     </span>
-                    <span class="absolute right-4 top-2 h-1.5 w-1.5 rounded-full bg-white/90 transition-opacity duration-300 dark:opacity-0"></span>
-                    <span class="absolute right-2 top-4 h-1 w-1 rounded-full bg-white/80 transition-opacity duration-300 dark:opacity-0"></span>
-                    <span class="absolute left-3 top-2 h-1 w-1 rounded-full bg-white/80 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                    <span class="absolute left-6 top-4 h-1.5 w-1.5 rounded-full bg-white/70 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                    <span class="absolute left-8 top-1 h-1 w-1 rounded-full bg-white/60 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                  </span>
-                  <span class="text-xs font-semibold text-slate-400 dark:text-slate-100">Dark</span>
-                  <span data-theme-label class="sr-only">Light</span>
-                  <span class="sr-only">Toggle color theme</span>
+                    <span class="text-xs font-semibold text-slate-400 dark:text-slate-100">Dark</span>
+                    <span data-theme-label class="sr-only">Light</span>
+                    <span class="sr-only">Toggle color theme</span>
                 </button>
             </div>
-
-            <p class="text-center md:text-right">
+    
+            <p class="text-sm text-center md:text-right">
                 Implementation notes &amp; source ·
                 <a href="https://github.com/" target="_blank" rel="noreferrer" class="link-brand">
                     GitHub
@@ -1082,23 +1352,48 @@
         </div>
     </footer>
 
+    <!-- Scrollspy -->
     <script>
         (() => {
-            const sections = Array.from(document.querySelectorAll('[data-section]'));
-            const links = Array.from(document.querySelectorAll('[data-scroll-link]'));
-            if (!sections.length || !links.length) return;
+            const nav = document.querySelector("[data-side-index]");
+            if (!nav) return;
+
+            const links = Array.from(nav.querySelectorAll("a[href^='#']"));
+            const sections = Array.from(document.querySelectorAll("[data-section]"));
+            if (!links.length || !sections.length) return;
 
             const linkMap = new Map();
             links.forEach((link) => {
-                const id = link.getAttribute('href')?.replace('#', '');
+                const id = link.getAttribute("href")?.replace("#", "");
                 if (!id) return;
                 linkMap.set(id, link);
             });
 
+            const activeClasses = [
+                "bg-gray-100",
+                "text-gray-900",
+                "dark:bg-gray-800/60",
+                "dark:text-gray-100"
+            ];
+
+            const inactiveClasses = [
+                "text-gray-700",
+                "dark:text-gray-300"
+            ];
+
             const setActive = (id) => {
-                links.forEach((link) => link.classList.remove('text-gray-900', 'font-semibold', 'bg-white', 'shadow-sm', 'dark:text-gray-100', 'dark:bg-gray-900'));
+                links.forEach((link) => {
+                    link.setAttribute("aria-current", "false");
+                    activeClasses.forEach((c) => link.classList.remove(c));
+                    inactiveClasses.forEach((c) => link.classList.add(c));
+                });
+
                 const target = linkMap.get(id);
-                if (target) target.classList.add('text-gray-900', 'font-semibold', 'bg-white', 'shadow-sm', 'dark:text-gray-100', 'dark:bg-gray-900');
+                if (target) {
+                    target.setAttribute("aria-current", "true");
+                    inactiveClasses.forEach((c) => target.classList.remove(c));
+                    activeClasses.forEach((c) => target.classList.add(c));
+                }
             };
 
             const intersectingSections = new Set();
@@ -1122,9 +1417,10 @@
                                 Math.abs(a.rect.top + a.rect.height / 2 - center) -
                                 Math.abs(b.rect.top + b.rect.height / 2 - center)
                         );
+
                     setActive(visible[0].section.id);
                 },
-                { rootMargin: '-30% 0px -50% 0px', threshold: [0, 0.1, 0.25, 0.5, 0.75] }
+                { rootMargin: "-30% 0px -50% 0px", threshold: [0, 0.1, 0.25, 0.5, 0.75] }
             );
 
             sections.forEach((section) => observer.observe(section));

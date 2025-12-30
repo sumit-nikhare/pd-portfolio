@@ -3,108 +3,365 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Work</title>
+  <title>Project works</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-  <link href="../src/output.css" rel="stylesheet">
-  <script src="../src/theme.js" defer></script>
+  <link href="./src/output.css" rel="stylesheet">
+  <script src="./src/theme.js" defer></script>
 </head>
 <body class="mx-4 lg:w-3/5 lg:mx-auto bg-gray-100 pt-4 space-y-6 text-gray-900 transition-colors duration-200 dark:bg-gray-950 dark:text-gray-100">
   <header class="flex items-center justify-between">
-    <a href="../index.html" class="text-3xl font-semibold text-gray-900 dark:text-gray-100">sumit.design</a>
+    <a href="./index.html" class="text-3xl font-semibold text-gray-900 dark:text-gray-100">sumit.design</a>
     <nav class="flex items-center gap-4">
-      <a href="./work.html" class="nav-link" aria-current="page">Work</a>
-      <a href="../about.html" class="nav-link">About</a>
+      <a href="./work.html" class="nav-link" aria-current="page">Project works</a>
+      <a href="./about.html" class="nav-link">About</a>
     </nav>
   </header>
 
-  <main class="min-h-[70vh] py-12 space-y-6">
-    <p class="text-sm uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400">Portfolio</p>
-    <h1 class="text-5xl font-semibold">Work</h1>
-    <p class="text-gray-700 dark:text-gray-300">A curated selection of product design work and system-level case studies.</p>
-    <ul class="mt-8 space-y-3 text-gray-700 dark:text-gray-300">
-      <li class="space-y-2">
-        <a class="link-brand" href="./chip-2.html">CHIP 2.0</a>
-        <ul class="space-y-1 pl-4">
-          <li><a class="link-brand text-sm" href="./chip-2/homepage.html">Homepage</a></li>
-          <li><a class="link-brand text-sm" href="./chip-2/profile.html">Profile</a></li>
-          <li><a class="link-brand text-sm" href="./chip-2/onboarding.html">Onboarding</a></li>
-          <li><a class="link-brand text-sm" href="./chip-2/abha.html">ABHA</a></li>
-          <li><a class="link-brand text-sm" href="./chip-2/family-register.html">Family Register</a></li>
-          <li><a class="link-brand text-sm" href="./chip-2/family-planning.html">Family Planning</a></li>
-          <li><a class="link-brand text-sm" href="./chip-2/maternal-health.html">Maternal Health</a></li>
-          <li><a class="link-brand text-sm" href="./chip-2/child-health.html">Child Health</a></li>
-          <li><a class="link-brand text-sm" href="./chip-2/vhsnc-meeting.html">VHSNC Meeting</a></li>
-          <li><a class="link-brand text-sm" href="./chip-2/sicklecell-imr-mmr.html">Sickle Cell / IMR / MMR</a></li>
-          <li><a class="link-brand text-sm" href="./chip-2/gok-directory.html">GoK Directory</a></li>
-          <li><a class="link-brand text-sm" href="./chip-2/death.html">Death</a></li>
-        </ul>
-      </li>
-      <li class="space-y-2">
-        <a class="link-brand" href="./work/samasta.html">Samasta</a>
-        <ul class="space-y-1 pl-4">
-          <li><a class="link-brand text-sm" href="./samasta/registration.html">Registration</a></li>
-          <li><a class="link-brand text-sm" href="./samasta/opd.html">OPD</a></li>
-          <li><a class="link-brand text-sm" href="./samasta/inventory.html">Inventory</a></li>
-          <li><a class="link-brand text-sm" href="./samasta/management.html">Management</a></li>
-          <li><a class="link-brand text-sm" href="./samasta/outreach.html">Outreach</a></li>
-          <li><a class="link-brand text-sm" href="./samasta/progress-stats.html">Progress Stats</a></li>
-          <li><a class="link-brand text-sm" href="./samasta/facial-recognition.html">Facial Recognition</a></li>
-        </ul>
-      </li>
-      <li><a class="link-brand" href="./cho-soft.html">CHO Soft</a></li>
-      <li><a class="link-brand" href="./therabody-plp.html">Therabody PLP</a></li>
-      <li><a class="link-brand" href="./notify-ai.html">Notify AI</a></li>
-      <li class="flex items-center gap-2">
-        <a class="link-brand" href="./password-manager.html">Password Manager</a>
-        <span class="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-gray-500 dark:border-gray-800 dark:bg-gray-900/40 dark:text-gray-400">Coming soon</span>
-      </li>
-      <li><a class="link-brand" href="./ux-animation.html">UX Animation</a></li>
-      <li><a class="link-brand" href="./tarp.html">TARP</a></li>
-      <li><a class="link-brand" href="./ai-enabled.html">AI Enabled</a></li>
-      <li><a class="link-brand" href="./anarock.html">Anarock</a></li>
-    </ul>
-    <a href="mailto:sumit.v.nikhare@gmail.com" class="inline-flex items-center gap-2 link-brand">Request details</a>
+  <main class="min-h-[70vh] py-12 space-y-14">
+    <!-- Page hero -->
+    <section class="space-y-4">
+      <p class="text-sm uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400">Portfolio</p>
+      <div class="space-y-2">
+        <h1 class="text-5xl font-semibold">Project works</h1>
+        <p class="max-w-3xl text-gray-700 dark:text-gray-300">
+          A curated selection of projects focused on role-based, operational product design. I design modular workflows and permission-aware interfaces that stay
+          usable under real constraints like low connectivity, high task volume, and uneven training.
+        </p>
+      </div>
+    </section>
+
+    <!-- Company: Khushibaby -->
+    <section class="space-y-7">
+      <div class="space-y-2">
+        <h2 class="text-3xl font-semibold">Khushibaby</h2>
+        <p class="text-lg text-gray-700 dark:text-gray-200">UI/UX Designer – L3 · Jan 2023 – Present</p>
+      </div>
+
+      <div class="max-w-4xl space-y-4 text-gray-700 dark:text-gray-300">
+        <p>
+          I worked on multi-role public health systems used across PHC, SHC, and field settings. The design challenge was translating policy-driven responsibilities
+          into role-appropriate UI, while keeping patterns consistent across modules to reduce relearning.
+        </p>
+        <p>
+          Across CHIP 2.0, Samasta, and CHO Soft, I treated RBAC as a first-class UI constraint (not just backend logic), standardized navigation and actions,
+          and reduced cognitive load for high-frequency workflows.
+        </p>
+      </div>
+
+      <!-- Projects (small cards) -->
+      <div class="grid gap-4">
+        <!-- CHIP 2.0 -->
+        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
+          <div class="flex items-start gap-4">
+            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
+                <path d="M7 7h10v10H7V7Z" stroke="currentColor" stroke-width="1.6" />
+                <path d="M4 10V6a2 2 0 0 1 2-2h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M20 14v4a2 2 0 0 1-2 2h-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </div>
+
+            <div class="min-w-0 flex-1 space-y-2">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <div>
+                  <h3 class="text-xl font-semibold">CHIP 2.0</h3>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">Government platform redesign</p>
+                </div>
+                <a href="./work/chip-2.html" class="link-brand text-sm">View case study →</a>
+              </div>
+
+              <p class="text-sm text-gray-700 dark:text-gray-300">
+                Scalable redesign focused on RBAC-first navigation, modular patterns, and consistent workflows across programs.
+              </p>
+
+              <div class="space-y-1">
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400">More</p>
+                <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                  <a class="link-brand" href="./work/chip-2/homepage.html">Homepage</a>
+                  <a class="link-brand" href="./work/chip-2/profile.html">Profile</a>
+                  <a class="link-brand" href="./work/chip-2/onboarding.html">Onboarding</a>
+                  <a class="link-brand" href="./work/chip-2/abha.html">ABHA</a>
+                  <a class="link-brand" href="./work/chip-2/family-register.html">Family Register</a>
+                  <a class="link-brand" href="./work/chip-2/family-planning.html">Family Planning</a>
+                  <a class="link-brand" href="./work/chip-2/maternal-health.html">Maternal Health</a>
+                  <a class="link-brand" href="./work/chip-2/child-health.html">Child Health</a>
+                  <a class="link-brand" href="./work/chip-2/vhsnc-meeting.html">VHSNC Meeting</a>
+                  <a class="link-brand" href="./work/chip-2/sicklecell-imr-mmr.html">Sickle Cell / IMR / MMR</a>
+                  <a class="link-brand" href="./work/chip-2/gok-directory.html">GoK Directory</a>
+                  <a class="link-brand" href="./work/chip-2/death.html">Death</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Samasta -->
+        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
+          <div class="flex items-start gap-4">
+            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
+                <path d="M7 4h10a2 2 0 0 1 2 2v14H5V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6" />
+                <path d="M8 9h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M8 13h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </div>
+
+            <div class="min-w-0 flex-1 space-y-2">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <div>
+                  <h3 class="text-xl font-semibold">Samasta</h3>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">Facility app + admin dashboard</p>
+                </div>
+                <a href="./work/samasta.html" class="link-brand text-sm">View case study →</a>
+              </div>
+
+              <p class="text-sm text-gray-700 dark:text-gray-300">
+                PHC operations for registration, OPD, inventory, outreach, and admin management across users, facilities, and geography.
+              </p>
+
+              <div class="space-y-1">
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400">More</p>
+                <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                  <a class="link-brand" href="./work/samasta/registration.html">Registration</a>
+                  <a class="link-brand" href="./work/samasta/opd.html">OPD</a>
+                  <a class="link-brand" href="./work/samasta/inventory.html">Inventory</a>
+                  <a class="link-brand" href="./work/samasta/management.html">Management</a>
+                  <a class="link-brand" href="./work/samasta/outreach.html">Outreach</a>
+                  <a class="link-brand" href="./work/samasta/progress-stats.html">Progress Stats</a>
+                  <a class="link-brand" href="./work/samasta/facial-recognition.html">Facial Recognition</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CHO Soft -->
+        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
+          <div class="flex items-start gap-4">
+            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
+                <path d="M12 3v18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M3 12h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M7 7h10v10H7V7Z" stroke="currentColor" stroke-width="1.6" />
+              </svg>
+            </div>
+
+            <div class="min-w-0 flex-1 space-y-2">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <div>
+                  <h3 class="text-xl font-semibold">CHO Soft</h3>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">Field + facility operations</p>
+                </div>
+                <a href="./work/cho-soft.html" class="link-brand text-sm">View case study →</a>
+              </div>
+
+              <p class="text-sm text-gray-700 dark:text-gray-300">
+                Role-based workflows for CHO and supervisory roles aligned to policy-defined task lists and facility constraints.
+              </p>
+
+              <div class="space-y-1">
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400">More</p>
+                <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                  <a class="link-brand" href="./work/cho-soft.html#ui">UI overview</a>
+                  <a class="link-brand" href="./work/cho-soft.html#rbac">RBAC</a>
+                  <a class="link-brand" href="./work/cho-soft.html#workflows">Workflows</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="pt-1">
+          <a href="mailto:sumit.v.nikhare@gmail.com" class="inline-flex items-center gap-2 link-brand">
+            Request details
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company: Independent / Client work -->
+    <section class="space-y-7">
+      <div class="space-y-2">
+        <h2 class="text-3xl font-semibold">Independent</h2>
+        <p class="text-lg text-gray-700 dark:text-gray-200">Selected product explorations and client work</p>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
+          <div class="flex items-start gap-4">
+            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
+                <path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="1.6" />
+                <path d="M8 10h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M8 14h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="min-w-0 flex-1 space-y-1">
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="text-lg font-semibold">Therabody PLP</h3>
+                <a class="link-brand text-sm" href="./work/therabody-plp.html">Open →</a>
+              </div>
+              <p class="text-sm text-gray-700 dark:text-gray-300">Product listing UX for discovery, comparison, and decision support.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
+          <div class="flex items-start gap-4">
+            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
+                <path d="M6 8h12v10H6V8Z" stroke="currentColor" stroke-width="1.6" />
+                <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="min-w-0 flex-1 space-y-1">
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="text-lg font-semibold">Notify AI</h3>
+                <a class="link-brand text-sm" href="./work/notify-ai.html">Open →</a>
+              </div>
+              <p class="text-sm text-gray-700 dark:text-gray-300">Patterns for notification quality, control, and team-level governance.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
+          <div class="flex items-start gap-4">
+            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
+                <path d="M8 11h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M7 7h10v14H7V7Z" stroke="currentColor" stroke-width="1.6" />
+                <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="min-w-0 flex-1 space-y-1">
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="text-lg font-semibold">Password Manager</h3>
+                <a class="link-brand text-sm" href="./work/password-manager.html">Open →</a>
+              </div>
+              <p class="text-sm text-gray-700 dark:text-gray-300">Exploration of secure, low-friction credential workflows.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
+          <div class="flex items-start gap-4">
+            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
+                <path d="M6 20V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M18 20V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M6 12h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="min-w-0 flex-1 space-y-1">
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="text-lg font-semibold">UX Animation</h3>
+                <a class="link-brand text-sm" href="./work/ux-animation.html">Open →</a>
+              </div>
+              <p class="text-sm text-gray-700 dark:text-gray-300">Micro-interactions and motion studies for clarity and feedback.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
+          <div class="flex items-start gap-4">
+            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
+                <path d="M4 9h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M7 9V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M6 9v11h12V9" stroke="currentColor" stroke-width="1.6" />
+              </svg>
+            </div>
+            <div class="min-w-0 flex-1 space-y-1">
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="text-lg font-semibold">TARP</h3>
+                <a class="link-brand text-sm" href="./work/tarp.html">Open →</a>
+              </div>
+              <p class="text-sm text-gray-700 dark:text-gray-300">Workflow and information structuring for task-heavy operations.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
+          <div class="flex items-start gap-4">
+            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
+                <path d="M12 2l8 4v12l-8 4-8-4V6l8-4Z" stroke="currentColor" stroke-width="1.6" />
+                <path d="M12 6v16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M4 6l8 4 8-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="min-w-0 flex-1 space-y-1">
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="text-lg font-semibold">AI Enabled</h3>
+                <a class="link-brand text-sm" href="./work/ai-enabled.html">Open →</a>
+              </div>
+              <p class="text-sm text-gray-700 dark:text-gray-300">Interface concepts for assisted workflows and decision support.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
+          <div class="flex items-start gap-4">
+            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
+                <path d="M4 19V5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M20 19V5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M4 9h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M7 19V9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M17 19V9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="min-w-0 flex-1 space-y-1">
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="text-lg font-semibold">Anarock</h3>
+                <a class="link-brand text-sm" href="./work/anarock.html">Open →</a>
+              </div>
+              <p class="text-sm text-gray-700 dark:text-gray-300">Product design work with emphasis on clarity and operational usability.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
 
   <footer class="w-full pb-10 pt-6">
-        <div class="grid gap-3 px-4 text-sm text-gray-600 dark:text-gray-300 md:grid-cols-3 md:items-center">
-            <div class="hidden md:block"></div>
+    <div class="grid gap-3 px-4 text-sm text-gray-600 dark:text-gray-300 md:grid-cols-3 md:items-center">
+      <div class="hidden md:block"></div>
 
-            <div class="flex flex-wrap items-center justify-center gap-3">
-                <p class="text-center">© 2025 – sumit.design</p>
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <p class="text-center">© 2025 – sumit.design</p>
 
-                <button
-                  type="button"
-                  data-theme-toggle
-                  aria-pressed="false"
-                  class="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-xs font-semibold text-slate-600 shadow-sm transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400"
-                >
-                  <span class="text-xs font-semibold text-slate-800/90 dark:text-slate-500">Light</span>
-                  <span class="relative inline-flex h-7 w-14 items-center rounded-full bg-gradient-to-r from-sky-200 via-sky-300 to-sky-500 shadow-inner ring-1 ring-inset ring-white/40 transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 dark:ring-white/10">
-                    <span class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 dark:translate-x-7 dark:bg-slate-100">
-                      <span class="absolute -right-0.5 top-1 h-3 w-3 rounded-full bg-slate-900 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                    </span>
-                    <span class="absolute right-4 top-2 h-1.5 w-1.5 rounded-full bg-white/90 transition-opacity duration-300 dark:opacity-0"></span>
-                    <span class="absolute right-2 top-4 h-1 w-1 rounded-full bg-white/80 transition-opacity duration-300 dark:opacity-0"></span>
-                    <span class="absolute left-3 top-2 h-1 w-1 rounded-full bg-white/80 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                    <span class="absolute left-6 top-4 h-1.5 w-1.5 rounded-full bg-white/70 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                    <span class="absolute left-8 top-1 h-1 w-1 rounded-full bg-white/60 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                  </span>
-                  <span class="text-xs font-semibold text-slate-400 dark:text-slate-100">Dark</span>
-                  <span data-theme-label class="sr-only">Light</span>
-                  <span class="sr-only">Toggle color theme</span>
-                </button>
-            </div>
-        
-            <p class="text-center md:text-right">
-                Implementation notes &amp; source ·
-                <a href="https://github.com/" target="_blank" rel="noreferrer" class="link-brand">
-                    GitHub
-                </a>
-            </p>
-        </div>
-    </footer>
+        <button
+          type="button"
+          data-theme-toggle
+          aria-pressed="false"
+          class="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-xs font-semibold text-slate-600 shadow-sm transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400"
+        >
+          <span class="text-xs font-semibold text-slate-800/90 dark:text-slate-500">Light</span>
+          <span class="relative inline-flex h-7 w-14 items-center rounded-full bg-gradient-to-r from-sky-200 via-sky-300 to-sky-500 shadow-inner ring-1 ring-inset ring-white/40 transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 dark:ring-white/10">
+            <span class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 dark:translate-x-7 dark:bg-slate-100">
+              <span class="absolute -right-0.5 top-1 h-3 w-3 rounded-full bg-slate-900 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+            </span>
+            <span class="absolute right-4 top-2 h-1.5 w-1.5 rounded-full bg-white/90 transition-opacity duration-300 dark:opacity-0"></span>
+            <span class="absolute right-2 top-4 h-1 w-1 rounded-full bg-white/80 transition-opacity duration-300 dark:opacity-0"></span>
+            <span class="absolute left-3 top-2 h-1 w-1 rounded-full bg-white/80 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+            <span class="absolute left-6 top-4 h-1.5 w-1.5 rounded-full bg-white/70 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+            <span class="absolute left-8 top-1 h-1 w-1 rounded-full bg-white/60 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+          </span>
+          <span class="text-xs font-semibold text-slate-400 dark:text-slate-100">Dark</span>
+          <span data-theme-label class="sr-only">Light</span>
+          <span class="sr-only">Toggle color theme</span>
+        </button>
+      </div>
+
+      <p class="text-center md:text-right">
+        Implementation notes &amp; source ·
+        <a href="https://github.com/" target="_blank" rel="noreferrer" class="link-brand">GitHub</a>
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
