@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHIP 2.0 — Onboarding</title>
+    <title>CHIP 2.0 — Onboarding (Login, Registration)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,7 +17,7 @@
 <body
     class="relative isolate mx-4 lg:w-3/5 lg:mx-auto bg-gray-100 pt-4 space-y-6 text-gray-900 transition-colors duration-200 dark:bg-gray-950 dark:text-gray-100">
 
-    <!-- Ambient glassy glows -->
+    <!-- Ambient glows -->
     <div class="pointer-events-none fixed inset-0 -z-10">
         <div
             class="absolute -left-32 top-10 w-80 h-80 bg-gradient-to-br from-amber-200 via-white to-gray-100 opacity-60 blur-3xl dark:from-amber-500/20 dark:via-gray-950 dark:to-gray-950 dark:opacity-30">
@@ -30,15 +30,12 @@
         </div>
     </div>
 
-
     <!-- Floating back control -->
     <div id="backControl" class="fixed top-4 left-4 z-50 opacity-0 pointer-events-none transition-opacity duration-300"
         aria-hidden="true">
         <a href="../chip-2.html" aria-label="Back" class="group relative flex h-16 items-center focus:outline-none">
-
-            <!-- Soft ambient glow (only on hover/focus-within) -->
-            <span aria-hidden="true" class="pointer-events-none absolute -inset-6 -z-10 opacity-0 blur-2xl transition-opacity duration-300
-                                    group-hover:opacity-80 group-focus-within:opacity-80">
+            <span aria-hidden="true"
+                class="pointer-events-none absolute -inset-6 -z-10 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-80 group-focus-within:opacity-80">
                 <span
                     class="absolute left-0 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-amber-200/70 dark:bg-amber-500/20"></span>
                 <span
@@ -47,12 +44,8 @@
                     class="absolute left-20 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-orange-200/60 dark:bg-orange-500/20"></span>
             </span>
 
-            <!-- Expandable pill -->
-            <span class="flex h-16 items-center overflow-hidden rounded-full bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-100 shadow-sm
-                                        transition-all duration-300 max-w-[64px]
-                                        group-hover:max-w-[200px] group-focus-within:max-w-[200px]">
-
-                <!-- Icon -->
+            <span
+                class="flex h-16 items-center overflow-hidden rounded-full bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-100 shadow-sm transition-all duration-300 max-w-[64px] group-hover:max-w-[220px] group-focus-within:max-w-[220px]">
                 <span class="grid h-16 w-16 place-items-center">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                         <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
@@ -60,14 +53,9 @@
                     </svg>
                 </span>
 
-                <!-- Label -->
                 <span
-                    class="max-w-0 overflow-hidden whitespace-nowrap pr-0
-                                    text-sm font-semibold opacity-0 translate-x-0
-                                    transition-[max-width,opacity,padding] duration-300
-                                    group-hover:max-w-[120px] group-hover:opacity-100 group-hover:pr-6
-                                    group-focus-within:max-w-[120px] group-focus-within:opacity-100 group-focus-within:pr-6">
-                    Back
+                    class="max-w-0 overflow-hidden whitespace-nowrap pr-0 text-sm font-semibold opacity-0 translate-x-0 transition-[max-width,opacity,padding] duration-300 group-hover:max-w-[150px] group-hover:opacity-100 group-hover:pr-6 group-focus-within:max-w-[150px] group-focus-within:opacity-100 group-focus-within:pr-6">
+                    Back to CHIP 2.0
                 </span>
             </span>
         </a>
@@ -78,9 +66,8 @@
         class="fixed bottom-4 right-4 z-50 opacity-0 pointer-events-none translate-y-3 transition-all duration-300"
         aria-hidden="true">
         <a href="#hero" aria-label="Back to top" class="group relative flex h-16 items-center focus:outline-none">
-            <!-- Glow (only shows on md+ hover/focus) -->
-            <span aria-hidden="true" class="pointer-events-none absolute -inset-6 -z-10 hidden opacity-0 blur-2xl transition-opacity duration-300 md:block
-                            md:group-hover:opacity-80 md:group-focus-within:opacity-80">
+            <span aria-hidden="true"
+                class="pointer-events-none absolute -inset-6 -z-10 hidden opacity-0 blur-2xl transition-opacity duration-300 md:block md:group-hover:opacity-80 md:group-focus-within:opacity-80">
                 <span
                     class="absolute right-0 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-amber-200/60 dark:bg-amber-500/20"></span>
                 <span
@@ -89,11 +76,8 @@
                     class="absolute right-20 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-orange-200/55 dark:bg-orange-500/20"></span>
             </span>
 
-            <!-- Expandable pill (expands only on md+) -->
-            <span class="flex h-16 items-center overflow-hidden rounded-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-gray-200 dark:ring-gray-700
-                            transition-all duration-300 max-w-[64px]
-                            md:group-hover:max-w-[160px] md:group-focus-within:max-w-[160px]">
-                <!-- Icon -->
+            <span
+                class="flex h-16 items-center overflow-hidden rounded-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-gray-200 dark:ring-gray-700 transition-all duration-300 max-w-[64px] md:group-hover:max-w-[160px] md:group-focus-within:max-w-[160px]">
                 <span class="grid h-16 w-16 place-items-center">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                         <path d="M12 5l-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
@@ -102,12 +86,8 @@
                     </svg>
                 </span>
 
-                <!-- Label (md+ only, doesn’t steal width when hidden) -->
                 <span
-                    class="hidden md:inline max-w-0 overflow-hidden whitespace-nowrap pr-0 text-sm font-semibold opacity-0
-                                transition-[max-width,opacity,padding] duration-300
-                                md:group-hover:max-w-[80px] md:group-hover:opacity-100 md:group-hover:pr-6
-                                md:group-focus-within:max-w-[80px] md:group-focus-within:opacity-100 md:group-focus-within:pr-6">
+                    class="hidden md:inline max-w-0 overflow-hidden whitespace-nowrap pr-0 text-sm font-semibold opacity-0 transition-[max-width,opacity,padding] duration-300 md:group-hover:max-w-[80px] md:group-hover:opacity-100 md:group-hover:pr-6 md:group-focus-within:max-w-[80px] md:group-focus-within:opacity-100 md:group-focus-within:pr-6">
                     Top
                 </span>
             </span>
@@ -126,591 +106,538 @@
     <!-- Hero -->
     <section id="hero" class="w-full pt-12 space-y-8">
         <div class="space-y-4">
-
-            <p class="text-sm uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400">CASE STUDY · CHIP 2.0</p>
+            <p class="text-sm uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400">MODULE · CHIP 2.0</p>
 
             <div class="space-y-6 lg:w-4/5">
-
                 <h1 class="font-heading text-4xl font-semibold text-gray-900 dark:text-gray-100">
-                    Onboarding that respects roles, approvals, and reality
+                    Onboarding that treats identity + posting as governance
                 </h1>
 
-                <p class="text-gray-700 dark:text-gray-300">A role-aware onboarding and day-start experience designed
-                    for multi-program operations, where identity, posting, and permissions are governance constraints,
-                    not profile preferences.</p>
+                <p class="text-gray-700 dark:text-gray-300">
+                    A role-aware login and registration flow that establishes identity, posting location, and approval state upfront. The UI prevents duplicate registrations, makes “pending approval” a first-class state, and routes approved users into a day-start surface so work begins without hunting through menus.
+                </p>
             </div>
 
             <div class="flex flex-wrap gap-2 my-2">
                 <span
-                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">
-                    Mobile-first
-                </span>
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Credentials + OTP</span>
                 <span
-                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">
-                    RBAC-driven UX
-                </span>
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Approval states</span>
                 <span
-                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">
-                    Approval states
-                </span>
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Posting as scope</span>
                 <span
-                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">
-                    Posting & facility mapping
-                </span>
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Supervisor handoff</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Day-start gate</span>
             </div>
 
             <p class="max-w-3xl text-sm text-gray-600 dark:text-gray-400 pt-2">
-                *Full deck is in progress. This page captures shipped UX + system decisions.
+                *This page is derived from onboarding, approval, user-details, and day-start screens. Replace placeholder screenshots with final exports.
             </p>
         </div>
 
-        <!-- Hero image (optional) -->
+        <!-- Flow image (replace with your exported asset) -->
         <div>
             <img loading="eager" decoding="async" fetchpriority="high" src="../../assets/common/demo-img-1920.png"
-                alt="Onboarding flow overview" class="w-full rounded-3xl" />
+                alt="Onboarding flow: credentials login or OTP registration → approval state → day-start surface"
+                class="w-full rounded-3xl" />
         </div>
-
     </section>
 
     <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
 
-    <!-- Reusable section wrapper: glass card -->
-    <section class="space-y-8">
+    <!-- Content (no sticky side nav) -->
+    <section class="space-y-12">
 
-        <div class="space-y-3">
-            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Scope</p>
-            <h2 class="text-3xl font-semibold">What the onboarding system covers</h2>
-        </div>
+        <!-- Layout A -->
+        <section id="layout-a" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Problem</p>
+                <h2 class="text-3xl font-semibold">Onboarding breaks when identity and approvals are treated as backend-only logic</h2>
+            </div>
 
-        <div class="space-y-8">
+            <p class="text-gray-700 dark:text-gray-300">
+                CHIP 2.0 spans programs, facilities, and role hierarchies. If onboarding is a generic “create account” flow, the platform inherits messy identity data, wrong posting scope, and invisible approval states. In the field, that becomes repeat attempts, duplicate users, and support dependency before anyone can do actual work.
+            </p>
+
+            <div
+                class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">What onboarding must solve at scale</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Split entry paths:</span> Existing users should authenticate quickly; new users should register with OTP and guided steps.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Posting as scope:</span> District/block/facility mapping defines what modules and records a user can access.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Approval as a UX state:</span> “Pending approval” must be actionable and explainable, not a dead end.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Duplicate prevention:</span> Mobile already registered should route to supervisor escalation, not create split identities.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Day-start readiness:</span> Once approved, users need a clear first task surface (punch-in + work plan) to begin execution.</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout B -->
+        <section id="layout-b" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Users</p>
+                <h2 class="text-3xl font-semibold">Two user modes: approved staff logging in vs field users registering in real conditions</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                The onboarding system supports both credentialed staff who are already provisioned and frontline workers who register via mobile OTP. It also accounts for higher authorities who can correct details before approval, and supervisors who act as the escalation path when identity conflicts occur.
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-2">
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Already-approved users</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Login with username/password or direct credential flow. Goal: get them into day-start with minimum friction.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">New field registrants (OTP)</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Mobile-first registration with short steps for personal + employment details and posting selection.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Supervisors / higher authorities</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Review requests, correct role/posting/facility mapping, and approve. Their edits must be transparent to the registrant.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Program admins</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Own policy-driven roles, module visibility, and approval routing rules across districts, blocks, and facilities.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout C -->
+        <section id="layout-c" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Flow</p>
+                <h2 class="text-3xl font-semibold">A split-path flow that resolves identity, scope, and state before access</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                The flow is designed as two predictable paths: credentials login for provisioned users, and OTP-based registration for new users. Both converge on the same governance states (pending approval / approved), and approved users land on a day-start surface that gates work until punch-in.
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-4">
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 01</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Choose entry path</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Login for existing users, Register for OTP onboarding.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 02</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Capture identity + posting</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Personal + employment details, district/block/facility mapping.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 03</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Approval state</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Pending request with Request ID, details view, and supervisor contact.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 04</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Day-start</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Punch-in gate + work plan to start execution without navigation.</p>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Routing behavior</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                    <li>Credentials users skip registration and authenticate directly.</li>
+                    <li>Registration creates a reviewable request and surfaces status with a clear next step.</li>
+                    <li>Approved state routes into day-start and exposes module entry points based on role + posting.</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout D -->
+        <section id="layout-d" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Design decisions</p>
+                <h2 class="text-3xl font-semibold">Designed onboarding as governance-first UX, not a generic sign-up</h2>
+            </div>
+
+            <div class="space-y-6">
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">1) Split entry paths early</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Login and registration are not the same job. Separating them reduces confusion, prevents retries, and keeps approved users fast.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">2) Treat posting and facility mapping as governance</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        District/block/facility selection determines scope, supervisory chain, and module visibility. The UI treats it like a critical setup step, not optional metadata.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">3) Make approval states visible and explainable</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        “Pending approval” is presented as a valid state with a Request ID and a details view so users don’t assume the app is broken.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">4) Build explicit anti-duplication messaging</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        When a mobile number is already registered, the UI blocks creation and routes to supervisor resolution to avoid split identities.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">5) Route approved users into day-start, not navigation</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Punch-in and a work plan answer “what do I do now” immediately. This reduces menu hunting and aligns with daily execution rhythms.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout E -->
+        <section id="layout-e" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">RBAC as UX</p>
+                <h2 class="text-3xl font-semibold">RBAC starts at onboarding: scope and actions are established before users enter modules</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                Onboarding sets the platform’s RBAC baseline by binding a user to a role, posting location, and facility. That mapping determines what modules appear, what records are accessible, and which actions are available. Approval is the governance checkpoint that prevents incorrect access from entering the system.
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-3">
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 01</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Module visibility</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Home surfaces show only modules relevant to the user’s role and posting, reducing clutter for frontline staff.</p>
+                </div>
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 02</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Approval routing</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Requests route to the correct supervisory chain; edits before approval are transparent via a details view.</p>
+                </div>
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 03</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Day-start gating</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Punch-in and daily state ensure users don’t start tasks without context, assignments, or work plan entry.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout F -->
+        <section id="layout-f" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Edge cases</p>
+                <h2 class="text-3xl font-semibold">Handled the messy stuff as predictable UI states</h2>
+            </div>
 
             <div class="space-y-4">
-
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Entry paths</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400">Two ways in, depending on whether governance already
-                    exists.</p>
-
                 <div
-                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-
-                    <h4 class="font-semibold text-gray-900 dark:text-gray-100">Credentials login</h4>
-
-                    <p class="text-gray-700 dark:text-gray-300">Fast path for already-approved users, optimized for
-                        repeat daily usage.</p>
-
-                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Design intent:</span> reduce
-                            friction for operational users who return every day.</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Enables:</span> quick access to
-                            role-scoped work without re-onboarding.</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Prevents:</span> accidental
-                            re-registration and support loops.</li>
-                    </ul>
-
-                    <p class="font-semibold text-gray-900 dark:text-gray-100">Outcome: faster entry with fewer retries
-                        and less confusion between “login” and “register”.</p>
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Weak network / resend loops</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        OTP screen includes a resend timer and a clear resend affordance to prevent panic tapping and repeated requests.
+                    </p>
                 </div>
 
                 <div
-                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Mobile already registered</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Blocks duplicate registration and routes users to supervisor support, protecting data integrity.
+                    </p>
+                </div>
 
-                    <h4 class="font-semibold text-gray-900 dark:text-gray-100">Mobile + OTP registration</h4>
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Exit mid-registration</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Exit confirmation prevents accidental abandonment of multi-step registration flows.
+                    </p>
+                </div>
 
-                    <p class="text-gray-700 dark:text-gray-300">Mobile-first identity capture for onboarding at scale
-                        when email or institutional IDs aren’t reliable.</p>
-
-                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Design intent:</span> make
-                            identity entry possible on shared/low-end devices and inconsistent networks.</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Enables:</span> controlled
-                            creation of a new account before role and scope are applied.</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Prevents:</span> ghost
-                            accounts, mismatched identities, and partial sign-ups.</li>
-                    </ul>
-
-                    <p class="font-semibold text-gray-900 dark:text-gray-100">Note: OTP is identity entry before
-                        governance applies.</p>
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Pending approval waiting</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Request ID + “View details” makes the waiting state legible and reduces repeated submissions.
+                    </p>
                 </div>
             </div>
+        </section>
 
-            <div class="space-y-4">
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
 
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Governance handoff</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400">Registration creates identity, posting, and approval
-                    state in one controlled chain.</p>
-
-                <div
-                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-
-                    <h4 class="font-semibold text-gray-900 dark:text-gray-100">Role + posting + facility mapping</h4>
-
-                    <p class="text-gray-700 dark:text-gray-300">Captures role and posting context as governance inputs,
-                        not profile decoration.</p>
-
-                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Design intent:</span> establish
-                            scope and supervisory chain at the moment identity is created.</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Enables:</span> role-scoped
-                            navigation, assignment eligibility, and data visibility boundaries
-                            (district/block/facility).</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Prevents:</span> incorrect
-                            access, cross-facility data leakage, and admin clean-up work.</li>
-                    </ul>
-
-                    <p class="font-semibold text-gray-900 dark:text-gray-100">Result: permissions shape what users see,
-                        not what they fail at later.</p>
-                </div>
-
-                <div
-                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-
-                    <h4 class="font-semibold text-gray-900 dark:text-gray-100">Approval states</h4>
-
-                    <p class="text-gray-700 dark:text-gray-300">Registration does not equal access. Pending / approved /
-                        duplicate are explicit UX states.</p>
-
-                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Design intent:</span> make
-                            “waiting” explainable instead of looking like failure.</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Enables:</span> request
-                            traceability (ID + details), controlled activation, accountable approvals.</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Prevents:</span> duplicate
-                            registrations, repeated OTP attempts, and “app is broken” perception.</li>
-                    </ul>
-
-                    <p class="font-semibold text-gray-900 dark:text-gray-100">Result: fewer retries and cleaner identity
-                        records.</p>
-                </div>
-
-                <div
-                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-
-                    <h4 class="font-semibold text-gray-900 dark:text-gray-100">Day-start surface</h4>
-
-                    <p class="text-gray-700 dark:text-gray-300">Post-approval landing prioritizes execution: punch-in
-                        establishes daily state, work plan answers “what next”.</p>
-
-                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Design intent:</span> shift
-                            users from navigation to action within the first screen.</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Enables:</span> consistent
-                            day-start flow across modules without exposing everything at once.</li>
-                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Prevents:</span> menu
-                            wandering, missed activities, and inconsistent task completion.</li>
-                    </ul>
-
-                    <p class="font-semibold text-gray-900 dark:text-gray-100">Result: faster time-to-first-task and
-                        higher day compliance.</p>
-                </div>
+        <!-- Layout G -->
+        <section id="layout-g" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Screens</p>
+                <h2 class="text-3xl font-semibold">Key surfaces in onboarding and day-start</h2>
+                <p class="max-w-3xl text-gray-700 dark:text-gray-300">
+                    Replace placeholders with your final screenshots (from your Figma exports).
+                </p>
             </div>
-        </div>
-    </section>
 
-    <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
+            <div class="grid gap-8 md:grid-cols-2">
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Credentials login screen" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Credentials login for already-approved users.
+                    </figcaption>
+                </figure>
 
-    <!-- Flow: Steps + Screens -->
-    <section class="space-y-8">
-        <div class="space-y-3">
-            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Flow</p>
-            <h2 class="text-3xl font-semibold">From “unknown” to “operational”</h2>
-            <p class="max-w-3xl text-gray-700 dark:text-gray-300">
-                The flow is intentionally linear: users either authenticate or register, then move through approval
-                before gaining access
-                to role-scoped features. No permission surprises, no dead ends.
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="OTP registration and verification" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Mobile OTP registration with resend behavior for low connectivity.
+                    </figcaption>
+                </figure>
+
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Pending approval and user details view" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Approval state with Request ID and details view showing correctable fields before approval.
+                    </figcaption>
+                </figure>
+
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Day-start punch-in and work plan" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Punch-in gate + work plan surface to start work without hunting through menus.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout H -->
+        <section id="layout-h" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">System fit</p>
+                <h2 class="text-3xl font-semibold">Onboarding connects governance setup to daily execution</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                Once approved, onboarding hands users into a day-start surface that makes daily state visible (punched-in vs not), surfaces assigned activities, and provides direct entry into registers. This prevents the common failure mode where users are “logged in” but still don’t know what to do next.
             </p>
-        </div>
 
-        <!-- Step cards -->
-        <div class="grid gap-4 md:grid-cols-4">
-            <div
-                class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 01</p>
-                <p class="font-semibold text-gray-900 dark:text-gray-100">Login</p>
-                <p class="text-sm text-gray-700 dark:text-gray-300">Approved users authenticate quickly.</p>
+            <div class="grid gap-4 md:grid-cols-2">
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Day-start as the default landing</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Punch-in is treated as a work gate. When a user hasn’t punched in, the UI explains why work is blocked and offers a single action to proceed.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Work plan + register entry points</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Activities and register counts provide a clear starting point for execution and reduce reliance on supervisors for “what now.”
+                    </p>
+                </div>
             </div>
-            <div
-                class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 02</p>
-                <p class="font-semibold text-gray-900 dark:text-gray-100">OTP</p>
-                <p class="text-sm text-gray-700 dark:text-gray-300">Mobile verification with resend guardrails.</p>
-            </div>
-            <div
-                class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 03</p>
-                <p class="font-semibold text-gray-900 dark:text-gray-100">Registration wizard</p>
-                <p class="text-sm text-gray-700 dark:text-gray-300">Role + posting + facility scope.</p>
-            </div>
-            <div
-                class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 04</p>
-                <p class="font-semibold text-gray-900 dark:text-gray-100">Approval → Day start</p>
-                <p class="text-sm text-gray-700 dark:text-gray-300">State-based access + execution entry.</p>
-            </div>
-        </div>
+        </section>
 
-        <!-- Screens grid -->
-        <div class="grid gap-8 md:grid-cols-2">
-            <figure
-                class="space-y-3">
-                <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
-                    alt="Credentials login screen" class="w-full rounded-2xl" />
-                <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                    Credentials login stays minimal to reduce retries and support dependency.
-                </figcaption>
-            </figure>
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
 
-            <figure
-                class="space-y-3">
-                <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
-                    alt="OTP verification screen with resend timer" class="w-full rounded-2xl" />
-                <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                    OTP includes resend timing + clear affordances for low-connectivity behavior.
-                </figcaption>
-            </figure>
-
-            <figure
-                class="space-y-3">
-                <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
-                    alt="Registration wizard for role and posting mapping" class="w-full rounded-2xl" />
-                <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                    Registration collects only what’s needed for governance: role, posting location, facility scope.
-                </figcaption>
-            </figure>
-
-            <figure
-                class="space-y-3">
-                <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
-                    alt="Pending approval and approved state leading to day-start surface" class="w-full rounded-2xl" />
-                <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                    Approval is a UX state (not a silent backend step), followed by day-start entry (punch-in + work
-                    plan).
-                </figcaption>
-            </figure>
-        </div>
-    </section>
-
-    <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
-
-    <!-- Decisions -->
-    <section class="space-y-8">
-        <div class="space-y-3">
-            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Design decisions</p>
-            <h2 class="text-3xl font-semibold">Built to scale across roles and programs</h2>
-            <p class="max-w-3xl text-gray-700 dark:text-gray-300">
-                These decisions keep onboarding scalable across programs, geographies, and partner organizations without
-                turning the UI into a permission minefield. I established role, scope, and approval state early so
-                governance is enforced through predictable UI states instead of late-stage access errors.
-            </p>
-        </div>
-    
-        <div class="space-y-8">
-            <div
-                class="space-y-4">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">1) Split entry paths early</h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                    I separated authentication (approved users) from onboarding (new users) so each path stays fast,
-                    predictable, and explainable. Combining them creates ambiguity and increases repeat attempts.
-                </p>
-                <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                    <li>Users see only the path relevant to their account state</li>
-                    <li>Reduces accidental re-registration and OTP retry loops</li>
-                </ul>
-            </div>
-    
-            <div
-                class="space-y-4">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">2) Treat posting as governance</h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                    Posting and facility mapping aren’t profile fields. They define data boundaries, approval routing, and
-                    assignment eligibility. I designed posting selection as a governance step so scope is correct before
-                    users enter operational surfaces.
-                </p>
-                <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                    <li>Prevents cross-facility visibility and wrong-task eligibility</li>
-                    <li>Reduces reassignment and “fix my posting” escalations</li>
-                </ul>
-            </div>
-    
-            <div
-                class="space-y-4">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">3) Make approval states visible</h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                    Approval is a legitimate system state, not a backend delay. I surfaced pending/approved/duplicate as
-                    explicit UI states with traceability so users understand what’s happening and what to do next.
-                </p>
-                <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                    <li>Waiting becomes explainable and trackable</li>
-                    <li>Fewer repeat submissions and support escalations</li>
-                </ul>
-            </div>
-    
-            <div
-                class="space-y-4">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">4) Day-start over navigation</h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                    After approval, users need execution, not exploration. I prioritized day-start actions (punch-in + work
-                    plan) so the first screen answers “what now” based on role and daily state.
-                </p>
-                <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                    <li>Fewer irrelevant actions and less menu wandering</li>
-                    <li>Consistent entry into work across modules</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
-
-    <!-- RBAC logic without tables -->
-    <section class="space-y-6">
-        <div class="space-y-3">
-            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">RBAC as UX</p>
-            <h2 class="text-3xl font-semibold">Permissions influence what users see, not what they fail at</h2>
-            <p class="max-w-3xl text-gray-700 dark:text-gray-300">
-                Instead of showing everything and letting permissions break later, onboarding sets role + scope early so
-                navigation and actions are scoped from the first operational screen.
-            </p>
-        </div>
-
-        <div class="grid gap-4 md:grid-cols-3">
-            <div
-                class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Signal 01</p>
-                <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Role</p>
-                <p class="text-sm text-gray-700 dark:text-gray-300">
-                    Determines module visibility and action-level permissions (create/edit/approve/assign).
-                </p>
+        <!-- Layout I -->
+        <section id="layout-i" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Impact</p>
+                <h2 class="text-3xl font-semibold">Fewer retries, fewer duplicates, and a clearer first day experience
+                </h2>
             </div>
 
-            <div
-                class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Signal 02</p>
-                <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Scope</p>
-                <p class="text-sm text-gray-700 dark:text-gray-300">
-                    Posting + facility mapping sets data boundaries and drill depth.
-                </p>
-            </div>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Reduced confusion by separating login vs registration paths and converging on clear approval states.</li>
+                <li>Prevented duplicate identities by blocking mobile re-registration and routing escalation to supervisors.</li>
+                <li>Made governance visible with Request ID + details view, lowering “app is broken” perception.</li>
+                <li>Improved time-to-first-task by routing approved users into punch-in + work plan instead of menus.</li>
+            </ul>
 
-            <div
-                class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Signal 03</p>
-                <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">State</p>
-                <p class="text-sm text-gray-700 dark:text-gray-300">
-                    Approval + punch-in states gate actions and keep the experience explainable.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
-
-    <!-- Edge cases (no tables, mobile-friendly) -->
-    <section class="space-y-8">
-        <div class="space-y-3">
-            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Edge cases</p>
-            <h2 class="text-3xl font-semibold">Handled the messy stuff on purpose</h2>
-            <p class="max-w-3xl text-gray-700 dark:text-gray-300">
-                These are not “rare.” They’re daily behavior in field conditions. Each edge case is handled as a
-                predictable UI state to reduce retries and support dependency.
-            </p>
             <p class="text-sm text-gray-600 dark:text-gray-400">
-                *High-frequency failure modes treated as first-class states, not exceptions.
+                In-product counters surfaced on day-start (example): Registered population 12,54,872; Attention required 1,462; Family registered 21; Family DHS completed 18; People registered 75; People DHS completed 62; ABHA linked 21; ABHA created 18.
             </p>
-        </div>
+        </section>
 
-        <div class="space-y-4">
-            <!-- Card -->
-            <div class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">OTP</p>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Weak network / resend loops</h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                    Resend timer + explicit affordance prevents panic tapping and repeated OTP requests, especially in low-connectivity zones where delivery is delayed and users retry by instinct.
-                </p>
-                <p class="text-sm text-gray-600 dark:text-gray-400">
-                    Constraint addressed: intermittent connectivity + shared devices + low tolerance for waiting. System effect: reduces OTP flooding, verification churn, and “stuck onboarding” support calls.
-                </p>
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout J -->
+        <section id="layout-j" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">What’s next</p>
+                <h2 class="text-3xl font-semibold">What’s next: tighten onboarding integrity without adding steps</h2>
             </div>
 
-            <div class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Identity</p>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Mobile already registered</h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                    Clear messaging + recovery/escalation path routes users to account recovery or supervisor help instead of creating duplicates that split identity and records across facilities.
-                </p>
-                <p class="text-sm text-gray-600 dark:text-gray-400">
-                    Constraint addressed: data integrity + governance ownership for account activation. System effect: prevents duplicate identities, conflicting posting scopes, and reconciliation work.
-                </p>
-            </div>
+            <div class="space-y-4">
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Proactive duplicate resolution</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Offer a guided supervisor resolution flow (who to contact, what info to share) so “already registered” doesn’t become a dead end.
+                    </p>
+                </div>
 
-            <div class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Wizard</p>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Exit mid-registration</h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                    Exit confirmation prevents accidental abandonment of multi-step onboarding during interruptions (calls, travel, network drops), treating interruption as expected behavior.
-                </p>
-                <p class="text-sm text-gray-600 dark:text-gray-400">
-                    Constraint addressed: fatigue + interruptions + form length on mobile. System effect: reduces partial submissions, repeated starts, and supervisor corrections.
-                </p>
-            </div>
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Offline-first OTP recovery</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Make resend behavior resilient under low connectivity with clearer retry states and safe fallbacks.
+                    </p>
+                </div>
 
-            <div class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Approval</p>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Pending approval</h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                    Request ID + “view details” makes waiting explainable and traceable, letting users verify what they submitted and understand approval is the gate.
-                </p>
-                <p class="text-sm text-gray-600 dark:text-gray-400">
-                    Constraint addressed: supervisor-dependent workflows + asynchronous activation. System effect: reduces repeat submissions, duplicate requests, and workaround behavior.
-                </p>
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Approval transparency for supervisors</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Add lightweight audit cues (what changed, by whom) to reduce back-and-forth and speed up approvals.
+                    </p>
+                </div>
             </div>
-        </div>
+        </section>
+
     </section>
 
     <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
 
-    <!-- Outcomes (no fake stats, but recruiter-friendly placeholders) -->
-    <section class="space-y-6">
-        <div class="space-y-3">
-            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Outcomes</p>
-            <h2 class="text-3xl font-semibold">Operational progress (replace with your verified numbers)</h2>
-            <p class="max-w-3xl text-gray-700 dark:text-gray-300">
-                Drop your real metrics here. If you paste fake numbers, someone will ask about methodology and you’ll
-                spiritually leave your body.
-            </p>
-        </div>
+    <!-- Footer (correct relative links for /work/chip-2/onboarding.html) -->
+    <footer class="w-full pb-10 space-y-8">
+        <div class="rounded-4xl border border-gray-200 bg-white p-6 md:p-10 dark:border-gray-800 dark:bg-gray-900">
+            <div class="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+                <div>
+                    <h2 class="text-4xl font-semibold text-gray-900 dark:text-gray-100">Let’s connect</h2>
+                    <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                        Open to product roles, freelance projects, and collaborations. If you want a walkthrough of any
+                        case study, I’m happy to share details live.
+                    </p>
 
-        <div class="grid gap-4 md:grid-cols-3">
-            <div
-                class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Completion</p>
-                <p class="text-4xl font-bold text-gray-900 dark:text-gray-100">__%</p>
-                <p class="text-sm text-gray-700 dark:text-gray-300">OTP start → registration submitted for approval.</p>
+                    <a href="mailto:sumit.v.nikhare@gmail.com"
+                        class="mt-6 inline-flex items-center rounded-full border-2 border-gray-900 bg-white px-7 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-900 hover:text-white transition duration-300 dark:border-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-100 dark:hover:text-gray-900">
+                        Let's Talk
+                    </a>
+                </div>
+
+                <div class="flex justify-start md:justify-end">
+                    <span class="font-heading text-3xl font-semibold">sumit.design</span>
+                </div>
             </div>
 
-            <div
-                class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Approval</p>
-                <p class="text-4xl font-bold text-gray-900 dark:text-gray-100">__ hrs</p>
-                <p class="text-sm text-gray-700 dark:text-gray-300">Median time from request → approved.</p>
-            </div>
+            <div class="mt-14 grid gap-12 md:grid-cols-3">
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Navigation</p>
+                    <ul class="mt-5 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li><a href="../../index.html" class="link-brand">Home</a></li>
+                        <li><a href="../../about.html" class="link-brand">About</a></li>
+                        <li><a href="../work.html" class="link-brand">Work</a></li>
+                        <li><a href="../../resume.html" class="link-brand">Resume</a></li>
+                    </ul>
+                </div>
 
-            <div
-                class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Support load</p>
-                <p class="text-4xl font-bold text-gray-900 dark:text-gray-100">__%</p>
-                <p class="text-sm text-gray-700 dark:text-gray-300">Reduction in onboarding-related queries.</p>
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Case studies</p>
+                    <ul class="mt-5 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li><a href="../chip-2.html" class="link-brand">CHIP 2.0</a></li>
+                        <li><a href="../samasta.html" class="link-brand">Samasta</a></li>
+                        <li><a href="../cho-soft.html" class="link-brand">CHO Soft</a></li>
+                        <li><a href="../work.html" class="link-brand">View All</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Elsewhere</p>
+                    <div class="mt-5 space-y-2">
+                        <a href="https://www.linkedin.com/in/sumit-nikhare-482058215/" target="_blank" rel="noreferrer"
+                            class="flex items-center justify-between rounded-2xl bg-gradient-to-r bg-violet-100 py-2 pl-2 pr-4 dark:bg-violet-900/30">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="grid h-12 w-12 place-items-center rounded-2xl bg-white/70 dark:bg-gray-900/60">
+                                    <span class="text-sm font-semibold">in</span>
+                                </div>
+                                <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">LinkedIn</p>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">↗</span>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <p class="text-sm text-gray-600 dark:text-gray-400">
-            Optional metrics to add: duplicate registrations prevented, time-to-first-task, punch-in compliance.
-        </p>
-    </section>
-
-    <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
-
-    <!-- Footer -->
-    <section class="pt-2">
-        <p class="text-sm text-gray-700 dark:text-gray-300">
-            Working on the full deck with expanded flows, module coverage, and governance details.
-        </p>
-        <div class="mt-3">
-            <a href="mailto:sumit.v.nikhare@gmail.com" class="link-brand">
-                Request details →
-            </a>
-        </div>
-    </section>
-
-    <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
-
-    <footer class="w-full pb-10 pt-6">
-        <div class="grid gap-3 px-4 text-sm text-gray-600 dark:text-gray-300 md:grid-cols-3 md:items-center">
-            <div class="hidden md:block"></div>
-
-            <div class="flex flex-wrap items-center justify-center gap-3">
+        <div class="flex flex-col space-y-4 items-center">
+            <div class="flex flex-col items-center gap-3">
                 <p class="text-center">© 2025 – sumit.design</p>
 
-                <button
-                  type="button"
-                  data-theme-toggle
-                  aria-pressed="false"
-                  class="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-xs font-semibold text-slate-600 shadow-sm transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400"
-                >
-                  <span class="text-xs font-semibold text-slate-800/90 dark:text-slate-500">Light</span>
-                  <span class="relative inline-flex h-7 w-14 items-center rounded-full bg-gradient-to-r from-sky-200 via-sky-300 to-sky-500 shadow-inner ring-1 ring-inset ring-white/40 transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 dark:ring-white/10">
-                    <span class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 dark:translate-x-7 dark:bg-slate-100">
-                      <span class="absolute -right-0.5 top-1 h-3 w-3 rounded-full bg-slate-900 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                <button type="button" data-theme-toggle aria-pressed="false"
+                    class="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-4 py-1 text-xs font-semibold text-slate-600 shadow-sm transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400">
+                    <span class="text-xs font-semibold text-slate-800/90 dark:text-slate-500">Light</span>
+                    <span
+                        class="relative inline-flex h-7 w-14 items-center rounded-full bg-gradient-to-r from-sky-200 via-sky-300 to-sky-500 shadow-inner ring-1 ring-inset ring-white/40 transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 dark:ring-white/10">
+                        <span
+                            class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 dark:translate-x-7 dark:bg-slate-100">
+                            <span
+                                class="absolute -right-0.5 top-1 h-3 w-3 rounded-full bg-slate-900 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        </span>
+                        <span
+                            class="absolute right-4 top-2 h-1.5 w-1.5 rounded-full bg-white/90 transition-opacity duration-300 dark:opacity-0"></span>
+                        <span
+                            class="absolute right-2 top-4 h-1 w-1 rounded-full bg-white/80 transition-opacity duration-300 dark:opacity-0"></span>
+                        <span
+                            class="absolute left-3 top-2 h-1 w-1 rounded-full bg-white/80 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        <span
+                            class="absolute left-6 top-4 h-1.5 w-1.5 rounded-full bg-white/70 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        <span
+                            class="absolute left-8 top-1 h-1 w-1 rounded-full bg-white/60 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
                     </span>
-                    <span class="absolute right-4 top-2 h-1.5 w-1.5 rounded-full bg-white/90 transition-opacity duration-300 dark:opacity-0"></span>
-                    <span class="absolute right-2 top-4 h-1 w-1 rounded-full bg-white/80 transition-opacity duration-300 dark:opacity-0"></span>
-                    <span class="absolute left-3 top-2 h-1 w-1 rounded-full bg-white/80 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                    <span class="absolute left-6 top-4 h-1.5 w-1.5 rounded-full bg-white/70 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                    <span class="absolute left-8 top-1 h-1 w-1 rounded-full bg-white/60 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                  </span>
-                  <span class="text-xs font-semibold text-slate-400 dark:text-slate-100">Dark</span>
-                  <span data-theme-label class="sr-only">Light</span>
-                  <span class="sr-only">Toggle color theme</span>
+                    <span class="text-xs font-semibold text-slate-400 dark:text-slate-100">Dark</span>
+                    <span data-theme-label class="sr-only">Light</span>
+                    <span class="sr-only">Toggle color theme</span>
                 </button>
             </div>
 
-            <p class="text-center md:text-right">
+            <p class="text-sm text-center md:text-right">
                 Implementation notes &amp; source ·
-                <a href="https://github.com/" target="_blank" rel="noreferrer" class="link-brand">
-                    GitHub
-                </a>
+                <a href="https://github.com/" target="_blank" rel="noreferrer" class="link-brand">GitHub</a>
             </p>
         </div>
     </footer>
-
-    <script>
-        (() => {
-            const sections = Array.from(document.querySelectorAll('[data-section]'));
-            const links = Array.from(document.querySelectorAll('[data-scroll-link]'));
-            if (!sections.length || !links.length) return;
-
-            const linkMap = new Map();
-            links.forEach((link) => {
-                const id = link.getAttribute('href')?.replace('#', '');
-                if (!id) return;
-                linkMap.set(id, link);
-            });
-
-            const setActive = (id) => {
-                links.forEach((link) => link.classList.remove('text-gray-900', 'font-semibold', 'bg-white', 'shadow-sm', 'dark:text-gray-100', 'dark:bg-gray-900'));
-                const target = linkMap.get(id);
-                if (target) target.classList.add('text-gray-900', 'font-semibold', 'bg-white', 'shadow-sm', 'dark:text-gray-100', 'dark:bg-gray-900');
-            };
-
-            const intersectingSections = new Set();
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            intersectingSections.add(entry.target);
-                        } else {
-                            intersectingSections.delete(entry.target);
-                        }
-                    });
-
-                    if (!intersectingSections.size) return;
-
-                    const center = window.innerHeight / 2;
-                    const visible = Array.from(intersectingSections)
-                        .map((section) => ({ section, rect: section.getBoundingClientRect() }))
-                        .sort(
-                            (a, b) =>
-                                Math.abs(a.rect.top + a.rect.height / 2 - center) -
-                                Math.abs(b.rect.top + b.rect.height / 2 - center)
-                        );
-                    setActive(visible[0].section.id);
-                },
-                { rootMargin: '-30% 0px -50% 0px', threshold: [0, 0.1, 0.25, 0.5, 0.75] }
-            );
-
-            sections.forEach((section) => observer.observe(section));
-            setActive(sections[0].id);
-        })();
-    </script>
 
     <!-- Back Control Button -->
     <script>
@@ -725,7 +652,7 @@
             const calc = () => {
                 const rect = hero.getBoundingClientRect();
                 const heroTop = window.scrollY + rect.top;
-                cutoff = heroTop + hero.offsetHeight - 20; // “past hero” threshold
+                cutoff = heroTop + hero.offsetHeight - 20;
             };
 
             const setVisible = (visible) => {
@@ -759,7 +686,6 @@
             if (!btn || !hero) return;
             const link = btn.querySelector('a');
 
-            // Smooth scroll to hero
             btn.querySelector('a')?.addEventListener('click', (e) => {
                 e.preventDefault();
                 hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -789,7 +715,6 @@
             const update = () => {
                 const y = window.scrollY;
 
-                // Only eligible after hero
                 if (y <= cutoff) {
                     setVisible(false);
                     lastY = y;
@@ -799,7 +724,6 @@
 
                 const delta = y - lastY;
 
-                // Hide when scrolling down, show when scrolling up
                 if (delta > 8) setVisible(false);
                 if (delta < -8) setVisible(true);
 
@@ -823,6 +747,7 @@
             }, { passive: true });
         })();
     </script>
+
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CHIP 2.0 — Family Register & DHS</title>
+    <title>CHIP 2.0 — mDash (Population + DHS)</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -112,47 +112,47 @@
 
             <div class="space-y-6 lg:w-4/5">
                 <h1 class="font-heading text-4xl font-semibold text-gray-900 dark:text-gray-100">
-                    Geo-scoped Family Register with DHS capture gates
+                    Mobile dashboard for ABHA + DHS progress, across admin levels
                 </h1>
 
                 <p class="text-gray-700 dark:text-gray-300">
-                    A field-first register that lets frontline workers discover houses and families by area, keep family
-                    + member
-                    profiles updated, and run DHS-style capture flows with “presence”, GPS, and photo gates. The UI is
-                    built to
-                    handle daily realities: incomplete data, updates required, duplicates, and interruptions.
+                    A drill-down “progress + attention” surface for supervisors to track registration and DHS completion
+                    from
+                    State → District → Block → PHC/CHC → SHC → Village/Area. It supports time windows (All time / Today
+                    / This week / This month),
+                    demographic splits, and verification queues so action is obvious without exporting reports.
                 </p>
             </div>
 
             <div class="flex flex-wrap gap-2 my-2">
                 <span
-                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Geo-scoped
-                    discovery</span>
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Time
+                    periods</span>
                 <span
-                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Family
-                    + member profiles</span>
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Geo
+                    drill-down</span>
                 <span
-                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Update
-                    required states</span>
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">ABHA
+                    progress</span>
                 <span
                     class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">DHS
-                    capture gates</span>
+                    completion</span>
                 <span
-                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Safe
-                    delete + status</span>
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Attention
+                    queues</span>
             </div>
 
             <p class="max-w-3xl text-sm text-gray-600 dark:text-gray-400 pt-2">
-                *This page is derived from family register lists (house → family), family profile (category, housing,
-                schemes), member profile (personal + conditions), and DHS instruction + house photo/GPS gates. Replace
-                placeholder
-                screenshots with final exports.
+                *This page is derived from the “Registered Population Overview” mobile dashboard concept including: geo
+                filters,
+                map/list views, ABHA registration and linking totals, DHS completion totals, demographic insights, and
+                verification/approval counters. Replace placeholder screenshots with final exports.
             </p>
         </div>
 
         <div>
             <img loading="eager" decoding="async" fetchpriority="high" src="../../assets/common/demo-img-1920.png"
-                alt="Family Register module: geo filters, house list, family list, member profile, and DHS capture gates"
+                alt="mDash: mobile screens for population overview, geo drill-down, ABHA and DHS progress, demographics, and attention required cards"
                 class="w-full rounded-3xl" />
         </div>
     </section>
@@ -166,40 +166,33 @@
         <section id="layout-a" class="scroll-mt-24 space-y-8">
             <div class="space-y-3">
                 <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Problem</p>
-                <h2 class="text-3xl font-semibold">Registers break when discovery, identity, and survey gates are
-                    disconnected</h2>
+                <h2 class="text-3xl font-semibold">Progress dashboards fail when they show numbers without operational
+                    next steps</h2>
             </div>
 
             <p class="text-gray-700 dark:text-gray-300">
-                Family data is not collected in a clean office flow. Workers operate in a geography, move
-                house-to-house,
-                and update records over time. If discovery (where am I?), identity (who is this?), and survey gates (am
-                I present
-                at the house, do I have GPS/photo?) are split across screens or hidden behind admin logic, field teams
-                either
-                skip steps or create messy duplicates. This module keeps “what needs to happen next” visible as a state.
+                Supervisors don’t just need “how much.” They need “where is it stuck” and “what action unlocks
+                progress.”
+                In multi-level systems, a state-level percent means nothing if villages are unverified, facilities are
+                unmapped,
+                or new users are pending approvals. This dashboard treats progress, verification, and geography as one
+                system.
             </p>
 
             <div
                 class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">What the Family Register + DHS module
-                    must solve</h3>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">What mDash must solve</h3>
                 <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Geo-first discovery:</span> filter
-                        by
-                        state/district/block/PHC/SHC/village/area and land on the right households quickly.</li>
-                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">House → family structure:</span>
-                        multiple
-                        families per house and multiple members per family must be legible.</li>
-                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">State-based work:</span> “Survey
-                        pending” and
-                        “Update required” must drive the next action.</li>
-                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">DHS gates:</span> explicit prompts
-                        for
-                        presence, house location, and house photo before survey capture.</li>
-                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Safe edits:</span> member delete,
-                        “member not
-                        alive”, and key identity changes require confirmations and clear consequences.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Single metric spine:</span> total
+                        registered and % coverage against target, consistent across levels.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Drill-down by geography:</span>
+                        state → district → block → facility → SHC → village/area.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Time windows:</span> all time vs
+                        today/week/month with “change from previous” to show movement.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Quality layers:</span> DHS
+                        completion, demographics, family indicators as “depth”, not separate reports.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Attention required:</span>
+                        verification/approval counters that point to the governance backlog.</li>
                 </ul>
             </div>
         </section>
@@ -210,54 +203,49 @@
         <section id="layout-b" class="scroll-mt-24 space-y-8">
             <div class="space-y-3">
                 <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Users</p>
-                <h2 class="text-3xl font-semibold">Same register, different accountability</h2>
+                <h2 class="text-3xl font-semibold">Different roles, same truth, different depth</h2>
             </div>
 
             <p class="text-gray-700 dark:text-gray-300">
-                This module is used in the field, but it impacts the entire system. Frontline roles need speed and
-                clarity,
-                supervisors need correction paths, and the platform needs predictable states to avoid garbage-in
-                reporting.
+                The dashboard supports supervisors who need prioritization and drill-down, while still remaining
+                readable for facility owners.
+                RBAC determines what level of geography a user can view and which “attention” queues they can resolve.
             </p>
 
             <div class="grid gap-4 md:grid-cols-2">
                 <div
                     class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">ASHA / Field worker</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">District / Block supervisors</h3>
                     <p class="text-gray-700 dark:text-gray-300">
-                        Discovers households by area, updates family profile fields, adds members, and triggers surveys
-                        when present
-                        at the beneficiary’s house.
+                        Track coverage, identify low-performing SHCs/areas, and prioritize verification and approvals
+                        that unblock field execution.
                     </p>
                 </div>
 
                 <div
                     class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">ANM / CHO</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Facility owners (PHC/CHC)</h3>
                     <p class="text-gray-700 dark:text-gray-300">
-                        Works on larger survey coverage, handles updates required, and ensures house location/photo and
-                        identity
-                        fields are captured reliably.
+                        Monitor OPD and registration activity, see verification backlogs, and check whether the facility
+                        is moving or stalled.
                     </p>
                 </div>
 
                 <div
                     class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Supervisor / Program admin</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Program leads</h3>
                     <p class="text-gray-700 dark:text-gray-300">
-                        Resolves data quality issues: duplicates, incomplete identities, and corrections that would
-                        otherwise
-                        cascade into reporting and follow-up failures.
+                        Use DHS completion and indicator splits to understand depth of data capture, not just raw
+                        registration volume.
                     </p>
                 </div>
 
                 <div
                     class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Facility users</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Governance roles</h3>
                     <p class="text-gray-700 dark:text-gray-300">
-                        Need family/member profiles to be trustworthy for downstream services, referrals, and continuity
-                        workflows
-                        that depend on correct household context.
+                        Work through approvals and verification backlog: health facilities, villages/wards, and new user
+                        registrations.
                     </p>
                 </div>
             </div>
@@ -269,65 +257,58 @@
         <section id="layout-c" class="scroll-mt-24 space-y-8">
             <div class="space-y-3">
                 <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Flow</p>
-                <h2 class="text-3xl font-semibold">House → family → member, with DHS gates before capture</h2>
+                <h2 class="text-3xl font-semibold">Select time → select geography → see progress → act on backlog</h2>
             </div>
 
             <p class="text-gray-700 dark:text-gray-300">
-                The primary navigation is not “menus.” It’s a predictable drill-down from geography to household to
-                family to
-                member. DHS capture is treated as a gated flow, not a casual “start survey” button.
+                The interaction model is intentionally repetitive: users pick a time window, pick a geography lens, and
+                read the same “progress spine”.
+                That consistency enables fast scanning without retraining across screens.
             </p>
 
             <div class="grid gap-4 md:grid-cols-4">
                 <div
                     class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
                     <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 01</p>
-                    <p class="font-semibold text-gray-900 dark:text-gray-100">Discover</p>
-                    <p class="text-sm text-gray-700 dark:text-gray-300">Filter by geography and scan houses/families by
-                        HoF and
-                        house number.</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Choose time</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">All time / Today / This week / This month with
+                        deltas vs previous.</p>
                 </div>
 
                 <div
                     class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
                     <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 02</p>
-                    <p class="font-semibold text-gray-900 dark:text-gray-100">Review family</p>
-                    <p class="text-sm text-gray-700 dark:text-gray-300">Family profile: category, housing, facilities,
-                        schemes,
-                        and update-required cues.</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Choose geography</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">State → District → Block → Facility → SHC →
+                        Village/Area.</p>
                 </div>
 
                 <div
                     class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
                     <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 03</p>
-                    <p class="font-semibold text-gray-900 dark:text-gray-100">Manage members</p>
-                    <p class="text-sm text-gray-700 dark:text-gray-300">Add/edit member details, link IDs, record status
-                        changes,
-                        and prevent accidental deletes.</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Read progress</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Total registered + % against target, plus
+                        distribution lists/map.</p>
                 </div>
 
                 <div
                     class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
                     <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 04</p>
-                    <p class="font-semibold text-gray-900 dark:text-gray-100">DHS capture</p>
-                    <p class="text-sm text-gray-700 dark:text-gray-300">Instruction → presence → house GPS/photo →
-                        personal and
-                        conditions capture → save.</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Go deeper</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Demographics, family indicators, DHS completion,
+                        and attention queues.</p>
                 </div>
             </div>
 
             <div class="space-y-3">
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Routing behavior</h3>
                 <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Work states:</span> “Survey
-                        pending” and
-                        “Update required” are visible on lists to reduce guesswork.</li>
-                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Fast scanning:</span> sort and
-                        filter by age,
-                        house number, HoF, and family number.</li>
-                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">DHS gates:</span> presence prompt +
-                        house
-                        location/photo reduce “survey done but unusable” outcomes.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Map vs list parity:</span>
+                        districts can be seen as a map view or list view, keeping the same metric spine.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Consistent headers:</span> the same
+                        “PHC/District/Village/State : Name” header prevents confusion about current scope.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Geo filter modal:</span>
+                        state/district/block/PHC/SHC/village/area with clear apply/clear actions.</li>
                 </ul>
             </div>
         </section>
@@ -338,57 +319,53 @@
         <section id="layout-d" class="scroll-mt-24 space-y-8">
             <div class="space-y-3">
                 <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Design decisions</p>
-                <h2 class="text-3xl font-semibold">Designed the register as a field workflow, not a directory</h2>
+                <h2 class="text-3xl font-semibold">Designed for scan-speed, not report-reading</h2>
             </div>
 
             <div class="space-y-6">
                 <div class="space-y-2">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">1) Discovery is geography-first
-                    </h3>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">1) A single progress spine across
+                        every level</h3>
                     <p class="text-gray-700 dark:text-gray-300">
-                        Filters for administrative hierarchy reduce long scrolling and keep the worker anchored to where
-                        they are
-                        actually operating.
+                        “Total registered people + % vs target” stays identical whether the user is at PHC, district, or
+                        state.
+                        Only the breakdown changes.
                     </p>
                 </div>
 
                 <div class="space-y-2">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">2) “Update required” is a work
-                        signal</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">2) Time windows show movement,
+                        not just status</h3>
                     <p class="text-gray-700 dark:text-gray-300">
-                        Update is treated as a state (including “update required since”) to help workers prioritize and
-                        supervisors
-                        track stale records.
+                        Today/Week/Month show registration totals with change vs previous period, so supervisors can
+                        detect momentum shifts early.
                     </p>
                 </div>
 
                 <div class="space-y-2">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">3) Family profile captures
-                        determinants, not just demographics</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">3) Drill-down lists are ranked
+                        and comparable</h3>
                     <p class="text-gray-700 dark:text-gray-300">
-                        Housing, sanitation, drinking water, cooking fuel, and schemes are structured for consistency
-                        because they
-                        are often used for program targeting and eligibility.
+                        Sub-health centers and areas are listed with counts and % so the “lowest” becomes immediately
+                        visible without extra filters.
                     </p>
                 </div>
 
                 <div class="space-y-2">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">4) DHS instruction + presence
-                        gate prevents premature capture</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">4) Depth metrics live next to
+                        volume metrics</h3>
                     <p class="text-gray-700 dark:text-gray-300">
-                        The flow explicitly asks if the worker is present at the beneficiary’s house and warns what
-                        inputs are
-                        required (GPS + photo) before entering sensitive data.
+                        DHS completion and demographic splits sit under the same dashboard surface, reducing the gap
+                        between “coverage” and “quality”.
                     </p>
                 </div>
 
                 <div class="space-y-2">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">5) Destructive actions are
-                        guarded</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">5) “Attention required” is
+                        first-class</h3>
                     <p class="text-gray-700 dark:text-gray-300">
-                        “Delete member” and status changes like “member not alive” are treated as irreversible
-                        governance actions
-                        and require explicit confirmation.
+                        Verification/approvals are shown as counters (not buried) so governance work is treated as a
+                        blocker, not an afterthought.
                     </p>
                 </div>
             </div>
@@ -400,41 +377,40 @@
         <section id="layout-e" class="scroll-mt-24 space-y-8">
             <div class="space-y-3">
                 <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">RBAC as UX</p>
-                <h2 class="text-3xl font-semibold">Sensitive edits are role-bound, and the UI makes that obvious</h2>
+                <h2 class="text-3xl font-semibold">Access is scoped by geography, and actions are scoped by authority
+                </h2>
             </div>
 
             <p class="text-gray-700 dark:text-gray-300">
-                Household and member data is high-impact. The interface treats edit and delete not as convenience
-                actions, but
-                as permissions that must be explained through visibility, confirmations, and constrained entry points.
+                mDash is valuable only if it respects organizational scope. A village-level user should not browse state
+                performance.
+                A state admin should see verification backlogs and program insights. The UI assumes geography scoping is
+                a primary constraint.
             </p>
 
             <div class="grid gap-4 md:grid-cols-3">
                 <div
                     class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
                     <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 01</p>
-                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">View vs edit</p>
-                    <p class="text-sm text-gray-700 dark:text-gray-300">Most users review; only authorized roles edit
-                        core identity
-                        and family baselines.</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Geography visibility</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Users see only their permitted geo tree
+                        (state/district/block/PHC/SHC/village/area).</p>
                 </div>
 
                 <div
                     class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
                     <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 02</p>
-                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">DHS capture integrity</p>
-                    <p class="text-sm text-gray-700 dark:text-gray-300">Presence + house location/photo gates reduce
-                        incomplete
-                        surveys and improve auditability.</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Data depth</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Program leads get DHS + indicator insights;
+                        facility owners focus on operational activity.</p>
                 </div>
 
                 <div
                     class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
                     <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 03</p>
-                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Delete + status changes</p>
-                    <p class="text-sm text-gray-700 dark:text-gray-300">Delete member and “not alive” require
-                        confirmation to
-                        prevent accidental data loss.</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Action authority</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Only governance roles can resolve
+                        approvals/verifications surfaced as “attention required”.</p>
                 </div>
             </div>
         </section>
@@ -445,48 +421,45 @@
         <section id="layout-f" class="scroll-mt-24 space-y-8">
             <div class="space-y-3">
                 <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Edge cases</p>
-                <h2 class="text-3xl font-semibold">Built for daily mess: missing IDs, duplicates, and interrupted
-                    surveys</h2>
+                <h2 class="text-3xl font-semibold">Handled mixed deltas, partial coverage, and governance backlog
+                    visibility</h2>
             </div>
 
             <div class="space-y-4">
                 <div
                     class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">No ration card / no Aadhaar flows
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Negative deltas</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Weekly views can show negative change versus previous periods. The UI keeps deltas visible so
+                        backsliding isn’t hidden.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Uneven SHC coverage</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        SHCs show wide spread in coverage (examples range from 82% down to 49%), so lists must support
+                        fast prioritization.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Approval/verification backlog
                     </h3>
                     <p class="text-gray-700 dark:text-gray-300">
-                        The UI supports “Don’t have” paths so capture can proceed without forcing fake entries just to
-                        unblock
-                        workers.
+                        “Verifications / approvals required” is treated as a headline operational blocker, not a buried
+                        admin view.
                     </p>
                 </div>
 
                 <div
                     class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Linked people / duplicates
-                        surfaced</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Map + list parity</h3>
                     <p class="text-gray-700 dark:text-gray-300">
-                        “Linked people” selection reduces duplicate identity creation when a household already exists in
-                        the system.
-                    </p>
-                </div>
-
-                <div
-                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Exit from DHS without damage</h3>
-                    <p class="text-gray-700 dark:text-gray-300">
-                        Clear “Exit” vs “Continue with DHS” choices reduce accidental abandonment and make intent
-                        explicit.
-                    </p>
-                </div>
-
-                <div
-                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Accidental deletes blocked</h3>
-                    <p class="text-gray-700 dark:text-gray-300">
-                        “Are you sure you want to delete member from the family list?” confirmation prevents
-                        irreversible mistakes
-                        under mobile field conditions.
+                        Districts can be seen in map view or list view, using the same values so users don’t interpret
+                        two “truths”.
                     </p>
                 </div>
             </div>
@@ -498,7 +471,7 @@
         <section id="layout-g" class="scroll-mt-24 space-y-8">
             <div class="space-y-3">
                 <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Screens</p>
-                <h2 class="text-3xl font-semibold">Key surfaces in Family Register + DHS</h2>
+                <h2 class="text-3xl font-semibold">Key surfaces in mDash</h2>
                 <p class="max-w-3xl text-gray-700 dark:text-gray-300">
                     Replace placeholders with your final screenshots (from your Figma exports).
                 </p>
@@ -507,39 +480,38 @@
             <div class="grid gap-8 md:grid-cols-2">
                 <figure class="space-y-3">
                     <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
-                        alt="Family register list with geo filters, house numbers, HoF names, and survey pending/update required statuses"
+                        alt="Dashboard home showing attention required, registered population, and quick navigation"
                         class="w-full rounded-2xl" />
                     <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                        Geo-scoped discovery: house/family lists with “survey pending” and “update required” states.
+                        Dashboard home: progress entry + “attention required” for verifications/approvals.
                     </figcaption>
                 </figure>
 
                 <figure class="space-y-3">
                     <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
-                        alt="Family profile with category, housing structure, sanitation, facilities, and schemes"
+                        alt="Registered Population Overview with total registered, percent, and time period selection"
                         class="w-full rounded-2xl" />
                     <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                        Family profile: category, housing accessibility, toilet, water/fuel, and government schemes.
+                        Registered Population Overview: time periods with totals and % against target.
                     </figcaption>
                 </figure>
 
                 <figure class="space-y-3">
                     <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
-                        alt="Member profile and health conditions including behaviours and diagnosed diseases"
+                        alt="Geography breakdown list for districts, SHCs, villages or areas with percent bars"
                         class="w-full rounded-2xl" />
                     <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                        Member profile + conditions: personal details, guardians, behaviours, diagnosed diseases, and
-                        disability flags.
+                        Geo breakdown lists (Districts/SHCs/Villages/Areas) with comparable % bars for quick
+                        prioritization.
                     </figcaption>
                 </figure>
 
                 <figure class="space-y-3">
                     <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
-                        alt="DHS instruction flow with presence prompt and capture house location and house photo gates"
+                        alt="Demographic insights screens: gender distribution, age bands, education and occupation, family category, and DHS completion"
                         class="w-full rounded-2xl" />
                     <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                        DHS capture gates: instructions → “Are you present?” → house location + photo → proceed to
-                        survey.
+                        Insights layer: gender/age distributions, family indicators, and DHS completion as “depth”.
                     </figcaption>
                 </figure>
             </div>
@@ -551,34 +523,32 @@
         <section id="layout-h" class="scroll-mt-24 space-y-8">
             <div class="space-y-3">
                 <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">System fit</p>
-                <h2 class="text-3xl font-semibold">This is the foundation for longitudinal service delivery</h2>
+                <h2 class="text-3xl font-semibold">mDash connects coverage to governance and execution</h2>
             </div>
 
             <p class="text-gray-700 dark:text-gray-300">
-                Family Register isn’t a standalone list. It’s how the system anchors households, assigns scope, and
-                prevents
-                repeat capture. When registers are trustworthy, follow-ups and program workflows don’t start from zero
-                each time.
+                This dashboard is not a “nice chart.” It ties together coverage, data depth, and the governance backlog
+                that blocks progress.
+                It also sits alongside day-start and registers, so the system can move from insight → action without
+                changing tools.
             </p>
 
             <div class="grid gap-4 md:grid-cols-2">
                 <div
                     class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Links to identity + services</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Coverage + depth</h3>
                     <p class="text-gray-700 dark:text-gray-300">
-                        Member profiles carry identifiers and health conditions that can feed eligibility, referrals,
-                        and
-                        continuity flows without redundant questioning.
+                        ABHA registration/linking totals show reach, while DHS completion and indicators show whether
+                        the data is usable for programs.
                     </p>
                 </div>
 
                 <div
                     class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Governance via “update required”
-                    </h3>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Governance backlog</h3>
                     <p class="text-gray-700 dark:text-gray-300">
-                        Update-required states help supervisors maintain data freshness without turning the register
-                        into an admin-only system.
+                        Verification/approval counters keep facility/village/user governance visible as an operational
+                        dependency.
                     </p>
                 </div>
             </div>
@@ -590,23 +560,23 @@
         <section id="layout-i" class="scroll-mt-24 space-y-8">
             <div class="space-y-3">
                 <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Impact</p>
-                <h2 class="text-3xl font-semibold">Less duplication, clearer field execution, cleaner capture</h2>
+                <h2 class="text-3xl font-semibold">A dashboard that makes prioritization defensible</h2>
             </div>
 
             <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                <li>Reduced duplicate identity creation by surfacing linked people and encouraging selection before new
-                    entry.</li>
-                <li>Made field work diagnosable through explicit states (survey pending, update required) rather than
-                    hidden errors.</li>
-                <li>Improved DHS capture quality by gating on presence and requiring house GPS + photo before
-                    proceeding.</li>
-                <li>Reduced irreversible mistakes with confirmation dialogs for delete and member status changes.</li>
+                <li>Made coverage scannable with a consistent “total + % vs target” spine across levels.</li>
+                <li>Enabled rapid triage with ranked geo lists (district/SHC/area performance side-by-side).</li>
+                <li>Connected volume to depth by surfacing DHS completion alongside registration totals.</li>
+                <li>Reduced “unknown blockers” by exposing verification/approval backlog as a first-class operational
+                    signal.</li>
             </ul>
 
             <p class="text-sm text-gray-600 dark:text-gray-400">
-                Example counters shown in the UI: Family register shows 55 families and 184 people in a geography slice;
-                families commonly show 3–6 members; update required is tracked with “since 2 months”; DHS completion can
-                surface lightweight progress cues (example: “You have earned 20 Stars”).
+                Example stats represented in the UI: Total registered people 6,54,872 (~83.5%) with target 7,83,872;
+                ABHA link/created shown at 6,54,872 (89%);
+                DHS completed people 3,54,872 (52%); weekly registered example 11,000 with +1,200 (20%) vs previous
+                week; SHC coverage examples range from 82% down to 49%;
+                attention required example counters: 08 health facilities, 12 villages/wards, 05 new user registrations.
             </p>
         </section>
 
@@ -616,33 +586,34 @@
         <section id="layout-j" class="scroll-mt-24 space-y-8">
             <div class="space-y-3">
                 <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">What’s next</p>
-                <h2 class="text-3xl font-semibold">What’s next: reduce retries without hiding governance</h2>
+                <h2 class="text-3xl font-semibold">What’s next: reduce ambiguity, increase trust</h2>
             </div>
 
             <div class="space-y-4">
                 <div class="space-y-2">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Smarter duplicate resolution</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Explain the target and
+                        denominator</h3>
                     <p class="text-gray-700 dark:text-gray-300">
-                        Add clearer “why this match” cues in linked-people selection (name + age + guardian + last
-                        update) to reduce incorrect merges and rework.
+                        Add lightweight “what target is this” help text at every level to avoid misinterpretation when
+                        targets change by program or geography.
                     </p>
                 </div>
 
                 <div class="space-y-2">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Offline-first DHS save states
-                    </h3>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Turn “attention required” into
+                        navigable queues</h3>
                     <p class="text-gray-700 dark:text-gray-300">
-                        Make save/sync status explicit (saved locally, syncing, failed, retry) so workers trust the
-                        system without repeating entries.
+                        Clicking a counter should take users directly into the verification/approval workflow, scoped to
+                        the same geography.
                     </p>
                 </div>
 
                 <div class="space-y-2">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Supervisor review surfaces for
-                        “update required”</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Confidence cues for freshness and
+                        sync</h3>
                     <p class="text-gray-700 dark:text-gray-300">
-                        Provide a lightweight queue for stale records and partial surveys so governance becomes scalable
-                        rather than reactive.
+                        Add “last synced” and partial data warnings so supervisors don’t punish teams for network
+                        reality.
                     </p>
                 </div>
             </div>
@@ -652,7 +623,7 @@
 
     <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
 
-    <!-- Footer (correct relative links for /work/chip-2/family-register-dhs.html) -->
+    <!-- Footer (correct relative links for /work/chip-2/m-dash-dhs.html) -->
     <footer class="w-full pb-10 space-y-8">
         <div class="rounded-4xl border border-gray-200 bg-white p-6 md:p-10 dark:border-gray-800 dark:bg-gray-900">
             <div class="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
