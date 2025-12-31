@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samasta — Outreach Activities</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="../../src/output.css" rel="stylesheet">
+    <script src="../../src/theme.js" defer></script>
+</head>
+
+<body
+    class="relative isolate mx-4 lg:w-3/5 lg:mx-auto bg-gray-100 pt-4 space-y-6 text-gray-900 transition-colors duration-200 dark:bg-gray-950 dark:text-gray-100">
+
+    <!-- Ambient glows -->
+    <div class="pointer-events-none fixed inset-0 -z-10">
+        <div
+            class="absolute -left-32 top-10 w-80 h-80 bg-gradient-to-br from-amber-200 via-white to-gray-100 opacity-60 blur-3xl dark:from-amber-500/20 dark:via-gray-950 dark:to-gray-950 dark:opacity-30">
+        </div>
+        <div
+            class="absolute right-0 -top-24 w-96 h-96 bg-gradient-to-br from-white via-gray-100 to-orange-200 opacity-60 blur-3xl dark:from-gray-950 dark:via-gray-950 dark:to-orange-500/20 dark:opacity-30">
+        </div>
+        <div
+            class="absolute left-1/3 bottom-0 w-96 h-96 bg-gradient-to-br from-orange-200 via-white to-gray-100 opacity-50 blur-3xl dark:from-orange-500/20 dark:via-gray-950 dark:to-gray-950 dark:opacity-30">
+        </div>
+    </div>
+
+    <!-- Floating back control -->
+    <div id="backControl" class="fixed top-4 left-4 z-50 opacity-0 pointer-events-none transition-opacity duration-300"
+        aria-hidden="true">
+        <a href="../samasta.html" aria-label="Back" class="group relative flex h-16 items-center focus:outline-none">
+            <span aria-hidden="true"
+                class="pointer-events-none absolute -inset-6 -z-10 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-80 group-focus-within:opacity-80">
+                <span
+                    class="absolute left-0 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-amber-200/70 dark:bg-amber-500/20"></span>
+                <span
+                    class="absolute left-10 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-gray-200/80 dark:bg-gray-700/40"></span>
+                <span
+                    class="absolute left-20 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-orange-200/60 dark:bg-orange-500/20"></span>
+            </span>
+
+            <span
+                class="flex h-16 items-center overflow-hidden rounded-full bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-100 shadow-sm transition-all duration-300 max-w-[64px] group-hover:max-w-[220px] group-focus-within:max-w-[220px]">
+                <span class="grid h-16 w-16 place-items-center">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </span>
+
+                <span
+                    class="max-w-0 overflow-hidden whitespace-nowrap pr-0 text-sm font-semibold opacity-0 translate-x-0 transition-[max-width,opacity,padding] duration-300 group-hover:max-w-[150px] group-hover:opacity-100 group-hover:pr-6 group-focus-within:max-w-[150px] group-focus-within:opacity-100 group-focus-within:pr-6">
+                    Back to Samasta
+                </span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Back to top -->
+    <div id="toTopControl"
+        class="fixed bottom-4 right-4 z-50 opacity-0 pointer-events-none translate-y-3 transition-all duration-300"
+        aria-hidden="true">
+        <a href="#hero" aria-label="Back to top" class="group relative flex h-16 items-center focus:outline-none">
+            <span aria-hidden="true"
+                class="pointer-events-none absolute -inset-6 -z-10 hidden opacity-0 blur-2xl transition-opacity duration-300 md:block md:group-hover:opacity-80 md:group-focus-within:opacity-80">
+                <span
+                    class="absolute right-0 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-amber-200/60 dark:bg-amber-500/20"></span>
+                <span
+                    class="absolute right-10 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-gray-200/80 dark:bg-gray-700/40"></span>
+                <span
+                    class="absolute right-20 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-orange-200/55 dark:bg-orange-500/20"></span>
+            </span>
+
+            <span
+                class="flex h-16 items-center overflow-hidden rounded-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-gray-200 dark:ring-gray-700 transition-all duration-300 max-w-[64px] md:group-hover:max-w-[160px] md:group-focus-within:max-w-[160px]">
+                <span class="grid h-16 w-16 place-items-center">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 5l-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                        <path d="M12 5l7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                        <path d="M12 5v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                    </svg>
+                </span>
+
+                <span
+                    class="hidden md:inline max-w-0 overflow-hidden whitespace-nowrap pr-0 text-sm font-semibold opacity-0 transition-[max-width,opacity,padding] duration-300 md:group-hover:max-w-[80px] md:group-hover:opacity-100 md:group-hover:pr-6 md:group-focus-within:max-w-[80px] md:group-focus-within:opacity-100 md:group-focus-within:pr-6">
+                    Top
+                </span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Top Bar -->
+    <header class="flex items-center justify-between">
+        <a class="text-3xl font-semibold text-gray-900 dark:text-gray-100" href="../../index.html">sumit.design</a>
+        <nav class="flex items-center gap-4">
+            <a href="../work.html" class="nav-link">Work</a>
+            <a href="../../about.html" class="nav-link">About</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero" class="w-full pt-12 space-y-8">
+        <div class="space-y-4">
+            <p class="text-sm uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400">MODULE · SAMASTA</p>
+
+            <div class="space-y-6 lg:w-4/5">
+                <h1 class="font-heading text-4xl font-semibold text-gray-900 dark:text-gray-100">
+                    Outreach activities that don’t collapse into “notes in a diary”
+                </h1>
+
+                <p class="text-gray-700 dark:text-gray-300">
+                    A structured outreach workflow for PHC/SHC teams to plan events, run routine activity types, record
+                    participation,
+                    and tie health screening outcomes back to follow-ups and referrals. Designed to support real field
+                    constraints:
+                    fast capture, partial data, and accountability without extra paperwork.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 my-2">
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Planned
+                    events</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Routine
+                    activity types</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Missed
+                    vs completed</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Participants
+                    + photos</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Screening
+                    + follow-up linkage</span>
+            </div>
+
+            <p class="max-w-3xl text-sm text-gray-600 dark:text-gray-400 pt-2">
+                *Replace placeholder screenshots with final Figma exports. This page focuses on outreach planning +
+                capture + linkage
+                to screening and follow-up.
+            </p>
+        </div>
+
+        <!-- Flow image (replace with your exported asset) -->
+        <div>
+            <img loading="eager" decoding="async" fetchpriority="high"
+                src="../../assets/samasta/outreach/outreach-flow.jpg"
+                alt="Outreach flow: planned events, routine activities, health screening selection, reports and completion states"
+                class="w-full rounded-3xl" />
+        </div>
+    </section>
+
+    <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
+
+    <!-- Content (no sticky side nav) -->
+    <section class="space-y-12">
+
+        <!-- Layout A -->
+        <section id="layout-a" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Problem</p>
+                <h2 class="text-3xl font-semibold">Outreach becomes invisible when it’s not operationally structured
+                </h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                Outreach is a daily reality in public health: wellness days, screenings, trainings, meetings, and
+                immunization sessions.
+                But teams lose visibility when outreach capture is unstructured, optional, or disconnected from patient
+                follow-up.
+                The result is predictable: activities happen, but the system can’t prove it, plan it, or connect it to
+                care continuity.
+            </p>
+
+            <div
+                class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">What the Outreach module must solve
+                </h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Plan vs run:</span> planned events
+                        and routine activities need different capture patterns.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Fast field capture:</span> minimal
+                        mandatory fields, but still structured enough for reporting.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Missed activity visibility:</span>
+                        missed is a state, not a shame secret.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Screening linkage:</span> screening
+                        outcomes must land into follow-up and referral workflows.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Operational reporting:</span> “my
+                        report today” surfaces work without forcing a dashboard obsession.</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout B -->
+        <section id="layout-b" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Users</p>
+                <h2 class="text-3xl font-semibold">Designed for teams who alternate between OPD and community work</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                Outreach sits alongside OPD and follow-up work. The module supports mixed duty patterns where facility
+                staff move
+                between clinic queues and community activity capture.
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-2">
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">PHC: MO / Staff Nurse</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Runs planned wellness days, meetings, and screening camps. Needs quick entry, patient search,
+                        and clean outcomes
+                        (referral/follow-up) without turning the field day into a data-entry internship.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">SHC: CHO / ANM</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Runs routine activities and targeted screenings. Needs sub-center and village context, plus a
+                        simple way to
+                        capture participants and evidence (photos) when required.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Village: ASHA (field app)</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Feeds beneficiary context and supports mobilization. Outreach capture must remain compatible
+                        with fragmented connectivity
+                        and partial beneficiary identity.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Admins (dashboard)</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Needs aggregated views: planned vs conducted counts, missed activities, and screening outputs by
+                        geography and facility.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout C -->
+        <section id="layout-c" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Flow</p>
+                <h2 class="text-3xl font-semibold">Outreach modeled as a daily surface: planned events + routine
+                    activity entry</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                The module starts with “Today” because that’s how field work actually happens. From there, users can
+                move into
+                planned event execution, routine activity creation, or health screening flows that generate follow-up
+                work.
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-4">
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Flow 01</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Today</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">See today’s featured event + quick actions for
+                        routine activity types.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Flow 02</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Planned events</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Upcoming / previous / missed with clear state
+                        and details.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Flow 03</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Routine activity</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Wellness activity / training / meeting with
+                        location + participants + photos.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Flow 04</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Health screening</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Select screening type → search patient → capture
+                        screening → refer/follow-up.</p>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Key states and transitions</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Planned → Conducted:</span> the
+                        event becomes an execution record with outcomes.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Planned → Missed:</span> missed
+                        activity remains visible for governance and planning.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Screening → Follow-up due:</span>
+                        screening can generate follow-up tasks with dates and reasons.</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout D -->
+        <section id="layout-d" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Design decisions</p>
+                <h2 class="text-3xl font-semibold">Designed for high variance, low time, and inconsistent connectivity
+                </h2>
+            </div>
+
+            <div class="space-y-6">
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">1) “Routine Activities” as
+                        shortcuts, not a menu maze</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Routine activities are presented as a compact set of entry points (wellness activity, health
+                        screening, training, meeting)
+                        so users can start capture in under a minute.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">2) Event lists optimized for
+                        scanning</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Upcoming, previous, and missed events use the same card pattern with date/time and activity
+                        type, so the user can
+                        spot what needs attention without reading paragraphs.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">3) “Participants + photos” are
+                        treated as evidence, not decoration</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Capture supports participant count and a limited photo upload, giving program teams a basic
+                        audit trail without
+                        bloating the workflow.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">4) Screening flows reuse familiar
+                        patterns</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Health screenings reuse the same patient search and follow-up/referral patterns used elsewhere,
+                        reducing training load
+                        across modules and roles.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">5) “My report today” keeps
+                        reporting lightweight</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        A simple daily report view surfaces counts and activity summaries without forcing users into
+                        dashboards during service delivery.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout E -->
+        <section id="layout-e" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">RBAC as UX</p>
+                <h2 class="text-3xl font-semibold">Permissions define who can record, verify, and report outreach</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                Outreach activity capture affects reporting and program accountability, so the UI treats permissions as
+                first-class:
+                users see only the activity types and actions that match their facility role and geography scope.
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-3">
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 01</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Create activity</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                        Facility roles can create routine activities and execute planned events within their geography
+                        scope.
+                    </p>
+                </div>
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 02</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Run screening</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                        Screening actions are scoped to authorized users, with follow-up/referral output flowing to
+                        clinical roles.
+                    </p>
+                </div>
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 03</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Aggregate reporting</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                        Admin views prioritize visibility and exceptions, not operational edits to past records.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout F -->
+        <section id="layout-f" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Edge cases</p>
+                <h2 class="text-3xl font-semibold">Built for missed days, partial info, and duplicate identity</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Missed activity as a visible
+                        state</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Missed events remain on the timeline so teams can follow up and program ops can understand gaps
+                        without hunting in WhatsApp threads.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Patient search with ambiguity
+                    </h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Search supports name / mobile / ID patterns, with sub-center and village filters to reduce false
+                        matches in high-similarity populations.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">“No events found” empty states
+                    </h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Date-based views provide explicit empty states so users don’t confuse “no data” with “sync
+                        failed.”
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Photo limits for low bandwidth
+                    </h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Photo uploads are capped to keep capture feasible in rural network conditions and avoid blocking
+                        “Save” on heavy media.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout G -->
+        <section id="layout-g" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Screens</p>
+                <h2 class="text-3xl font-semibold">Key surfaces in the Outreach module</h2>
+                <p class="max-w-3xl text-gray-700 dark:text-gray-300">
+                    Replace placeholders with your final screenshots (from your Figma exports).
+                </p>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-2">
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Today view with routine activities and upcoming events" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Today view: featured event + routine activity shortcuts + upcoming events list.
+                    </figcaption>
+                </figure>
+
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="All events list with previous and missed states" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        All events: upcoming, previous, and missed activity cards.
+                    </figcaption>
+                </figure>
+
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Create routine activity form with village, description, participants and photo upload"
+                        class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Routine activity forms: date, village, description, participant count, photo uploads.
+                    </figcaption>
+                </figure>
+
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Health screening selection and follow-up/referral outputs" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Health screening: select type → patient search → screening → follow-up/referral.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout H -->
+        <section id="layout-h" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">System fit</p>
+                <h2 class="text-3xl font-semibold">Outreach connects planning, delivery, and continuity</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                Outreach matters only if outcomes land somewhere. The module is designed to connect community activity
+                capture to
+                follow-ups, referrals, and facility workflows so care doesn’t reset every time a patient shows up again.
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-2">
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Follow-up generation</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Screening can generate “follow-up due” tasks with dates, keeping outreach outcomes actionable
+                        instead of archived.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Program ops visibility</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Planned vs conducted vs missed surfaces patterns at facility and geography level without
+                        demanding extra reporting work.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout I -->
+        <section id="layout-i" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Impact</p>
+                <h2 class="text-3xl font-semibold">More completed activities, fewer missing outcomes, less “trust me
+                    bro” reporting</h2>
+            </div>
+
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Daily “Today” surface reduces the effort required to start and complete outreach capture.</li>
+                <li>Missed states stay visible, enabling rescheduling and realistic planning.</li>
+                <li>Routine activities become comparable across facilities because activity types are standardized.</li>
+                <li>Screening outcomes feed follow-up and referral workflows instead of disappearing into notes.</li>
+            </ul>
+
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+                Add verified metrics here if you have them (planned-to-conducted rate, missed reduction, screenings
+                completed during camps,
+                follow-ups created per screening type).
+            </p>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout J -->
+        <section id="layout-j" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">What’s next</p>
+                <h2 class="text-3xl font-semibold">Tighten operational control without making capture heavier</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Exception views for missed and
+                        pending outcomes</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Add exception lists: planned events without completion, screenings without follow-up/referral
+                        decision, and activities
+                        missing participants/photos where required.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Offline-safe capture</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Make routine activity capture fully offline-first with conflict-safe sync so field work doesn’t
+                        stop when networks do.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Smarter planning support</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Use historical attendance and screening output patterns to suggest activity timing and village
+                        targeting, without turning it into “AI suggestions”
+                        no one asked for.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
+
+    <!-- Footer (correct relative links for /work/samasta/outreach.html) -->
+    <footer class="w-full pb-10 space-y-8">
+        <div class="rounded-4xl border border-gray-200 bg-white p-6 md:p-10 dark:border-gray-800 dark:bg-gray-900">
+            <div class="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+                <div>
+                    <h2 class="text-4xl font-semibold text-gray-900 dark:text-gray-100">Let’s connect</h2>
+                    <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                        Open to product roles, freelance projects, and collaborations. If you want a walkthrough of any
+                        case study,
+                        I’m happy to share details live.
+                    </p>
+
+                    <a href="mailto:sumit.v.nikhare@gmail.com"
+                        class="mt-6 inline-flex items-center rounded-full border-2 border-gray-900 bg-white px-7 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-900 hover:text-white transition duration-300 dark:border-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-100 dark:hover:text-gray-900">
+                        Let's Talk
+                    </a>
+                </div>
+
+                <div class="flex justify-start md:justify-end">
+                    <span class="font-heading text-3xl font-semibold">sumit.design</span>
+                </div>
+            </div>
+
+            <div class="mt-14 grid gap-12 md:grid-cols-3">
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Navigation</p>
+                    <ul class="mt-5 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li><a href="../../index.html" class="link-brand">Home</a></li>
+                        <li><a href="../../about.html" class="link-brand">About</a></li>
+                        <li><a href="../work.html" class="link-brand">Work</a></li>
+                        <li><a href="../../resume.html" class="link-brand">Resume</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Case studies</p>
+                    <ul class="mt-5 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li><a href="../chip-2.html" class="link-brand">CHIP 2.0</a></li>
+                        <li><a href="../samasta.html" class="link-brand">Samasta</a></li>
+                        <li><a href="../cho-soft.html" class="link-brand">CHO Soft</a></li>
+                        <li><a href="../work.html" class="link-brand">View All</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Elsewhere</p>
+                    <div class="mt-5 space-y-2">
+                        <a href="https://www.linkedin.com/in/sumit-nikhare-482058215/" target="_blank" rel="noreferrer"
+                            class="flex items-center justify-between rounded-2xl bg-gradient-to-r bg-violet-100 py-2 pl-2 pr-4 dark:bg-violet-900/30">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="grid h-12 w-12 place-items-center rounded-2xl bg-white/70 dark:bg-gray-900/60">
+                                    <span class="text-sm font-semibold">in</span>
+                                </div>
+                                <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">LinkedIn</p>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">↗</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="flex flex-col space-y-4 items-center">
+            <div class="flex flex-col items-center gap-3">
+                <p class="text-center">© 2025 – sumit.design</p>
+
+                <button type="button" data-theme-toggle aria-pressed="false"
+                    class="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-4 py-1 text-xs font-semibold text-slate-600 shadow-sm transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400">
+                    <span class="text-xs font-semibold text-slate-800/90 dark:text-slate-500">Light</span>
+                    <span
+                        class="relative inline-flex h-7 w-14 items-center rounded-full bg-gradient-to-r from-sky-200 via-sky-300 to-sky-500 shadow-inner ring-1 ring-inset ring-white/40 transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 dark:ring-white/10">
+                        <span
+                            class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 dark:translate-x-7 dark:bg-slate-100">
+                            <span
+                                class="absolute -right-0.5 top-1 h-3 w-3 rounded-full bg-slate-900 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        </span>
+                        <span
+                            class="absolute right-4 top-2 h-1.5 w-1.5 rounded-full bg-white/90 transition-opacity duration-300 dark:opacity-0"></span>
+                        <span
+                            class="absolute right-2 top-4 h-1 w-1 rounded-full bg-white/80 transition-opacity duration-300 dark:opacity-0"></span>
+                        <span
+                            class="absolute left-3 top-2 h-1 w-1 rounded-full bg-white/80 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        <span
+                            class="absolute left-6 top-4 h-1.5 w-1.5 rounded-full bg-white/70 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        <span
+                            class="absolute left-8 top-1 h-1 w-1 rounded-full bg-white/60 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                    </span>
+                    <span class="text-xs font-semibold text-slate-400 dark:text-slate-100">Dark</span>
+                    <span data-theme-label class="sr-only">Light</span>
+                    <span class="sr-only">Toggle color theme</span>
+                </button>
+            </div>
+
+            <p class="text-sm text-center md:text-right">
+                Implementation notes &amp; source ·
+                <a href="https://github.com/" target="_blank" rel="noreferrer" class="link-brand">GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Back Control Button -->
+    <script>
+        (() => {
+            const btn = document.getElementById('backControl');
+            const hero = document.getElementById('hero');
+            if (!btn || !hero) return;
+            const link = btn.querySelector('a');
+
+            let cutoff = 0;
+
+            const calc = () => {
+                const rect = hero.getBoundingClientRect();
+                const heroTop = window.scrollY + rect.top;
+                cutoff = heroTop + hero.offsetHeight - 20;
+            };
+
+            const setVisible = (visible) => {
+                btn.classList.toggle('opacity-0', !visible);
+                btn.classList.toggle('pointer-events-none', !visible);
+                btn.setAttribute('aria-hidden', visible ? 'false' : 'true');
+                if (link) link.tabIndex = visible ? 0 : -1;
+            };
+
+            const tick = () => {
+                const show = window.scrollY > cutoff;
+                setVisible(show);
+            };
+
+            calc();
+            tick();
+            window.addEventListener('resize', () => { calc(); tick(); }, { passive: true });
+            if ('ResizeObserver' in window) {
+                const observer = new ResizeObserver(() => { calc(); tick(); });
+                observer.observe(hero);
+            }
+            window.addEventListener('scroll', () => requestAnimationFrame(tick), { passive: true });
+        })();
+    </script>
+
+    <!-- To Top Control Button -->
+    <script>
+        (() => {
+            const btn = document.getElementById('toTopControl');
+            const hero = document.getElementById('hero');
+            if (!btn || !hero) return;
+            const link = btn.querySelector('a');
+
+            btn.querySelector('a')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.replaceState(null, '', '#hero');
+            });
+
+            let cutoff = 0;
+            let lastY = window.scrollY;
+            let ticking = false;
+
+            const calc = () => {
+                const rect = hero.getBoundingClientRect();
+                const heroTop = window.scrollY + rect.top;
+                cutoff = heroTop + hero.offsetHeight - 20;
+            };
+
+            const setVisible = (visible) => {
+                btn.classList.toggle('opacity-0', !visible);
+                btn.classList.toggle('pointer-events-none', !visible);
+                btn.classList.toggle('translate-y-3', !visible);
+                btn.classList.toggle('opacity-100', visible);
+                btn.classList.toggle('translate-y-0', visible);
+                btn.setAttribute('aria-hidden', visible ? 'false' : 'true');
+                if (link) link.tabIndex = visible ? 0 : -1;
+            };
+
+            const update = () => {
+                const y = window.scrollY;
+
+                if (y <= cutoff) {
+                    setVisible(false);
+                    lastY = y;
+                    ticking = false;
+                    return;
+                }
+
+                const delta = y - lastY;
+
+                if (delta > 8) setVisible(false);
+                if (delta < -8) setVisible(true);
+
+                lastY = y;
+                ticking = false;
+            };
+
+            calc();
+            setVisible(false);
+
+            window.addEventListener('resize', () => { calc(); }, { passive: true });
+            if ('ResizeObserver' in window) {
+                const observer = new ResizeObserver(() => { calc(); });
+                observer.observe(hero);
+            }
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    ticking = true;
+                    requestAnimationFrame(update);
+                }
+            }, { passive: true });
+        })();
+    </script>
+
+</body>
+
+</html>

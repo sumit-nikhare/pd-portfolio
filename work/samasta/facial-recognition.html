@@ -1,527 +1,785 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Facial Recognition | Samasta | sumit.design</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@600;700;800&display=swap"
-    rel="stylesheet"
-  />
-
-  <link href="../../src/output.css" rel="stylesheet" />
-  <script src="../../src/theme.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samasta — Facial Recognition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="../../src/output.css" rel="stylesheet">
+    <script src="../../src/theme.js" defer></script>
 </head>
 
 <body
-    class="mx-4 lg:w-3/5 lg:mx-auto bg-gray-100 pt-4 space-y-6 text-gray-900 transition-colors duration-200 dark:bg-gray-950 dark:text-gray-100">
-    <!-- Header -->
+    class="relative isolate mx-4 lg:w-3/5 lg:mx-auto bg-gray-100 pt-4 space-y-6 text-gray-900 transition-colors duration-200 dark:bg-gray-950 dark:text-gray-100">
+
+    <!-- Ambient glows -->
+    <div class="pointer-events-none fixed inset-0 -z-10">
+        <div
+            class="absolute -left-32 top-10 w-80 h-80 bg-gradient-to-br from-amber-200 via-white to-gray-100 opacity-60 blur-3xl dark:from-amber-500/20 dark:via-gray-950 dark:to-gray-950 dark:opacity-30">
+        </div>
+        <div
+            class="absolute right-0 -top-24 w-96 h-96 bg-gradient-to-br from-white via-gray-100 to-orange-200 opacity-60 blur-3xl dark:from-gray-950 dark:via-gray-950 dark:to-orange-500/20 dark:opacity-30">
+        </div>
+        <div
+            class="absolute left-1/3 bottom-0 w-96 h-96 bg-gradient-to-br from-orange-200 via-white to-gray-100 opacity-50 blur-3xl dark:from-orange-500/20 dark:via-gray-950 dark:to-gray-950 dark:opacity-30">
+        </div>
+    </div>
+
+    <!-- Floating back control -->
+    <div id="backControl" class="fixed top-4 left-4 z-50 opacity-0 pointer-events-none transition-opacity duration-300"
+        aria-hidden="true">
+        <a href="../samasta.html" aria-label="Back" class="group relative flex h-16 items-center focus:outline-none">
+            <span aria-hidden="true" class="pointer-events-none absolute -inset-6 -z-10 opacity-0 blur-2xl transition-opacity duration-300
+                  group-hover:opacity-80 group-focus-within:opacity-80">
+                <span
+                    class="absolute left-0 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-amber-200/70 dark:bg-amber-500/20"></span>
+                <span
+                    class="absolute left-10 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-gray-200/80 dark:bg-gray-700/40"></span>
+                <span
+                    class="absolute left-20 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-orange-200/60 dark:bg-orange-500/20"></span>
+            </span>
+
+            <span class="flex h-16 items-center overflow-hidden rounded-full bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-100 shadow-sm
+                  transition-all duration-300 max-w-[64px]
+                  group-hover:max-w-[220px] group-focus-within:max-w-[220px]">
+                <span class="grid h-16 w-16 place-items-center">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </span>
+
+                <span class="max-w-0 overflow-hidden whitespace-nowrap pr-0
+                  text-sm font-semibold opacity-0 translate-x-0
+                  transition-[max-width,opacity,padding] duration-300
+                  group-hover:max-w-[150px] group-hover:opacity-100 group-hover:pr-6
+                  group-focus-within:max-w-[150px] group-focus-within:opacity-100 group-focus-within:pr-6">
+                    Back to Samasta
+                </span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Back to top -->
+    <div id="toTopControl"
+        class="fixed bottom-4 right-4 z-50 opacity-0 pointer-events-none translate-y-3 transition-all duration-300"
+        aria-hidden="true">
+        <a href="#hero" aria-label="Back to top" class="group relative flex h-16 items-center focus:outline-none">
+            <span aria-hidden="true" class="pointer-events-none absolute -inset-6 -z-10 hidden opacity-0 blur-2xl transition-opacity duration-300 md:block
+              md:group-hover:opacity-80 md:group-focus-within:opacity-80">
+                <span
+                    class="absolute right-0 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-amber-200/60 dark:bg-amber-500/20"></span>
+                <span
+                    class="absolute right-10 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-gray-200/80 dark:bg-gray-700/40"></span>
+                <span
+                    class="absolute right-20 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-orange-200/55 dark:bg-orange-500/20"></span>
+            </span>
+
+            <span class="flex h-16 items-center overflow-hidden rounded-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-gray-200 dark:ring-gray-700
+              transition-all duration-300 max-w-[64px]
+              md:group-hover:max-w-[160px] md:group-focus-within:max-w-[160px]">
+                <span class="grid h-16 w-16 place-items-center">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 5l-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                        <path d="M12 5l7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                        <path d="M12 5v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                    </svg>
+                </span>
+
+                <span class="hidden md:inline max-w-0 overflow-hidden whitespace-nowrap pr-0 text-sm font-semibold opacity-0
+                transition-[max-width,opacity,padding] duration-300
+                md:group-hover:max-w-[80px] md:group-hover:opacity-100 md:group-hover:pr-6
+                md:group-focus-within:max-w-[80px] md:group-focus-within:opacity-100 md:group-focus-within:pr-6">
+                    Top
+                </span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Top Bar -->
     <header class="flex items-center justify-between">
-        <a href="../../index.html" class="text-3xl font-semibold text-gray-900 dark:text-gray-100">sumit.design</a>
+        <a class="text-3xl font-semibold text-gray-900 dark:text-gray-100" href="../../index.html">sumit.design</a>
         <nav class="flex items-center gap-4">
-            <a href="../work.html" class="nav-link" aria-current="page">Work</a>
+            <a href="../work.html" class="nav-link">Work</a>
             <a href="../../about.html" class="nav-link">About</a>
         </nav>
     </header>
 
-    <main class="min-h-[70vh] py-12 space-y-12">
-        <!-- Hero -->
-        <section class="space-y-5">
-            <div class="flex flex-wrap items-center gap-3">
-                <a href="../samasta.html"
-                    class="inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-2 text-sm font-semibold hover:bg-gray-50 dark:hover:bg-gray-800">
-                    ← Samasta case study
-                </a>
+    <!-- Hero -->
+    <section id="hero" class="w-full pt-12 space-y-8">
+        <div class="space-y-4">
+            <p class="text-sm uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400">MODULE · SAMASTA</p>
 
-                <a href="./opd.html"
-                    class="inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-2 text-sm font-semibold hover:bg-gray-50 dark:hover:bg-gray-800">
-                    OPD Services
-                </a>
+            <div class="space-y-6 lg:w-4/5">
+                <h1 class="font-heading text-4xl font-semibold text-gray-900 dark:text-gray-100">
+                    Facial recognition for search and biometric enrollment
+                </h1>
 
-                <a href="./inventory.html"
-                    class="inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-2 text-sm font-semibold hover:bg-gray-50 dark:hover:bg-gray-800">
-                    Inventory
-                </a>
+                <p class="text-gray-700 dark:text-gray-300">
+                    A consent-led facial scan flow used at PHCs to speed up beneficiary lookup, reduce duplicate
+                    creation, and
+                    optionally enroll facial biometric for future recognition. Designed with clear fallbacks: manual
+                    search,
+                    online search, and registration when no match is found.
+                </p>
             </div>
 
-            <p class="text-sm uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400">Samasta · Focus module</p>
+            <div class="flex flex-wrap gap-2 my-2">
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Search-first</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Consent-led</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Online
+                    fallback</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">OCR
+                    assist</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">RBAC-aware</span>
+            </div>
+
+            <p class="max-w-3xl text-sm text-gray-600 dark:text-gray-400 pt-2">
+                *This page is derived from the provided facial recognition flow PDF. Replace placeholder images with
+                final assets.
+            </p>
+        </div>
+
+        <!-- Flow image (replace with your exported asset) -->
+        <div>
+            <img loading="eager" decoding="async" fetchpriority="high"
+                src="../../assets/samasta/facial-recognition/facial-recognition-flow.jpg"
+                alt="Facial scan, online search, and register face flow overview" class="w-full rounded-3xl" />
+        </div>
+    </section>
+
+    <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
+
+    <!-- Content (no sticky side nav) -->
+    <section class="space-y-12">
+
+        <!-- Layout A -->
+        <section id="layout-a" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Problem</p>
+                <h2 class="text-3xl font-semibold">Fast identification without creating identity debt</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                In PHC operations, identity retrieval is a throughput problem. If staff can’t find a person quickly,
+                they create
+                a new record. That’s how duplicates become “normal”. Facial recognition is introduced as an optional
+                accelerator,
+                but it must remain safe, consent-led, and recoverable under network constraints.
+            </p>
+
+            <div
+                class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">What makes it hard</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Consent and sensitivity:</span>
+                        biometric capture cannot be “just another step”.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Match confidence:</span> results
+                        may include multiple people with similar demographics.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Operational variability:</span>
+                        lighting and background quality affect capture reliability.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Connectivity:</span> online search
+                        is useful but cannot become a blocker for care.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">RBAC reality:</span> not every role
+                        should be allowed to enroll or edit biometric identity.</li>
+                </ul>
+            </div>
+
+            <p class="font-semibold text-gray-900 dark:text-gray-100">
+                Design goal: keep facial recognition as a <span class="underline underline-offset-4">fast path</span>
+                with
+                <span class="underline underline-offset-4">explicit consent</span> and
+                <span class="underline underline-offset-4">clear fallbacks</span>.
+            </p>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout B -->
+        <section id="layout-b" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Users</p>
+                <h2 class="text-3xl font-semibold">Same flow, different accountability</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                The flow is used inside facility contexts where speed matters, but governance still applies. Roles
+                differ in what
+                they can do: search, start OPD, enroll biometric, and link ABHA.
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-2">
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Front-desk / Facility staff</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Primary: quickly find the right person and route them
+                        into the correct workflow (OPD / follow-up).</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400"><span class="font-semibold">UX need:</span> fast
+                        search, clear result cues, minimal rework.</p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">MO / Authorized staff</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Secondary: approve or perform sensitive actions like
+                        biometric enrollment where policy requires it.</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400"><span class="font-semibold">UX need:</span>
+                        explicit consent, auditability, and safe defaults.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout C -->
+        <section id="layout-c" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Flow</p>
+                <h2 class="text-3xl font-semibold">Facial scan → results → online fallback → register if needed</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                The PDF shows three primary lanes: (1) face scan search success, (2) face scan search fail with online
+                search, and
+                (3) register face (biometric enrollment) with consent and capture guidance.
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-4">
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 01</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Entry</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">“Search or Add People” from home.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 02</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Choose mode</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Face scan or search by mobile/name/ABHA.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 03</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Consent + capture</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Consent form → capture with guidance.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 04</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Resolve</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Select match → purpose of visit, or register
+                        new.</p>
+                </div>
+            </div>
 
             <div class="space-y-3">
-                <h1 class="text-5xl font-semibold leading-tight">Facial Recognition</h1>
-                <p class="text-lg text-gray-700 dark:text-gray-300">
-                    A front-door identity flow that reduces friction at the facility entry point while keeping consent,
-                    fallbacks,
-                    and handoffs explicit. The module supports three paths:
-                    <span class="font-semibold">search by identifiers</span>, <span class="font-semibold">face scan +
-                        online search</span>,
-                    and <span class="font-semibold">new registration with optional biometric enrollment</span>.
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Key branches (as shown)</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Scan success:</span> show a results
+                        list (multiple candidates possible) and proceed after selection into “Purpose of Visit”.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Scan fail:</span> show “No People
+                        Found” and offer “Search Online” without forcing loops.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Register face:</span> enroll facial
+                        biometric with consent, capture guidance, image captured, and then return to the workflow.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">If not found anywhere:</span>
+                        create new person and optionally use OCR scan to prefill fields before saving.</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout D -->
+        <section id="layout-d" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Design decisions</p>
+                <h2 class="text-3xl font-semibold">Speed with safety: make the fast path trustworthy</h2>
+            </div>
+
+            <div class="space-y-6">
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">1) Multi-mode search on one
+                        surface</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        “Search Facial Scan”, “Search People”, and “Add New People” live together so users don’t bounce
+                        between modules.
+                        Manual search remains first-class (mobile/name/ABHA), and face scan is an accelerator, not the
+                        only way.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">2) Consent before capture, not
+                        after</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        The flow shows a dedicated consent form and clear “Don’t Add” / “Give Consent” options before
+                        any biometric action.
+                        This is deliberate: consent is a decision point, not a compliance checkbox.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">3) Capture guidance as live
+                        feedback</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        The capture screens call out quality constraints (lighting/background, single-face, position in
+                        circle) so failure becomes actionable.
+                        Users get reasons like “Background not good” instead of mystery errors.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">4) Online search is an explicit
+                        fallback</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        When local scan fails, the UI offers “Search Online” and shows “Searching online...” states,
+                        making the connectivity boundary visible.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">5) OCR-assisted registration to
+                        reduce typing</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        When no match is found, the flow supports OCR scan and prefilled demographic fields to speed up
+                        creation and reduce entry errors.
+                    </p>
+                </div>
+            </div>
+
+            <p class="font-semibold text-gray-900 dark:text-gray-100">
+                Outcome: the module reduces duplicate creation pressure while keeping a safe path when biometric search
+                fails.
+            </p>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout E -->
+        <section id="layout-e" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">RBAC as UX</p>
+                <h2 class="text-3xl font-semibold">Biometrics require tighter action boundaries than search</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                The design separates “find someone” from “enroll biometric”. Searching can be broader, but enrollment
+                should be restricted
+                to authorized roles and auditable contexts, because it changes future identification behavior.
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-3">
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 01</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Search visibility</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Users can search and view limited demographic
+                        cues to verify a match.</p>
+                </div>
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 02</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Enroll / “Add Facial Biometric”
+                    </p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Enrollment is gated through consent and should
+                        be permission-controlled.</p>
+                </div>
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 03</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Auditability</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Biometric actions should produce logs so
+                        responsibility survives handoffs.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout F -->
+        <section id="layout-f" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Edge cases</p>
+                <h2 class="text-3xl font-semibold">Designed for daily failure modes, not perfect demos</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Poor lighting / cluttered
+                        background</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Capture screens provide real-time cues (“Light good”,
+                        “Background not good”) and a how-to checklist.</p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">No match found</h3>
+                    <p class="text-gray-700 dark:text-gray-300">User can switch to “Try Online Search” or proceed with
+                        new registration without being stuck in retry loops.</p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Consent declined</h3>
+                    <p class="text-gray-700 dark:text-gray-300">The flow supports “Don’t Add” paths so service delivery
+                        can continue without biometric enrollment.</p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Multiple results returned</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Result cards include demographic cues (age, gender,
+                        village, masked mobile) to support correct selection.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout G -->
+        <section id="layout-g" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Screens</p>
+                <h2 class="text-3xl font-semibold">Key surfaces in the module</h2>
+                <p class="max-w-3xl text-gray-700 dark:text-gray-300">Replace placeholders with your final screenshots.
                 </p>
             </div>
 
-            <div class="grid gap-3 sm:grid-cols-4">
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4">
-                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Entry modes</p>
-                    <p class="mt-1 font-semibold">Search + Face scan</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Mobile / Name / ABHA ID + biometric</p>
-                </div>
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4">
-                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Consent</p>
-                    <p class="mt-1 font-semibold">Required gating</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Clear “Give consent” step</p>
-                </div>
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4">
-                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Fallback</p>
-                    <p class="mt-1 font-semibold">Never dead-ends</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">No result → online search → register</p>
-                </div>
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4">
-                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Handoff</p>
-                    <p class="mt-1 font-semibold">Purpose of visit</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">OPD / Follow-up flows</p>
-                </div>
+            <div class="grid gap-8 md:grid-cols-2">
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Search facial scan / search people tabs" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">Single entry point for facial scan, manual
+                        search, and new registration.</figcaption>
+                </figure>
+
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Consent screen for facial scan" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">Consent is explicit with a clean opt-out
+                        path.</figcaption>
+                </figure>
+
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Capture guidance and scanning state" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">Capture feedback reduces repeated failures
+                        and support burden.</figcaption>
+                </figure>
+
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Result selection and purpose of visit" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">Selection flows directly into “Purpose of
+                        Visit” for OPD or follow-up.</figcaption>
+                </figure>
             </div>
-
-            <!-- TOC -->
-            <section class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                <div class="flex items-start justify-between gap-4">
-                    <div>
-                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">On this page</p>
-                        <h2 class="mt-1 text-xl font-semibold">Facial Recognition deep dive</h2>
-                    </div>
-                    <span
-                        class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-xs text-gray-600 dark:text-gray-300">
-                        CHIP 2 structure
-                    </span>
-                </div>
-
-                <div class="mt-5 grid gap-3 sm:grid-cols-2">
-                    <a href="#scope"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Scope</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">What the module covers</p>
-                    </a>
-                    <a href="#problem"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Problem framing</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Why identity slows facilities</p>
-                    </a>
-                    <a href="#rbac"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Users & RBAC</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Who can search, enroll, and proceed</p>
-                    </a>
-                    <a href="#flows"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Primary flows</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Search, scan, consent, register,
-                            handoff</p>
-                    </a>
-                    <a href="#decisions"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Key decisions</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">What I chose and why</p>
-                    </a>
-                    <a href="#edge-cases"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Edge cases</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-600 dark:text-gray-300">Failures, ambiguity,
-                            and safety controls</p>
-                    </a>
-                </div>
-            </section>
         </section>
 
-        <!-- Scope -->
-        <section id="scope" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Module scope</h2>
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
 
-            <div
-                class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-6">
-                <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">What this module covers</p>
-                        <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-gray-700 dark:text-gray-300">
-                            <li>Search people by Mobile Number, Name, or ABHA ID</li>
-                            <li>Face scan workflow with guidance (lighting, background, distance)</li>
-                            <li>Global/online search fallback when local search fails</li>
-                            <li>Consent gating for face scan / biometric registration</li>
-                            <li>Result selection → Purpose of Visit (OPD / New follow-up)</li>
-                            <li>No-result → registration path with OCR-assisted form fill</li>
-                            <li>Optional biometric enrollment (“Add facial biometric” vs “Don’t add”)</li>
-                            <li>ABHA link/create prompts where relevant</li>
-                        </ul>
-                    </div>
+        <!-- Layout H -->
+        <section id="layout-h" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">System fit</p>
+                <h2 class="text-3xl font-semibold">How facial recognition connects across Samasta</h2>
+            </div>
 
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">What this module intentionally does not solve</p>
-                        <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-gray-700 dark:text-gray-300">
-                            <li>Clinical workflow itself (that begins after Purpose of Visit)</li>
-                            <li>Identity governance policy (consent language exists; policy sits above UX)</li>
-                            <li>“Perfect match” guarantees (the UX supports verification and fallbacks)</li>
-                        </ul>
-                    </div>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Beneficiary registration:</span> used
+                    as a search accelerator and a de-dup support mechanism.</li>
+                <li><span class="font-semibold text-gray-900 dark:text-gray-100">OPD services:</span> reduces
+                    time-to-start by taking users straight into “Purpose of Visit” after selection.</li>
+                <li><span class="font-semibold text-gray-900 dark:text-gray-100">ABHA linking:</span> surfaced as “Link
+                    ABHA” when not linked/created, without blocking identification.</li>
+            </ul>
+
+            <p class="font-semibold text-gray-900 dark:text-gray-100">
+                This module makes the first 30 seconds of the facility journey less chaotic. Which is the best you can
+                hope for.
+            </p>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout I -->
+        <section id="layout-i" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Impact</p>
+                <h2 class="text-3xl font-semibold">Lower friction at entry, fewer accidental duplicates</h2>
+            </div>
+
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Improves beneficiary retrieval speed in high-throughput contexts.</li>
+                <li>Reduces duplicate record creation pressure by providing a fast recognition path with online
+                    fallback.</li>
+                <li>Makes consent and biometric capture explicit, improving trust and governance alignment.</li>
+                <li>Creates a cleaner handoff into OPD and follow-up workflows.</li>
+            </ul>
+
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+                Add real metrics here if available (recognition success rate, time-to-identify, duplicate reduction,
+                enrollment completion rate).
+            </p>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout J -->
+        <section id="layout-j" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">What’s next</p>
+                <h2 class="text-3xl font-semibold">Make exceptions manageable and enrollment more accountable</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Exception queues</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Surface “scan failed / online search unavailable /
+                        partial match” as reviewable states, not silent dead ends.</p>
                 </div>
-
-                <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                    <p class="font-semibold">Why this module is a platform concern</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        Identity sits upstream of OPD, follow-ups, outreach, and reporting. If identity is slow or
-                        inconsistent, every downstream module pays
-                        the cost through duplicates, rework, and mistrust in records. This flow was designed as a stable
-                        entry primitive:
-                        <span class="font-semibold">Find</span> → <span class="font-semibold">Confirm</span> → <span
-                            class="font-semibold">Proceed</span>.
-                    </p>
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Stronger match verification</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Improve match cues and confirmation steps to reduce
+                        wrong selection when multiple candidates appear.</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Enrollment governance</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Tighten role-action rules and audit logs around
+                        biometric enrollment so accountability is explicit.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Problem -->
-        <section id="problem" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Problem framing</h2>
+    </section>
 
-            <div
-                class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-5">
-                <p class="text-gray-700 dark:text-gray-300">
-                    At facility entry points, identity is a throughput problem. Staff need to locate a beneficiary
-                    quickly,
-                    avoid duplicates, and transition into service flows without losing time. A biometric option helps,
-                    but only if consent is clear, failures are handled, and fallbacks remain available.
-                </p>
+    <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
 
-                <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Searching needs multiple keys</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            Mobile, name, and ABHA ID reduce dependence on a single identifier and support partial
-                            recall in real-world interactions.
-                        </p>
-                    </div>
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Biometrics require explicit consent</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            Consent is treated as a gating step (not a tooltip), with a “Don’t add” branch that still
-                            lets the user proceed.
-                        </p>
-                    </div>
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Capture quality is a UX problem</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            Lighting, background, and distance guidance reduces “silent failure” and supports consistent
-                            capture across facilities.
-                        </p>
-                    </div>
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">No-result must still continue</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            When scan/search fails, the system offers online search and registration, avoiding dead ends
-                            that create duplicates later.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- RBAC -->
-        <section id="rbac" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Users and RBAC</h2>
-
-            <div
-                class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-5">
-                <p class="text-gray-700 dark:text-gray-300">
-                    This flow sits on a responsibility boundary: searching and confirming identity is not the same as
-                    registering a new person
-                    or enrolling a biometric. The UI design keeps those actions separate so facilities can enforce
-                    governance without breaking throughput.
-                </p>
-
-                <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-800">
-                    <table class="min-w-[980px] w-full text-left text-sm">
-                        <thead class="bg-gray-50 dark:bg-gray-800">
-                            <tr>
-                                <th class="px-4 py-3 font-semibold">Role</th>
-                                <th class="px-4 py-3 font-semibold">Search people</th>
-                                <th class="px-4 py-3 font-semibold">Face scan search</th>
-                                <th class="px-4 py-3 font-semibold">Online/global search</th>
-                                <th class="px-4 py-3 font-semibold">Register new person</th>
-                                <th class="px-4 py-3 font-semibold">Enroll face biometric</th>
-                                <th class="px-4 py-3 font-semibold">Start visit</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200 dark:divide-gray-800">
-                            <tr class="bg-white dark:bg-gray-900">
-                                <td class="px-4 py-3 font-semibold">MO / Facility operator</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">✔ (with consent)</td>
-                                <td class="px-4 py-3">✔</td>
-                            </tr>
-                            <tr class="bg-white dark:bg-gray-900">
-                                <td class="px-4 py-3 font-semibold">Registration / Frontdesk</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">✔ (policy-dependent)</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">✔ (policy-dependent)</td>
-                                <td class="px-4 py-3">✔ (handoff)</td>
-                            </tr>
-                            <tr class="bg-white dark:bg-gray-900">
-                                <td class="px-4 py-3 font-semibold">Read-only roles</td>
-                                <td class="px-4 py-3">View/limited</td>
-                                <td class="px-4 py-3">—</td>
-                                <td class="px-4 py-3">—</td>
-                                <td class="px-4 py-3">—</td>
-                                <td class="px-4 py-3">—</td>
-                                <td class="px-4 py-3">—</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <p class="text-xs text-gray-500 dark:text-gray-400">
-                    Note: The screens show this flow initiated from an MO context (“Search or Add People”). Governance
-                    typically defines which staff can enroll biometrics vs only search/verify.
-                </p>
-            </div>
-        </section>
-
-        <!-- Flows -->
-        <section id="flows" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Primary workflows</h2>
-
-            <div
-                class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-6">
-                <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5 space-y-2">
-                        <p class="font-semibold">1) Search by identifiers</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">
-                            Search supports Mobile Number, Name, and ABHA ID. Results show demographics and location
-                            details to help resolve ambiguity when multiple matches exist.
-                        </p>
-                        <ul class="mt-2 list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-                            <li>Search bar + results list with multiple candidates</li>
-                            <li>Clear “No result found” state</li>
-                            <li>Fallback to “Try online search” when local results fail</li>
-                        </ul>
-                    </div>
-
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5 space-y-2">
-                        <p class="font-semibold">2) Face scan search (with online lookup)</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">
-                            Face scan includes capture guidance and online searching states. When successful, users can
-                            “View results” and proceed.
-                        </p>
-                        <ul class="mt-2 list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-                            <li>Capture checklist: no masks/glasses, single face, centered, clear background, adequate
-                                lighting</li>
-                            <li>Real-time guidance: “Light good”, “Background not good”, “Move further”</li>
-                            <li>System state: “Searching online…”</li>
-                            <li>Outcomes: results list OR “No people found”</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5 space-y-2">
-                        <p class="font-semibold">3) Consent gating</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">
-                            Consent is surfaced as a dedicated step with a clear acceptance action (“Give consent”) and
-                            an explicit opt-out path (“Don’t add”).
-                            This prevents biometric enrollment from becoming an implicit requirement to receive care.
-                        </p>
-                        <ul class="mt-2 list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-                            <li>Consent form appears before biometric actions</li>
-                            <li>Users can proceed without enrolling biometrics</li>
-                            <li>Consent supports ABHA-related context (link/create prompts)</li>
-                        </ul>
-                    </div>
-
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5 space-y-2">
-                        <p class="font-semibold">4) No-result → registration (OCR-assisted)</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">
-                            When scan/search fails, the flow supports registering a new person. OCR scan helps prefill
-                            structured fields to reduce typing burden.
-                        </p>
-                        <ul class="mt-2 list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-                            <li>OCR scan → registration form fields (name, DOB/age, gender, mobile, address, geography)
-                            </li>
-                            <li>Save and Next continues into downstream flows</li>
-                            <li>Optional “Add facial biometric” after registration</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5 space-y-2">
-                    <p class="font-semibold">5) Identity confirmed → Purpose of Visit</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        Once a beneficiary is selected, the next decision is operational: why are they here. The module
-                        hands off into visit flows
-                        via “Purpose of Visit” (OPD / New Follow-up), and surfaces ABHA status (Not created / Not
-                        linked) with link/create actions.
+    <!-- Footer (links fixed for /work/samasta/* pages) -->
+    <footer class="w-full pb-10 space-y-8">
+        <div class="rounded-4xl border border-gray-200 bg-white p-6 md:p-10 dark:border-gray-800 dark:bg-gray-900">
+            <div class="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+                <div>
+                    <h2 class="text-4xl font-semibold text-gray-900 dark:text-gray-100">Let’s connect</h2>
+                    <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                        Open to product roles, freelance projects, and collaborations. If you want a walkthrough of any
+                        case study,
+                        I’m happy to share details live.
                     </p>
-                </div>
-            </div>
-        </section>
 
-        <!-- Decisions -->
-        <section id="decisions" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Key design decisions</h2>
-
-            <div class="grid gap-4 md:grid-cols-2">
-                <div
-                    class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                    <p class="font-semibold">Design for ambiguity (multiple matches)</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        Results lists include demographic and household context so staff can disambiguate candidates
-                        without opening multiple profiles.
-                    </p>
-                </div>
-
-                <div
-                    class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                    <p class="font-semibold">Treat consent as a gate, not decoration</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        The module explicitly supports opting out (“Don’t add”) while still allowing care workflows to
-                        proceed.
-                    </p>
-                </div>
-
-                <div
-                    class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                    <p class="font-semibold">Make capture quality visible in the UI</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        Real-time hints (lighting/background/distance) reduce repeated failures and normalize capture
-                        conditions across sites.
-                    </p>
-                </div>
-
-                <div
-                    class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                    <p class="font-semibold">Always provide a “continue” path</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        No-result states route users to online search or registration rather than forcing them to
-                        restart or abandon the process.
-                    </p>
-                </div>
-
-                <div
-                    class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                    <p class="font-semibold">Handoff into work, not into more identity</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        After identity confirmation, the next screen is operational (“Purpose of Visit”). This prevents
-                        identity steps from expanding into a maze.
-                    </p>
-                </div>
-
-                <div
-                    class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                    <p class="font-semibold">Keep ABHA status visible at the decision point</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        ABHA not linked/created is surfaced alongside the beneficiary card so linking can happen
-                        intentionally, not buried later.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Edge cases -->
-        <section id="edge-cases" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Edge cases and controls</h2>
-
-            <div class="grid gap-4 md:grid-cols-2">
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                    <p class="font-semibold">Scan success, search fail</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        The flow distinguishes capture from match (“scan/search fail”), prompting online search or
-                        registration rather than repeating capture endlessly.
-                    </p>
-                </div>
-
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                    <p class="font-semibold">No people found (online)</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        “No people found” is a valid outcome with a clear next step. This prevents staff from creating
-                        duplicates through guesswork.
-                    </p>
-                </div>
-
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                    <p class="font-semibold">Multiple similar candidates</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        When multiple results share family/spouse fields and location, the UI relies on demographic
-                        context and structured identifiers to avoid wrong selection.
-                    </p>
-                </div>
-
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                    <p class="font-semibold">Consent refused</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        The flow supports continuing without biometric enrollment. This protects access and keeps the
-                        module compliant with real-world opt-out behavior.
-                    </p>
-                </div>
-            </div>
-
-            <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                    <div>
-                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Next</p>
-                        <p class="mt-1 text-lg font-semibold">Move to Beneficiary Registration</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            When identity can’t be confirmed via search or face scan, registration becomes the
-                            controlled fallback.
-                        </p>
-                    </div>
-                    <a href="./beneficiary-registration.html"
-                        class="inline-flex items-center justify-center rounded-full bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900 px-5 py-2.5 text-sm font-semibold hover:opacity-90">
-                        Open Registration
+                    <a href="mailto:sumit.v.nikhare@gmail.com"
+                        class="mt-6 inline-flex items-center rounded-full border-2 border-gray-900 bg-white px-7 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-900 hover:text-white transition duration-300 dark:border-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-100 dark:hover:text-gray-900">
+                        Let's Talk
                     </a>
                 </div>
+
+                <div class="flex justify-start md:justify-end">
+                    <span class="font-heading text-3xl font-semibold">sumit.design</span>
+                </div>
             </div>
-        </section>
-    </main>
 
-    <!-- Footer -->
-    <footer class="w-full pb-10 pt-6">
-        <div class="grid gap-3 px-4 text-sm text-gray-600 dark:text-gray-300 md:grid-cols-3 md:items-center">
-            <div class="hidden md:block"></div>
+            <div class="mt-14 grid gap-12 md:grid-cols-3">
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Navigation</p>
+                    <ul class="mt-5 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li><a href="../../index.html" class="link-brand">Home</a></li>
+                        <li><a href="../../about.html" class="link-brand">About</a></li>
+                        <li><a href="../work.html" class="link-brand">Work</a></li>
+                        <li><a href="../../resume.html" class="link-brand">Resume</a></li>
+                    </ul>
+                </div>
 
-            <div class="flex flex-wrap items-center justify-center gap-3">
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Case studies</p>
+                    <ul class="mt-5 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li><a href="../chip-2.html" class="link-brand">CHIP 2.0</a></li>
+                        <li><a href="../samasta.html" class="link-brand">Samasta</a></li>
+                        <li><a href="../cho-soft.html" class="link-brand">CHO Soft</a></li>
+                        <li><a href="../work.html" class="link-brand">View All</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Elsewhere</p>
+                    <div class="mt-5 space-y-2">
+                        <a href="https://www.linkedin.com/in/sumit-nikhare-482058215/" target="_blank" rel="noreferrer"
+                            class="flex items-center justify-between rounded-2xl bg-gradient-to-r bg-violet-100 py-2 pl-2 pr-4 dark:bg-violet-900/30">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="grid h-12 w-12 place-items-center rounded-2xl bg-white/70 dark:bg-gray-900/60">
+                                    <span class="text-sm font-semibold">in</span>
+                                </div>
+                                <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">LinkedIn</p>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">↗</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="flex flex-col space-y-4 items-center">
+            <div class="flex flex-col items-center gap-3">
                 <p class="text-center">© 2025 – sumit.design</p>
 
-                <button
-                  type="button"
-                  data-theme-toggle
-                  aria-pressed="false"
-                  class="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-xs font-semibold text-slate-600 shadow-sm transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400"
-                >
-                  <span class="text-xs font-semibold text-slate-800/90 dark:text-slate-500">Light</span>
-                  <span class="relative inline-flex h-7 w-14 items-center rounded-full bg-gradient-to-r from-sky-200 via-sky-300 to-sky-500 shadow-inner ring-1 ring-inset ring-white/40 transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 dark:ring-white/10">
-                    <span class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 dark:translate-x-7 dark:bg-slate-100">
-                      <span class="absolute -right-0.5 top-1 h-3 w-3 rounded-full bg-slate-900 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                <button type="button" data-theme-toggle aria-pressed="false"
+                    class="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-4 py-1 text-xs font-semibold text-slate-600 shadow-sm transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400">
+                    <span class="text-xs font-semibold text-slate-800/90 dark:text-slate-500">Light</span>
+                    <span
+                        class="relative inline-flex h-7 w-14 items-center rounded-full bg-gradient-to-r from-sky-200 via-sky-300 to-sky-500 shadow-inner ring-1 ring-inset ring-white/40 transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 dark:ring-white/10">
+                        <span
+                            class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 dark:translate-x-7 dark:bg-slate-100">
+                            <span
+                                class="absolute -right-0.5 top-1 h-3 w-3 rounded-full bg-slate-900 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        </span>
+                        <span
+                            class="absolute right-4 top-2 h-1.5 w-1.5 rounded-full bg-white/90 transition-opacity duration-300 dark:opacity-0"></span>
+                        <span
+                            class="absolute right-2 top-4 h-1 w-1 rounded-full bg-white/80 transition-opacity duration-300 dark:opacity-0"></span>
+                        <span
+                            class="absolute left-3 top-2 h-1 w-1 rounded-full bg-white/80 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        <span
+                            class="absolute left-6 top-4 h-1.5 w-1.5 rounded-full bg-white/70 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        <span
+                            class="absolute left-8 top-1 h-1 w-1 rounded-full bg-white/60 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
                     </span>
-                    <span class="absolute right-4 top-2 h-1.5 w-1.5 rounded-full bg-white/90 transition-opacity duration-300 dark:opacity-0"></span>
-                    <span class="absolute right-2 top-4 h-1 w-1 rounded-full bg-white/80 transition-opacity duration-300 dark:opacity-0"></span>
-                    <span class="absolute left-3 top-2 h-1 w-1 rounded-full bg-white/80 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                    <span class="absolute left-6 top-4 h-1.5 w-1.5 rounded-full bg-white/70 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                    <span class="absolute left-8 top-1 h-1 w-1 rounded-full bg-white/60 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                  </span>
-                  <span class="text-xs font-semibold text-slate-400 dark:text-slate-100">Dark</span>
-                  <span data-theme-label class="sr-only">Light</span>
-                  <span class="sr-only">Toggle color theme</span>
+                    <span class="text-xs font-semibold text-slate-400 dark:text-slate-100">Dark</span>
+                    <span data-theme-label class="sr-only">Light</span>
+                    <span class="sr-only">Toggle color theme</span>
                 </button>
             </div>
 
-            <p class="text-center md:text-right">
+            <p class="text-sm text-center md:text-right">
                 Implementation notes &amp; source ·
                 <a href="https://github.com/" target="_blank" rel="noreferrer" class="link-brand">GitHub</a>
             </p>
         </div>
     </footer>
+
+    <!-- Back Control Button -->
+    <script>
+        (() => {
+            const btn = document.getElementById('backControl');
+            const hero = document.getElementById('hero');
+            if (!btn || !hero) return;
+            const link = btn.querySelector('a');
+
+            let cutoff = 0;
+
+            const calc = () => {
+                const rect = hero.getBoundingClientRect();
+                const heroTop = window.scrollY + rect.top;
+                cutoff = heroTop + hero.offsetHeight - 20;
+            };
+
+            const setVisible = (visible) => {
+                btn.classList.toggle('opacity-0', !visible);
+                btn.classList.toggle('pointer-events-none', !visible);
+                btn.setAttribute('aria-hidden', visible ? 'false' : 'true');
+                if (link) link.tabIndex = visible ? 0 : -1;
+            };
+
+            const tick = () => {
+                const show = window.scrollY > cutoff;
+                setVisible(show);
+            };
+
+            calc();
+            tick();
+            window.addEventListener('resize', () => { calc(); tick(); }, { passive: true });
+            if ('ResizeObserver' in window) {
+                const observer = new ResizeObserver(() => { calc(); tick(); });
+                observer.observe(hero);
+            }
+            window.addEventListener('scroll', () => requestAnimationFrame(tick), { passive: true });
+        })();
+    </script>
+
+    <!-- To Top Control Button -->
+    <script>
+        (() => {
+            const btn = document.getElementById('toTopControl');
+            const hero = document.getElementById('hero');
+            if (!btn || !hero) return;
+            const link = btn.querySelector('a');
+
+            btn.querySelector('a')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.replaceState(null, '', '#hero');
+            });
+
+            let cutoff = 0;
+            let lastY = window.scrollY;
+            let ticking = false;
+
+            const calc = () => {
+                const rect = hero.getBoundingClientRect();
+                const heroTop = window.scrollY + rect.top;
+                cutoff = heroTop + hero.offsetHeight - 20;
+            };
+
+            const setVisible = (visible) => {
+                btn.classList.toggle('opacity-0', !visible);
+                btn.classList.toggle('pointer-events-none', !visible);
+                btn.classList.toggle('translate-y-3', !visible);
+                btn.classList.toggle('opacity-100', visible);
+                btn.classList.toggle('translate-y-0', visible);
+                btn.setAttribute('aria-hidden', visible ? 'false' : 'true');
+                if (link) link.tabIndex = visible ? 0 : -1;
+            };
+
+            const update = () => {
+                const y = window.scrollY;
+
+                if (y <= cutoff) {
+                    setVisible(false);
+                    lastY = y;
+                    ticking = false;
+                    return;
+                }
+
+                const delta = y - lastY;
+
+                if (delta > 8) setVisible(false);
+                if (delta < -8) setVisible(true);
+
+                lastY = y;
+                ticking = false;
+            };
+
+            calc();
+            setVisible(false);
+
+            window.addEventListener('resize', () => { calc(); }, { passive: true });
+            if ('ResizeObserver' in window) {
+                const observer = new ResizeObserver(() => { calc(); });
+                observer.observe(hero);
+            }
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    ticking = true;
+                    requestAnimationFrame(update);
+                }
+            }, { passive: true });
+        })();
+    </script>
+
 </body>
+
 </html>

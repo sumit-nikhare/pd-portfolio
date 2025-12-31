@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samasta — Dashboard & Admin Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="../../src/output.css" rel="stylesheet">
+    <script src="../../src/theme.js" defer></script>
+</head>
+
+<body
+    class="relative isolate mx-4 lg:w-3/5 lg:mx-auto bg-gray-100 pt-4 space-y-6 text-gray-900 transition-colors duration-200 dark:bg-gray-950 dark:text-gray-100">
+
+    <!-- Ambient glows -->
+    <div class="pointer-events-none fixed inset-0 -z-10">
+        <div
+            class="absolute -left-32 top-10 w-80 h-80 bg-gradient-to-br from-amber-200 via-white to-gray-100 opacity-60 blur-3xl dark:from-amber-500/20 dark:via-gray-950 dark:to-gray-950 dark:opacity-30">
+        </div>
+        <div
+            class="absolute right-0 -top-24 w-96 h-96 bg-gradient-to-br from-white via-gray-100 to-orange-200 opacity-60 blur-3xl dark:from-gray-950 dark:via-gray-950 dark:to-orange-500/20 dark:opacity-30">
+        </div>
+        <div
+            class="absolute left-1/3 bottom-0 w-96 h-96 bg-gradient-to-br from-orange-200 via-white to-gray-100 opacity-50 blur-3xl dark:from-orange-500/20 dark:via-gray-950 dark:to-gray-950 dark:opacity-30">
+        </div>
+    </div>
+
+    <!-- Floating back control -->
+    <div id="backControl" class="fixed top-4 left-4 z-50 opacity-0 pointer-events-none transition-opacity duration-300"
+        aria-hidden="true">
+        <a href="../samasta.html" aria-label="Back" class="group relative flex h-16 items-center focus:outline-none">
+            <span aria-hidden="true"
+                class="pointer-events-none absolute -inset-6 -z-10 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-80 group-focus-within:opacity-80">
+                <span
+                    class="absolute left-0 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-amber-200/70 dark:bg-amber-500/20"></span>
+                <span
+                    class="absolute left-10 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-gray-200/80 dark:bg-gray-700/40"></span>
+                <span
+                    class="absolute left-20 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-orange-200/60 dark:bg-orange-500/20"></span>
+            </span>
+
+            <span
+                class="flex h-16 items-center overflow-hidden rounded-full bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-100 shadow-sm transition-all duration-300 max-w-[64px] group-hover:max-w-[220px] group-focus-within:max-w-[220px]">
+                <span class="grid h-16 w-16 place-items-center">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </span>
+
+                <span
+                    class="max-w-0 overflow-hidden whitespace-nowrap pr-0 text-sm font-semibold opacity-0 translate-x-0 transition-[max-width,opacity,padding] duration-300 group-hover:max-w-[150px] group-hover:opacity-100 group-hover:pr-6 group-focus-within:max-w-[150px] group-focus-within:opacity-100 group-focus-within:pr-6">
+                    Back to Samasta
+                </span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Back to top -->
+    <div id="toTopControl"
+        class="fixed bottom-4 right-4 z-50 opacity-0 pointer-events-none translate-y-3 transition-all duration-300"
+        aria-hidden="true">
+        <a href="#hero" aria-label="Back to top" class="group relative flex h-16 items-center focus:outline-none">
+            <span aria-hidden="true"
+                class="pointer-events-none absolute -inset-6 -z-10 hidden opacity-0 blur-2xl transition-opacity duration-300 md:block md:group-hover:opacity-80 md:group-focus-within:opacity-80">
+                <span
+                    class="absolute right-0 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-amber-200/60 dark:bg-amber-500/20"></span>
+                <span
+                    class="absolute right-10 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-gray-200/80 dark:bg-gray-700/40"></span>
+                <span
+                    class="absolute right-20 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-orange-200/55 dark:bg-orange-500/20"></span>
+            </span>
+
+            <span
+                class="flex h-16 items-center overflow-hidden rounded-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-gray-200 dark:ring-gray-700 transition-all duration-300 max-w-[64px] md:group-hover:max-w-[160px] md:group-focus-within:max-w-[160px]">
+                <span class="grid h-16 w-16 place-items-center">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 5l-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                        <path d="M12 5l7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                        <path d="M12 5v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                    </svg>
+                </span>
+
+                <span
+                    class="hidden md:inline max-w-0 overflow-hidden whitespace-nowrap pr-0 text-sm font-semibold opacity-0 transition-[max-width,opacity,padding] duration-300 md:group-hover:max-w-[80px] md:group-hover:opacity-100 md:group-hover:pr-6 md:group-focus-within:max-w-[80px] md:group-focus-within:opacity-100 md:group-focus-within:pr-6">
+                    Top
+                </span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Top Bar -->
+    <header class="flex items-center justify-between">
+        <a class="text-3xl font-semibold text-gray-900 dark:text-gray-100" href="../../index.html">sumit.design</a>
+        <nav class="flex items-center gap-4">
+            <!-- FIXED: work is at root, not /work/ -->
+            <a href="../../work.html" class="nav-link">Work</a>
+            <a href="../../about.html" class="nav-link">About</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero" class="w-full pt-12 space-y-8">
+        <div class="space-y-4">
+            <p class="text-sm uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400">MODULE · SAMASTA</p>
+
+            <div class="space-y-6 lg:w-4/5">
+                <h1 class="font-heading text-4xl font-semibold text-gray-900 dark:text-gray-100">
+                    Dashboard + admin console for PHC operations at scale
+                </h1>
+
+                <p class="text-gray-700 dark:text-gray-300">
+                    A role-aware dashboard and management console to run PHC deployments: track OPD output and service
+                    funnel,
+                    monitor attendance, and maintain the operational spine (staff, facilities, and geography). Built for
+                    government
+                    reality: drill-down by state → district → block → facility, exportable reports, and strict
+                    separation between
+                    “view stats” and “change master data.”
+                </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 my-2">
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Geo
+                    drill-down</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">OPD
+                    trend + funnel</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Attendance
+                    monitoring</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Exports
+                    + reports</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Staff
+                    / Facility / Geography</span>
+            </div>
+
+            <p class="max-w-3xl text-sm text-gray-600 dark:text-gray-400 pt-2">
+                *Replace placeholder screenshots with final Figma exports. This page covers: dashboard analytics,
+                reports,
+                attendance, and admin master-data management.
+            </p>
+        </div>
+
+        <!-- Hero image (replace with your exported asset) -->
+        <div>
+            <img loading="eager" decoding="async" fetchpriority="high"
+                src="../../assets/samasta/dashboard/dashboard-hero.jpg"
+                alt="Dashboard and admin console overview with filters, trends, reports and management modules"
+                class="w-full rounded-3xl" />
+        </div>
+    </section>
+
+    <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
+
+    <!-- Content -->
+    <section class="space-y-12">
+
+        <!-- Layout A -->
+        <section id="layout-a" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Problem</p>
+                <h2 class="text-3xl font-semibold">Operations fail when “data exists” but accountability doesn’t</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                In government deployments, the hard part is not generating numbers, it’s making them usable:
+                teams need to know which facilities are active, who showed up, where OPD is rising or collapsing,
+                and whether services are actually reaching patients. Without a governance layer,
+                frontline workflows become isolated, and leadership ends up chasing updates through calls and
+                spreadsheets.
+            </p>
+
+            <div
+                class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">What this module must solve</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Hierarchical visibility:</span>
+                        state → district → block → facility drill-down without rebuilding charts each time.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Two modes:</span> analytics +
+                        reporting vs master-data management (staff/facility/geo).</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Exportability:</span> reports must
+                        be downloadable for formal review cycles.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Exception detection:</span> not
+                        just totals, but “who is missing?” and “what is stuck?”</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Safe admin actions:</span> edits,
+                        deactivation, transfer, password reset, migration, with audit-friendly flows.</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout B -->
+        <section id="layout-b" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Users</p>
+                <h2 class="text-3xl font-semibold">Designed for governance roles, without punishing facility workflows
+                </h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                This module primarily supports administrative and supervisory roles: they need consistent filters, quick
+                comparisons,
+                and controlled edit capabilities. The UX avoids mixing “monitoring” screens with “doing work” screens.
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-2">
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Program ops / supervisors</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Monitors facility performance: OPD trends, service funnel completion (vitals, labs,
+                        prescription),
+                        attendance health, and report downloads for review meetings.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">District/block admins</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Maintains staff lists and postings, manages facilities and attributes (HWC, referral, 24×7),
+                        and maintains geography (villages, anganwadis) with migration flows.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout C -->
+        <section id="layout-c" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Information architecture
+                </p>
+                <h2 class="text-3xl font-semibold">Two planes: Analytics + Reports vs Master data management</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                The console is structured around an unavoidable reality: analytics is read-heavy and comparative,
+                while management is edit-heavy and risk-sensitive. Keeping these planes separate reduces accidental
+                edits,
+                permission confusion, and training load.
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-2">
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Plane 01</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Analytics + Reports</p>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        <li>Dashboard trend line (30 days / 6 months / year)</li>
+                        <li>OPD overview: new vs revisit vs teleconsultations</li>
+                        <li>Service funnel: vitals, labs, prescriptions, diagnosis</li>
+                        <li>Breakdowns: age, gender, symptoms, vitals, labs</li>
+                        <li>Reports: OPD report with date range + download</li>
+                        <li>Attendance dashboards and staff punch-in overview</li>
+                    </ul>
+                </div>
+
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Plane 02</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Master data management</p>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        <li>Staff: list, view details, create, transfer, deactivate</li>
+                        <li>Login controls: generate/reset password, app user status</li>
+                        <li>Health facilities: create/edit, service attributes, migrate</li>
+                        <li>Geography: district/block/panchayat/village/anganwadi</li>
+                        <li>Bulk creation patterns (add more villages/anganwadis)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout D -->
+        <section id="layout-d" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Design decisions</p>
+                <h2 class="text-3xl font-semibold">Designed for drill-down, comparability, and meeting-ready exports
+                </h2>
+            </div>
+
+            <div class="space-y-6">
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">1) Global geo filter spine</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        The top filter pattern (state, district, block, facility type, facility) acts as a shared
+                        language across
+                        dashboard, reports, and management. This avoids users having to “re-learn” scoping on every
+                        screen.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">2) Trend controls that map to
+                        review rhythms</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Time toggles (30 days, 6 months, year) align to typical operational reviews: daily monitoring,
+                        monthly tracking,
+                        and annual program reporting. The same control appears consistently across trend surfaces.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">3) Service funnel as an
+                        operational truth-check</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Showing “vitals taken / lab examined / medicine prescribed / diagnosis recorded” makes it hard
+                        for the system
+                        to hide incomplete clinical workflows behind a single “OPD count.” This is where exceptions get
+                        caught.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">4) Reports designed for export,
+                        not exploration</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        OPD reports use a date range → table → download flow, because reporting often happens outside
+                        the product
+                        (reviews, audits, meetings). Exploration stays in the dashboard; reporting stays in reports.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">5) Attendance as “who is
+                        missing?”</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Attendance summary surfaces not just “present %” but the operational buckets: punched in, late,
+                        not present,
+                        on leave. The detail table supports quick follow-up by designation and facility.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout E -->
+        <section id="layout-e" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">RBAC as UX</p>
+                <h2 class="text-3xl font-semibold">Separation of powers: view, export, and edit are not the same
+                    permission</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                In government systems, “who can see” and “who can change” must be explicit. This module treats RBAC as a
+                UI constraint:
+                navigation visibility, action placement, and destructive actions are permission-gated and designed with
+                friction where needed.
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-3">
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 01</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Analytics access</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                        Most supervisory roles can view dashboard metrics and drill-down within their geography scope.
+                    </p>
+                </div>
+
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 02</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Export privilege</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                        Download/report actions can be restricted independently to prevent unmanaged sharing of large
+                        datasets.
+                    </p>
+                </div>
+
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 03</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Master data edits</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                        Staff/facility/geography changes are limited to admins, with “transfer/deactivate/migrate”
+                        treated as controlled actions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout F -->
+        <section id="layout-f" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Admin workflows</p>
+                <h2 class="text-3xl font-semibold">Staff, facilities, and geography as the operational backbone</h2>
+            </div>
+
+            <div class="grid gap-4 md:grid-cols-2">
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Staff management</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                        <li>Staff list with filters and “App user” status</li>
+                        <li>Create staff with personal + posting + login details</li>
+                        <li>Transfer staff between postings (PHC/CHC, SC, village)</li>
+                        <li>Reset/generate password + send to user</li>
+                        <li>Deactivate staff without deleting history</li>
+                    </ul>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Facilities + geography</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                        <li>Facility list with attributes (HWC, referral, MTC, 24×7, Namma Clinic)</li>
+                        <li>Create/edit facility and update service details</li>
+                        <li>Migration flows for location detail changes</li>
+                        <li>Create villages and anganwadis with bulk “Add more” patterns</li>
+                        <li>Geography summaries for quick completeness checks</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout G -->
+        <section id="layout-g" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Screens</p>
+                <h2 class="text-3xl font-semibold">Key surfaces in Dashboard + Admin</h2>
+                <p class="max-w-3xl text-gray-700 dark:text-gray-300">
+                    Replace placeholders with your final screenshots (from your Figma exports).
+                </p>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-2">
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Dashboard with global filters and trend line" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Dashboard: state/district/block/facility filters + trend line with time toggles.
+                    </figcaption>
+                </figure>
+
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="OPD overview and service funnel charts" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        OPD overview: new vs revisit vs teleconsultations, plus service funnel completion.
+                    </figcaption>
+                </figure>
+
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Attendance summary and staff attendance table" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Attendance: summary buckets + designation-level overview + staff table for follow-up.
+                    </figcaption>
+                </figure>
+
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Staff management: list and staff details with transfer, deactivate, password reset"
+                        class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Staff management: list → details → transfer/deactivate/reset password flows.
+                    </figcaption>
+                </figure>
+
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Health facilities management: list, create facility, facility details and migrate"
+                        class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Facilities: attributes (HWC, referral, 24×7) + create/edit + migrate for location updates.
+                    </figcaption>
+                </figure>
+
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Geography management: create villages and anganwadis with add more pattern"
+                        class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Geography: create villages/anganwadis with bulk “add more,” and summary views for completeness.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout H -->
+        <section id="layout-h" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">System fit</p>
+                <h2 class="text-3xl font-semibold">This module is the governance layer for everything else</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                OPD, inventory, outreach, and registration workflows succeed only if the system’s backbone is accurate:
+                staff are correctly posted, facilities are correctly typed, and geography mappings are current.
+                This dashboard + admin console ensures the rest of Samasta isn’t forced to “guess the truth.”
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-2">
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Operational continuity</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Staff transfer and deactivation flows reduce “ghost users,” and keep app access aligned with
+                        real postings.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Reporting reliability</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Exportable OPD and attendance reports support review cycles without forcing stakeholders into
+                        the product UI.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout I -->
+        <section id="layout-i" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Impact</p>
+                <h2 class="text-3xl font-semibold">Fewer blind spots, faster follow-ups, safer admin operations</h2>
+            </div>
+
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Geo drill-down makes it easy to compare facilities without building separate dashboards per
+                    district.</li>
+                <li>Service funnel views reveal “partial OPD” and missing steps, not just visit totals.</li>
+                <li>Attendance summaries reduce time-to-action for absenteeism and staffing gaps.</li>
+                <li>Admin actions (transfer/deactivate/migrate) make master data maintainable without unsafe deletes.
+                </li>
+                <li>Reports align with government workflows: date range → table → download.</li>
+            </ul>
+
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+                Add verified metrics here if you have them (report download frequency, time to identify low-performing
+                facilities,
+                attendance follow-up cycle time, reduction in mismatched postings).
+            </p>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout J -->
+        <section id="layout-j" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">What’s next</p>
+                <h2 class="text-3xl font-semibold">Make exceptions actionable, not just visible</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Exception queues for governance
+                    </h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Add “needs action” views: facilities with missing staff, low service funnel completion, repeated
+                        absenteeism,
+                        and incomplete master data (missing mappings, inactive-but-reporting facilities).
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Audit-friendly change history
+                    </h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Show “what changed, by whom, when” for staff transfers, facility edits, and geography migrations
+                        to support
+                        program audits without forensic spreadsheet archaeology.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Report templates for recurring
+                        reviews</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Support saved report presets (e.g., last month OPD + attendance by district) to speed up
+                        recurring meetings and reduce manual setup.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
+
+    <!-- Footer (correct relative links for /work/samasta/dashboard.html) -->
+    <footer class="w-full pb-10 space-y-8">
+        <div class="rounded-4xl border border-gray-200 bg-white p-6 md:p-10 dark:border-gray-800 dark:bg-gray-900">
+            <div class="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+                <div>
+                    <h2 class="text-4xl font-semibold text-gray-900 dark:text-gray-100">Let’s connect</h2>
+                    <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                        Open to product roles, freelance projects, and collaborations. If you want a walkthrough of any
+                        case study,
+                        I’m happy to share details live.
+                    </p>
+
+                    <a href="mailto:sumit.v.nikhare@gmail.com"
+                        class="mt-6 inline-flex items-center rounded-full border-2 border-gray-900 bg-white px-7 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-900 hover:text-white transition duration-300 dark:border-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-100 dark:hover:text-gray-900">
+                        Let's Talk
+                    </a>
+                </div>
+
+                <div class="flex justify-start md:justify-end">
+                    <span class="font-heading text-3xl font-semibold">sumit.design</span>
+                </div>
+            </div>
+
+            <div class="mt-14 grid gap-12 md:grid-cols-3">
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Navigation</p>
+                    <ul class="mt-5 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li><a href="../../index.html" class="link-brand">Home</a></li>
+                        <li><a href="../../about.html" class="link-brand">About</a></li>
+                        <!-- FIXED -->
+                        <li><a href="../../work.html" class="link-brand">Work</a></li>
+                        <li><a href="../../resume.html" class="link-brand">Resume</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Case studies</p>
+                    <ul class="mt-5 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li><a href="../chip-2.html" class="link-brand">CHIP 2.0</a></li>
+                        <li><a href="../samasta.html" class="link-brand">Samasta</a></li>
+                        <li><a href="../cho-soft.html" class="link-brand">CHO Soft</a></li>
+                        <!-- FIXED: View All should go to root work.html -->
+                        <li><a href="../../work.html" class="link-brand">View All</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Elsewhere</p>
+                    <div class="mt-5 space-y-2">
+                        <a href="https://www.linkedin.com/in/sumit-nikhare-482058215/" target="_blank" rel="noreferrer"
+                            class="flex items-center justify-between rounded-2xl bg-gradient-to-r bg-violet-100 py-2 pl-2 pr-4 dark:bg-violet-900/30">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="grid h-12 w-12 place-items-center rounded-2xl bg-white/70 dark:bg-gray-900/60">
+                                    <span class="text-sm font-semibold">in</span>
+                                </div>
+                                <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">LinkedIn</p>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">↗</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="flex flex-col space-y-4 items-center">
+            <div class="flex flex-col items-center gap-3">
+                <p class="text-center">© 2025 – sumit.design</p>
+
+                <button type="button" data-theme-toggle aria-pressed="false"
+                    class="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-4 py-1 text-xs font-semibold text-slate-600 shadow-sm transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400">
+                    <span class="text-xs font-semibold text-slate-800/90 dark:text-slate-500">Light</span>
+                    <span
+                        class="relative inline-flex h-7 w-14 items-center rounded-full bg-gradient-to-r from-sky-200 via-sky-300 to-sky-500 shadow-inner ring-1 ring-inset ring-white/40 transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 dark:ring-white/10">
+                        <span
+                            class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 dark:translate-x-7 dark:bg-slate-100">
+                            <span
+                                class="absolute -right-0.5 top-1 h-3 w-3 rounded-full bg-slate-900 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        </span>
+                        <span
+                            class="absolute right-4 top-2 h-1.5 w-1.5 rounded-full bg-white/90 transition-opacity duration-300 dark:opacity-0"></span>
+                        <span
+                            class="absolute right-2 top-4 h-1 w-1 rounded-full bg-white/80 transition-opacity duration-300 dark:opacity-0"></span>
+                        <span
+                            class="absolute left-3 top-2 h-1 w-1 rounded-full bg-white/80 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        <span
+                            class="absolute left-6 top-4 h-1.5 w-1.5 rounded-full bg-white/70 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        <span
+                            class="absolute left-8 top-1 h-1 w-1 rounded-full bg-white/60 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                    </span>
+                    <span class="text-xs font-semibold text-slate-400 dark:text-slate-100">Dark</span>
+                    <span data-theme-label class="sr-only">Light</span>
+                    <span class="sr-only">Toggle color theme</span>
+                </button>
+            </div>
+
+            <p class="text-sm text-center md:text-right">
+                Implementation notes &amp; source ·
+                <a href="https://github.com/" target="_blank" rel="noreferrer" class="link-brand">GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Back Control Button -->
+    <script>
+        (() => {
+            const btn = document.getElementById('backControl');
+            const hero = document.getElementById('hero');
+            if (!btn || !hero) return;
+            const link = btn.querySelector('a');
+
+            let cutoff = 0;
+
+            const calc = () => {
+                const rect = hero.getBoundingClientRect();
+                const heroTop = window.scrollY + rect.top;
+                cutoff = heroTop + hero.offsetHeight - 20;
+            };
+
+            const setVisible = (visible) => {
+                btn.classList.toggle('opacity-0', !visible);
+                btn.classList.toggle('pointer-events-none', !visible);
+                btn.setAttribute('aria-hidden', visible ? 'false' : 'true');
+                if (link) link.tabIndex = visible ? 0 : -1;
+            };
+
+            const tick = () => {
+                const show = window.scrollY > cutoff;
+                setVisible(show);
+            };
+
+            calc();
+            tick();
+            window.addEventListener('resize', () => { calc(); tick(); }, { passive: true });
+            if ('ResizeObserver' in window) {
+                const observer = new ResizeObserver(() => { calc(); tick(); });
+                observer.observe(hero);
+            }
+            window.addEventListener('scroll', () => requestAnimationFrame(tick), { passive: true });
+        })();
+    </script>
+
+    <!-- To Top Control Button -->
+    <script>
+        (() => {
+            const btn = document.getElementById('toTopControl');
+            const hero = document.getElementById('hero');
+            if (!btn || !hero) return;
+            const link = btn.querySelector('a');
+
+            btn.querySelector('a')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.replaceState(null, '', '#hero');
+            });
+
+            let cutoff = 0;
+            let lastY = window.scrollY;
+            let ticking = false;
+
+            const calc = () => {
+                const rect = hero.getBoundingClientRect();
+                const heroTop = window.scrollY + rect.top;
+                cutoff = heroTop + hero.offsetHeight - 20;
+            };
+
+            const setVisible = (visible) => {
+                btn.classList.toggle('opacity-0', !visible);
+                btn.classList.toggle('pointer-events-none', !visible);
+                btn.classList.toggle('translate-y-3', !visible);
+                btn.classList.toggle('opacity-100', visible);
+                btn.classList.toggle('translate-y-0', visible);
+                btn.setAttribute('aria-hidden', visible ? 'false' : 'true');
+                if (link) link.tabIndex = visible ? 0 : -1;
+            };
+
+            const update = () => {
+                const y = window.scrollY;
+
+                if (y <= cutoff) {
+                    setVisible(false);
+                    lastY = y;
+                    ticking = false;
+                    return;
+                }
+
+                const delta = y - lastY;
+
+                if (delta > 8) setVisible(false);
+                if (delta < -8) setVisible(true);
+
+                lastY = y;
+                ticking = false;
+            };
+
+            calc();
+            setVisible(false);
+
+            window.addEventListener('resize', () => { calc(); }, { passive: true });
+            if ('ResizeObserver' in window) {
+                const observer = new ResizeObserver(() => { calc(); });
+                observer.observe(hero);
+            }
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    ticking = true;
+                    requestAnimationFrame(update);
+                }
+            }, { passive: true });
+        })();
+    </script>
+
+</body>
+
+</html>

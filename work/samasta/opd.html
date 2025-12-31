@@ -1,818 +1,812 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OPD Services | Samasta | sumit.design</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@600;700;800&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- NOTE: this matches your existing Samasta pages' relative pathing -->
-  <link href="../../src/output.css" rel="stylesheet" />
-  <script src="../../src/theme.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samasta — OPD Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="../../src/output.css" rel="stylesheet">
+    <script src="../../src/theme.js" defer></script>
 </head>
 
 <body
-    class="mx-4 lg:w-3/5 lg:mx-auto bg-gray-100 pt-4 space-y-6 text-gray-900 transition-colors duration-200 dark:bg-gray-950 dark:text-gray-100">
-    <!-- Header -->
+    class="relative isolate mx-4 lg:w-3/5 lg:mx-auto bg-gray-100 pt-4 space-y-6 text-gray-900 transition-colors duration-200 dark:bg-gray-950 dark:text-gray-100">
+
+    <!-- Ambient glows -->
+    <div class="pointer-events-none fixed inset-0 -z-10">
+        <div
+            class="absolute -left-32 top-10 w-80 h-80 bg-gradient-to-br from-amber-200 via-white to-gray-100 opacity-60 blur-3xl dark:from-amber-500/20 dark:via-gray-950 dark:to-gray-950 dark:opacity-30">
+        </div>
+        <div
+            class="absolute right-0 -top-24 w-96 h-96 bg-gradient-to-br from-white via-gray-100 to-orange-200 opacity-60 blur-3xl dark:from-gray-950 dark:via-gray-950 dark:to-orange-500/20 dark:opacity-30">
+        </div>
+        <div
+            class="absolute left-1/3 bottom-0 w-96 h-96 bg-gradient-to-br from-orange-200 via-white to-gray-100 opacity-50 blur-3xl dark:from-orange-500/20 dark:via-gray-950 dark:to-gray-950 dark:opacity-30">
+        </div>
+    </div>
+
+    <!-- Floating back control -->
+    <div id="backControl" class="fixed top-4 left-4 z-50 opacity-0 pointer-events-none transition-opacity duration-300"
+        aria-hidden="true">
+        <a href="../samasta.html" aria-label="Back" class="group relative flex h-16 items-center focus:outline-none">
+            <span aria-hidden="true"
+                class="pointer-events-none absolute -inset-6 -z-10 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-80 group-focus-within:opacity-80">
+                <span
+                    class="absolute left-0 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-amber-200/70 dark:bg-amber-500/20"></span>
+                <span
+                    class="absolute left-10 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-gray-200/80 dark:bg-gray-700/40"></span>
+                <span
+                    class="absolute left-20 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-orange-200/60 dark:bg-orange-500/20"></span>
+            </span>
+
+            <span
+                class="flex h-16 items-center overflow-hidden rounded-full bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-100 shadow-sm transition-all duration-300 max-w-[64px] group-hover:max-w-[220px] group-focus-within:max-w-[220px]">
+                <span class="grid h-16 w-16 place-items-center">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </span>
+
+                <span
+                    class="max-w-0 overflow-hidden whitespace-nowrap pr-0 text-sm font-semibold opacity-0 translate-x-0 transition-[max-width,opacity,padding] duration-300 group-hover:max-w-[150px] group-hover:opacity-100 group-hover:pr-6 group-focus-within:max-w-[150px] group-focus-within:opacity-100 group-focus-within:pr-6">
+                    Back to Samasta
+                </span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Back to top -->
+    <div id="toTopControl"
+        class="fixed bottom-4 right-4 z-50 opacity-0 pointer-events-none translate-y-3 transition-all duration-300"
+        aria-hidden="true">
+        <a href="#hero" aria-label="Back to top" class="group relative flex h-16 items-center focus:outline-none">
+            <span aria-hidden="true"
+                class="pointer-events-none absolute -inset-6 -z-10 hidden opacity-0 blur-2xl transition-opacity duration-300 md:block md:group-hover:opacity-80 md:group-focus-within:opacity-80">
+                <span
+                    class="absolute right-0 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-amber-200/60 dark:bg-amber-500/20"></span>
+                <span
+                    class="absolute right-10 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-gray-200/80 dark:bg-gray-700/40"></span>
+                <span
+                    class="absolute right-20 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-orange-200/55 dark:bg-orange-500/20"></span>
+            </span>
+
+            <span
+                class="flex h-16 items-center overflow-hidden rounded-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-gray-200 dark:ring-gray-700 transition-all duration-300 max-w-[64px] md:group-hover:max-w-[160px] md:group-focus-within:max-w-[160px]">
+                <span class="grid h-16 w-16 place-items-center">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 5l-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                        <path d="M12 5l7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                        <path d="M12 5v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                    </svg>
+                </span>
+
+                <span
+                    class="hidden md:inline max-w-0 overflow-hidden whitespace-nowrap pr-0 text-sm font-semibold opacity-0 transition-[max-width,opacity,padding] duration-300 md:group-hover:max-w-[80px] md:group-hover:opacity-100 md:group-hover:pr-6 md:group-focus-within:max-w-[80px] md:group-focus-within:opacity-100 md:group-focus-within:pr-6">
+                    Top
+                </span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Top Bar -->
     <header class="flex items-center justify-between">
-        <a href="../../index.html" class="text-3xl font-semibold text-gray-900 dark:text-gray-100">sumit.design</a>
+        <a class="text-3xl font-semibold text-gray-900 dark:text-gray-100" href="../../index.html">sumit.design</a>
         <nav class="flex items-center gap-4">
-            <a href="../work.html" class="nav-link" aria-current="page">Work</a>
+            <a href="../work.html" class="nav-link">Work</a>
             <a href="../../about.html" class="nav-link">About</a>
         </nav>
     </header>
 
-    <main class="min-h-[70vh] py-12 space-y-12">
-        <!-- Hero -->
-        <section class="space-y-5">
-            <div class="flex flex-wrap items-center gap-3">
-                <a href="../samasta.html"
-                    class="inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-2 text-sm font-semibold hover:bg-gray-50 dark:hover:bg-gray-800">
-                    ← Samasta case study
-                </a>
+    <!-- Hero -->
+    <section id="hero" class="w-full pt-12 space-y-8">
+        <div class="space-y-4">
+            <p class="text-sm uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400">MODULE · SAMASTA</p>
 
-                <a href="./application.html"
-                    class="inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-2 text-sm font-semibold hover:bg-gray-50 dark:hover:bg-gray-800">
-                    Field Application
-                </a>
+            <div class="space-y-6 lg:w-4/5">
+                <h1 class="font-heading text-4xl font-semibold text-gray-900 dark:text-gray-100">
+                    OPD services with multi-role handoff
+                </h1>
 
-                <a href="./dashboard.html"
-                    class="inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-2 text-sm font-semibold hover:bg-gray-50 dark:hover:bg-gray-800">
-                    Dashboard
-                </a>
+                <p class="text-gray-700 dark:text-gray-300">
+                    A queue-driven OPD workflow that coordinates Nurse → MO → Lab Technician → Pharmacist, with
+                    fallbacks for teleconsultation and structured completion through referral and follow-up. The module
+                    is designed around the reality that OPD is not a single “form”, it’s a handoff system.
+                </p>
             </div>
 
-            <p class="text-sm uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400">Samasta · Focus module</p>
+            <div class="flex flex-wrap gap-2 my-2">
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Queue-based</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Multi-role</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Vitals
+                    / Labs / Rx</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Referral
+                    + Follow-up</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Patient
+                    history graphs</span>
+            </div>
+
+            <p class="max-w-3xl text-sm text-gray-600 dark:text-gray-400 pt-2">
+                *This page is derived from OPD flow + screen set and Patient History graphs. Replace placeholder
+                screenshots with
+                final exports.
+            </p>
+        </div>
+
+        <!-- Flow image (replace with your exported asset) -->
+        <div>
+            <img loading="eager" decoding="async" fetchpriority="high" src="../../assets/samasta/opd/opd-flow.jpg"
+                alt="OPD end-to-end flow with nurse, MO, lab, pharmacy and completion actions"
+                class="w-full rounded-3xl" />
+        </div>
+    </section>
+
+    <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
+
+    <!-- Content (no sticky side nav) -->
+    <section class="space-y-12">
+
+        <!-- Layout A -->
+        <section id="layout-a" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Problem</p>
+                <h2 class="text-3xl font-semibold">OPD breaks when the UI assumes one person does everything</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                In PHC settings, OPD work is distributed. A patient enters the system through a queue, vitals may be
+                captured by nursing staff, diagnosis and prescription by the MO, investigations by lab staff, and
+                dispensing by pharmacy. If the UI doesn’t support handoffs, the system becomes a “please call the other
+                person” machine.
+            </p>
+
+            <div
+                class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">What the OPD module must solve</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Handoffs with state:</span> “Vitals
+                        due”, “Lab tests due”, “Medicine due” must be explicit and trackable.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Fast complaint capture:</span>
+                        chief concerns need search + common lists for speed.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Structured clinical steps:</span>
+                        vitals, labs, diagnosis, prescription, summary should be consistent and resumable.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Closure actions:</span> referral +
+                        follow-up should be part of completion, not side tasks.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Continuity:</span> patient history,
+                        graphs, and follow-ups should reduce repeat questioning and missed care.</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout B -->
+        <section id="layout-b" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Users</p>
+                <h2 class="text-3xl font-semibold">Role-based work queues, not a shared “do everything” screen</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                The OPD screens show distinct home/queue surfaces for Staff Nurse, MO, Lab Technician, and Pharmacist.
+                Each role sees the same patient identity but different “work due” states and actions.
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-2">
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Staff Nurse</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Works from a vitals queue (“Vitals due”), captures vitals and pushes the patient forward with a
+                        predictable state transition.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Medical Officer</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Works from OPD waiting + due queues, completes diagnosis and prescription, and finalizes with
+                        follow-up/referral decisions.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Lab Technician</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Receives a “Lab Tests” queue, enters investigation values, and returns results into the
+                        encounter timeline.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Pharmacist</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Works from “Medicine pending”, reviews prescription items, records dispensing (“Given”), and
+                        closes the medication step.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout C -->
+        <section id="layout-c" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Flow</p>
+                <h2 class="text-3xl font-semibold">Encounter as a staged checklist with work-due routing</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                The OPD experience is structured as a staged flow: Chief complaint → Vitals → Lab investigations →
+                Diagnosis → Prescription → Summary, with completion gates for follow-up/referral and shareable output
+                (prescription summary).
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-4">
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 01</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Intake</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Start check-up or teleconsultation from patient
+                        details.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 02</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Capture</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Chief concerns, history, allergies, vitals.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 03</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Investigate</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Select tests, enter values, return results.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 04</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Treat + Close</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Diagnosis, prescription, summary,
+                        follow-up/referral.</p>
+                </div>
+            </div>
 
             <div class="space-y-3">
-                <h1 class="text-5xl font-semibold leading-tight">OPD Services</h1>
-                <p class="text-lg text-gray-700 dark:text-gray-300">
-                    A queue-first OPD workflow designed for multi-role execution inside facilities.
-                    The module treats an OPD visit as a <span class="font-semibold">staged encounter</span> (vitals,
-                    investigations,
-                    diagnosis, prescription, dispensing, closure), so handoffs stay accountable and visible without
-                    forcing every role
-                    through the same UI.
-                </p>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Routing behavior</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Queues:</span> OPD waiting, vitals
+                        due, lab tests due, medicines due are surfaced as filters and counts.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Within an encounter:</span> the
+                        progress checklist shows which steps are completed vs pending.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Output:</span> a shareable
+                        summary/prescription closes the loop after completion.</li>
+                </ul>
             </div>
-
-            <!-- Quick stats / framing -->
-            <div class="grid gap-3 sm:grid-cols-4">
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4">
-                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Model</p>
-                    <p class="mt-1 font-semibold">Queue-first</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Waiting → Completed with time-since
-                        indicators</p>
-                </div>
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4">
-                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Roles</p>
-                    <p class="mt-1 font-semibold">Handoff-driven</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Nurse → MO → Lab → Pharmacist</p>
-                </div>
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4">
-                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">State</p>
-                    <p class="mt-1 font-semibold">Staged completion</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Vitals / Lab / Diagnosis / Rx</p>
-                </div>
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4">
-                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Closure</p>
-                    <p class="mt-1 font-semibold">Controlled finish</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Summary, share Rx, follow-up/referral,
-                        complete</p>
-                </div>
-            </div>
-
-            <!-- TOC -->
-            <section class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                <div class="flex items-start justify-between gap-4">
-                    <div>
-                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">On this page</p>
-                        <h2 class="mt-1 text-xl font-semibold">OPD deep dive</h2>
-                    </div>
-                    <span
-                        class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-xs text-gray-600 dark:text-gray-300">
-                        CHIP 2 structure
-                    </span>
-                </div>
-
-                <div class="mt-5 grid gap-3 sm:grid-cols-2">
-                    <a href="#scope"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Scope</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">What OPD includes and excludes</p>
-                    </a>
-                    <a href="#problem"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Problem framing</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Why OPD breaks at scale</p>
-                    </a>
-                    <a href="#rbac"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Users & RBAC</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Role queues and permission boundaries
-                        </p>
-                    </a>
-                    <a href="#workflow"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Workflow</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">End-to-end encounter stages</p>
-                    </a>
-                    <a href="#decisions"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Key decisions</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">What I chose and why</p>
-                    </a>
-                    <a href="#patterns"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Reusable patterns</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Components and IA rules reused
-                            elsewhere</p>
-                    </a>
-                </div>
-
-                <div class="mt-3 grid gap-3 sm:grid-cols-2">
-                    <a href="#edge-cases"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Edge cases</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Where systems fall apart if you ignore
-                            reality</p>
-                    </a>
-                    <a href="#dashboard-hooks"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Dashboard hooks</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">What OPD produces for oversight and
-                            governance</p>
-                    </a>
-                </div>
-            </section>
         </section>
 
-        <!-- Scope -->
-        <section id="scope" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Module scope</h2>
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
 
-            <div
-                class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-6">
-                <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">What OPD covers</p>
-                        <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-gray-700 dark:text-gray-300">
-                            <li>Queue-based OPD entry (waiting → completed)</li>
-                            <li>Vitals stage with explicit completion</li>
-                            <li>Consultation capture (complaints, history, allergies)</li>
-                            <li>Investigation ordering + structured results entry</li>
-                            <li>Diagnosis with provisional vs final states</li>
-                            <li>Prescription creation with stock visibility</li>
-                            <li>Dispensing as a role action (“Given”)</li>
-                            <li>Closure gates: summary, share prescription, follow-up/referral prompts, complete OPD
-                            </li>
-                            <li>Teleconsultation as an alternate consult path, without breaking closure consistency</li>
-                        </ul>
-                    </div>
+        <!-- Layout D -->
+        <section id="layout-d" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Design decisions</p>
+                <h2 class="text-3xl font-semibold">Designed OPD as orchestration, not a long form</h2>
+            </div>
 
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">What OPD intentionally does not solve</p>
-                        <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-gray-700 dark:text-gray-300">
-                            <li>Appointment scheduling as the core model (this module is throughput-driven)</li>
-                            <li>Inpatient workflows and bed management</li>
-                            <li>Advanced clinical decision support (the focus is routing, capture quality, and
-                                accountability)</li>
-                            <li>Analytics as the primary operator interface (queues are the operator interface)</li>
-                        </ul>
-                    </div>
+            <div class="space-y-6">
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">1) Chief concerns optimized for
+                        speed</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        The chief concern step uses search plus a “Common Chief Concern” list and selected chips. This
+                        supports fast entry while keeping it structured.
+                    </p>
                 </div>
 
-                <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5 space-y-2">
-                    <p class="font-semibold">Why this module matters at platform scale</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        OPD is high-frequency and time-sensitive. Any ambiguity in handoffs creates downstream friction:
-                        missing vitals, duplicate visits, untracked lab delays, inconsistent dispensing, and “completed”
-                        visits
-                        that aren’t actually complete. A staged encounter model gives you a stable platform primitive
-                        that
-                        other modules can reliably attach to.
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">2) Patient context is modular
+                        (history, allergies, habits)</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Personal/family medical history and allergies are captured as reusable modules that can persist
+                        across encounters, with “Updated at” timestamps and additional notes.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">3) Vitals and lab entry are
+                        role-ready</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Vitals and lab screens are structured with explicit units and value fields, allowing the “due”
+                        queues to map cleanly to Nurse and Lab Technician workflows.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">4) Diagnosis supports provisional
+                        vs final</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Diagnosis selection supports writing, list-based add, and status (provisional/final), which
+                        reduces ambiguity at discharge and follow-ups.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">5) Prescription ties into stock
+                        reality</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Prescription includes medicine details (type, frequency, duration) and surfaces “Left in Stock”,
+                        anticipating the pharmacy step and inventory constraints.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Problem -->
-        <section id="problem" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Problem framing</h2>
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
 
-            <div
-                class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-5">
-                <p class="text-gray-700 dark:text-gray-300">
-                    Facility OPD workflows break when the system assumes one person owns the entire visit.
-                    In practice, OPD is a chain of responsibilities: vitals, consultation, investigations, dispensing,
-                    and closure. The design goal was to keep throughput high while making ownership and state explicit.
-                </p>
+        <!-- Layout E -->
+        <section id="layout-e" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">RBAC as UX</p>
+                <h2 class="text-3xl font-semibold">Permissions shape the encounter and who can move it forward</h2>
+            </div>
 
-                <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Handoffs need visible states</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            “Vitals done” and “lab done” cannot be vibes. They must be states that drive queues.
-                        </p>
-                    </div>
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Queues are the UI for operators</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            Operators don’t need charts. They need to see what’s due, what’s stuck, and what’s next.
-                        </p>
-                    </div>
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Capture must survive interruption</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            OPD is not a calm desk job. The system needs safe “continue later” behavior without losing
-                            clarity.
-                        </p>
-                    </div>
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Closure must be governed</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            Completing OPD is a responsibility boundary. It should be explicit, deliberate, and
-                            auditable.
-                        </p>
-                    </div>
+            <p class="text-gray-700 dark:text-gray-300">
+                OPD requires explicit role boundaries. The screens imply task ownership through entry points: nurses act
+                on vitals, lab techs act on investigations, pharmacists act on dispensing, and MOs act on diagnosis and
+                closure actions like referral and follow-up.
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-3">
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 01</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Work queues</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Role dashboards show only relevant due states
+                        (Vitals / Labs / Medicine).</p>
+                </div>
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 02</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Clinical authority</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Diagnosis, prescription, referral and follow-up
+                        are MO-led actions.</p>
+                </div>
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 03</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Completion integrity</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Step-level completion (pending/completed)
+                        prevents “fake done” encounters.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout F -->
+        <section id="layout-f" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Edge cases</p>
+                <h2 class="text-3xl font-semibold">Built around interruptions, not ideal sequences</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Save as draft during chief
+                        concern</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Chief concern capture includes “Save as Draft”, acknowledging that OPD intake is often
+                        interrupted.
+                    </p>
                 </div>
 
-                <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                    <p class="font-semibold">Constraint carried across the whole case study</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        OPD has to interoperate with identity (registration/face match), inventory (stock reality),
-                        and the dashboard (oversight). This module was designed as a platform building block, not a
-                        one-off flow.
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Teleconsultation entry point</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        The “Start Check up OR Teleconsultation” decision supports alternate clinical delivery while
+                        still returning to the same encounter checklist and completion flow.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Exit guardrails</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        “Do you want to exit OPD?” confirms intent, reducing accidental abandonment of partially
+                        completed encounters.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Referral + follow-up as closure
+                        choices</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Completion includes explicit “Do you want to refer?” and “Do you want to follow up?” flows with
+                        reason and timing.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- RBAC -->
-        <section id="rbac" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Users and RBAC</h2>
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
 
-            <div
-                class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-5">
-                <p class="text-gray-700 dark:text-gray-300">
-                    OPD uses role-separated worklists to prevent responsibility drift. Everyone can see the same
-                    encounter,
-                    but only the relevant stages are actionable per role. This keeps the UI clean and reduces
-                    error-prone “helpful”
-                    edits by the wrong person.
+        <!-- Layout G -->
+        <section id="layout-g" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Screens</p>
+                <h2 class="text-3xl font-semibold">Key surfaces in the OPD module</h2>
+                <p class="max-w-3xl text-gray-700 dark:text-gray-300">
+                    Replace placeholders with your final screenshots (from your Figma exports).
                 </p>
+            </div>
 
-                <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-800">
-                    <table class="min-w-[980px] w-full text-left text-sm">
-                        <thead class="bg-gray-50 dark:bg-gray-800">
-                            <tr>
-                                <th class="px-4 py-3 font-semibold">Role</th>
-                                <th class="px-4 py-3 font-semibold">Primary queue</th>
-                                <th class="px-4 py-3 font-semibold">Vitals</th>
-                                <th class="px-4 py-3 font-semibold">Order tests</th>
-                                <th class="px-4 py-3 font-semibold">Enter results</th>
-                                <th class="px-4 py-3 font-semibold">Diagnosis</th>
-                                <th class="px-4 py-3 font-semibold">Prescription</th>
-                                <th class="px-4 py-3 font-semibold">Dispense</th>
-                                <th class="px-4 py-3 font-semibold">Close OPD</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200 dark:divide-gray-800">
-                            <tr class="bg-white dark:bg-gray-900">
-                                <td class="px-4 py-3 font-semibold">Medical Officer</td>
-                                <td class="px-4 py-3">OPD waiting / completed</td>
-                                <td class="px-4 py-3">View</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">View</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">View</td>
-                                <td class="px-4 py-3">✔</td>
-                            </tr>
+            <div class="grid gap-8 md:grid-cols-2">
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="OPD queue and filters" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Role dashboards with due-state counts (OPD, vitals, lab tests, medicine).
+                    </figcaption>
+                </figure>
 
-                            <tr class="bg-white dark:bg-gray-900">
-                                <td class="px-4 py-3 font-semibold">Staff Nurse</td>
-                                <td class="px-4 py-3">Vitals due / completed</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">—</td>
-                                <td class="px-4 py-3">—</td>
-                                <td class="px-4 py-3">—</td>
-                                <td class="px-4 py-3">—</td>
-                                <td class="px-4 py-3">—</td>
-                                <td class="px-4 py-3">—</td>
-                            </tr>
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Chief concerns search and selection" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Chief concerns with search + common list + selected chips.
+                    </figcaption>
+                </figure>
 
-                            <tr class="bg-white dark:bg-gray-900">
-                                <td class="px-4 py-3 font-semibold">Lab Technician</td>
-                                <td class="px-4 py-3">Lab tests due / completed</td>
-                                <td class="px-4 py-3">View</td>
-                                <td class="px-4 py-3">View</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">—</td>
-                                <td class="px-4 py-3">—</td>
-                                <td class="px-4 py-3">—</td>
-                                <td class="px-4 py-3">—</td>
-                            </tr>
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Vitals capture" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Vitals entry with units and stage cues (e.g., hypertension stage).
+                    </figcaption>
+                </figure>
 
-                            <tr class="bg-white dark:bg-gray-900">
-                                <td class="px-4 py-3 font-semibold">Pharmacist</td>
-                                <td class="px-4 py-3">Medicines due / dispensed</td>
-                                <td class="px-4 py-3">View</td>
-                                <td class="px-4 py-3">—</td>
-                                <td class="px-4 py-3">View</td>
-                                <td class="px-4 py-3">View</td>
-                                <td class="px-4 py-3">View</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">—</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">RBAC rule of thumb used here</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            If a role needs awareness, they get <span class="font-semibold">read-only visibility</span>.
-                            If they need responsibility, they get <span class="font-semibold">clear actions</span>.
-                            If neither, the UI stays quiet. Noise is not transparency.
-                        </p>
-                    </div>
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Why queues scale better than menus</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            Queues align to work, not features. As modules grow, the operator model stays stable:
-                            “what’s due” and “what’s done” are universal.
-                        </p>
-                    </div>
-                </div>
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Prescription and summary" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Prescription → shareable summary → completion (with referral/follow-up choices).
+                    </figcaption>
+                </figure>
             </div>
         </section>
 
-        <!-- Workflow -->
-        <section id="workflow" class="space-y-4">
-            <h2 class="text-2xl font-semibold">End-to-end workflow</h2>
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
 
-            <div
-                class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-6">
-                <p class="text-gray-700 dark:text-gray-300">
-                    The encounter is treated as a container with staged completion. Each stage updates worklists across
-                    roles.
-                    This keeps the system operational even when stages happen out of order (labs delayed, consult
-                    continues, dispensing later).
-                </p>
-
-                <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5 space-y-2">
-                        <p class="font-semibold">Encounter states (system-level)</p>
-                        <ul class="mt-2 list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-                            <li>OPD waiting</li>
-                            <li>Vitals due / completed</li>
-                            <li>Lab tests due / completed</li>
-                            <li>Diagnosis provisional / final</li>
-                            <li>Prescription created</li>
-                            <li>Medicines due / dispensed</li>
-                            <li>OPD completed (closure)</li>
-                        </ul>
-                    </div>
-
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5 space-y-2">
-                        <p class="font-semibold">What “done” means here</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">
-                            “Complete OPD” is not the same as “entered some data.” It’s the point where the system
-                            treats the encounter
-                            as closed and routes continuity (follow-up/referral) explicitly.
-                        </p>
-                    </div>
-                </div>
-
-                <ol class="space-y-4">
-                    <li class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <div class="flex items-start justify-between gap-4">
-                            <p class="font-semibold">1) Patient enters OPD queue</p>
-                            <span
-                                class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-xs text-gray-600 dark:text-gray-300">Waiting</span>
-                        </div>
-                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                            Queue cards carry patient identity, OPD identifier, and time-since, so throughput can be
-                            managed without switching context.
-                        </p>
-                    </li>
-
-                    <li class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <div class="flex items-start justify-between gap-4">
-                            <p class="font-semibold">2) Vitals stage (Nurse)</p>
-                            <span
-                                class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-xs text-gray-600 dark:text-gray-300">Vitals
-                                due</span>
-                        </div>
-                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                            Vitals are captured as structured fields and marked complete. This stage gates quality
-                            without forcing MO to re-enter basics.
-                        </p>
-                    </li>
-
-                    <li class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <div class="flex items-start justify-between gap-4">
-                            <p class="font-semibold">3) Consultation (MO)</p>
-                            <span
-                                class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-xs text-gray-600 dark:text-gray-300">Assessment</span>
-                        </div>
-                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                            Consultation flows from complaints and history to diagnosis and orders. Structured inputs
-                            reduce ambiguity and help downstream lists.
-                        </p>
-                    </li>
-
-                    <li class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <div class="flex items-start justify-between gap-4">
-                            <p class="font-semibold">4) Investigations (MO orders → Lab executes)</p>
-                            <span
-                                class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-xs text-gray-600 dark:text-gray-300">Lab
-                                tests due</span>
-                        </div>
-                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                            Tests selected by MO appear in the Lab Technician queue until results are entered. Results
-                            entry is structured for comparability.
-                        </p>
-                    </li>
-
-                    <li class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <div class="flex items-start justify-between gap-4">
-                            <p class="font-semibold">5) Diagnosis (Provisional → Final)</p>
-                            <span
-                                class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-xs text-gray-600 dark:text-gray-300">Staged
-                                certainty</span>
-                        </div>
-                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                            Diagnosis supports provisional vs final states so the system can continue moving without
-                            pretending certainty too early.
-                        </p>
-                    </li>
-
-                    <li class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <div class="flex items-start justify-between gap-4">
-                            <p class="font-semibold">6) Prescription (MO)</p>
-                            <span
-                                class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-xs text-gray-600 dark:text-gray-300">Rx
-                                created</span>
-                        </div>
-                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                            Medicines are selected with dosage/frequency/duration/quantity. Stock visibility reduces
-                            pharmacy friction and backtracking.
-                        </p>
-                    </li>
-
-                    <li class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <div class="flex items-start justify-between gap-4">
-                            <p class="font-semibold">7) Dispensing (Pharmacist)</p>
-                            <span
-                                class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-xs text-gray-600 dark:text-gray-300">Medicines
-                                due</span>
-                        </div>
-                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                            Dispensing is recorded as an explicit “Given” action, preventing the classic “it was
-                            probably dispensed” data fiction.
-                        </p>
-                    </li>
-
-                    <li class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <div class="flex items-start justify-between gap-4">
-                            <p class="font-semibold">8) Summary + closure (MO)</p>
-                            <span
-                                class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-xs text-gray-600 dark:text-gray-300">Complete
-                                OPD</span>
-                        </div>
-                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                            Closure includes summary and share prescription, plus required prompts for follow-up and
-                            referral before marking the encounter complete.
-                        </p>
-                    </li>
-                </ol>
+        <!-- Layout H -->
+        <section id="layout-h" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">System fit</p>
+                <h2 class="text-3xl font-semibold">OPD connects to longitudinal care through history and follow-ups</h2>
             </div>
-        </section>
 
-        <!-- Decisions -->
-        <section id="decisions" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Key design decisions</h2>
+            <p class="text-gray-700 dark:text-gray-300">
+                OPD is where continuity either happens or dies. Patient history and graphs reduce repeat capture and
+                enable quicker decisions, while follow-up due surfaces (Family Planning, ANC, NCD, Immunization)
+                connect encounters to ongoing program work.
+            </p>
 
             <div class="grid gap-4 md:grid-cols-2">
                 <div
-                    class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                    <p class="font-semibold">Encounter as a staged container</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        I treated the visit as a container that accumulates staged work. This makes “where is the visit
-                        stuck” debuggable
-                        at both operator and supervisor levels.
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Patient history graphs</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Tabs and charts support trend viewing for BMI, BP, body temperature, height/weight and growth
+                        references, helping staff interpret changes over time.
                     </p>
                 </div>
 
                 <div
-                    class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                    <p class="font-semibold">Worklists as the primary navigation</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        Each role lands on what they must do (Vitals Due, Lab Due, Medicines Due). This keeps UI minimal
-                        and training repeatable.
-                    </p>
-                </div>
-
-                <div
-                    class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                    <p class="font-semibold">Provisional vs final diagnosis</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        Instead of forcing a single final answer early, I supported staged certainty. It reduces
-                        blockage and rework when investigations are pending.
-                    </p>
-                </div>
-
-                <div
-                    class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                    <p class="font-semibold">Stock-aware prescribing</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        Inventory is not a separate universe. Prescribing must acknowledge availability to prevent
-                        downstream chaos at dispensing.
-                    </p>
-                </div>
-
-                <div
-                    class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                    <p class="font-semibold">Teleconsultation as an alternate consult path</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        Teleconsultation should not fork the encounter model. I kept the OPD summary as the stable
-                        return point for closure actions.
-                    </p>
-                </div>
-
-                <div
-                    class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                    <p class="font-semibold">Closure gates for continuity</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        Follow-up and referral prompts are part of closure so continuity isn’t “optional later work”
-                        that disappears under load.
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Follow-up due routing</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Follow-up due cards (NCD, TB, ANC, FP, Immunization) are surfaced as actionable queues with
+                        “Start Follow up” entry points.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Patterns -->
-        <section id="patterns" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Reusable patterns</h2>
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
 
-            <div
-                class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-6">
-                <div class="grid gap-4 md:grid-cols-3">
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Patient card anatomy</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            Identity + OPD ID + stage label + time-since.
-                            Reused across role queues for predictable scanning.
-                        </p>
-                    </div>
+        <!-- Layout I -->
+        <section id="layout-i" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Impact</p>
+                <h2 class="text-3xl font-semibold">Clearer handoffs and fewer “where is this patient stuck?” moments
+                </h2>
+            </div>
 
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Stage headers with status</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            Clear “pending/completed” grouping so users don’t redo work or assume completion.
-                        </p>
-                    </div>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Queue + due states make cross-role work visible (OPD, vitals, labs, medicine).</li>
+                <li>Structured capture reduces rework while keeping intake fast (chief concerns, history, allergies).
+                </li>
+                <li>Completion includes follow-up/referral decisions, improving continuity and accountability.</li>
+                <li>Patient history graphs and follow-ups support longitudinal care instead of “fresh start every
+                    visit”.</li>
+            </ul>
 
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Structured entry defaults</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            Reduce free-text where outcomes need comparability (tests, vitals, diagnoses,
-                            prescriptions).
-                        </p>
-                    </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+                Add verified metrics here if you have them (time-to-complete encounter, queue clearance time, %
+                completed with follow-up, prescription share rate).
+            </p>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout J -->
+        <section id="layout-j" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">What’s next</p>
+                <h2 class="text-3xl font-semibold">Tighten the orchestration where it usually breaks</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Exception queues</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Expand “due” states into exception types (missing vitals, pending lab value, partial dispensing)
+                        so stuck encounters are diagnosable without calls and guesswork.
+                    </p>
                 </div>
 
-                <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5 space-y-2">
-                        <p class="font-semibold">“Return to summary” pattern</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">
-                            Each stage exits back to the encounter summary. This avoids the classic “where did I go”
-                            confusion when users get interrupted.
-                        </p>
-                    </div>
-
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5 space-y-2">
-                        <p class="font-semibold">Visibility vs action separation</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">
-                            Most roles can view the full encounter. Only the responsible role can act on their stage.
-                            This reduces “helpful” mistakes.
-                        </p>
-                    </div>
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Patient history inside encounter
+                    </h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Pull key trend highlights (e.g., last BP/BMI flags) into the encounter summary to reduce
+                        tab-switching during MO decision-making.
+                    </p>
                 </div>
 
-                <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                    <p class="font-semibold">Design system note</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        These patterns are deliberately generic: they can carry referrals, follow-ups, inventory,
-                        outreach, and dashboards without creating new interaction rules per module.
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Better closure quality</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Make follow-up scheduling and referral details more structured (reason, facility, date) to
+                        improve downstream continuity and reporting.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Edge cases -->
-        <section id="edge-cases" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Edge cases and controls</h2>
+    </section>
 
-            <div class="grid gap-4 md:grid-cols-2">
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                    <p class="font-semibold">Labs delayed, consult continues</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        Staged certainty allows progress without lying. Provisional diagnosis can exist while lab is
-                        pending.
-                    </p>
-                </div>
+    <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
 
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                    <p class="font-semibold">Medication unavailable at dispensing</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        Stock visibility in prescription reduces the mismatch, but the system still needs “partial
-                        dispense / substitute” policies outside UI.
-                    </p>
-                </div>
-
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                    <p class="font-semibold">Duplicate visits / repeat same-day</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        Queue-first systems need guardrails: encounter identifiers and clear statuses reduce accidental
-                        duplicates and confusion.
-                    </p>
-                </div>
-
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                    <p class="font-semibold">Completion governance</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        “Complete OPD” is an explicit action so closure is deliberate and reviewable. Systems collapse
-                        when completion is accidental.
-                    </p>
-                </div>
-            </div>
-
-            <div
-                class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                <p class="font-semibold">Referral and follow-up as closure gates</p>
-                <p class="text-sm text-gray-600 dark:text-gray-300">
-                    Referral and follow-up are prompted at the end of the encounter to prevent continuity tasks from
-                    becoming “someone else’s problem later.”
-                    This is also where the dashboard and outreach modules get meaningful handoff data.
-                </p>
-            </div>
-        </section>
-
-        <!-- Dashboard hooks -->
-        <section id="dashboard-hooks" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Dashboard hooks</h2>
-
-            <div
-                class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-5">
-                <p class="text-gray-700 dark:text-gray-300">
-                    Even when operators live in queues, OPD produces operational signals that matter to supervisors and
-                    program governance.
-                    These should remain actionable (what is stuck, where, and who owns it), not just KPI tiles.
-                </p>
-
-                <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Operational backlogs</p>
-                        <ul class="mt-2 list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-                            <li>OPD waiting vs completed</li>
-                            <li>Vitals due backlog</li>
-                            <li>Lab tests due backlog</li>
-                            <li>Medicines due backlog</li>
-                        </ul>
-                    </div>
-
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Quality and continuity</p>
-                        <ul class="mt-2 list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-                            <li>Provisional vs final diagnosis rate</li>
-                            <li>Prescription completeness</li>
-                            <li>Referrals created vs pending</li>
-                            <li>Follow-ups scheduled vs completed</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                    <p class="font-semibold">Why this matters to the larger case study</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        OPD is a feeder module. If the feeder is unclear, everything downstream becomes cleanup work:
-                        inventory reconciliation, referral chasing, outreach follow-up, and dashboard “data quality”
-                        firefighting.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Related focus pages -->
-        <section id="relationships" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Related focus pages</h2>
-
-            <div class="grid gap-4 md:grid-cols-2">
-                <a href="./beneficiary-registration.html"
-                    class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 hover:bg-gray-50 dark:hover:bg-gray-800">
-                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Focus</p>
-                    <h3 class="mt-1 text-xl font-semibold">Beneficiary Registration</h3>
+    <!-- Footer (correct relative links for /work/samasta/opd.html) -->
+    <footer class="w-full pb-10 space-y-8">
+        <div class="rounded-4xl border border-gray-200 bg-white p-6 md:p-10 dark:border-gray-800 dark:bg-gray-900">
+            <div class="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+                <div>
+                    <h2 class="text-4xl font-semibold text-gray-900 dark:text-gray-100">Let’s connect</h2>
                     <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
-                        Identity capture and entry into facility workflows. OPD only works if identity is reliable.
+                        Open to product roles, freelance projects, and collaborations. If you want a walkthrough of any
+                        case study, I’m happy to share details live.
                     </p>
-                    <p class="mt-4 text-sm font-semibold link-brand">Open page →</p>
-                </a>
 
-                <a href="./facial-recognition.html"
-                    class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 hover:bg-gray-50 dark:hover:bg-gray-800">
-                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Focus</p>
-                    <h3 class="mt-1 text-xl font-semibold">Facial Recognition</h3>
-                    <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
-                        Identity confirmation and friction reduction at service points, without breaking governance.
-                    </p>
-                    <p class="mt-4 text-sm font-semibold link-brand">Open page →</p>
-                </a>
-
-                <a href="./inventory.html"
-                    class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 hover:bg-gray-50 dark:hover:bg-gray-800">
-                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Focus</p>
-                    <h3 class="mt-1 text-xl font-semibold">Inventory</h3>
-                    <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
-                        Stock visibility that directly affects prescribing and dispensing outcomes in OPD.
-                    </p>
-                    <p class="mt-4 text-sm font-semibold link-brand">Open page →</p>
-                </a>
-
-                <a href="./outreach-activities.html"
-                    class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 hover:bg-gray-50 dark:hover:bg-gray-800">
-                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Focus</p>
-                    <h3 class="mt-1 text-xl font-semibold">Outreach Activities</h3>
-                    <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
-                        Continuity beyond the facility. Follow-up and referral decisions from OPD become outreach work.
-                    </p>
-                    <p class="mt-4 text-sm font-semibold link-brand">Open page →</p>
-                </a>
-            </div>
-
-            <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                    <div>
-                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Next</p>
-                        <p class="mt-1 text-lg font-semibold">Move to Inventory</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            Because “prescribed” is meaningless when the medicine doesn’t exist in the facility.
-                        </p>
-                    </div>
-                    <a href="./inventory.html"
-                        class="inline-flex items-center justify-center rounded-full bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900 px-5 py-2.5 text-sm font-semibold hover:opacity-90">
-                        Open Inventory
+                    <a href="mailto:sumit.v.nikhare@gmail.com"
+                        class="mt-6 inline-flex items-center rounded-full border-2 border-gray-900 bg-white px-7 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-900 hover:text-white transition duration-300 dark:border-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-100 dark:hover:text-gray-900">
+                        Let's Talk
                     </a>
                 </div>
+
+                <div class="flex justify-start md:justify-end">
+                    <span class="font-heading text-3xl font-semibold">sumit.design</span>
+                </div>
             </div>
-        </section>
-    </main>
 
-    <!-- Footer -->
-    <footer class="w-full pb-10 pt-6">
-        <div class="grid gap-3 px-4 text-sm text-gray-600 dark:text-gray-300 md:grid-cols-3 md:items-center">
-            <div class="hidden md:block"></div>
+            <div class="mt-14 grid gap-12 md:grid-cols-3">
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Navigation</p>
+                    <ul class="mt-5 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li><a href="../../index.html" class="link-brand">Home</a></li>
+                        <li><a href="../../about.html" class="link-brand">About</a></li>
+                        <li><a href="../work.html" class="link-brand">Work</a></li>
+                        <li><a href="../../resume.html" class="link-brand">Resume</a></li>
+                    </ul>
+                </div>
 
-            <div class="flex flex-wrap items-center justify-center gap-3">
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Case studies</p>
+                    <ul class="mt-5 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li><a href="../chip-2.html" class="link-brand">CHIP 2.0</a></li>
+                        <li><a href="../samasta.html" class="link-brand">Samasta</a></li>
+                        <li><a href="../cho-soft.html" class="link-brand">CHO Soft</a></li>
+                        <li><a href="../work.html" class="link-brand">View All</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Elsewhere</p>
+                    <div class="mt-5 space-y-2">
+                        <a href="https://www.linkedin.com/in/sumit-nikhare-482058215/" target="_blank" rel="noreferrer"
+                            class="flex items-center justify-between rounded-2xl bg-gradient-to-r bg-violet-100 py-2 pl-2 pr-4 dark:bg-violet-900/30">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="grid h-12 w-12 place-items-center rounded-2xl bg-white/70 dark:bg-gray-900/60">
+                                    <span class="text-sm font-semibold">in</span>
+                                </div>
+                                <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">LinkedIn</p>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">↗</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="flex flex-col space-y-4 items-center">
+            <div class="flex flex-col items-center gap-3">
                 <p class="text-center">© 2025 – sumit.design</p>
 
-                <button
-                  type="button"
-                  data-theme-toggle
-                  aria-pressed="false"
-                  class="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-xs font-semibold text-slate-600 shadow-sm transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400"
-                >
-                  <span class="text-xs font-semibold text-slate-800/90 dark:text-slate-500">Light</span>
-                  <span class="relative inline-flex h-7 w-14 items-center rounded-full bg-gradient-to-r from-sky-200 via-sky-300 to-sky-500 shadow-inner ring-1 ring-inset ring-white/40 transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 dark:ring-white/10">
-                    <span class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 dark:translate-x-7 dark:bg-slate-100">
-                      <span class="absolute -right-0.5 top-1 h-3 w-3 rounded-full bg-slate-900 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                <button type="button" data-theme-toggle aria-pressed="false"
+                    class="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-4 py-1 text-xs font-semibold text-slate-600 shadow-sm transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400">
+                    <span class="text-xs font-semibold text-slate-800/90 dark:text-slate-500">Light</span>
+                    <span
+                        class="relative inline-flex h-7 w-14 items-center rounded-full bg-gradient-to-r from-sky-200 via-sky-300 to-sky-500 shadow-inner ring-1 ring-inset ring-white/40 transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 dark:ring-white/10">
+                        <span
+                            class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 dark:translate-x-7 dark:bg-slate-100">
+                            <span
+                                class="absolute -right-0.5 top-1 h-3 w-3 rounded-full bg-slate-900 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        </span>
+                        <span
+                            class="absolute right-4 top-2 h-1.5 w-1.5 rounded-full bg-white/90 transition-opacity duration-300 dark:opacity-0"></span>
+                        <span
+                            class="absolute right-2 top-4 h-1 w-1 rounded-full bg-white/80 transition-opacity duration-300 dark:opacity-0"></span>
+                        <span
+                            class="absolute left-3 top-2 h-1 w-1 rounded-full bg-white/80 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        <span
+                            class="absolute left-6 top-4 h-1.5 w-1.5 rounded-full bg-white/70 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        <span
+                            class="absolute left-8 top-1 h-1 w-1 rounded-full bg-white/60 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
                     </span>
-                    <span class="absolute right-4 top-2 h-1.5 w-1.5 rounded-full bg-white/90 transition-opacity duration-300 dark:opacity-0"></span>
-                    <span class="absolute right-2 top-4 h-1 w-1 rounded-full bg-white/80 transition-opacity duration-300 dark:opacity-0"></span>
-                    <span class="absolute left-3 top-2 h-1 w-1 rounded-full bg-white/80 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                    <span class="absolute left-6 top-4 h-1.5 w-1.5 rounded-full bg-white/70 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                    <span class="absolute left-8 top-1 h-1 w-1 rounded-full bg-white/60 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                  </span>
-                  <span class="text-xs font-semibold text-slate-400 dark:text-slate-100">Dark</span>
-                  <span data-theme-label class="sr-only">Light</span>
-                  <span class="sr-only">Toggle color theme</span>
+                    <span class="text-xs font-semibold text-slate-400 dark:text-slate-100">Dark</span>
+                    <span data-theme-label class="sr-only">Light</span>
+                    <span class="sr-only">Toggle color theme</span>
                 </button>
             </div>
 
-            <p class="text-center md:text-right">
+            <p class="text-sm text-center md:text-right">
                 Implementation notes &amp; source ·
                 <a href="https://github.com/" target="_blank" rel="noreferrer" class="link-brand">GitHub</a>
             </p>
         </div>
     </footer>
+
+    <!-- Back Control Button -->
+    <script>
+        (() => {
+            const btn = document.getElementById('backControl');
+            const hero = document.getElementById('hero');
+            if (!btn || !hero) return;
+            const link = btn.querySelector('a');
+
+            let cutoff = 0;
+
+            const calc = () => {
+                const rect = hero.getBoundingClientRect();
+                const heroTop = window.scrollY + rect.top;
+                cutoff = heroTop + hero.offsetHeight - 20;
+            };
+
+            const setVisible = (visible) => {
+                btn.classList.toggle('opacity-0', !visible);
+                btn.classList.toggle('pointer-events-none', !visible);
+                btn.setAttribute('aria-hidden', visible ? 'false' : 'true');
+                if (link) link.tabIndex = visible ? 0 : -1;
+            };
+
+            const tick = () => {
+                const show = window.scrollY > cutoff;
+                setVisible(show);
+            };
+
+            calc();
+            tick();
+            window.addEventListener('resize', () => { calc(); tick(); }, { passive: true });
+            if ('ResizeObserver' in window) {
+                const observer = new ResizeObserver(() => { calc(); tick(); });
+                observer.observe(hero);
+            }
+            window.addEventListener('scroll', () => requestAnimationFrame(tick), { passive: true });
+        })();
+    </script>
+
+    <!-- To Top Control Button -->
+    <script>
+        (() => {
+            const btn = document.getElementById('toTopControl');
+            const hero = document.getElementById('hero');
+            if (!btn || !hero) return;
+            const link = btn.querySelector('a');
+
+            btn.querySelector('a')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.replaceState(null, '', '#hero');
+            });
+
+            let cutoff = 0;
+            let lastY = window.scrollY;
+            let ticking = false;
+
+            const calc = () => {
+                const rect = hero.getBoundingClientRect();
+                const heroTop = window.scrollY + rect.top;
+                cutoff = heroTop + hero.offsetHeight - 20;
+            };
+
+            const setVisible = (visible) => {
+                btn.classList.toggle('opacity-0', !visible);
+                btn.classList.toggle('pointer-events-none', !visible);
+                btn.classList.toggle('translate-y-3', !visible);
+                btn.classList.toggle('opacity-100', visible);
+                btn.classList.toggle('translate-y-0', visible);
+                btn.setAttribute('aria-hidden', visible ? 'false' : 'true');
+                if (link) link.tabIndex = visible ? 0 : -1;
+            };
+
+            const update = () => {
+                const y = window.scrollY;
+
+                if (y <= cutoff) {
+                    setVisible(false);
+                    lastY = y;
+                    ticking = false;
+                    return;
+                }
+
+                const delta = y - lastY;
+
+                if (delta > 8) setVisible(false);
+                if (delta < -8) setVisible(true);
+
+                lastY = y;
+                ticking = false;
+            };
+
+            calc();
+            setVisible(false);
+
+            window.addEventListener('resize', () => { calc(); }, { passive: true });
+            if ('ResizeObserver' in window) {
+                const observer = new ResizeObserver(() => { calc(); });
+                observer.observe(hero);
+            }
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    ticking = true;
+                    requestAnimationFrame(update);
+                }
+            }, { passive: true });
+        })();
+    </script>
+
 </body>
+
 </html>

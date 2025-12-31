@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samasta — Beneficiary Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="../../src/output.css" rel="stylesheet">
+    <script src="../../src/theme.js" defer></script>
+</head>
+
+<body
+    class="relative isolate mx-4 lg:w-3/5 lg:mx-auto bg-gray-100 pt-4 space-y-6 text-gray-900 transition-colors duration-200 dark:bg-gray-950 dark:text-gray-100">
+
+    <!-- Ambient glassy glows -->
+    <div class="pointer-events-none fixed inset-0 -z-10">
+        <div
+            class="absolute -left-32 top-10 w-80 h-80 bg-gradient-to-br from-amber-200 via-white to-gray-100 opacity-60 blur-3xl dark:from-amber-500/20 dark:via-gray-950 dark:to-gray-950 dark:opacity-30">
+        </div>
+        <div
+            class="absolute right-0 -top-24 w-96 h-96 bg-gradient-to-br from-white via-gray-100 to-orange-200 opacity-60 blur-3xl dark:from-gray-950 dark:via-gray-950 dark:to-orange-500/20 dark:opacity-30">
+        </div>
+        <div
+            class="absolute left-1/3 bottom-0 w-96 h-96 bg-gradient-to-br from-orange-200 via-white to-gray-100 opacity-50 blur-3xl dark:from-orange-500/20 dark:via-gray-950 dark:to-gray-950 dark:opacity-30">
+        </div>
+    </div>
+
+
+    <!-- Floating back control -->
+    <div id="backControl" class="fixed top-4 left-4 z-50 opacity-0 pointer-events-none transition-opacity duration-300"
+        aria-hidden="true">
+        <a href="../samasta.html" aria-label="Back" class="group relative flex h-16 items-center focus:outline-none">
+
+            <!-- Soft ambient glow (only on hover/focus-within) -->
+            <span aria-hidden="true" class="pointer-events-none absolute -inset-6 -z-10 opacity-0 blur-2xl transition-opacity duration-300
+                                    group-hover:opacity-80 group-focus-within:opacity-80">
+                <span
+                    class="absolute left-0 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-amber-200/70 dark:bg-amber-500/20"></span>
+                <span
+                    class="absolute left-10 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-gray-200/80 dark:bg-gray-700/40"></span>
+                <span
+                    class="absolute left-20 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-orange-200/60 dark:bg-orange-500/20"></span>
+            </span>
+
+            <!-- Expandable pill -->
+            <span class="flex h-16 items-center overflow-hidden rounded-full bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-100 shadow-sm
+                                        transition-all duration-300 max-w-[64px]
+                                        group-hover:max-w-[220px] group-focus-within:max-w-[220px]">
+
+                <!-- Icon -->
+                <span class="grid h-16 w-16 place-items-center">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </span>
+
+                <!-- Label -->
+                <span
+                    class="max-w-0 overflow-hidden whitespace-nowrap pr-0
+                                    text-sm font-semibold opacity-0 translate-x-0
+                                    transition-[max-width,opacity,padding] duration-300
+                                    group-hover:max-w-[150px] group-hover:opacity-100 group-hover:pr-6
+                                    group-focus-within:max-w-[150px] group-focus-within:opacity-100 group-focus-within:pr-6">
+                    Back to Samasta
+                </span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Back to top -->
+    <div id="toTopControl"
+        class="fixed bottom-4 right-4 z-50 opacity-0 pointer-events-none translate-y-3 transition-all duration-300"
+        aria-hidden="true">
+        <a href="#hero" aria-label="Back to top" class="group relative flex h-16 items-center focus:outline-none">
+            <!-- Glow (only shows on md+ hover/focus) -->
+            <span aria-hidden="true" class="pointer-events-none absolute -inset-6 -z-10 hidden opacity-0 blur-2xl transition-opacity duration-300 md:block
+                            md:group-hover:opacity-80 md:group-focus-within:opacity-80">
+                <span
+                    class="absolute right-0 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-amber-200/60 dark:bg-amber-500/20"></span>
+                <span
+                    class="absolute right-10 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-gray-200/80 dark:bg-gray-700/40"></span>
+                <span
+                    class="absolute right-20 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-orange-200/55 dark:bg-orange-500/20"></span>
+            </span>
+
+            <!-- Expandable pill (expands only on md+) -->
+            <span class="flex h-16 items-center overflow-hidden rounded-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-gray-200 dark:ring-gray-700
+                            transition-all duration-300 max-w-[64px]
+                            md:group-hover:max-w-[160px] md:group-focus-within:max-w-[160px]">
+                <!-- Icon -->
+                <span class="grid h-16 w-16 place-items-center">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 5l-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                        <path d="M12 5l7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                        <path d="M12 5v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                    </svg>
+                </span>
+
+                <!-- Label (md+ only, doesn’t steal width when hidden) -->
+                <span
+                    class="hidden md:inline max-w-0 overflow-hidden whitespace-nowrap pr-0 text-sm font-semibold opacity-0
+                                transition-[max-width,opacity,padding] duration-300
+                                md:group-hover:max-w-[80px] md:group-hover:opacity-100 md:group-hover:pr-6
+                                md:group-focus-within:max-w-[80px] md:group-focus-within:opacity-100 md:group-focus-within:pr-6">
+                    Top
+                </span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Top Bar -->
+    <header class="flex items-center justify-between">
+        <a class="text-3xl font-semibold text-gray-900 dark:text-gray-100" href="../../index.html">sumit.design</a>
+        <nav class="flex items-center gap-4">
+            <a href="../work.html" class="nav-link">Work</a>
+            <a href="../../about.html" class="nav-link">About</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero" class="w-full pt-12 space-y-8">
+        <div class="space-y-4">
+
+            <p class="text-sm uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400">MODULE · SAMASTA</p>
+
+            <div class="space-y-6 lg:w-4/5">
+
+                <h1 class="font-heading text-4xl font-semibold text-gray-900 dark:text-gray-100">
+                    Beneficiary registration with ABHA inclusion
+                </h1>
+
+                <p class="text-gray-700 dark:text-gray-300">
+                    A role-aware identity entry flow designed for PHC + field operations. The module prioritizes fast lookup,
+                    controlled creation, and optional ABHA linking with explicit consent and resilient fallbacks.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 my-2">
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Mobile-first</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Identity + de-dup</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">ABHA linking</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Offline tolerance</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">RBAC-driven UX</span>
+            </div>
+
+            <p class="max-w-3xl text-sm text-gray-600 dark:text-gray-400 pt-2">
+                *This page is derived from the provided flow diagram. Replace placeholder screenshots with your final assets.
+            </p>
+        </div>
+
+        <!-- Flow image (replace src with your actual asset path) -->
+        <div>
+            <img loading="eager" decoding="async" fetchpriority="high"
+                src="../../assets/samasta/beneficiary-registration/beneficiary-registration-abha-flow.jpg"
+                alt="Beneficiary registration and ABHA inclusion flow overview" class="w-full rounded-3xl" />
+        </div>
+
+    </section>
+
+    <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
+
+    <!-- Main content with sticky side index -->
+    <section class="">
+
+        <!-- Content -->
+        <div class="space-y-12">
+
+            <!-- Layout A: Problem -->
+            <section id="layout-a" data-section class="scroll-mt-24 space-y-8">
+                <div class="space-y-3">
+                    <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Problem</p>
+                    <h2 class="text-3xl font-semibold">Identity entry must be fast, controlled, and trustable</h2>
+                </div>
+
+                <p class="text-gray-700 dark:text-gray-300">
+                    Beneficiary registration is the entry point to every downstream workflow (OPD, outreach, inventory-linked dispensing).
+                    The interface must prevent duplicates, support role-based ownership, and still feel fast under field conditions.
+                </p>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">What makes it hard</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">High duplicate risk:</span> names and demographics repeat across villages; search must be encouraged before create.</li>
+                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Optional ABHA path:</span> linking should be available without blocking service delivery when it can’t complete.</li>
+                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Consent + sensitivity:</span> identity linking requires explicit consent and clear opt-out.</li>
+                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Connectivity constraints:</span> online steps must have safe fallbacks to avoid data loss or repeated work.</li>
+                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">RBAC reality:</span> create/edit rights differ across ASHA/ANM/CHO/facility staff, and the UI must reflect it.</li>
+                    </ul>
+                </div>
+
+                <p class="font-semibold text-gray-900 dark:text-gray-100">
+                    Design goal: keep the flow <span class="underline underline-offset-4">search-first</span>,
+                    <span class="underline underline-offset-4">consent-aware</span>, and
+                    <span class="underline underline-offset-4">recoverable</span> under interruptions.
+                </p>
+            </section>
+
+            <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+            <!-- Layout B: Users & Responsibilities -->
+            <section id="layout-b" data-section class="scroll-mt-24 space-y-8">
+                <div class="space-y-3">
+                    <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Users</p>
+                    <h2 class="text-3xl font-semibold">Different roles create and reuse identity in different contexts</h2>
+                </div>
+
+                <p class="text-gray-700 dark:text-gray-300">
+                    Registration is used by field workers creating beneficiary records during household visits and by facility teams who need quick identity retrieval for service delivery.
+                    The interface aligns the same flow to different responsibilities and permissions.
+                </p>
+
+                <div class="grid gap-4 md:grid-cols-2">
+                    <div
+                        class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">ASHA (Field)</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Creates beneficiary records, captures core demographics, and initiates linking when feasible.</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400"><span class="font-semibold">UX need:</span> quick capture, resumable steps, low failure anxiety.</p>
+                    </div>
+                    <div
+                        class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">ANM / CHO / Facility staff</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Reuses existing records for service delivery, verifies details, and handles edits that require more authority.</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400"><span class="font-semibold">UX need:</span> fast search, reliable match cues, clear edit boundaries.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Operational realities baked into the UI</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                        <li>Users switch contexts quickly (visit interruptions, shared devices).</li>
+                        <li>Connectivity changes across locations, so online-only steps must be explicit.</li>
+                        <li>Users need confidence that the right person was selected before creating new records.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+            <!-- Layout C: Flow -->
+            <section id="layout-c" data-section class="scroll-mt-24 space-y-8">
+                <div class="space-y-3">
+                    <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Flow</p>
+                    <h2 class="text-3xl font-semibold">Search → verify → create → optionally link ABHA</h2>
+                </div>
+
+                <p class="text-gray-700 dark:text-gray-300">
+                    The flow starts with retrieval (search) and only moves to creation when a confident match is not found.
+                    ABHA inclusion sits as an optional branch that should never block registration completion.
+                </p>
+
+                <div class="grid gap-4 md:grid-cols-4">
+                    <div class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 01</p>
+                        <p class="font-semibold text-gray-900 dark:text-gray-100">Start</p>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Entry from home or task list.</p>
+                    </div>
+                    <div class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 02</p>
+                        <p class="font-semibold text-gray-900 dark:text-gray-100">Search</p>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Find existing record before create.</p>
+                    </div>
+                    <div class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 03</p>
+                        <p class="font-semibold text-gray-900 dark:text-gray-100">Create</p>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Minimal required fields, role-aware edit.</p>
+                    </div>
+                    <div class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Step 04</p>
+                        <p class="font-semibold text-gray-900 dark:text-gray-100">ABHA (Optional)</p>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Consent → link, or skip safely.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Branch behavior (as shown in the diagram)</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">If ABHA is available:</span> show consent, proceed with online verification/linking, then return to the beneficiary profile.</li>
+                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">If ABHA is not available / user declines:</span> complete registration normally and keep a clear option to link later.</li>
+                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">If offline or validation fails:</span> preserve form state and continue registration without forcing retries.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+            <!-- Layout D: Design decisions -->
+            <section id="layout-d" data-section class="scroll-mt-24 space-y-8">
+                <div class="space-y-3">
+                    <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Design Decisions</p>
+                    <h2 class="text-3xl font-semibold">Designed for speed without sacrificing governance</h2>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">1) Search-first entry</h3>
+                        <p class="text-gray-700 dark:text-gray-300">The default path pushes users to search before create to reduce duplicates and increase confidence in reuse.</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">2) Progressive disclosure for ABHA inclusion</h3>
+                        <p class="text-gray-700 dark:text-gray-300">ABHA linking is presented as an optional branch that can be completed when conditions allow, rather than a hard gate.</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">3) Consent is a UX step, not a checkbox</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Consent screens are explicit and placed before any sensitive linking action, with a clear “skip” path that doesn’t punish the user.</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">4) Recoverable failures</h3>
+                        <p class="text-gray-700 dark:text-gray-300">When online steps fail, the UI explains what happened and lets users continue registration without losing progress.</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">5) Role-aware edit boundaries</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Create and edit capabilities differ by role; the interface avoids “show everything, fail later” behavior by shaping the UI around permissions.</p>
+                    </div>
+                </div>
+
+                <p class="font-semibold text-gray-900 dark:text-gray-100">
+                    Outcome: the flow stays usable in field conditions while protecting identity integrity and consent.
+                </p>
+            </section>
+
+            <hr class="border-t border-gray-300 dark:text-gray-700 border-gray-300 dark:border-gray-700" />
+
+            <!-- Layout E: RBAC as UX -->
+            <section id="layout-e" data-section class="scroll-mt-24 space-y-8">
+                <div class="space-y-3">
+                    <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">RBAC as UX</p>
+                    <h2 class="text-3xl font-semibold">Permissions define what users can confidently complete</h2>
+                </div>
+
+                <p class="text-gray-700 dark:text-gray-300">
+                    Beneficiary registration touches sensitive data and sets downstream eligibility.
+                    The UI treats RBAC as a first-class constraint by controlling visibility, editability, and action affordances.
+                </p>
+
+                <div class="grid gap-4 md:grid-cols-3">
+                    <div class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 01</p>
+                        <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Create vs edit</p>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Some roles can create records; edits to core identity fields can be restricted or audited.</p>
+                    </div>
+                    <div class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 02</p>
+                        <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">ABHA actions</p>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Linking steps can be limited to authorized roles and require explicit user consent within the flow.</p>
+                    </div>
+                    <div class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 03</p>
+                        <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Auditability</p>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Where identity changes matter, actions are traceable so accountability survives handoffs.</p>
+                    </div>
+                </div>
+
+                <p class="font-semibold text-gray-900 dark:text-gray-100">
+                    RBAC reduces clutter for frontline roles and makes governance explicit where it matters.
+                </p>
+            </section>
+
+            <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+            <!-- Layout F: Edge cases -->
+            <section id="layout-f" data-section class="scroll-mt-24 space-y-8">
+                <div class="space-y-3">
+                    <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Edge cases</p>
+                    <h2 class="text-3xl font-semibold">Designed for failure modes that happen daily</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Weak network during ABHA linking</h3>
+                        <p class="text-gray-700 dark:text-gray-300">The user can continue registration without losing progress. The UI makes “online required” steps explicit.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Possible match found</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Match cues support verification so users reuse the correct record instead of creating a duplicate.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Consent declined</h3>
+                        <p class="text-gray-700 dark:text-gray-300">The system respects opt-out and completes registration normally, keeping “link later” available.</p>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+            <!-- Layout G: Screens -->
+            <section id="layout-g" data-section class="scroll-mt-24 space-y-8">
+                <div class="space-y-3">
+                    <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Screens</p>
+                    <h2 class="text-3xl font-semibold">Key surfaces in the flow</h2>
+                    <p class="max-w-3xl text-gray-700 dark:text-gray-300">Replace placeholders with final screenshots from your design handoff.</p>
+                </div>
+
+                <div class="grid gap-8 md:grid-cols-2">
+                    <figure class="space-y-3">
+                        <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                            alt="Search beneficiary" class="w-full rounded-2xl" />
+                        <figcaption class="px-2 text-gray-600 dark:text-gray-400">Search-first entry reduces duplicates and builds confidence.</figcaption>
+                    </figure>
+
+                    <figure class="space-y-3">
+                        <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                            alt="Consent screen" class="w-full rounded-2xl" />
+                        <figcaption class="px-2 text-gray-600 dark:text-gray-400">Consent is explicit and skippable without blocking service delivery.</figcaption>
+                    </figure>
+
+                    <figure class="space-y-3">
+                        <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                            alt="Registration form" class="w-full rounded-2xl" />
+                        <figcaption class="px-2 text-gray-600 dark:text-gray-400">Minimal required fields with predictable structure for fast entry.</figcaption>
+                    </figure>
+
+                    <figure class="space-y-3">
+                        <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                            alt="Beneficiary profile" class="w-full rounded-2xl" />
+                        <figcaption class="px-2 text-gray-600 dark:text-gray-400">Profile becomes the handoff surface into OPD and outreach workflows.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+            <!-- Layout H: System fit -->
+            <section id="layout-h" data-section class="scroll-mt-24 space-y-8">
+                <div class="space-y-3">
+                    <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">System fit</p>
+                    <h2 class="text-3xl font-semibold">Where this module connects across Samasta</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">OPD:</span> registration creates the identity anchor for encounters and prescriptions.</li>
+                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Outreach:</span> field follow-ups depend on consistent beneficiary identity and contact data.</li>
+                        <li><span class="font-semibold text-gray-900 dark:text-gray-100">Dashboard:</span> oversight and reporting reliability improves when duplicates are controlled at entry.</li>
+                    </ul>
+                </div>
+
+                <p class="font-semibold text-gray-900 dark:text-gray-100">Registration is the platform’s front door. If it’s messy, everything downstream inherits the mess.</p>
+            </section>
+
+            <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+            <!-- Layout I: Impact -->
+            <section id="layout-i" data-section class="scroll-mt-24 space-y-8">
+                <div class="space-y-3">
+                    <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Impact</p>
+                    <h2 class="text-3xl font-semibold">Cleaner identity records and less friction for daily work</h2>
+                </div>
+
+                <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                    <li>Encourages record reuse through search-first entry and verification cues.</li>
+                    <li>Supports ABHA inclusion without blocking registration completion.</li>
+                    <li>Makes consent explicit and safe, improving user trust in identity linking.</li>
+                    <li>Reduces downstream confusion in OPD and outreach by stabilizing beneficiary identity at the source.</li>
+                </ul>
+
+                <p class="text-sm text-gray-600 dark:text-gray-400">Add verified metrics here if you have them (duplicate rate reduction, time-to-register, link completion rate).</p>
+            </section>
+
+            <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+            <!-- Layout J: What’s Next -->
+            <section id="layout-j" data-section class="scroll-mt-24 space-y-8">
+                <div class="space-y-3">
+                    <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">What’s Next</p>
+                    <h2 class="text-3xl font-semibold">Improve exception handling and “link later” continuity</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Exception-led follow-up</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Surface “unlinked but eligible” beneficiaries as a manageable queue for authorized roles, rather than a hidden backlog.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Stronger duplicate resolution</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Improve match review and merge pathways (where policy allows) to reduce long-term fragmentation.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">More explicit offline boundaries</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Standardize UI messaging for online-required steps so users don’t interpret “can’t link now” as “app is broken.”</p>
+                    </div>
+                </div>
+
+                <p class="font-semibold text-gray-900 dark:text-gray-100">The module should keep scaling without increasing training burden or creating identity debt.</p>
+            </section>
+
+        </div>
+
+    </section>
+
+    <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
+
+    <footer class="w-full pb-10 pt-6">
+        <div class="grid gap-3 px-4 text-sm text-gray-600 dark:text-gray-300 md:grid-cols-3 md:items-center">
+            <div class="hidden md:block"></div>
+
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <p class="text-center">© 2025 – sumit.design</p>
+
+                <button type="button" data-theme-toggle aria-pressed="false"
+                    class="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-xs font-semibold text-slate-600 shadow-sm transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400">
+                    <span class="text-xs font-semibold text-slate-800/90 dark:text-slate-500">Light</span>
+                    <span
+                        class="relative inline-flex h-7 w-14 items-center rounded-full bg-gradient-to-r from-sky-200 via-sky-300 to-sky-500 shadow-inner ring-1 ring-inset ring-white/40 transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 dark:ring-white/10">
+                        <span
+                            class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 dark:translate-x-7 dark:bg-slate-100">
+                            <span
+                                class="absolute -right-0.5 top-1 h-3 w-3 rounded-full bg-slate-900 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        </span>
+                        <span
+                            class="absolute right-4 top-2 h-1.5 w-1.5 rounded-full bg-white/90 transition-opacity duration-300 dark:opacity-0"></span>
+                        <span
+                            class="absolute right-2 top-4 h-1 w-1 rounded-full bg-white/80 transition-opacity duration-300 dark:opacity-0"></span>
+                        <span
+                            class="absolute left-3 top-2 h-1 w-1 rounded-full bg-white/80 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        <span
+                            class="absolute left-6 top-4 h-1.5 w-1.5 rounded-full bg-white/70 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        <span
+                            class="absolute left-8 top-1 h-1 w-1 rounded-full bg-white/60 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                    </span>
+                    <span class="text-xs font-semibold text-slate-400 dark:text-slate-100">Dark</span>
+                    <span data-theme-label class="sr-only">Light</span>
+                    <span class="sr-only">Toggle color theme</span>
+                </button>
+            </div>
+
+            <p class="text-center md:text-right">
+                Implementation notes &amp; source ·
+                <a href="https://github.com/" target="_blank" rel="noreferrer" class="link-brand">GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Back Control Button -->
+    <script>
+        (() => {
+            const btn = document.getElementById('backControl');
+            const hero = document.getElementById('hero');
+            if (!btn || !hero) return;
+            const link = btn.querySelector('a');
+
+            let cutoff = 0;
+
+            const calc = () => {
+                const rect = hero.getBoundingClientRect();
+                const heroTop = window.scrollY + rect.top;
+                cutoff = heroTop + hero.offsetHeight - 20;
+            };
+
+            const setVisible = (visible) => {
+                btn.classList.toggle('opacity-0', !visible);
+                btn.classList.toggle('pointer-events-none', !visible);
+                btn.setAttribute('aria-hidden', visible ? 'false' : 'true');
+                if (link) link.tabIndex = visible ? 0 : -1;
+            };
+
+            const tick = () => {
+                const show = window.scrollY > cutoff;
+                setVisible(show);
+            };
+
+            calc();
+            tick();
+            window.addEventListener('resize', () => { calc(); tick(); }, { passive: true });
+            if ('ResizeObserver' in window) {
+                const observer = new ResizeObserver(() => { calc(); tick(); });
+                observer.observe(hero);
+            }
+            window.addEventListener('scroll', () => requestAnimationFrame(tick), { passive: true });
+        })();
+    </script>
+
+    <!-- To Top Control Button -->
+    <script>
+        (() => {
+            const btn = document.getElementById('toTopControl');
+            const hero = document.getElementById('hero');
+            if (!btn || !hero) return;
+            const link = btn.querySelector('a');
+
+            btn.querySelector('a')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.replaceState(null, '', '#hero');
+            });
+
+            let cutoff = 0;
+            let lastY = window.scrollY;
+            let ticking = false;
+
+            const calc = () => {
+                const rect = hero.getBoundingClientRect();
+                const heroTop = window.scrollY + rect.top;
+                cutoff = heroTop + hero.offsetHeight - 20;
+            };
+
+            const setVisible = (visible) => {
+                btn.classList.toggle('opacity-0', !visible);
+                btn.classList.toggle('pointer-events-none', !visible);
+                btn.classList.toggle('translate-y-3', !visible);
+                btn.classList.toggle('opacity-100', visible);
+                btn.classList.toggle('translate-y-0', visible);
+                btn.setAttribute('aria-hidden', visible ? 'false' : 'true');
+                if (link) link.tabIndex = visible ? 0 : -1;
+            };
+
+            const update = () => {
+                const y = window.scrollY;
+
+                if (y <= cutoff) {
+                    setVisible(false);
+                    lastY = y;
+                    ticking = false;
+                    return;
+                }
+
+                const delta = y - lastY;
+
+                if (delta > 8) setVisible(false);
+                if (delta < -8) setVisible(true);
+
+                lastY = y;
+                ticking = false;
+            };
+
+            calc();
+            setVisible(false);
+
+            window.addEventListener('resize', () => { calc(); }, { passive: true });
+            if ('ResizeObserver' in window) {
+                const observer = new ResizeObserver(() => { calc(); });
+                observer.observe(hero);
+            }
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    ticking = true;
+                    requestAnimationFrame(update);
+                }
+            }, { passive: true });
+        })();
+    </script>
+
+</body>
+
+</html>

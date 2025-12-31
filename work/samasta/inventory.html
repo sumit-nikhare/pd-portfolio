@@ -1,636 +1,872 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inventory | Samasta | sumit.design</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@600;700;800&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Match your existing Samasta pages relative path -->
-  <link href="../../src/output.css" rel="stylesheet" />
-  <script src="../../src/theme.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samasta — Inventory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="../../src/output.css" rel="stylesheet">
+    <script src="../../src/theme.js" defer></script>
 </head>
 
 <body
-    class="mx-4 lg:w-3/5 lg:mx-auto bg-gray-100 pt-4 space-y-6 text-gray-900 transition-colors duration-200 dark:bg-gray-950 dark:text-gray-100">
-    <!-- Header -->
+    class="relative isolate mx-4 lg:w-3/5 lg:mx-auto bg-gray-100 pt-4 space-y-6 text-gray-900 transition-colors duration-200 dark:bg-gray-950 dark:text-gray-100">
+
+    <!-- Ambient glows -->
+    <div class="pointer-events-none fixed inset-0 -z-10">
+        <div
+            class="absolute -left-32 top-10 w-80 h-80 bg-gradient-to-br from-amber-200 via-white to-gray-100 opacity-60 blur-3xl dark:from-amber-500/20 dark:via-gray-950 dark:to-gray-950 dark:opacity-30">
+        </div>
+        <div
+            class="absolute right-0 -top-24 w-96 h-96 bg-gradient-to-br from-white via-gray-100 to-orange-200 opacity-60 blur-3xl dark:from-gray-950 dark:via-gray-950 dark:to-orange-500/20 dark:opacity-30">
+        </div>
+        <div
+            class="absolute left-1/3 bottom-0 w-96 h-96 bg-gradient-to-br from-orange-200 via-white to-gray-100 opacity-50 blur-3xl dark:from-orange-500/20 dark:via-gray-950 dark:to-gray-950 dark:opacity-30">
+        </div>
+    </div>
+
+    <!-- Floating back control -->
+    <div id="backControl" class="fixed top-4 left-4 z-50 opacity-0 pointer-events-none transition-opacity duration-300"
+        aria-hidden="true">
+        <a href="../samasta.html" aria-label="Back" class="group relative flex h-16 items-center focus:outline-none">
+            <span aria-hidden="true"
+                class="pointer-events-none absolute -inset-6 -z-10 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-80 group-focus-within:opacity-80">
+                <span
+                    class="absolute left-0 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-amber-200/70 dark:bg-amber-500/20"></span>
+                <span
+                    class="absolute left-10 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-gray-200/80 dark:bg-gray-700/40"></span>
+                <span
+                    class="absolute left-20 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-orange-200/60 dark:bg-orange-500/20"></span>
+            </span>
+
+            <span
+                class="flex h-16 items-center overflow-hidden rounded-full bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-100 shadow-sm transition-all duration-300 max-w-[64px] group-hover:max-w-[220px] group-focus-within:max-w-[220px]">
+                <span class="grid h-16 w-16 place-items-center">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </span>
+
+                <span
+                    class="max-w-0 overflow-hidden whitespace-nowrap pr-0 text-sm font-semibold opacity-0 translate-x-0 transition-[max-width,opacity,padding] duration-300 group-hover:max-w-[150px] group-hover:opacity-100 group-hover:pr-6 group-focus-within:max-w-[150px] group-focus-within:opacity-100 group-focus-within:pr-6">
+                    Back to Samasta
+                </span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Back to top -->
+    <div id="toTopControl"
+        class="fixed bottom-4 right-4 z-50 opacity-0 pointer-events-none translate-y-3 transition-all duration-300"
+        aria-hidden="true">
+        <a href="#hero" aria-label="Back to top" class="group relative flex h-16 items-center focus:outline-none">
+            <span aria-hidden="true"
+                class="pointer-events-none absolute -inset-6 -z-10 hidden opacity-0 blur-2xl transition-opacity duration-300 md:block md:group-hover:opacity-80 md:group-focus-within:opacity-80">
+                <span
+                    class="absolute right-0 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-amber-200/60 dark:bg-amber-500/20"></span>
+                <span
+                    class="absolute right-10 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-gray-200/80 dark:bg-gray-700/40"></span>
+                <span
+                    class="absolute right-20 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-orange-200/55 dark:bg-orange-500/20"></span>
+            </span>
+
+            <span
+                class="flex h-16 items-center overflow-hidden rounded-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-gray-200 dark:ring-gray-700 transition-all duration-300 max-w-[64px] md:group-hover:max-w-[160px] md:group-focus-within:max-w-[160px]">
+                <span class="grid h-16 w-16 place-items-center">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 5l-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                        <path d="M12 5l7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                        <path d="M12 5v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                    </svg>
+                </span>
+
+                <span
+                    class="hidden md:inline max-w-0 overflow-hidden whitespace-nowrap pr-0 text-sm font-semibold opacity-0 transition-[max-width,opacity,padding] duration-300 md:group-hover:max-w-[80px] md:group-hover:opacity-100 md:group-hover:pr-6 md:group-focus-within:max-w-[80px] md:group-focus-within:opacity-100 md:group-focus-within:pr-6">
+                    Top
+                </span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Top Bar -->
     <header class="flex items-center justify-between">
-        <a href="../../index.html" class="text-3xl font-semibold text-gray-900 dark:text-gray-100">sumit.design</a>
+        <a class="text-3xl font-semibold text-gray-900 dark:text-gray-100" href="../../index.html">sumit.design</a>
         <nav class="flex items-center gap-4">
-            <a href="../work.html" class="nav-link" aria-current="page">Work</a>
+            <a href="../work.html" class="nav-link">Work</a>
             <a href="../../about.html" class="nav-link">About</a>
         </nav>
     </header>
 
-    <main class="min-h-[70vh] py-12 space-y-12">
-        <!-- Hero -->
-        <section class="space-y-5">
-            <div class="flex flex-wrap items-center gap-3">
-                <a href="../samasta.html"
-                    class="inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-2 text-sm font-semibold hover:bg-gray-50 dark:hover:bg-gray-800">
-                    ← Samasta case study
-                </a>
+    <!-- Hero -->
+    <section id="hero" class="w-full pt-12 space-y-8">
+        <div class="space-y-4">
+            <p class="text-sm uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400">MODULE · SAMASTA</p>
 
-                <a href="./opd.html"
-                    class="inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-2 text-sm font-semibold hover:bg-gray-50 dark:hover:bg-gray-800">
-                    OPD Services
-                </a>
+            <div class="space-y-6 lg:w-4/5">
+                <h1 class="font-heading text-4xl font-semibold text-gray-900 dark:text-gray-100">
+                    Inventory built for real-world stock movement
+                </h1>
 
-                <a href="./dashboard.html"
-                    class="inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-2 text-sm font-semibold hover:bg-gray-50 dark:hover:bg-gray-800">
-                    Dashboard
-                </a>
+                <p class="text-gray-700 dark:text-gray-300">
+                    A stock workflow that handles inward acceptance, outward issuing, manual additions, and
+                    transaction-ledger
+                    visibility across PHC and SHC. Designed to reduce “we had it yesterday” problems by making
+                    quantities, states,
+                    and responsibility explicit.
+                </p>
             </div>
 
-            <p class="text-sm uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400">Samasta · Focus module</p>
+            <div class="flex flex-wrap gap-2 my-2">
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Inward
+                    + Outward</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">In-stock
+                    / Out-of-stock</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Few
+                    Left thresholds</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Medicine
+                    ledger</span>
+                <span
+                    class="rounded-full bg-gray-50 dark:bg-gray-900 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Dispensation
+                    report</span>
+            </div>
+
+            <p class="max-w-3xl text-sm text-gray-600 dark:text-gray-400 pt-2">
+                *Replace placeholder screenshots with final Figma exports. This module page focuses on inventory
+                movement and
+                audit visibility, not procurement policy.
+            </p>
+        </div>
+
+        <!-- Flow image (replace with your exported asset) -->
+        <div>
+            <img loading="eager" decoding="async" fetchpriority="high"
+                src="../../assets/samasta/inventory/inventory-flow.jpg"
+                alt="Inventory flows: inward acceptance, outward issue, stock list, medicine details ledger and reporting"
+                class="w-full rounded-3xl" />
+        </div>
+    </section>
+
+    <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
+
+    <!-- Content (no sticky side nav) -->
+    <section class="space-y-12">
+
+        <!-- Layout A -->
+        <section id="layout-a" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Problem</p>
+                <h2 class="text-3xl font-semibold">Inventory fails when “stock” is just a number without a story</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                At PHC/SHC level, stock is constantly moving: received from warehouse, issued to sub-centers, dispensed
+                to
+                patients, and sometimes added manually due to emergency purchase. If the UI doesn’t preserve the “why”
+                behind a
+                quantity change, teams lose trust in the number and revert to informal workarounds.
+            </p>
+
+            <div
+                class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">What the Inventory module must solve
+                </h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Inward acceptance integrity:</span>
+                        received
+                        vs indent counts, item-level accept, and clear completion.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Outward issuing with
+                            accountability:</span>
+                        who issued, to whom, and whether it was received.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Operational stock states:</span>
+                        in-stock,
+                        out-of-stock, few left, inactive.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Ledger visibility:</span> make
+                        stock changes
+                        traceable via transactions (inward/outward/issued/purchase/manual).</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Low-effort maintenance:</span>
+                        search by name
+                        / code and bulk actions for high-volume lists.</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout B -->
+        <section id="layout-b" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Users</p>
+                <h2 class="text-3xl font-semibold">Role-based responsibilities shape what “stock” means</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                Inventory is not a single-user system. The module is designed around PHC and SHC roles where the same
+                stock
+                truth is shared, but actions are constrained by responsibility and facility context.
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-2">
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">PHC: MO / Pharmacist</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Reviews stock states, accepts inward deliveries, issues outward to SHC/SC, and maintains
+                        thresholds to
+                        prevent stockouts from becoming surprises.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">SHC: CHO</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Receives outward consignments, verifies items, updates local availability, and uses “few left”
+                        triggers as
+                        early warning for indenting.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Facility teams</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Consume stock through OPD and outreach flows. Inventory must stay aligned with dispensing
+                        reality and not
+                        drift into “paper-only” land.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Admins (dashboard)</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Needs aggregated visibility, not operational controls: stock status distributions, movement
+                        patterns, and
+                        exception monitoring.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout C -->
+        <section id="layout-c" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Flow</p>
+                <h2 class="text-3xl font-semibold">Inventory modeled as movement: accept, issue, dispense, reconcile
+                </h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                The module breaks inventory into four operational flows that match how facilities actually work: inward
+                acceptance from warehouse, outward issuing to another institute, dispensing/issuing to patients, and
+                reconciliation via ledger.
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-4">
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Flow 01</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Inward</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Select received date → view inward → accept
+                        items → save &
+                        exit.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Flow 02</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Outward</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Choose recipient institute → select items →
+                        issue quantity
+                        → notify.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Flow 03</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Stock state</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">In-stock / out-of-stock / few left / inactive
+                        with quick
+                        search.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 p-4 space-y-2">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Flow 04</p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">Ledger + reports</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Medicine detail ledger filters + dispensation
+                        report by
+                        date range.</p>
+                </div>
+            </div>
 
             <div class="space-y-3">
-                <h1 class="text-5xl font-semibold leading-tight">Inventory</h1>
-                <p class="text-lg text-gray-700 dark:text-gray-300">
-                    A facility inventory module built around <span class="font-semibold">operational truth</span>:
-                    what’s in stock, what’s running out, what moved in/out, and who acknowledged it.
-                    The design supports day-to-day workflows like <span class="font-semibold">inward acceptance</span>,
-                    <span class="font-semibold">outward issuing</span>, and <span class="font-semibold">manual stock
-                        correction</span>,
-                    while keeping oversight and accountability visible.
-                </p>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Key states and transitions</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Inward completion:</span> accepted
+                        count makes
+                        partial vs complete deliveries visible.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Outward lifecycle:</span> created →
+                        notified
+                        → received (or pending) prevents silent losses.</li>
+                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Few left triggers:</span>
+                        thresholds move a
+                        medicine into “Few Left” automatically, so it’s an operational alert, not a memory test.</li>
+                </ul>
             </div>
-
-            <div class="grid gap-3 sm:grid-cols-4">
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4">
-                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Core flows</p>
-                    <p class="mt-1 font-semibold">Inward & Outward</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Receipt + issue with acceptance states</p>
-                </div>
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4">
-                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Catalog</p>
-                    <p class="mt-1 font-semibold">Medicines + Supplies</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">In-stock / Out-of-stock / Few left /
-                        Inactive</p>
-                </div>
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4">
-                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Control</p>
-                    <p class="mt-1 font-semibold">Min indent threshold</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Auto moves to “Few Left”</p>
-                </div>
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4">
-                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Audit</p>
-                    <p class="mt-1 font-semibold">Item ledger</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Opening / Inward / Outward / Issued +
-                        filters</p>
-                </div>
-            </div>
-
-            <!-- TOC -->
-            <section class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                <div class="flex items-start justify-between gap-4">
-                    <div>
-                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">On this page</p>
-                        <h2 class="mt-1 text-xl font-semibold">Inventory deep dive</h2>
-                    </div>
-                    <span
-                        class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1 text-xs text-gray-600 dark:text-gray-300">
-                        CHIP 2 structure
-                    </span>
-                </div>
-
-                <div class="mt-5 grid gap-3 sm:grid-cols-2">
-                    <a href="#scope"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Scope</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">What the module covers</p>
-                    </a>
-                    <a href="#problem"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Problem framing</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Why inventory breaks in the real world
-                        </p>
-                    </a>
-                    <a href="#rbac"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Users & RBAC</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Who can do what</p>
-                    </a>
-                    <a href="#flows"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Primary flows</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Inward, outward, manual add, requests
-                        </p>
-                    </a>
-                    <a href="#decisions"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Key decisions</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Design choices tied to ops reality</p>
-                    </a>
-                    <a href="#patterns"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Reusable patterns</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Patterns shared across Samasta</p>
-                    </a>
-                </div>
-
-                <div class="mt-3 grid gap-3 sm:grid-cols-2">
-                    <a href="#edge-cases"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">Edge cases</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Where governance matters most</p>
-                    </a>
-                    <a href="#opd-hook"
-                        class="rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <p class="font-semibold">OPD connection</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">How inventory impacts
-                            prescribing/dispensing</p>
-                    </a>
-                </div>
-            </section>
         </section>
 
-        <!-- Scope -->
-        <section id="scope" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Module scope</h2>
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
 
-            <div
-                class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-6">
-                <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">What Inventory covers</p>
-                        <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-gray-700 dark:text-gray-300">
-                            <li>Inventory summary: inward/outward counts, category-level stock status</li>
-                            <li>Medicines catalog with tabs: In-stock, Out of stock, Few left, Inactive</li>
-                            <li>Inward receipts: list → detail → view items → accept items / mark received</li>
-                            <li>Outward issues: select institute → select items → issue qty → notify</li>
-                            <li>Medicine details: available quantity + options (add quantity, request medicine, mark
-                                inactive)</li>
-                            <li>Item ledger: Opening / Inward / Outward / Issued, with filters by date and type</li>
-                            <li>Minimum indenting quantity to control “Few Left” threshold</li>
-                        </ul>
-                    </div>
+        <!-- Layout D -->
+        <section id="layout-d" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Design decisions</p>
+                <h2 class="text-3xl font-semibold">Designed for high-volume lists and low patience</h2>
+            </div>
 
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">What Inventory does not try to be</p>
-                        <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-gray-700 dark:text-gray-300">
-                            <li>A procurement system (it supports receipt/issue and requests, not full tender cycles)
-                            </li>
-                            <li>A purely administrative module (it’s integrated into daily facility work)</li>
-                            <li>A single-role experience (actions differ by responsibility and scope)</li>
-                        </ul>
-                    </div>
+            <div class="space-y-6">
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">1) Bulk acceptance, with item
+                        detail when
+                        needed</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Inward flows support “Mark all items as received” for speed, while still allowing drill-in on
+                        item details
+                        (batch number, manufacturing and expiry) for validation.
+                    </p>
                 </div>
 
-                <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                    <p class="font-semibold">Facility-scoped by default</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        Inventory surfaces the facility and geography context (example: Bangalore Urban 1, HWC(UPHC)),
-                        and inward/outward flows reference
-                        “issued from” and “issued to” institute types (PHC, sub-center). This makes scope explicit and
-                        reduces accidental cross-facility actions.
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">2) Search by medicine code and
+                        name</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Inventory lists are designed for scanning and retrieval, not browsing. Search is always present
+                        to avoid
+                        forcing users through long catalog scrolls.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">3) Tabs represent operational
+                        states, not
+                        categories</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        In-stock / out-of-stock / few left / inactive are the fastest way to answer “what’s the problem
+                        right now”
+                        without making users interpret raw quantities.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">4) Quantity changes require a
+                        mode</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        “Add quantity” isn’t just a number field. It’s tied to a reason (manual, purchase, received from
+                        PHC, issued
+                        to SC, issued to patients) so the ledger stays meaningful.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">5) Ledger first, reporting second
+                    </h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        The medicine detail view acts as the primary audit surface (transaction list + filters). Reports
+                        summarize,
+                        but the ledger explains.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Problem -->
-        <section id="problem" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Problem framing</h2>
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
 
-            <div
-                class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-5">
-                <p class="text-gray-700 dark:text-gray-300">
-                    Inventory fails when it’s treated as paperwork. Facilities need a system that supports fast
-                    acknowledgement of receipts,
-                    controlled issuance, and believable stock levels. If inventory is wrong, OPD and pharmacy workflows
-                    become theatre.
-                </p>
-
-                <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Receipts must be acknowledged</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            Inward isn’t “received” until items are accepted. The UI needs explicit states like “Not
-                            received” vs “Accepted”.
-                        </p>
-                    </div>
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Issuing needs a trace</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            Outward needs “issued to” institute selection and clear quantities per item, plus
-                            notification.
-                        </p>
-                    </div>
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Stock status must be actionable</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            “Few left” is only useful if it’s system-driven (min indent threshold) and tied to
-                            requests/indent flows.
-                        </p>
-                    </div>
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Connectivity is a real constraint</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            The screens explicitly show “No Internet Found”. The system needs graceful failure states
-                            and recovery paths.
-                        </p>
-                    </div>
-                </div>
+        <!-- Layout E -->
+        <section id="layout-e" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">RBAC as UX</p>
+                <h2 class="text-3xl font-semibold">Permissions protect stock truth and prevent “creative accounting”
+                </h2>
             </div>
-        </section>
 
-        <!-- RBAC -->
-        <section id="rbac" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Users and RBAC</h2>
+            <p class="text-gray-700 dark:text-gray-300">
+                Inventory actions have consequences. The UI makes permissions visible through entry points and available
+                actions
+                rather than hiding everything behind generic forms.
+            </p>
 
-            <div
-                class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-5">
-                <p class="text-gray-700 dark:text-gray-300">
-                    Inventory actions carry governance risk. The UI separates “view stock” from “change stock,” and
-                    treats receipts and issues
-                    as accountable actions tied to institutes and reference numbers.
-                </p>
-
-                <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-800">
-                    <table class="min-w-[980px] w-full text-left text-sm">
-                        <thead class="bg-gray-50 dark:bg-gray-800">
-                            <tr>
-                                <th class="px-4 py-3 font-semibold">Role</th>
-                                <th class="px-4 py-3 font-semibold">View stock</th>
-                                <th class="px-4 py-3 font-semibold">Inward accept</th>
-                                <th class="px-4 py-3 font-semibold">Create outward</th>
-                                <th class="px-4 py-3 font-semibold">Manual add qty</th>
-                                <th class="px-4 py-3 font-semibold">Set min indent</th>
-                                <th class="px-4 py-3 font-semibold">Mark inactive</th>
-                                <th class="px-4 py-3 font-semibold">Request medicine</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200 dark:divide-gray-800">
-                            <tr class="bg-white dark:bg-gray-900">
-                                <td class="px-4 py-3 font-semibold">MO (Facility lead)</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">✔ (governed)</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">✔</td>
-                            </tr>
-                            <tr class="bg-white dark:bg-gray-900">
-                                <td class="px-4 py-3 font-semibold">CHO / Store operator</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">✔ (governed)</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">View/limited</td>
-                                <td class="px-4 py-3">✔</td>
-                            </tr>
-                            <tr class="bg-white dark:bg-gray-900">
-                                <td class="px-4 py-3 font-semibold">Pharmacist</td>
-                                <td class="px-4 py-3">✔</td>
-                                <td class="px-4 py-3">View</td>
-                                <td class="px-4 py-3">View</td>
-                                <td class="px-4 py-3">—</td>
-                                <td class="px-4 py-3">—</td>
-                                <td class="px-4 py-3">—</td>
-                                <td class="px-4 py-3">View/request</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <p class="text-xs text-gray-500 dark:text-gray-400">
-                    This RBAC matrix reflects patterns shown in the Inventory screens (inward/outward, “options” like
-                    add quantity/request/mark inactive, and notes like “inward by MO / inward by CHO”).
-                    Final policies often vary by deployment governance.
-                </p>
-            </div>
-        </section>
-
-        <!-- Flows -->
-        <section id="flows" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Primary workflows</h2>
-
-            <div
-                class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-6">
-                <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5 space-y-2">
-                        <p class="font-semibold">1) Inward receipt and acceptance</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">
-                            Inward is treated as a traceable record (inward number, sender warehouse/institute, receipt
-                            date), and items are accepted before
-                            the inward is considered complete (e.g., 174/174 accepted). “Mark all items as received”
-                            supports bulk acknowledgement.
-                        </p>
-                        <ul class="mt-2 list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-                            <li>Inward list grouped by date + received vs not received</li>
-                            <li>Inward details: institute info + sender + view items count</li>
-                            <li>Item list supports search (name/medicine code) + batch details</li>
-                            <li>Bulk receive for high-volume indents</li>
-                        </ul>
-                    </div>
-
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5 space-y-2">
-                        <p class="font-semibold">2) Outward issue to another institute</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">
-                            Outward is a controlled issuance flow: select destination institute, select items, set issue
-                            quantities,
-                            and notify the receiver (example: “Notify to HWC”, “Notified”). Pending receipt status is
-                            visible.
-                        </p>
-                        <ul class="mt-2 list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-                            <li>Outward list shows “received on” vs “not received”</li>
-                            <li>Outward details include issued-from/issued-to institute types</li>
-                            <li>Item selection supports partial issuing + save</li>
-                            <li>Receiver acknowledgement can remain pending</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5 space-y-2">
-                        <p class="font-semibold">3) Stock browsing and status triage</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">
-                            Medicines are browseable with search, and stock status is surfaced as tabs: In-stock,
-                            Out-of-stock, Few Left, Inactive.
-                            This supports operational scanning without forcing users into item details every time.
-                        </p>
-                        <ul class="mt-2 list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-                            <li>Search by name or medicine code</li>
-                            <li>Clear available quantity on list rows</li>
-                            <li>Optional filters (including medicine type)</li>
-                        </ul>
-                    </div>
-
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5 space-y-2">
-                        <p class="font-semibold">4) Medicine details + item ledger</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">
-                            Medicine details support “options” actions (add quantity, request medicine, mark inactive)
-                            and provide an auditable transaction log:
-                            Opening, Inward, Outward, Issued, with filters by date and type.
-                        </p>
-                        <ul class="mt-2 list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-                            <li>Ledger is filterable: date range + type (Inward/Outward/Issued)</li>
-                            <li>Displays closing balance per transaction</li>
-                            <li>Supports entries like “Manually Added”, “Purchased”, “Received from PHC”, “Issued to
-                                SC”, “Issued to patients”</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5 space-y-2">
-                    <p class="font-semibold">5) Manual quantity updates with safeguards</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        Manual add/edit quantity exists for real-world corrections (private purchase, purchasing,
-                        reconciliation). The UI asks for
-                        minimum indenting quantity, which drives the system moving items into “Few Left” automatically.
+            <div class="grid gap-4 md:grid-cols-3">
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 01</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Accept inward</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                        Acceptance is restricted to authorized facility roles. It completes an inward record and moves
+                        it from “not
+                        received” to accepted.
                     </p>
-                    <ul class="mt-2 list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-                        <li>“Add/Edit current quantity” supports corrections</li>
-                        <li>Minimum indenting quantity defines when it becomes “Few Left”</li>
-                        <li>Options include “Request medicine” for resupply workflows</li>
+                </div>
+
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 02</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Issue outward</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                        Outward requires institute selection and item selection with explicit quantities, then notifies
+                        the receiver
+                        to confirm receipt.
+                    </p>
+                </div>
+
+                <div
+                    class="rounded-3xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-6 space-y-2 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Boundary 03</p>
+                    <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">Edit quantity</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                        Quantity edits are treated as transactions with a reason. “Mark inactive” is gated so catalog
+                        doesn’t get
+                        corrupted casually.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout F -->
+        <section id="layout-f" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Edge cases</p>
+                <h2 class="text-3xl font-semibold">Designed for partial deliveries, mismatches, and missing dates</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Indent vs received mismatch</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Inward list surfaces “Indent Items” and “Received Items” to make partial deliveries obvious, so
+                        reconciliation
+                        happens early, not after a stockout.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">No inward found for selected date
+                    </h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Explicit empty states prevent “maybe it didn’t sync” confusion and make the next action clear.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Outward pending receipt</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Outward records include a received date state (received vs pending). This avoids “it left us”
+                        becoming the
+                        end of the story.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">No transactions</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Medicine detail includes a “No transactions” state so ledger views don’t silently fail when the
+                        item is new
+                        or hasn’t moved yet.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout G -->
+        <section id="layout-g" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Screens</p>
+                <h2 class="text-3xl font-semibold">Key surfaces in the Inventory module</h2>
+                <p class="max-w-3xl text-gray-700 dark:text-gray-300">
+                    Replace placeholders with your final screenshots (from your Figma exports).
+                </p>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-2">
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Inventory summary with inward/outward and stock state counts" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Inventory summary with Inward/Outward counts and stock-state breakdown (in-stock, out-of-stock,
+                        few left,
+                        inactive).
+                    </figcaption>
+                </figure>
+
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Inward list and inward details with accept actions" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Inward list → inward details → accept items / mark all received with save & exit.
+                    </figcaption>
+                </figure>
+
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Outward creation and item selection with issue quantities" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Create outward: select institute, select items, enter issue quantity, notify receiver.
+                    </figcaption>
+                </figure>
+
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/common/demo-img-1920.png"
+                        alt="Medicine detail with ledger and filters by type and date" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
+                        Medicine detail: options (add quantity, request, inactive), minimum indenting threshold,
+                        transaction ledger
+                        with date/type filters.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout H -->
+        <section id="layout-h" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">System fit</p>
+                <h2 class="text-3xl font-semibold">Inventory connects operations: OPD prescribing, dispensing, and
+                    reporting</h2>
+            </div>
+
+            <p class="text-gray-700 dark:text-gray-300">
+                Inventory is not an isolated module. It supports OPD and outreach by keeping availability trustworthy.
+                It also
+                powers the admin dashboard with state distributions (out-of-stock vs few-left) and movement patterns
+                (received vs
+                issued).
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-2">
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Clinical workflows depend on
+                        stock truth</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Prescriptions and dispensing are only safe when “left in stock” isn’t fiction. Inventory state
+                        tabs make
+                        shortages visible early.
+                    </p>
+                </div>
+
+                <div
+                    class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Reporting surfaces patterns, not
+                        blame</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Medicines dispensation reports summarize movement over a date range. The intent is to support
+                        planning and
+                        redistribution, not punish facilities for being busy.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout I -->
+        <section id="layout-i" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Impact</p>
+                <h2 class="text-3xl font-semibold">Fewer stock surprises, faster reconciliation, clearer responsibility
+                </h2>
+            </div>
+
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Inward acceptance becomes verifiable through accepted counts and item-level confirmation.</li>
+                <li>Outward issuing becomes traceable through institute selection and received-state tracking.</li>
+                <li>Few-left thresholds convert “memory-based reordering” into an explicit alert mechanism.</li>
+                <li>Ledger views reduce time spent debating stock by showing how the number changed.</li>
+            </ul>
+
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+                Add verified metrics here if you have them (stockout rate reduction, time-to-accept inward, % outward
+                received
+                within X days, reconciliation time).
+            </p>
+        </section>
+
+        <hr class="border-t border-gray-300 dark:border-gray-700" />
+
+        <!-- Layout J -->
+        <section id="layout-j" class="scroll-mt-24 space-y-8">
+            <div class="space-y-3">
+                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">What’s next</p>
+                <h2 class="text-3xl font-semibold">Close the gaps where stock systems usually break</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Batch and expiry-first flows</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Make FEFO (first-expiry-first-out) practical by surfacing expiry risk in lists and guiding
+                        issuing decisions
+                        with batch context.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Exception queues</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Add exception surfaces: partial inward, mismatched counts, pending outward receipt beyond
+                        threshold, and
+                        suspicious manual edits.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Smarter reorder support</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Use consumption patterns (dispensed/issued history) to recommend minimum indenting quantities
+                        instead of
+                        relying on one-time manual thresholds.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <hr class="border-t border-gray-300 dark:border-gray-700 my-12" />
+
+    <!-- Footer (correct relative links for /work/samasta/inventory.html) -->
+    <footer class="w-full pb-10 space-y-8">
+        <div class="rounded-4xl border border-gray-200 bg-white p-6 md:p-10 dark:border-gray-800 dark:bg-gray-900">
+            <div class="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+                <div>
+                    <h2 class="text-4xl font-semibold text-gray-900 dark:text-gray-100">Let’s connect</h2>
+                    <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                        Open to product roles, freelance projects, and collaborations. If you want a walkthrough of any
+                        case study,
+                        I’m happy to share details live.
+                    </p>
+
+                    <a href="mailto:sumit.v.nikhare@gmail.com"
+                        class="mt-6 inline-flex items-center rounded-full border-2 border-gray-900 bg-white px-7 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-900 hover:text-white transition duration-300 dark:border-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-100 dark:hover:text-gray-900">
+                        Let's Talk
+                    </a>
+                </div>
+
+                <div class="flex justify-start md:justify-end">
+                    <span class="font-heading text-3xl font-semibold">sumit.design</span>
+                </div>
+            </div>
+
+            <div class="mt-14 grid gap-12 md:grid-cols-3">
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Navigation</p>
+                    <ul class="mt-5 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li><a href="../../index.html" class="link-brand">Home</a></li>
+                        <li><a href="../../about.html" class="link-brand">About</a></li>
+                        <li><a href="../work.html" class="link-brand">Work</a></li>
+                        <li><a href="../../resume.html" class="link-brand">Resume</a></li>
                     </ul>
                 </div>
-            </div>
-        </section>
 
-        <!-- Decisions -->
-        <section id="decisions" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Key design decisions</h2>
-
-            <div class="grid gap-4 md:grid-cols-2">
-                <div
-                    class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                    <p class="font-semibold">Treat stock movement as the system, not a spreadsheet</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        The ledger view (Opening/Inward/Outward/Issued + closing balance) makes the question “why is
-                        stock like this” answerable without exports.
-                    </p>
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Case studies</p>
+                    <ul class="mt-5 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li><a href="../chip-2.html" class="link-brand">CHIP 2.0</a></li>
+                        <li><a href="../samasta.html" class="link-brand">Samasta</a></li>
+                        <li><a href="../cho-soft.html" class="link-brand">CHO Soft</a></li>
+                        <li><a href="../work.html" class="link-brand">View All</a></li>
+                    </ul>
                 </div>
 
-                <div
-                    class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                    <p class="font-semibold">Bulk receive for high-volume indents</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        “Mark all items as received” reduces acknowledgement friction for large indents (hundreds of
-                        items), while still keeping an acceptance boundary.
-                    </p>
-                </div>
-
-                <div
-                    class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                    <p class="font-semibold">Separate “Outward” from “Issued”</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        Outward to another institute and issuing to patients are not the same thing. Treating them as
-                        distinct transaction types keeps reporting and audits credible.
-                    </p>
-                </div>
-
-                <div
-                    class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                    <p class="font-semibold">Min indent quantity as a product rule</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        “Few Left” should not be manually curated. The min indent threshold makes it a predictable
-                        system behavior and supports reorder/request flows.
-                    </p>
-                </div>
-
-                <div
-                    class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                    <p class="font-semibold">Connectivity failure state is explicit</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        The “No Internet Found” screen makes the constraint visible. Operational modules need honest
-                        states so staff don’t do repeated work blindly.
-                    </p>
-                </div>
-
-                <div
-                    class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-2">
-                    <p class="font-semibold">Make “scope” visible everywhere</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">
-                        Showing geography + facility context reduces accidental actions across sites and supports
-                        governance expectations in multi-institute hierarchies.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Patterns -->
-        <section id="patterns" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Reusable UI patterns</h2>
-
-            <div
-                class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-6">
-                <div class="grid gap-4 md:grid-cols-3">
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Status-as-navigation</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            In-stock / out-of-stock / few left / inactive tabs reduce cognitive load and support quick
-                            triage.
-                        </p>
-                    </div>
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Detail page with “Options” sheet</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            Actions (add qty, request, mark inactive) are grouped, reducing accidental edits and keeping
-                            browsing fast.
-                        </p>
-                    </div>
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">Ledger filter pattern</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            Filter by date range and transaction type. Same pattern can be reused in OPD timelines or
-                            referrals.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                    <p class="font-semibold">“Acknowledge” as a first-class action</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        Inward and outward both contain a responsibility boundary: accepted vs pending. The UI makes
-                        this boundary explicit so responsibility doesn’t dissolve into “someone did it.”
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Edge cases -->
-        <section id="edge-cases" class="space-y-4">
-            <h2 class="text-2xl font-semibold">Edge cases and controls</h2>
-
-            <div class="grid gap-4 md:grid-cols-2">
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                    <p class="font-semibold">Inward date mismatch</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        The flow includes “No inward found” for a selected date. This prevents staff from force-fitting
-                        receipts into the wrong record.
-                    </p>
-                </div>
-
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                    <p class="font-semibold">Over-received vs indent count</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        Screens show cases where received items exceed indent items. The UI must handle exceptions
-                        without corrupting stock math.
-                    </p>
-                </div>
-
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                    <p class="font-semibold">Manual additions need provenance</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        Manual stock updates require a “mode” (purchased/private purchase/manually added). Without that,
-                        audits become fiction.
-                    </p>
-                </div>
-
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                    <p class="font-semibold">Outward acknowledgement pending</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        Outward records show “received date: pending”. The system needs to make pending visible and
-                        searchable to avoid silent loss.
-                    </p>
-                </div>
-            </div>
-
-            <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                <p class="font-semibold">Connectivity loss</p>
-                <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                    “No Internet Found” must map to safe behavior: prevent partial inward acceptance or quantity edits
-                    from appearing successful when they aren’t.
-                </p>
-            </div>
-        </section>
-
-        <!-- OPD hook -->
-        <section id="opd-hook" class="space-y-4">
-            <h2 class="text-2xl font-semibold">How Inventory connects to OPD</h2>
-
-            <div
-                class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 space-y-5">
-                <p class="text-gray-700 dark:text-gray-300">
-                    Inventory is not a “separate module.” It directly determines whether prescribing and dispensing
-                    succeed.
-                    In OPD, medicines show stock availability. In pharmacy flows, dispensing becomes an accountable
-                    issuance.
-                </p>
-
-                <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">At prescription time</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            Stock visibility reduces downstream negotiation and avoids writing prescriptions the
-                            facility cannot fulfill.
-                        </p>
-                    </div>
-                    <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-                        <p class="font-semibold">At dispensing time</p>
-                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                            Dispensing should create “Issued to patients” transactions, keeping stock and care records
-                            aligned.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
-                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                        <div>
-                            <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Next</p>
-                            <p class="mt-1 text-lg font-semibold">Move to Beneficiary Registration</p>
-                            <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                                Because inventory is only useful if the right person gets the right item, not “someone,
-                                somewhere.”
-                            </p>
-                        </div>
-                        <a href="./beneficiary-registration.html"
-                            class="inline-flex items-center justify-center rounded-full bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900 px-5 py-2.5 text-sm font-semibold hover:opacity-90">
-                            Open Registration
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Elsewhere</p>
+                    <div class="mt-5 space-y-2">
+                        <a href="https://www.linkedin.com/in/sumit-nikhare-482058215/" target="_blank" rel="noreferrer"
+                            class="flex items-center justify-between rounded-2xl bg-gradient-to-r bg-violet-100 py-2 pl-2 pr-4 dark:bg-violet-900/30">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="grid h-12 w-12 place-items-center rounded-2xl bg-white/70 dark:bg-gray-900/60">
+                                    <span class="text-sm font-semibold">in</span>
+                                </div>
+                                <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">LinkedIn</p>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">↗</span>
                         </a>
                     </div>
                 </div>
+
             </div>
-        </section>
-    </main>
+        </div>
 
-    <!-- Footer -->
-    <footer class="w-full pb-10 pt-6">
-        <div class="grid gap-3 px-4 text-sm text-gray-600 dark:text-gray-300 md:grid-cols-3 md:items-center">
-            <div class="hidden md:block"></div>
-
-            <div class="flex flex-wrap items-center justify-center gap-3">
+        <div class="flex flex-col space-y-4 items-center">
+            <div class="flex flex-col items-center gap-3">
                 <p class="text-center">© 2025 – sumit.design</p>
 
-                <button
-                  type="button"
-                  data-theme-toggle
-                  aria-pressed="false"
-                  class="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-xs font-semibold text-slate-600 shadow-sm transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400"
-                >
-                  <span class="text-xs font-semibold text-slate-800/90 dark:text-slate-500">Light</span>
-                  <span class="relative inline-flex h-7 w-14 items-center rounded-full bg-gradient-to-r from-sky-200 via-sky-300 to-sky-500 shadow-inner ring-1 ring-inset ring-white/40 transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 dark:ring-white/10">
-                    <span class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 dark:translate-x-7 dark:bg-slate-100">
-                      <span class="absolute -right-0.5 top-1 h-3 w-3 rounded-full bg-slate-900 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                <button type="button" data-theme-toggle aria-pressed="false"
+                    class="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-4 py-1 text-xs font-semibold text-slate-600 shadow-sm transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400">
+                    <span class="text-xs font-semibold text-slate-800/90 dark:text-slate-500">Light</span>
+                    <span
+                        class="relative inline-flex h-7 w-14 items-center rounded-full bg-gradient-to-r from-sky-200 via-sky-300 to-sky-500 shadow-inner ring-1 ring-inset ring-white/40 transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 dark:ring-white/10">
+                        <span
+                            class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 dark:translate-x-7 dark:bg-slate-100">
+                            <span
+                                class="absolute -right-0.5 top-1 h-3 w-3 rounded-full bg-slate-900 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        </span>
+                        <span
+                            class="absolute right-4 top-2 h-1.5 w-1.5 rounded-full bg-white/90 transition-opacity duration-300 dark:opacity-0"></span>
+                        <span
+                            class="absolute right-2 top-4 h-1 w-1 rounded-full bg-white/80 transition-opacity duration-300 dark:opacity-0"></span>
+                        <span
+                            class="absolute left-3 top-2 h-1 w-1 rounded-full bg-white/80 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        <span
+                            class="absolute left-6 top-4 h-1.5 w-1.5 rounded-full bg-white/70 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        <span
+                            class="absolute left-8 top-1 h-1 w-1 rounded-full bg-white/60 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
                     </span>
-                    <span class="absolute right-4 top-2 h-1.5 w-1.5 rounded-full bg-white/90 transition-opacity duration-300 dark:opacity-0"></span>
-                    <span class="absolute right-2 top-4 h-1 w-1 rounded-full bg-white/80 transition-opacity duration-300 dark:opacity-0"></span>
-                    <span class="absolute left-3 top-2 h-1 w-1 rounded-full bg-white/80 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                    <span class="absolute left-6 top-4 h-1.5 w-1.5 rounded-full bg-white/70 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                    <span class="absolute left-8 top-1 h-1 w-1 rounded-full bg-white/60 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-                  </span>
-                  <span class="text-xs font-semibold text-slate-400 dark:text-slate-100">Dark</span>
-                  <span data-theme-label class="sr-only">Light</span>
-                  <span class="sr-only">Toggle color theme</span>
+                    <span class="text-xs font-semibold text-slate-400 dark:text-slate-100">Dark</span>
+                    <span data-theme-label class="sr-only">Light</span>
+                    <span class="sr-only">Toggle color theme</span>
                 </button>
             </div>
 
-            <p class="text-center md:text-right">
+            <p class="text-sm text-center md:text-right">
                 Implementation notes &amp; source ·
                 <a href="https://github.com/" target="_blank" rel="noreferrer" class="link-brand">GitHub</a>
             </p>
         </div>
     </footer>
+
+    <!-- Back Control Button -->
+    <script>
+        (() => {
+            const btn = document.getElementById('backControl');
+            const hero = document.getElementById('hero');
+            if (!btn || !hero) return;
+            const link = btn.querySelector('a');
+
+            let cutoff = 0;
+
+            const calc = () => {
+                const rect = hero.getBoundingClientRect();
+                const heroTop = window.scrollY + rect.top;
+                cutoff = heroTop + hero.offsetHeight - 20;
+            };
+
+            const setVisible = (visible) => {
+                btn.classList.toggle('opacity-0', !visible);
+                btn.classList.toggle('pointer-events-none', !visible);
+                btn.setAttribute('aria-hidden', visible ? 'false' : 'true');
+                if (link) link.tabIndex = visible ? 0 : -1;
+            };
+
+            const tick = () => {
+                const show = window.scrollY > cutoff;
+                setVisible(show);
+            };
+
+            calc();
+            tick();
+            window.addEventListener('resize', () => { calc(); tick(); }, { passive: true });
+            if ('ResizeObserver' in window) {
+                const observer = new ResizeObserver(() => { calc(); tick(); });
+                observer.observe(hero);
+            }
+            window.addEventListener('scroll', () => requestAnimationFrame(tick), { passive: true });
+        })();
+    </script>
+
+    <!-- To Top Control Button -->
+    <script>
+        (() => {
+            const btn = document.getElementById('toTopControl');
+            const hero = document.getElementById('hero');
+            if (!btn || !hero) return;
+            const link = btn.querySelector('a');
+
+            btn.querySelector('a')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.replaceState(null, '', '#hero');
+            });
+
+            let cutoff = 0;
+            let lastY = window.scrollY;
+            let ticking = false;
+
+            const calc = () => {
+                const rect = hero.getBoundingClientRect();
+                const heroTop = window.scrollY + rect.top;
+                cutoff = heroTop + hero.offsetHeight - 20;
+            };
+
+            const setVisible = (visible) => {
+                btn.classList.toggle('opacity-0', !visible);
+                btn.classList.toggle('pointer-events-none', !visible);
+                btn.classList.toggle('translate-y-3', !visible);
+                btn.classList.toggle('opacity-100', visible);
+                btn.classList.toggle('translate-y-0', visible);
+                btn.setAttribute('aria-hidden', visible ? 'false' : 'true');
+                if (link) link.tabIndex = visible ? 0 : -1;
+            };
+
+            const update = () => {
+                const y = window.scrollY;
+
+                if (y <= cutoff) {
+                    setVisible(false);
+                    lastY = y;
+                    ticking = false;
+                    return;
+                }
+
+                const delta = y - lastY;
+
+                if (delta > 8) setVisible(false);
+                if (delta < -8) setVisible(true);
+
+                lastY = y;
+                ticking = false;
+            };
+
+            calc();
+            setVisible(false);
+
+            window.addEventListener('resize', () => { calc(); }, { passive: true });
+            if ('ResizeObserver' in window) {
+                const observer = new ResizeObserver(() => { calc(); });
+                observer.observe(hero);
+            }
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    ticking = true;
+                    requestAnimationFrame(update);
+                }
+            }, { passive: true });
+        })();
+    </script>
+
 </body>
+
 </html>
