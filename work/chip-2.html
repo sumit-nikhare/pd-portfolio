@@ -109,11 +109,12 @@
 
     <!-- Top Bar -->
     <header class="flex items-center justify-between">
-        <a class="text-3xl font-semibold text-gray-900 dark:text-gray-100"
-            href="../index.html">sumit.design</a>
+        <a href="./index.html" class="font-heading text-3xl font-semibold text-gray-900 dark:text-gray-100">
+            sumit.design
+        </a>
         <nav class="flex items-center gap-4">
-            <a href="./work.html" class="nav-link" aria-current="page">Work</a>
-            <a href="../about.html" class="nav-link">About</a>
+            <a href="./work.html" class="nav-link">Work</a>
+            <a href="./about.html" class="nav-link">About</a>
         </nav>
     </header>
 
@@ -122,30 +123,29 @@
         class="w-full rounded-3xl border border-[#F2C14E] bg-[#FFF6DF] px-5 py-4 dark:border-amber-400/70 dark:bg-amber-950/40">
         <div class="flex items-start gap-4">
             <!-- Icon -->
-            <div class="mt-0.5 grid h-12 w-12 flex-shrink-0 place-items-center rounded-full bg-[#F2C14E] dark:bg-amber-400/80">
+            <div class="mt-0.5 grid h-8 w-8 flex-shrink-0 place-items-center rounded-full bg-[#F2C14E] dark:bg-amber-400/80">
                 <svg class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path d="M12 7v6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
                     <path d="M12 17h.01" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
                 </svg>
             </div>
-
+    
             <!-- Content -->
-            <div class="min-w-0 flex-1">
-                <p class="text-lg font-extrabold text-[#1F1F1F] dark:text-gray-100">Case Study Note</p>
-
-                <p class="mt-1 text-base text-[#6B6B6B] dark:text-gray-300">
-                    This page contains representative alert patterns from the CHIP 2.0 system. Content is illustrative.
+            <div class="space-y-3">
+                <p class="text-lg font-extrabold text-gray-900 dark:text-gray-100">Important Notice</p>
+    
+                <p class="mt-1 text-base text-gray-700 dark:text-gray-200">
+                    This platform contains proprietary design assets and system workflows developed for Khushi Baby. These designs are confidential and unauthorized copying, distribution, or reuse is not permitted.
                 </p>
-
-                <div class="mt-3 flex items-center gap-4">
-                    <a href="#layout-e" class="relative text-sm link-brand
-                            after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-current
-                            after:origin-left after:scale-x-0 hover:after:scale-x-100
-                            after:transition-transform after:duration-200">
-                        View system patterns
-                    </a>
-                </div>
             </div>
+    
+            <!-- Close -->
+            <button type="button" data-alert-close aria-label="Dismiss warning"
+                class="-mr-1 grid h-10 w-10 flex-shrink-0 place-items-center rounded-2xl text-[#6B6B6B] hover:bg-white/70 hover:text-[#c71919] dark:text-gray-300 dark:hover:bg-white/10 dark:hover:text-red-300">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                </svg>
+            </button>
         </div>
     </div>
 
@@ -231,7 +231,7 @@
 
         <div>
             <img loading="eager" decoding="async" fetchpriority="high" src="../assets/chip-2/demo-img.png" alt="CHIP-2.0 Hero Image"
-                class="w-full rounded-3xl border border-gray-300 dark:border-gray-700 shadow-lg">
+                class="w-full">
         </div>
     </section>
 
@@ -243,6 +243,7 @@
         <div class="container mx-auto">
 
             <div class="grid lg:grid-cols-6 gap-8 lg:gap-12">
+                <!-- Right Content -->
                 <div class="lg:col-span-4 space-y-12">
 
                     <!-- Layout A: Problem -->
@@ -251,7 +252,7 @@
                         <!-- Heading -->
                         <div class="space-y-3">
                             <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Problem</p>
-                            <h2 class="text-3xl font-semibold">UI and RBAC failed to scale</h2>
+                            <h2 class="text-3xl font-semibold">UI scaling and no RBAC failed</h2>
                         </div>
 
                         <!-- Problem Description -->
@@ -261,37 +262,422 @@
                         <div class="space-y-4">
                             
                             <h2 class="text-xl text-gray-900 dark:text-gray-100 font-semibold">Key problems included:</h2>
-                            <ul class="space-y-8 text-gray-700 dark:text-gray-300">
-                                <li class="space-y-2">
+
+                            <ul class="space-y-4 text-gray-700 dark:text-gray-300">
+
+                                <!-- Inconsistent UX across modules -->
+                                <li class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                     <p class="font-semibold text-gray-900 dark:text-gray-100">Inconsistent user experience across modules</p>
+
+                                    <svg class="w-full h-auto rounded-2xl bg-white/70 dark:bg-gray-900/40"
+                                        viewBox="0 0 1200 650" role="img" aria-label="Inconsistent UX across modules: same task shown differently">
+                                        <defs>
+                                            <style>
+                                                .t {
+                                                    font: 600 22px "Open Sans", system-ui;
+                                                    fill: currentColor;
+                                                }
+                                    
+                                                .s {
+                                                    font: 500 16px "Open Sans", system-ui;
+                                                    fill: currentColor;
+                                                    opacity: .75;
+                                                }
+                                    
+                                                .m {
+                                                    font: 600 16px "Open Sans", system-ui;
+                                                    fill: currentColor;
+                                                    opacity: .9;
+                                                }
+                                    
+                                                .stroke {
+                                                    stroke: currentColor;
+                                                    stroke-opacity: .35;
+                                                }
+                                    
+                                                .muted {
+                                                    fill: currentColor;
+                                                    fill-opacity: .08;
+                                                }
+                                    
+                                                .muted2 {
+                                                    fill: currentColor;
+                                                    fill-opacity: .05;
+                                                }
+                                            </style>
+                                        </defs>
+                                    
+                                        <rect x="0" y="0" width="1200" height="650" rx="28" class="muted2"></rect>
+                                    
+                                        <text x="44" y="64" class="t">Same task, different rules</text>
+                                        <text x="44" y="98" class="s">Compare “Register / Update” flow across modules. Mismatched fields, labels, and CTA
+                                            placement.</text>
+                                    
+                                        <!-- Screen A -->
+                                        <rect x="70" y="150" width="330" height="430" rx="26" class="muted"></rect>
+                                        <rect x="110" y="190" width="250" height="34" rx="10" class="muted2"></rect>
+                                        <rect x="110" y="245" width="250" height="24" rx="8" class="muted2"></rect>
+                                        <rect x="110" y="285" width="250" height="24" rx="8" class="muted2"></rect>
+                                        <rect x="110" y="325" width="180" height="24" rx="8" class="muted2"></rect>
+                                        <rect x="110" y="520" width="250" height="44" rx="14" class="muted2"></rect>
+                                        <text x="110" y="176" class="m">Module A</text>
+                                        <text x="110" y="505" class="s">Primary CTA at bottom</text>
+                                    
+                                        <!-- Screen B -->
+                                        <rect x="435" y="150" width="330" height="430" rx="26" class="muted"></rect>
+                                        <rect x="475" y="190" width="250" height="34" rx="10" class="muted2"></rect>
+                                        <rect x="475" y="245" width="170" height="24" rx="8" class="muted2"></rect>
+                                        <rect x="475" y="285" width="250" height="24" rx="8" class="muted2"></rect>
+                                        <rect x="475" y="325" width="250" height="24" rx="8" class="muted2"></rect>
+                                        <rect x="475" y="370" width="210" height="24" rx="8" class="muted2"></rect>
+                                        <rect x="475" y="455" width="200" height="44" rx="14" class="muted2"></rect>
+                                        <text x="475" y="176" class="m">Module B</text>
+                                        <text x="475" y="440" class="s">CTA shifts mid-screen</text>
+                                    
+                                        <!-- Callouts -->
+                                        <path d="M820 210 L1120 210" class="stroke" stroke-width="2"></path>
+                                        <circle cx="820" cy="210" r="6" fill="currentColor" fill-opacity=".5"></circle>
+                                        <text x="840" y="202" class="m">Mismatch 01</text>
+                                        <text x="840" y="228" class="s">Different field order and labels</text>
+                                    
+                                        <path d="M820 340 L1120 340" class="stroke" stroke-width="2"></path>
+                                        <circle cx="820" cy="340" r="6" fill="currentColor" fill-opacity=".5"></circle>
+                                        <text x="840" y="332" class="m">Mismatch 02</text>
+                                        <text x="840" y="358" class="s">Validation + required fields vary</text>
+                                    
+                                        <path d="M820 470 L1120 470" class="stroke" stroke-width="2"></path>
+                                        <circle cx="820" cy="470" r="6" fill="currentColor" fill-opacity=".5"></circle>
+                                        <text x="840" y="462" class="m">Mismatch 03</text>
+                                        <text x="840" y="488" class="s">Primary action appears in different places</text>
+                                    </svg>
+
                                     <p>Similar tasks behaved differently in DHS, Family Planning, and other modules, forcing users to relearn flows and increasing errors.</p>
-                                    <img loading="lazy" decoding="async" src="../assets/chip-2/demo-img.png" alt="Inconsistent user experience across modules" class="w-full rounded-2xl">
+
+                                    <!-- <img loading="lazy" decoding="async" src="../assets/chip-2/demo-img.png" alt="Inconsistent user experience across modules" class="w-full rounded-2xl"> -->
                                 </li>
-                                <li class="space-y-2">
-                                    <p class="font-semibold text-gray-900 dark:text-gray-100">RBAC implemented as backend logic only</p>
-                                    <p>Roles and permissions were handled at the data layer, but the interface was not designed around them, leading to cluttered screens, hidden actions, and frequent development rework.</p>
-                                    <img loading="lazy" decoding="async" src="../assets/chip-2/demo-img.png" alt="RBAC implemented as backend logic only" class="w-full rounded-2xl">
-                                </li>
-                                <li class="space-y-2">
+
+                                <!-- High cognitive load for frontline users -->
+                                <li class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                     <p class="font-semibold text-gray-900 dark:text-gray-100">High cognitive load for frontline users</p>
+
+                                    <svg class="w-full h-auto rounded-2xl bg-white/70 dark:bg-gray-900/40"
+                                        viewBox="0 0 1000 650" role="img" aria-label="High cognitive load: dense form and competing actions">
+                                        <defs>
+                                            <style>
+                                                .t {
+                                                    font: 600 22px "Open Sans", system-ui;
+                                                    fill: currentColor;
+                                                }
+                                    
+                                                .s {
+                                                    font: 500 16px "Open Sans", system-ui;
+                                                    fill: currentColor;
+                                                    opacity: .75;
+                                                }
+                                    
+                                                .m {
+                                                    font: 600 16px "Open Sans", system-ui;
+                                                    fill: currentColor;
+                                                    opacity: .9;
+                                                }
+                                    
+                                                .stroke {
+                                                    stroke: currentColor;
+                                                    stroke-opacity: .35;
+                                                }
+                                    
+                                                .muted {
+                                                    fill: currentColor;
+                                                    fill-opacity: .08;
+                                                }
+                                    
+                                                .muted2 {
+                                                    fill: currentColor;
+                                                    fill-opacity: .05;
+                                                }
+                                            </style>
+                                        </defs>
+                                    
+                                        <rect x="0" y="0" width="1200" height="650" rx="28" class="muted2"></rect>
+                                        <text x="44" y="64" class="t">Frontline screens carry too much at once</text>
+                                        <text x="44" y="98" class="s">Dense forms, too many sections, and competing CTAs slow down task completion.</text>
+                                    
+                                        <!-- Dense screen -->
+                                        <rect x="70" y="140" width="520" height="470" rx="28" class="muted"></rect>
+                                        <text x="100" y="185" class="m">Dense form</text>
+                                    
+                                        <!-- Many fields -->
+                                        <rect x="100" y="210" width="460" height="28" rx="10" class="muted2"></rect>
+                                        <rect x="100" y="250" width="460" height="28" rx="10" class="muted2"></rect>
+                                        <rect x="100" y="290" width="460" height="28" rx="10" class="muted2"></rect>
+                                        <rect x="100" y="330" width="460" height="28" rx="10" class="muted2"></rect>
+                                        <rect x="100" y="370" width="460" height="28" rx="10" class="muted2"></rect>
+                                        <rect x="100" y="410" width="460" height="28" rx="10" class="muted2"></rect>
+                                        <rect x="100" y="450" width="460" height="28" rx="10" class="muted2"></rect>
+                                    
+                                        <!-- Competing CTAs -->
+                                        <rect x="100" y="505" width="220" height="48" rx="16" class="muted2"></rect>
+                                        <rect x="340" y="505" width="220" height="48" rx="16" class="muted2"></rect>
+                                        <text x="120" y="536" class="s">Save</text>
+                                        <text x="360" y="536" class="s">Submit</text>
+                                    
+                                        <!-- Better version (progressive disclosure) -->
+                                        <rect x="640" y="140" width="520" height="470" rx="28" class="muted"></rect>
+                                        <text x="670" y="185" class="m">Role-focused view</text>
+                                    
+                                        <!-- Fewer visible fields + collapsed sections -->
+                                        <rect x="670" y="210" width="460" height="34" rx="12" class="muted2"></rect>
+                                        <rect x="670" y="260" width="460" height="34" rx="12" class="muted2"></rect>
+                                        <rect x="670" y="310" width="460" height="34" rx="12" class="muted2"></rect>
+                                    
+                                        <rect x="670" y="370" width="460" height="54" rx="16" class="muted2"></rect>
+                                        <text x="690" y="405" class="s">Collapsed sections (details on demand)</text>
+                                    
+                                        <rect x="670" y="505" width="460" height="48" rx="16" class="muted2"></rect>
+                                        <text x="690" y="536" class="s">One primary CTA</text>
+                                    </svg>
+
                                     <p>Field workers were exposed to unnecessary information and options, slowing down task completion in time-sensitive, real-world conditions.</p>
-                                    <img loading="lazy" decoding="async" src="../assets/chip-2/demo-img.png" alt="High cognitive load for frontline users" class="w-full rounded-2xl">
+
+                                    <!-- <img loading="lazy" decoding="async" src="../assets/chip-2/demo-img.png" alt="High cognitive load for frontline users" class="w-full rounded-2xl"> -->
                                 </li>
-                                <li class="space-y-2">
+
+                                <!-- Duplication in design and development -->
+                                <li class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                     <p class="font-semibold text-gray-900 dark:text-gray-100">Duplication in design and development
                                     </p>
+
+                                    <svg class="w-full h-auto rounded-2xl bg-white/70 dark:bg-gray-900/40"
+                                        viewBox="0 0 1000 650" role="img" aria-label="Duplication: same component reimplemented differently across modules">
+                                        <defs>
+                                            <style>
+                                                .t {
+                                                    font: 600 22px "Open Sans", system-ui;
+                                                    fill: currentColor;
+                                                }
+                                    
+                                                .s {
+                                                    font: 500 16px "Open Sans", system-ui;
+                                                    fill: currentColor;
+                                                    opacity: .75;
+                                                }
+                                    
+                                                .m {
+                                                    font: 600 16px "Open Sans", system-ui;
+                                                    fill: currentColor;
+                                                    opacity: .9;
+                                                }
+                                    
+                                                .stroke {
+                                                    stroke: currentColor;
+                                                    stroke-opacity: .35;
+                                                }
+                                    
+                                                .muted {
+                                                    fill: currentColor;
+                                                    fill-opacity: .08;
+                                                }
+                                    
+                                                .muted2 {
+                                                    fill: currentColor;
+                                                    fill-opacity: .05;
+                                                }
+                                            </style>
+                                        </defs>
+                                    
+                                        <rect x="0" y="0" width="1200" height="650" rx="28" class="muted2"></rect>
+                                        <text x="44" y="64" class="t">Same pattern, rebuilt repeatedly</text>
+                                        <text x="44" y="98" class="s">Small visual differences create inconsistent behavior and slow down new module
+                                            shipping.</text>
+                                    
+                                        <!-- Grid of “almost same” cards -->
+                                        <g transform="translate(70,140)">
+                                            <!-- row 1 -->
+                                            <rect x="0" y="0" width="330" height="160" rx="24" class="muted"></rect>
+                                            <rect x="30" y="28" width="200" height="22" rx="8" class="muted2"></rect>
+                                            <rect x="30" y="62" width="270" height="16" rx="6" class="muted2"></rect>
+                                            <rect x="30" y="92" width="140" height="34" rx="14" class="muted2"></rect>
+                                            <text x="30" y="145" class="s">Module A card</text>
+                                    
+                                            <rect x="370" y="0" width="330" height="160" rx="18" class="muted"></rect>
+                                            <rect x="400" y="24" width="220" height="22" rx="6" class="muted2"></rect>
+                                            <rect x="400" y="60" width="250" height="16" rx="6" class="muted2"></rect>
+                                            <rect x="400" y="90" width="160" height="36" rx="10" class="muted2"></rect>
+                                            <text x="400" y="145" class="s">Module B card</text>
+                                    
+                                            <rect x="740" y="0" width="330" height="160" rx="26" class="muted"></rect>
+                                            <rect x="770" y="30" width="180" height="22" rx="10" class="muted2"></rect>
+                                            <rect x="770" y="64" width="280" height="16" rx="6" class="muted2"></rect>
+                                            <rect x="770" y="96" width="120" height="34" rx="16" class="muted2"></rect>
+                                            <text x="770" y="145" class="s">Module C card</text>
+                                    
+                                            <!-- row 2 -->
+                                            <rect x="0" y="190" width="520" height="180" rx="24" class="muted"></rect>
+                                            <rect x="30" y="222" width="300" height="22" rx="8" class="muted2"></rect>
+                                            <rect x="30" y="258" width="460" height="16" rx="6" class="muted2"></rect>
+                                            <rect x="30" y="288" width="300" height="16" rx="6" class="muted2"></rect>
+                                            <rect x="30" y="320" width="200" height="40" rx="16" class="muted2"></rect>
+                                            <text x="30" y="368" class="s">“Same” form pattern (different spacing + CTA)</text>
+                                    
+                                            <rect x="550" y="190" width="520" height="180" rx="18" class="muted"></rect>
+                                            <rect x="580" y="220" width="280" height="22" rx="6" class="muted2"></rect>
+                                            <rect x="580" y="256" width="420" height="16" rx="6" class="muted2"></rect>
+                                            <rect x="580" y="286" width="420" height="16" rx="6" class="muted2"></rect>
+                                            <rect x="580" y="318" width="260" height="40" rx="10" class="muted2"></rect>
+                                            <text x="580" y="368" class="s">Rebuilt again (new variants)</text>
+                                        </g>
+                                    </svg>
+
                                     <p>Lack of a shared design system and role-aware patterns meant new features were repeatedly redesigned and rebuilt for different roles.</p>
-                                    <img loading="lazy" decoding="async" src="../assets/chip-2/demo-img.png" alt="Duplication in design and development" class="w-full rounded-2xl">
+
+                                    <!-- <img loading="lazy" decoding="async" src="../assets/chip-2/demo-img.png" alt="Duplication in design and development" class="w-full rounded-2xl"> -->
                                 </li>
-                                <li class="space-y-2">
+
+                                <!-- Poor performance on low-end devices and networks -->
+                                <li class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                     <p class="font-semibold text-gray-900 dark:text-gray-100">Poor performance on low-end devices and networks</p>
+
+                                    <svg class="w-full h-auto rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/40"
+                                        viewBox="0 0 1200 650" role="img"
+                                        aria-label="Performance and network constraints: unclear offline states and retry loops">
+                                        <defs>
+                                            <style>
+                                                .t {
+                                                    font: 600 22px "Open Sans", system-ui;
+                                                    fill: currentColor;
+                                                }
+                                    
+                                                .s {
+                                                    font: 500 16px "Open Sans", system-ui;
+                                                    fill: currentColor;
+                                                    opacity: .75;
+                                                }
+                                    
+                                                .m {
+                                                    font: 600 16px "Open Sans", system-ui;
+                                                    fill: currentColor;
+                                                    opacity: .9;
+                                                }
+                                    
+                                                .stroke {
+                                                    stroke: currentColor;
+                                                    stroke-opacity: .35;
+                                                }
+                                    
+                                                .muted {
+                                                    fill: currentColor;
+                                                    fill-opacity: .08;
+                                                }
+                                    
+                                                .muted2 {
+                                                    fill: currentColor;
+                                                    fill-opacity: .05;
+                                                }
+                                            </style>
+                                        </defs>
+                                    
+                                        <rect x="0" y="0" width="1200" height="650" rx="28" class="muted2"></rect>
+                                        <text x="44" y="64" class="t">Low-end devices + weak networks break confidence</text>
+                                        <text x="44" y="98" class="s">When “saved vs submitted” is unclear, users retry and create duplicates.</text>
+                                    
+                                        <!-- Screen -->
+                                        <rect x="70" y="140" width="740" height="470" rx="28" class="muted"></rect>
+                                        <text x="100" y="185" class="m">Form submit</text>
+                                    
+                                        <!-- Network badge -->
+                                        <rect x="640" y="160" width="140" height="36" rx="18" class="muted2"></rect>
+                                        <text x="662" y="184" class="s">Offline / 2G</text>
+                                    
+                                        <!-- Spinner area -->
+                                        <rect x="100" y="220" width="680" height="250" rx="22" class="muted2"></rect>
+                                        <circle cx="440" cy="330" r="28" class="stroke" fill="none" stroke-width="6"></circle>
+                                        <path d="M440 302 A28 28 0 0 1 468 330" class="stroke" stroke-width="6" fill="none"></path>
+                                        <text x="320" y="390" class="s">Submitting… (no clear local save state)</text>
+                                    
+                                        <!-- Retry toasts -->
+                                        <rect x="120" y="490" width="320" height="44" rx="16" class="muted2"></rect>
+                                        <rect x="120" y="545" width="360" height="44" rx="16" class="muted2"></rect>
+                                        <text x="145" y="518" class="s">Failed. Tap to retry</text>
+                                        <text x="145" y="573" class="s">Failed. Tap to retry (again)</text>
+                                    
+                                        <!-- Callout panel -->
+                                        <rect x="850" y="140" width="300" height="470" rx="28" class="muted"></rect>
+                                        <text x="875" y="185" class="m">What to prove</text>
+                                        <text x="875" y="230" class="s">• Saved locally confirmation</text>
+                                        <text x="875" y="265" class="s">• Sync pending / synced states</text>
+                                        <text x="875" y="300" class="s">• Retry without duplicates</text>
+                                        <text x="875" y="335" class="s">• Lightweight screens</text>
+                                        <text x="875" y="370" class="s">• Clear offline messaging</text>
+                                    </svg>
+
                                     <p>Heavy screens, long forms, and unclear offline states made the system unreliable in rural and low-connectivity environments.</p>
-                                    <img loading="lazy" decoding="async" src="../assets/chip-2/demo-img.png" alt="Poor performance on low-end devices and networks" class="w-full rounded-2xl">
+
+                                    <!-- <img loading="lazy" decoding="async" src="../assets/chip-2/demo-img.png" alt="Poor performance on low-end devices and networks" class="w-full rounded-2xl"> -->
                                 </li>
-                                <li class="space-y-2">
+
+                                <!-- Limited scalability for new states and programs -->
+                                <li class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                     <p class="font-semibold text-gray-900 dark:text-gray-100">Limited scalability for new states and programs</p>
+
+                                    <svg class="w-full h-auto rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/40"
+  viewBox="0 0 1200 650" role="img" aria-label="Scalability: modules and state variations create UI sprawl">
+  <defs>
+    <style>
+      .t { font: 600 22px "Open Sans", system-ui; fill: currentColor; }
+      .s { font: 500 16px "Open Sans", system-ui; fill: currentColor; opacity: .75; }
+      .m { font: 600 16px "Open Sans", system-ui; fill: currentColor; opacity: .9; }
+      .stroke { stroke: currentColor; stroke-opacity: .35; }
+      .muted { fill: currentColor; fill-opacity: .08; }
+      .muted2 { fill: currentColor; fill-opacity: .05; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="650" rx="28" class="muted2"></rect>
+  <text x="44" y="64" class="t">Every new module/state increases UX complexity</text>
+  <text x="44" y="98" class="s">Without shared patterns, navigation and workflows fork and become expensive to govern.</text>
+
+  <!-- Central node -->
+  <circle cx="420" cy="365" r="90" class="muted"></circle>
+  <text x="372" y="360" class="m">CHIP</text>
+  <text x="360" y="390" class="s">Core</text>
+
+  <!-- Spoke nodes -->
+  <g class="stroke" stroke-width="3" fill="none">
+    <path d="M490 310 C620 240, 710 240, 820 260"></path>
+    <path d="M500 380 C640 400, 720 440, 830 500"></path>
+    <path d="M420 275 C420 190, 420 150, 420 120"></path>
+    <path d="M345 430 C250 500, 200 520, 120 560"></path>
+    <path d="M340 300 C250 230, 210 210, 120 200"></path>
+  </g>
+
+  <!-- Nodes -->
+  <rect x="780" y="220" width="280" height="80" rx="22" class="muted"></rect>
+  <text x="805" y="255" class="m">New module</text>
+  <text x="805" y="282" class="s">Different flow + UI rules</text>
+
+  <rect x="780" y="460" width="280" height="80" rx="22" class="muted"></rect>
+  <text x="805" y="495" class="m">New state</text>
+  <text x="805" y="522" class="s">Policy + governance forks</text>
+
+  <rect x="280" y="70" width="280" height="80" rx="22" class="muted"></rect>
+  <text x="305" y="105" class="m">Partner rollout</text>
+  <text x="305" y="132" class="s">New training + setup</text>
+
+  <rect x="60" y="520" width="280" height="80" rx="22" class="muted"></rect>
+  <text x="85" y="555" class="m">Ops overhead</text>
+  <text x="85" y="582" class="s">Support + QA load grows</text>
+
+  <rect x="60" y="160" width="280" height="80" rx="22" class="muted"></rect>
+  <text x="85" y="195" class="m">Design debt</text>
+  <text x="85" y="222" class="s">Variants everywhere</text>
+
+  <!-- Bottom note -->
+  <text x="44" y="610" class="s">Design proof: shared patterns + role-aware rules prevent forks and reduce rollout cost.</text>
+                                    </svg>
+
                                     <p>Adding a new module or onboarding a new state required disproportionate effort due to fragmented UI patterns and rigid workflows.</p>
-                                    <img loading="lazy" decoding="async" src="../assets/chip-2/demo-img.png" alt="Limited scalability for new states and programs" class="w-full rounded-2xl">
+
+                                    <!-- <img loading="lazy" decoding="async" src="../assets/chip-2/demo-img.png" alt="Limited scalability for new states and programs" class="w-full rounded-2xl"> -->
                                 </li>
                             </ul>
                         </div>
@@ -317,26 +703,26 @@
 
                         <div class="space-y-4">
                             <h2 class="text-xl text-gray-800 dark:text-gray-200 font-semibold">My responsibilities included:</h2>
-                            <ul class="space-y-3 text-gray-700 dark:text-gray-300">
-                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">End-to-end product design</span> — defined
+                            <ul class="space-y-4 text-gray-700 dark:text-gray-300">
+                                <li class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40"><span class="font-semibold text-gray-900 dark:text-gray-100">End-to-end product design</span> — defined
                                     user flows, interaction models, and visual design across all healthcare modules,
                                     from frontline task execution to administrative oversight.</li>
-                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Design system ownership</span> — built a
+                                <li class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40"><span class="font-semibold text-gray-900 dark:text-gray-100">Design system ownership</span> — built a
                                     unified design system for mobile and web, enabling consistency, reuse, and faster
                                     rollout of new modules and states.</li>
-                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Role-based UX architecture</span> —
+                                <li class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40"><span class="font-semibold text-gray-900 dark:text-gray-100">Role-based UX architecture</span> —
                                     designed interfaces that adapt to different roles, permissions, and data depth so
                                     each user sees only what’s relevant.</li>
-                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Cross-platform design</span> — responsive
+                                <li class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40"><span class="font-semibold text-gray-900 dark:text-gray-100">Cross-platform design</span> — responsive
                                     experiences for Android and web, optimized for low-end devices, varying screen
                                     sizes, and unreliable connectivity.</li>
-                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Collaboration with engineering</span> —
+                                <li class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40"><span class="font-semibold text-gray-900 dark:text-gray-100">Collaboration with engineering</span> —
                                     aligned RBAC logic with UI behavior, component visibility, and action-level
                                     permissions to reduce ambiguity.</li>
-                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Constraint-driven design</span> — balanced
+                                <li class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40"><span class="font-semibold text-gray-900 dark:text-gray-100">Constraint-driven design</span> — balanced
                                     usability with low digital literacy, offline usage, government workflows, and
                                     program-mandated task structures.</li>
-                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Mentorship and quality control</span> —
+                                <li class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40"><span class="font-semibold text-gray-900 dark:text-gray-100">Mentorship and quality control</span> —
                                     mentored a design intern, reviewed work, and enforced system patterns and design
                                     principles.</li>
                             </ul>
@@ -368,7 +754,7 @@
                         <div class="space-y-4">
                             <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Primary user groups</h3>
 
-                            <div class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                            <div class="p-4 space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h4 class="font-semibold text-gray-900 dark:text-gray-100">Frontline & Facility-Level Users</h4>
                                 <p class="text-gray-700 dark:text-gray-300">These users interact with the system daily and are responsible
                                     for data collection, service delivery, and on-ground execution.</p>
@@ -386,7 +772,7 @@
                                 <p class="font-semibold text-gray-900 dark:text-gray-100">Needs: speed, clarity, error prevention, minimal cognitive load.</p>
                             </div>
 
-                            <div class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
+                            <div class="p-4 space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h4 class="font-semibold text-gray-900 dark:text-gray-100">Supervisory & Administrative Users</h4>
                                 <p class="text-gray-700 dark:text-gray-300">Oversight, planning, and performance monitoring across
                                     geographies and programs.</p>
@@ -446,8 +832,17 @@
 
                         <p class="text-gray-700 dark:text-gray-300">The design approach for CHIP 2.0 was driven by one core principle: design for scale, reality, and roles, not for ideal conditions or isolated screens. Every decision had to hold up across modules, states, devices, and user types.</p>
 
-                        <div class="space-y-8">
-                            <div class="space-y-2">
+                        <div class="space-y-4">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
+                                <!-- Icon: System-first -->
+                                <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M7 7h10v10H7z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                                    <path d="M7 12H4M20 12h-3M12 7V4M12 20v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                    <circle cx="4" cy="12" r="1.6" stroke="currentColor" stroke-width="1.8" />
+                                    <circle cx="20" cy="12" r="1.6" stroke="currentColor" stroke-width="1.8" />
+                                    <circle cx="12" cy="4" r="1.6" stroke="currentColor" stroke-width="1.8" />
+                                    <circle cx="12" cy="20" r="1.6" stroke="currentColor" stroke-width="1.8" />
+                                </svg>
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">System-first, not screen-first</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
                                     Treated the product as a connected ecosystem; shared workflows and patterns were
@@ -456,7 +851,16 @@
                                 </p>
                             </div>
 
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
+                                <!-- Icon: Role-aware -->
+                                <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z" stroke="currentColor" stroke-width="1.8" />
+                                    <path d="M4.5 20c1.5-3.8 4.4-5.5 7.5-5.5S18 16.2 19.5 20" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" />
+                                    <path d="M16.5 8.5h4v4h-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                                    <path d="M17.6 10.5l.9.9 1.9-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Role-aware by design</h3>
                                 <ul class="pl-2 list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
                                     <li>Task-focused views for frontline workers</li>
@@ -465,7 +869,15 @@
                                 </ul>
                             </div>
 
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
+                                <!-- Icon: Constraints -->
+                                <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M6 4v16M12 4v16M18 4v16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                    <path d="M4.5 8h3M10.5 14h3M16.5 10h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                    <circle cx="6" cy="8" r="1.6" stroke="currentColor" stroke-width="1.8" />
+                                    <circle cx="12" cy="14" r="1.6" stroke="currentColor" stroke-width="1.8" />
+                                    <circle cx="18" cy="10" r="1.6" stroke="currentColor" stroke-width="1.8" />
+                                </svg>
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Constraint-driven decisions</h3>
                                 <ul class="pl-2 list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
                                     <li>Low digital literacy and offline/poor connectivity</li>
@@ -476,7 +888,15 @@
                                     novelty.</p>
                             </div>
                             
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
+                                <!-- Icon: Mobile-first + Cross-platform -->
+                                <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M7 6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2Z" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linejoin="round" />
+                                    <path d="M10 18h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                    <path d="M16.5 7.5h4.5v7H16.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                                    <path d="M18.8 18.5h-3.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                </svg>
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Mobile-first, cross-platform</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
                                     Designed frontline workflows for small screens and limited attention first; extended
@@ -485,7 +905,17 @@
                                 </p>
                             </div>
 
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
+                                <!-- Icon: Reuse -->
+                                <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M7 7h6v6H7zM11 11h6v6h-6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                                    <path d="M6.5 14.5a5.5 5.5 0 0 1 0-5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                    <path d="M17.5 9.5a5.5 5.5 0 0 1 0 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                    <path d="M5.5 9l1.8-.2L7 6.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M18.5 15l-1.8.2.3 1.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Reuse over reinvention</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
                                     Standardized forms, approvals, validations, status indicators, and patterns to
@@ -493,7 +923,18 @@
                                 </p>
                             </div>
 
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
+                                <!-- Icon: Collaboration -->
+                                <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M8.2 11.2a3 3 0 1 0-3-3 3 3 0 0 0 3 3Z" stroke="currentColor" stroke-width="1.8" />
+                                    <path d="M15.8 11.2a3 3 0 1 0-3-3 3 3 0 0 0 3 3Z" stroke="currentColor" stroke-width="1.8" />
+                                    <path d="M3.8 20c.9-2.8 3-4.2 4.8-4.2S12.6 17.2 13.4 20" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" />
+                                    <path d="M10.6 20c.9-2.8 3-4.2 4.8-4.2s3.9 1.4 4.8 4.2" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" />
+                                    <path d="M12 13.5c1.1 0 2 .4 2.8 1.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                    <path d="M12 13.5c-1.1 0-2 .4-2.8 1.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                </svg>
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Collaboration & iteration</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
                                     Continuous validation with engineering and program stakeholders; field realities and
@@ -528,9 +969,9 @@
                             decoration.
                         </p>
 
-                        <div class="space-y-8">
+                        <div class="space-y-4">
 
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Foundations for heavy workflows</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
                                     Typography, spacing, and color tuned for prolonged use and dense data. Conservative
@@ -538,7 +979,7 @@
                                 </p>
                             </div>
                             
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Components for variation</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
                                     Forms scale from quick capture to multi-step workflows with validation, partial
@@ -549,7 +990,7 @@
                                     errors with states for loading, disabled, restricted, and offline.</p>
                             </div>
                             
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Patterns that reduce errors</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
                                     Standardized interactions: long tasks split into resumable steps; intentional
@@ -558,15 +999,15 @@
                                 </p>
                             </div>
                             
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Role-aware components</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
                                     Same component adapts by role—editable for field, limited updates for supervisors,
                                     read-only for admins—permissions drive behavior while visuals stay consistent.
                                 </p>
                             </div>
-                            
-                            <div class="space-y-2">
+
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Cross-platform consistency</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
                                     Core components and interaction logic align across Android and web; density,
@@ -575,7 +1016,7 @@
                                 </p>
                             </div>
 
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Reuse over reinvention</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
                                     Standardized forms, approvals, validations, and indicators reduced effort to add
@@ -612,9 +1053,9 @@
                             backend permissions.
                         </p>
 
-                        <div class="space-y-8">
+                        <div class="space-y-4">
 
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Designing for intent</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
                                     Interfaces centered on what each role does most often: frontline users see
@@ -623,7 +1064,7 @@
                                 </p>
                             </div>
 
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Visibility by design</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
                                     Information density, component visibility, and navigation structure shift by role.
@@ -632,7 +1073,7 @@
                                 </p>
                             </div>
 
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Action-level control & feedback</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
                                     Actions like edit, approve, assign, or escalate carry clear affordances tied to role
@@ -641,7 +1082,7 @@
                                 </p>
                             </div>
 
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Data depth & navigation</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
                                     Field users work at record/task depth; supervisors move between summaries and
@@ -650,7 +1091,7 @@
                                 </p>
                             </div>
 
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Consistency across modules</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
                                     RBAC behavior stays predictable across DHS, Family Planning, and other programs,
@@ -658,7 +1099,7 @@
                                 </p>
                             </div>
 
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Backend alignment</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
                                     Close alignment with backend roles, facilities, and hierarchies kept permission
@@ -691,54 +1132,54 @@
                         <p class="text-gray-700 dark:text-gray-300">CHIP 2.0 was designed inside structural and environmental constraints—these were everyday realities, not edge cases. Each limitation shaped specific tradeoffs to keep the platform usable and reliable.
                         </p>
 
-                        <div class="space-y-8">
+                        <div class="space-y-4">
                         
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Low digital literacy</h3>
                                 <p class="text-gray-700 dark:text-gray-300">Interfaces had to be immediately understandable, forgiving, and consistent for time-sensitive field work.</p>
                                 <p class="text-gray-800 dark:text-gray-200"><span class="font-semibold">Tradeoff:</span> Advanced customization and dense controls were avoided in favor of predictable patterns and guided workflows.</p>
                             </div>
                         
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Unreliable connectivity</h3>
                                 <p class="text-gray-700 dark:text-gray-300">Users often worked offline for long stretches.</p>
                                 <p class="text-sm text-gray-800 dark:text-gray-200"><span class="font-semibold">Tradeoff:</span> Real-time interactions and instant validations were delayed or simplified to ensure reliability offline/low-bandwidth.</p>
                             </div>
                         
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Low-end Android devices</h3>
                                 <p class="text-gray-700 dark:text-gray-300">Older devices with limited memory/CPU dominated frontline use.
                                 </p>
                                 <p class="text-sm text-gray-800 dark:text-gray-200"><span class="font-semibold">Tradeoff:</span> Visual polish and micro-interactions were deprioritized for performance, clarity, and faster load times.</p>
                             </div>
                         
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Long, repetitive data entry</h3>
                                 
                                 <p class="text-gray-700 dark:text-gray-300">Extensive, multi-step forms carried fatigue and error risk.</p>
                                 <p class="text-sm text-gray-800 dark:text-gray-200"><span class="font-semibold">Tradeoff:</span> Structured, sometimes rigid workflows reduced errors even if they limited edge-case flexibility.</p>
                             </div>
                         
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Mandated processes</h3>
                                 <p class="text-gray-700 dark:text-gray-300">Government and program rules dictated task structures.</p>
                                 <p class="text-sm text-gray-800 dark:text-gray-200"><span class="font-semibold">Tradeoff:</span> Flows weren’t radically restructured; instead they were clarified, made less error-prone, and easier to resume.</p>
                             </div>
                         
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Role complexity & hierarchy</h3>
                                 <p class="text-gray-700 dark:text-gray-300">Users switched roles/facilities and worked in layered hierarchies.</p>
                                 <p class="text-sm text-gray-800 dark:text-gray-200"><span class="font-semibold">Tradeoff:</span> Some actions were intentionally hidden rather than explained to reduce overload and risk.</p>
                             </div>
                         
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Multi-state variability</h3>
                                 
                                 <p class="text-gray-700 dark:text-gray-300">Each state/partner had different operational needs.</p>
                                 <p class="text-sm text-gray-800 dark:text-gray-200"><span class="font-semibold">Tradeoff:</span> Prioritized configurable patterns over bespoke UI; some optimizations handled operationally, not through divergence.</p>
                             </div>
                         
-                            <div class="space-y-2">
+                            <div class="space-y-4 p-4 rounded-2xl bg-white/70 dark:bg-gray-900/40">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Design vs delivery pressure</h3>
                                 
                                 <p class="text-gray-700 dark:text-gray-300">Continuous delivery alongside system improvements.</p>
@@ -773,7 +1214,7 @@
                             <!-- Accordion -->
                             <div
                                 data-accordion="chip-2-modules"
-                                class="overflow-hidden rounded-3xl border border-gray-200 bg-white/70 dark:bg-gray-900/40 shadow-sm dark:border-gray-800">
+                                class="overflow-hidden rounded-3xl bg-white/70 dark:bg-gray-900/40 ">
 
                                 <!-- Onboarding (Login, Registration) -->
                                 <details
@@ -805,7 +1246,7 @@
                                         <div
                                             class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out group-open:grid-rows-[1fr]">
 
-                                            <div class="overflow-hidden">
+                                            <div class="">
                                                 <div
                                                     class="space-y-4 opacity-0 transition-opacity duration-300 ease-out group-open:opacity-100">
 
@@ -817,12 +1258,12 @@
 
 
                                                     </div>
-                                                    <div class="space-y-3">
-                                                        <p class="text-sm text-gray-700 dark:text-gray-300">
+                                                    <div class="space-y-6">
+                                                        <p class="text-gray-700 dark:text-gray-300">
                                                             A role-aware login and registration flow that establishes identity, posting location, and approval state upfront. The UI prevents duplicate registrations, makes “pending approval” a first-class state, and routes approved users into a day-start surface so work begins without hunting through menus.
                                                         </p>
                                                         <a href="./chip-2/onboarding.html"
-                                                            class="inline-flex items-center justify-center rounded-lg border border-orange-200 bg-orange-50 px-3 py-1.5 text-xs font-semibold text-orange-900 shadow-sm ring-1 ring-orange-200/60 transition hover:border-orange-300 hover:bg-orange-100 hover:ring-orange-300/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:border-amber-400/40 dark:bg-amber-500/20 dark:text-amber-100 dark:ring-amber-400/30 dark:hover:border-amber-300/60 dark:hover:bg-amber-500/30 dark:hover:ring-amber-300/50 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                                                            class="inline-flex items-center rounded-lg border border-transparent bg-gray-100 px-4 py-2 font-semibold text-gray-900 transition hover:border-gray-300 hover:bg-gray-200 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100 dark:hover:border-gray-700 dark:hover:bg-gray-800">
                                                             View module
                                                         </a>
                                                     </div>
@@ -867,11 +1308,11 @@
 
                                                     </div>
                                                     <div class="space-y-3">
-                                                        <p class="text-sm text-gray-700 dark:text-gray-300">
+                                                        <p class="text-gray-700 dark:text-gray-300">
                                                             A role-aware day-start system that makes punch-in a real operational state, not a polite suggestion. Users select where work is happening (facility, village, outreach, VHND, monitoring, meetings), see execution counters and pending governance work, and get a clean “start visit” path without menu hunting.
                                                         </p>
                                                         <a href="./chip-2/homepage.html"
-                                                            class="inline-flex items-center justify-center rounded-lg border border-orange-200 bg-orange-50 px-3 py-1.5 text-xs font-semibold text-orange-900 shadow-sm ring-1 ring-orange-200/60 transition hover:border-orange-300 hover:bg-orange-100 hover:ring-orange-300/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:border-amber-400/40 dark:bg-amber-500/20 dark:text-amber-100 dark:ring-amber-400/30 dark:hover:border-amber-300/60 dark:hover:bg-amber-500/30 dark:hover:ring-amber-300/50 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                                                            class="inline-flex items-center rounded-lg border border-transparent bg-gray-100 px-4 py-2 font-semibold text-gray-900 transition hover:border-gray-300 hover:bg-gray-200 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100 dark:hover:border-gray-700 dark:hover:bg-gray-800">
                                                             View module
                                                         </a>
                                                     </div>
@@ -920,7 +1361,7 @@
                                                             A role-aware day-start system that makes punch-in a real operational state, not a polite suggestion. Users select where work is happening (facility, village, outreach, VHND, monitoring, meetings), see execution counters and pending governance work, and get a clean “start visit” path without menu hunting.
                                                         </p>
                                                         <a href="./chip-2/profile.html"
-                                                            class="inline-flex items-center justify-center rounded-lg border border-orange-200 bg-orange-50 px-3 py-1.5 text-xs font-semibold text-orange-900 shadow-sm ring-1 ring-orange-200/60 transition hover:border-orange-300 hover:bg-orange-100 hover:ring-orange-300/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:border-amber-400/40 dark:bg-amber-500/20 dark:text-amber-100 dark:ring-amber-400/30 dark:hover:border-amber-300/60 dark:hover:bg-amber-500/30 dark:hover:ring-amber-300/50 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                                                            class="inline-flex items-center rounded-lg border border-transparent bg-gray-100 px-4 py-2 font-semibold text-gray-900 transition hover:border-gray-300 hover:bg-gray-200 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100 dark:hover:border-gray-700 dark:hover:bg-gray-800">
                                                             View module
                                                         </a>
                                                     </div>
@@ -969,7 +1410,7 @@
                                                             A field-ready ABHA flow inside CHIP 2.0 that supports search, verification, creation, and updates using Aadhaar OTP / Mobile OTP, explicit consent capture, and online/offline paths.
                                                         </p>
                                                         <a href="./chip-2/abha.html"
-                                                            class="inline-flex items-center justify-center rounded-lg border border-orange-200 bg-orange-50 px-3 py-1.5 text-xs font-semibold text-orange-900 shadow-sm ring-1 ring-orange-200/60 transition hover:border-orange-300 hover:bg-orange-100 hover:ring-orange-300/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:border-amber-400/40 dark:bg-amber-500/20 dark:text-amber-100 dark:ring-amber-400/30 dark:hover:border-amber-300/60 dark:hover:bg-amber-500/30 dark:hover:ring-amber-300/50 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                                                            class="inline-flex items-center rounded-lg border border-transparent bg-gray-100 px-4 py-2 font-semibold text-gray-900 transition hover:border-gray-300 hover:bg-gray-200 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100 dark:hover:border-gray-700 dark:hover:bg-gray-800">
                                                             View module
                                                         </a>
                                                     </div>
@@ -1018,7 +1459,7 @@
                                                             A field-first register that lets frontline workers discover houses and families by area, keep family + member profiles updated, and run DHS-style capture flows with “presence”, GPS, and photo gates. The UI is built to handle daily realities: incomplete data, updates required, duplicates, and interruptions.
                                                         </p>
                                                         <a href="./chip-2/family-register.html"
-                                                            class="inline-flex items-center justify-center rounded-lg border border-orange-200 bg-orange-50 px-3 py-1.5 text-xs font-semibold text-orange-900 shadow-sm ring-1 ring-orange-200/60 transition hover:border-orange-300 hover:bg-orange-100 hover:ring-orange-300/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:border-amber-400/40 dark:bg-amber-500/20 dark:text-amber-100 dark:ring-amber-400/30 dark:hover:border-amber-300/60 dark:hover:bg-amber-500/30 dark:hover:ring-amber-300/50 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                                                            class="inline-flex items-center rounded-lg border border-transparent bg-gray-100 px-4 py-2 font-semibold text-gray-900 transition hover:border-gray-300 hover:bg-gray-200 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100 dark:hover:border-gray-700 dark:hover:bg-gray-800">
                                                             View module
                                                         </a>
                                                     </div>
@@ -1067,7 +1508,7 @@
                                                             A drill-down “progress + attention” surface for supervisors to track registration and DHS completion from State → District → Block → PHC/CHC → SHC → Village/Area. It supports time windows (All time / Today / This week / This month), demographic splits, and verification queues so action is obvious without exporting reports.
                                                         </p>
                                                         <a href="./chip-2/dhs-overview.html"
-                                                            class="inline-flex items-center justify-center rounded-lg border border-orange-200 bg-orange-50 px-3 py-1.5 text-xs font-semibold text-orange-900 shadow-sm ring-1 ring-orange-200/60 transition hover:border-orange-300 hover:bg-orange-100 hover:ring-orange-300/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:border-amber-400/40 dark:bg-amber-500/20 dark:text-amber-100 dark:ring-amber-400/30 dark:hover:border-amber-300/60 dark:hover:bg-amber-500/30 dark:hover:ring-amber-300/50 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                                                            class="inline-flex items-center rounded-lg border border-transparent bg-gray-100 px-4 py-2 font-semibold text-gray-900 transition hover:border-gray-300 hover:bg-gray-200 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100 dark:hover:border-gray-700 dark:hover:bg-gray-800">
                                                             View module
                                                         </a>
                                                     </div>
@@ -1116,7 +1557,7 @@
                                                             A field-ready set of DHS-adjacent flows that capture: (1) Sickle Cell screening status, DBS sample collection, barcode validation, and follow-up needs, and (2) household-level infant and maternal death event capture with structured, repeatable “individual details” steps. The design treats follow-up and data integrity as primary outcomes, not side effects.
                                                         </p>
                                                         <a href="./chip-2/sicklecell-imr-mmr.html"
-                                                            class="inline-flex items-center justify-center rounded-lg border border-orange-200 bg-orange-50 px-3 py-1.5 text-xs font-semibold text-orange-900 shadow-sm ring-1 ring-orange-200/60 transition hover:border-orange-300 hover:bg-orange-100 hover:ring-orange-300/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:border-amber-400/40 dark:bg-amber-500/20 dark:text-amber-100 dark:ring-amber-400/30 dark:hover:border-amber-300/60 dark:hover:bg-amber-500/30 dark:hover:ring-amber-300/50 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                                                            class="inline-flex items-center rounded-lg border border-transparent bg-gray-100 px-4 py-2 font-semibold text-gray-900 transition hover:border-gray-300 hover:bg-gray-200 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100 dark:hover:border-gray-700 dark:hover:bg-gray-800">
                                                             View module
                                                         </a>
                                                     </div>
@@ -1165,7 +1606,7 @@
                                                             A role-aware Family Planning module built around eligible couple tracking, due follow-ups, and event-based status changes (notified → confirmed → closed). It supports frontline realities: low attention, interruptions, mixed connectivity, and strict program rules.
                                                         </p>
                                                         <a href="./chip-2/family-planning.html"
-                                                            class="inline-flex items-center justify-center rounded-lg border border-orange-200 bg-orange-50 px-3 py-1.5 text-xs font-semibold text-orange-900 shadow-sm ring-1 ring-orange-200/60 transition hover:border-orange-300 hover:bg-orange-100 hover:ring-orange-300/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:border-amber-400/40 dark:bg-amber-500/20 dark:text-amber-100 dark:ring-amber-400/30 dark:hover:border-amber-300/60 dark:hover:bg-amber-500/30 dark:hover:ring-amber-300/50 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                                                            class="inline-flex items-center rounded-lg border border-transparent bg-gray-100 px-4 py-2 font-semibold text-gray-900 transition hover:border-gray-300 hover:bg-gray-200 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100 dark:hover:border-gray-700 dark:hover:bg-gray-800">
                                                             View module
                                                         </a>
                                                     </div>
@@ -1214,7 +1655,7 @@
                                                             A role-aware maternal health module designed for frontline delivery where due lists, checkup capture, risk flags, lab completion, and pregnancy outcome must stay connected. Instead of treating ANC as “a form”, the UX is built as a predictable state machine that keeps cases moving across ASHA → ANM and facility handoffs.
                                                         </p>
                                                         <a href="./chip-2/maternal-health.html"
-                                                            class="inline-flex items-center justify-center rounded-lg border border-orange-200 bg-orange-50 px-3 py-1.5 text-xs font-semibold text-orange-900 shadow-sm ring-1 ring-orange-200/60 transition hover:border-orange-300 hover:bg-orange-100 hover:ring-orange-300/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:border-amber-400/40 dark:bg-amber-500/20 dark:text-amber-100 dark:ring-amber-400/30 dark:hover:border-amber-300/60 dark:hover:bg-amber-500/30 dark:hover:ring-amber-300/50 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                                                            class="inline-flex items-center rounded-lg border border-transparent bg-gray-100 px-4 py-2 font-semibold text-gray-900 transition hover:border-gray-300 hover:bg-gray-200 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100 dark:hover:border-gray-700 dark:hover:bg-gray-800">
                                                             View module
                                                         </a>
                                                     </div>
@@ -1263,7 +1704,7 @@
                                                             A role-aware directory that maps District → Block → PHC → SHC → Village chains, and organizes contacts across health workers, elected members, and committee roles. The UX is designed for field operations: fast calling, clear ownership, and governance-aligned edits.
                                                         </p>
                                                         <a href="./chip-2/gok-directory.html"
-                                                            class="inline-flex items-center justify-center rounded-lg border border-orange-200 bg-orange-50 px-3 py-1.5 text-xs font-semibold text-orange-900 shadow-sm ring-1 ring-orange-200/60 transition hover:border-orange-300 hover:bg-orange-100 hover:ring-orange-300/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:border-amber-400/40 dark:bg-amber-500/20 dark:text-amber-100 dark:ring-amber-400/30 dark:hover:border-amber-300/60 dark:hover:bg-amber-500/30 dark:hover:ring-amber-300/50 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                                                            class="inline-flex items-center rounded-lg border border-transparent bg-gray-100 px-4 py-2 font-semibold text-gray-900 transition hover:border-gray-300 hover:bg-gray-200 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100 dark:hover:border-gray-700 dark:hover:bg-gray-800">
                                                             View module
                                                         </a>
                                                     </div>
@@ -1312,7 +1753,7 @@
                                                             A role-aware workflow to notify, validate, and confirm a death without turning it into a “one-tap delete.” The module treats death as a high-integrity system event: it is routed for confirmation, classified by age/sex logic, and only then permanently removes a beneficiary from programs.
                                                         </p>
                                                         <a href="./chip-2/death.html"
-                                                            class="inline-flex items-center justify-center rounded-lg border border-orange-200 bg-orange-50 px-3 py-1.5 text-xs font-semibold text-orange-900 shadow-sm ring-1 ring-orange-200/60 transition hover:border-orange-300 hover:bg-orange-100 hover:ring-orange-300/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:border-amber-400/40 dark:bg-amber-500/20 dark:text-amber-100 dark:ring-amber-400/30 dark:hover:border-amber-300/60 dark:hover:bg-amber-500/30 dark:hover:ring-amber-300/50 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                                                            class="inline-flex items-center rounded-lg border border-transparent bg-gray-100 px-4 py-2 font-semibold text-gray-900 transition hover:border-gray-300 hover:bg-gray-200 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100 dark:hover:border-gray-700 dark:hover:bg-gray-800">
                                                             View module
                                                         </a>
                                                     </div>
@@ -1361,7 +1802,7 @@
                                                             A village-level planning, conduct, and verification system where “meeting happened” is treated as a trackable state machine. The UI supports role-based responsibility (ASHA executes, supervisors verify), evidence capture, and scalable rollups across SHC and PHC geographies.
                                                         </p>
                                                         <a href="./chip-2/vhsnc-meeting.html"
-                                                            class="inline-flex items-center justify-center rounded-lg border border-orange-200 bg-orange-50 px-3 py-1.5 text-xs font-semibold text-orange-900 shadow-sm ring-1 ring-orange-200/60 transition hover:border-orange-300 hover:bg-orange-100 hover:ring-orange-300/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:border-amber-400/40 dark:bg-amber-500/20 dark:text-amber-100 dark:ring-amber-400/30 dark:hover:border-amber-300/60 dark:hover:bg-amber-500/30 dark:hover:ring-amber-300/50 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                                                            class="inline-flex items-center rounded-lg border border-transparent bg-gray-100 px-4 py-2 font-semibold text-gray-900 transition hover:border-gray-300 hover:bg-gray-200 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100 dark:hover:border-gray-700 dark:hover:bg-gray-800">
                                                             View module
                                                         </a>
                                                     </div>
@@ -1528,78 +1969,76 @@
                     </section>
                 </div>
 
-                <!-- Sidebar Navigation -->
-                <aside class="hidden lg:block lg:col-span-2">
-                    <div
-                        class="sticky top-16 rounded-2xl border border-orange-100/70 bg-transparent pl-5 pr-4 py-5 space-y-1 dark:border-orange-400/20">
-                        <a data-scroll-link href="#layout-a"
-                            class="group flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors py-2 px-2 rounded-lg">
-                            <span
-                                class="w-2.5 h-2.5 rounded-full bg-gray-200 dark:bg-gray-800"></span>
-                            <span>Problem</span>
-                        </a>
+                <!-- Sticky Side Index -->
+                <aside class="lg:col-span-2">
+                    <div class="sticky top-24 space-y-4">
+                        <p class="text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">On this page</p>
 
-                        <a data-scroll-link href="#layout-b"
-                            class="group flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors py-2 px-2 rounded-lg">
-                            <span
-                                class="w-2.5 h-2.5 rounded-full bg-gray-200 dark:bg-gray-800"></span>
-                            <span>My Role</span>
-                        </a>
-
-                        <a data-scroll-link href="#layout-c"
-                            class="group flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors py-2 px-2 rounded-lg">
-                            <span
-                                class="w-2.5 h-2.5 rounded-full bg-gray-200 dark:bg-gray-800"></span>
-                            <span>Users & Context</span>
-                        </a>
-
-                        <a data-scroll-link href="#layout-d"
-                            class="group flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors py-2 px-2 rounded-lg">
-                            <span
-                                class="w-2.5 h-2.5 rounded-full bg-gray-200 dark:bg-gray-800"></span>
-                            <span>Design Approach</span>
-                        </a>
-
-                        <a data-scroll-link href="#layout-e"
-                            class="group flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors py-2 px-2 rounded-lg">
-                            <span
-                                class="w-2.5 h-2.5 rounded-full bg-gray-200 dark:bg-gray-800"></span>
-                            <span>Design System</span>
-                        </a>
-
-                        <a data-scroll-link href="#layout-f"
-                            class="group flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors py-2 px-2 rounded-lg">
-                            <span
-                                class="w-2.5 h-2.5 rounded-full bg-gray-200 dark:bg-gray-800"></span>
-                            <span>RBAC as UX</span>
-                        </a>
-                        <a data-scroll-link href="#layout-g"
-                            class="group flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors py-2 px-2 rounded-lg">
-                            <span
-                                class="w-2.5 h-2.5 rounded-full bg-gray-200 dark:bg-gray-800"></span>
-                            <span>Constraints</span>
-                        </a>
-
-                        <a data-scroll-link href="#layout-modules"
-                            class="group flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors py-2 px-2 rounded-lg">
-                            <span
-                                class="w-2.5 h-2.5 rounded-full bg-gray-200 dark:bg-gray-800"></span>
-                            <span>Modules</span>
-                        </a>
-
-                        <a data-scroll-link href="#layout-i"
-                            class="group flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors py-2 px-2 rounded-lg">
-                            <span
-                                class="w-2.5 h-2.5 rounded-full bg-gray-200 dark:bg-gray-800"></span>
-                            <span>Impact</span>
-                        </a>
-
-                        <a data-scroll-link href="#layout-j"
-                            class="group flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors py-2 px-2 rounded-lg">
-                            <span
-                                class="w-2.5 h-2.5 rounded-full bg-gray-200 dark:bg-gray-800"></span>
-                            <span>Demonstrates</span>
-                        </a>
+                        <nav data-side-index aria-label="Case study sections"
+                            class="rounded-2xl bg-white/70 dark:bg-gray-900/40 p-4 ">
+                            <ul class="space-y-1 text-sm">
+                                <li>
+                                    <a href="#layout-a"
+                                        class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800/60 dark:hover:text-gray-100 hover:font-semibold">
+                                        Problem
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#layout-b"
+                                        class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800/60 dark:hover:text-gray-100 hover:font-semibold">
+                                        My Role
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#layout-c"
+                                        class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800/60 dark:hover:text-gray-100 hover:font-semibold">
+                                        Users & Context
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#layout-d"
+                                        class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800/60 dark:hover:text-gray-100 hover:font-semibold">
+                                        Design Approach
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#layout-e"
+                                        class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800/60 dark:hover:text-gray-100 hover:font-semibold">
+                                        Design System
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#layout-f"
+                                        class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800/60 dark:hover:text-gray-100 hover:font-semibold">
+                                        RBAC as UX
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#layout-g"
+                                        class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800/60 dark:hover:text-gray-100 hover:font-semibold">
+                                        Constraints
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#layout-modules"
+                                        class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800/60 dark:hover:text-gray-100 hover:font-semibold">
+                                        Modules
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#layout-i"
+                                        class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800/60 dark:hover:text-gray-100 hover:font-semibold">
+                                        Impact
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#layout-j"
+                                        class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800/60 dark:hover:text-gray-100 hover:font-semibold">
+                                        Demonstrates
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </aside>
             </div>
@@ -1646,23 +2085,49 @@
         </div>
     </footer>
 
+    <!-- Scrollspy -->
     <script>
         (() => {
-            const sections = Array.from(document.querySelectorAll('[data-section]'));
-            const links = Array.from(document.querySelectorAll('[data-scroll-link]'));
-            if (!sections.length || !links.length) return;
+            const nav = document.querySelector("[data-side-index]");
+            if (!nav) return;
+
+            const links = Array.from(nav.querySelectorAll("a[href^='#']"));
+            const sections = Array.from(document.querySelectorAll("[data-section]"));
+            if (!links.length || !sections.length) return;
 
             const linkMap = new Map();
             links.forEach((link) => {
-                const id = link.getAttribute('href')?.replace('#', '');
+                const id = link.getAttribute("href")?.replace("#", "");
                 if (!id) return;
                 linkMap.set(id, link);
             });
 
+            const activeClasses = [
+                "bg-gray-100",
+                "text-gray-900",
+                "dark:bg-gray-800/60",
+                "dark:text-gray-100",
+                "font-semibold"
+            ];
+
+            const inactiveClasses = [
+                "text-gray-700",
+                "dark:text-gray-300"
+            ];
+
             const setActive = (id) => {
-                links.forEach((link) => link.classList.remove('text-gray-900', 'font-semibold', 'bg-white', 'shadow-sm', 'dark:text-gray-100', 'dark:bg-gray-900'));
+                links.forEach((link) => {
+                    link.setAttribute("aria-current", "false");
+                    activeClasses.forEach((c) => link.classList.remove(c));
+                    inactiveClasses.forEach((c) => link.classList.add(c));
+                });
+
                 const target = linkMap.get(id);
-                if (target) target.classList.add('text-gray-900', 'font-semibold', 'bg-white', 'shadow-sm', 'dark:text-gray-100', 'dark:bg-gray-900');
+                if (target) {
+                    target.setAttribute("aria-current", "true");
+                    inactiveClasses.forEach((c) => target.classList.remove(c));
+                    activeClasses.forEach((c) => target.classList.add(c));
+                }
             };
 
             const intersectingSections = new Set();
@@ -1686,9 +2151,10 @@
                                 Math.abs(a.rect.top + a.rect.height / 2 - center) -
                                 Math.abs(b.rect.top + b.rect.height / 2 - center)
                         );
+
                     setActive(visible[0].section.id);
                 },
-                { rootMargin: '-30% 0px -50% 0px', threshold: [0, 0.1, 0.25, 0.5, 0.75] }
+                { rootMargin: "-30% 0px -50% 0px", threshold: [0, 0.1, 0.25, 0.5, 0.75] }
             );
 
             sections.forEach((section) => observer.observe(section));
@@ -1696,6 +2162,7 @@
         })();
     </script>
 
+    <!-- Accordion -->
     <script>
         (() => {
             const accordion = document.querySelector('[data-accordion="chip-2-modules"]');
