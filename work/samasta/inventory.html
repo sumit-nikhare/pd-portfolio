@@ -16,6 +16,7 @@
 
 <body
     class="relative isolate mx-4 lg:w-3/5 lg:mx-auto bg-gray-100 pt-4 space-y-6 text-gray-900 transition-colors duration-200 dark:bg-gray-950 dark:text-gray-100">
+
     <!-- Ambient glassy glows -->
     <div class="pointer-events-none fixed inset-0 -z-10">
         <div
@@ -517,42 +518,40 @@
             <div class="space-y-3">
                 <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Screens</p>
                 <h2 class="text-3xl font-semibold">Key surfaces in the Inventory module</h2>
-                <p class="max-w-3xl text-gray-700 dark:text-gray-300">
-                    Replace placeholders with your final screenshots (from your Figma exports).
-                </p>
+                <p class="max-w-3xl text-gray-700 dark:text-gray-300">These screens show inventory as a transaction-led system, not a static stock count. The UI separates receiving, issuing, and manual adjustments into explicit modes so every quantity change has an owner, a reason, and a timestamp. Ledger and reports then make reconciliation fast instead of argumentative.</p>
             </div>
 
-            <div class="grid gap-8 md:grid-cols-2">
+            <div class="space-y-8">
                 <figure class="space-y-3">
                     <img loading="lazy" decoding="async" src="../../assets/samasta/Inventory/screen-display-1.png"
-                        alt="Inventory dashboard, inward list, and indent action sheet" class="w-full rounded-2xl" />
-                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                        Dashboard view pairs stock state tiles with inward list and indent actions.
-                    </figcaption>
+                        alt="Inventory medicine list with stock states (in stock, out of stock, few left), search, and quick actions"
+                        class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">The list view is designed for scanning under pressure: search is always available, and tabs reflect operational states (in-stock, out-of-stock, few left, inactive) instead of abstract categories. This makes the question “what’s the problem right now?” answerable in seconds, and keeps shortages visible without opening every medicine.</figcaption>
                 </figure>
-
+            
                 <figure class="space-y-3">
                     <img loading="lazy" decoding="async" src="../../assets/samasta/Inventory/screen-display-2.png"
-                        alt="Inward selection by date, inward details, and items list" class="w-full rounded-2xl" />
-                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                        Inward flow moves from date selection to receipt details and item review.
-                    </figcaption>
+                        alt="Inward acceptance workflow showing indent vs received items, item-level accept, and mark-complete controls"
+                        class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">Inward is treated as a controlled acceptance flow, not a passive delivery log. Indent items and received items are shown side-by-side so partial deliveries are explicit. Bulk accept handles high-volume days, while item drill-down supports batch/expiry checks when needed. Completion creates a clear handoff from “not received” to accepted stock.</figcaption>
                 </figure>
-
+            
                 <figure class="space-y-3">
                     <img loading="lazy" decoding="async" src="../../assets/samasta/Inventory/screen-display-3.png"
-                        alt="Outward list, institute selection, and outward details" class="w-full rounded-2xl" />
-                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                        Outward flow spans list review, institute selection, and outbound details.
-                    </figcaption>
+                        alt="Outward issuing flow with recipient institute selection, item selection, quantity entry, and received or pending states" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">Outward issuing is modeled as a lifecycle with accountability: select the recipient institute, issue item quantities, and track whether the consignment was received or remains pending. By keeping “issued” separate from “received,” the UI prevents silent loss and supports follow-up. Permissions gate issuing actions to authorized roles to protect stock truth.</figcaption>
                 </figure>
 
                 <figure class="space-y-3">
                     <img loading="lazy" decoding="async" src="../../assets/samasta/Inventory/screen-display-4.png"
-                        alt="Create outward items, search medicines, and selected items list" class="w-full rounded-2xl" />
-                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                        Outward creation lets staff search medicines, set quantities, and confirm selected items.
-                    </figcaption>
+                        alt="Medicine detail view showing transaction ledger entries with filters by type, date, and source of stock change" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">The medicine detail page is the primary audit surface. Every quantity movement appears as a transaction with type, source, date, and responsible user, and filters help isolate specific events (manual add, purchase, issued to SC, dispensed to patients). This turns reconciliation into evidence review instead of debate, especially when counts drift between facilities.</figcaption>
+                </figure>
+
+                <figure class="space-y-3">
+                    <img loading="lazy" decoding="async" src="../../assets/samasta/Inventory/screen-display-5.png"
+                        alt="Dispensation report and exports showing date range selection, totals by medicine, and facility-level summary" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">Reports summarize what the ledger explains. Date-range dispensation reporting helps facilities understand consumption and supports redistribution planning without forcing manual counting. Exportable outputs reduce repeated phone calls from supervisors, while keeping operational controls out of admin hands. The intent is visibility and planning, not punitive monitoring.</figcaption>
                 </figure>
             </div>
         </section>

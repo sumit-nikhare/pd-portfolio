@@ -161,7 +161,7 @@
             </p>
         </div>
 
-        <!-- Flow image (replace src with your actual asset path) -->
+        <!-- Hero image -->
         <div>
             <img loading="eager" decoding="async" fetchpriority="high"
                 src="../../assets/samasta/Beneficiary%20registration/module-hero.png"
@@ -405,32 +405,27 @@
                 <div class="space-y-3">
                     <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Screens</p>
                     <h2 class="text-3xl font-semibold">Key surfaces in the flow</h2>
-                    <p class="max-w-3xl text-gray-700 dark:text-gray-300">Replace placeholders with final screenshots from your design handoff.</p>
+                    <p class="text-gray-700 dark:text-gray-300">These screens highlight the search-first pattern that prevents duplicates,
+                    then moves into a controlled create flow. АВНА linking stays optional and consent-led, with clear fallbacks when connectivity or verification fails.</p>
                 </div>
 
                 <div class="space-y-8">
                     <figure class="space-y-3">
                         <img loading="lazy" decoding="async" src="../../assets/samasta/Beneficiary%20registration/screen-display-1.png"
                             alt="Search people screen, registration method options, and search results list" class="w-full rounded-2xl" />
-                        <figcaption class="px-2 text-gray-600 dark:text-gray-400">Search-first entry supports lookup, multiple registration methods, and matching results.</figcaption>
+                        <figcaption class="px-2 text-gray-600 dark:text-gray-400">The module starts with search-first registration to reduce duplicate creation in high-repeat demographics. Users choose a registration method, scan match cues (age, village, phone), and confirm identity before moving into creation. This keeps field work fast while protecting downstream OPD and outreach records.</figcaption>
                     </figure>
 
                     <figure class="space-y-3">
                         <img loading="lazy" decoding="async" src="../../assets/samasta/Beneficiary%20registration/screen-display-2.png"
                             alt="Registration form with ABHA choice, duplicate check list, and people details with purpose of visit" class="w-full rounded-2xl" />
-                        <figcaption class="px-2 text-gray-600 dark:text-gray-400">Registration captures demographics, surfaces possible duplicates, and routes into purpose of visit.</figcaption>
+                        <figcaption class="px-2 text-gray-600 dark:text-gray-400">Creation is intentionally minimal and role-aware: collect only required demographics, then run an in-flow duplicate review before final submission. Edit boundaries follow permissions, so frontline roles see fewer risky fields while authorized staff can validate or correct identity details. The UI favors resumable steps over fragile, all-or-nothing forms.</figcaption>
                     </figure>
 
                     <figure class="space-y-3">
                         <img loading="lazy" decoding="async" src="../../assets/samasta/Beneficiary%20registration/screen-display-3.png"
                             alt="ABHA OTP verification, consent form, and ABHA card details" class="w-full rounded-2xl" />
-                        <figcaption class="px-2 text-gray-600 dark:text-gray-400">ABHA linking flows through OTP verification, consent, and card details review.</figcaption>
-                    </figure>
-
-                    <figure class="space-y-3">
-                        <img loading="lazy" decoding="async" src="../../assets/samasta/Beneficiary%20registration/screen-display-3.png"
-                            alt="ABHA card details view after verification and consent" class="w-full rounded-2xl" />
-                        <figcaption class="px-2 text-gray-600 dark:text-gray-400">Verified ABHA details are presented for review before continuing.</figcaption>
+                        <figcaption class="px-2 text-gray-600 dark:text-gray-400">ABHA inclusion is a separate, optional branch built around explicit consent. When conditions allow, users complete OTP verification and confirm ABHA details, then return to the beneficiary profile. If connectivity fails or consent is declined, the flow safely completes registration and preserves a clear “link later” path for authorized roles.</figcaption>
                     </figure>
                 </div>
             </section>

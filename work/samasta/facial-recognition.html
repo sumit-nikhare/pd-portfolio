@@ -469,33 +469,29 @@
             <div class="space-y-3">
                 <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Screens</p>
                 <h2 class="text-3xl font-semibold">Key surfaces in the module</h2>
-                <p class="max-w-3xl text-gray-700 dark:text-gray-300">Replace placeholders with your final screenshots.
-                </p>
+                <p class="text-gray-700 dark:text-gray-300">These key screens show how facial recognition works as an accelerator, not a dependency. The flow makes consent explicit, guides capture quality in real conditions, and always provides a safe fallback to manual/online search and registration when no reliable match is found.</p>
             </div>
 
-            <div class="grid gap-8 md:grid-cols-2">
+            <div class="space-y-8">
                 <figure class="space-y-3">
                     <img loading="lazy" decoding="async" src="../../assets/samasta/Facial%20recognition/screen-display-1.png"
-                        alt="Face scan consent form with capture preview and accuracy guidelines" class="w-full rounded-2xl" />
-                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">Consent language and capture guidance appear before staff begin the scan.</figcaption>
+                        alt="Entry screen showing facial scan as a search option alongside manual search and add-new actions"
+                        class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">Entry is built around a single decision: scan face, search manually, or add new. Putting these modes on one surface reduces bouncing and prevents “panic registration” when queues are long. Face scan is positioned as a fast path, while manual identifiers remain first-class so work continues even when biometrics are inappropriate or unavailable.</figcaption>
                 </figure>
-
+            
                 <figure class="space-y-3">
                     <img loading="lazy" decoding="async" src="../../assets/samasta/Facial%20recognition/screen-display-2.png"
-                        alt="Face vector generation screen with capture success confirmation and save action" class="w-full rounded-2xl" />
-                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">The scan moves from vector generation to a clear capture success state.</figcaption>
+                        alt="Consent and capture guidance screens with face positioning, lighting checks, and scan progress"
+                        class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">Before any capture, the flow pauses for explicit consent, making biometric action a deliberate choice. Capture guidance then acts like live QA: position-in-frame, background/lighting cues, and clear retry affordances. This shifts failure from a mysterious error into an actionable checklist, improving scan reliability across messy PHC environments.</figcaption>
                 </figure>
-
+            
                 <figure class="space-y-3">
                     <img loading="lazy" decoding="async" src="../../assets/samasta/Facial%20recognition/screen-display-3.png"
-                        alt="No match state, online search in progress, and matched results list" class="w-full rounded-2xl" />
-                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">When no local match is found, the flow expands to online search and returns candidates.</figcaption>
-                </figure>
-
-                <figure class="space-y-3">
-                    <img loading="lazy" decoding="async" src="../../assets/samasta/Facial%20recognition/screen-display-3.png"
-                        alt="Facial match results list with demographic cues and quick selection" class="w-full rounded-2xl" />
-                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">Result cards highlight age, relation, and location to confirm the right person quickly.</figcaption>
+                        alt="Match results list and no-match state with options to search online, switch methods, or proceed to registration"
+                        class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">Results are treated as probabilistic, not definitive. When multiple candidates appear, the UI relies on quick demographic cues to confirm the right person before proceeding. If no match is found, the flow exposes online search and registration as parallel fallbacks instead of forcing endless retries. Enrollment actions remain permission-gated for accountability.</figcaption>
                 </figure>
             </div>
         </section>

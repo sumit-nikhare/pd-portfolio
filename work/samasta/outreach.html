@@ -16,6 +16,7 @@
 
 <body
     class="relative isolate mx-4 lg:w-3/5 lg:mx-auto bg-gray-100 pt-4 space-y-6 text-gray-900 transition-colors duration-200 dark:bg-gray-950 dark:text-gray-100">
+    
     <!-- Ambient glassy glows -->
     <div class="pointer-events-none fixed inset-0 -z-10">
         <div
@@ -499,43 +500,28 @@
             <div class="space-y-3">
                 <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Screens</p>
                 <h2 class="text-3xl font-semibold">Key surfaces in the Outreach module</h2>
-                <p class="max-w-3xl text-gray-700 dark:text-gray-300">
-                    Replace placeholders with your final screenshots (from your Figma exports).
-                </p>
+                <p class="max-w-3xl text-gray-700 dark:text-gray-300">These screens show outreach as an operational surface, not free-form diary notes. The flow separates planned events from routine activities, keeps “missed” as an explicit state, and turns screening outcomes into follow-up or referral work. Capture stays lightweight: minimal fields, participant counts, and limited photo evidence for audit without slowing field teams.</p>
             </div>
 
-            <div class="grid gap-8 md:grid-cols-2">
+            <div class="space-y-8">
                 <figure class="space-y-3">
                     <img loading="lazy" decoding="async" src="../../assets/samasta/Outreach%20activities/screen-display-1.png"
-                        alt="Outreach activity overview with today's card, previous events, and all-events calendar" class="w-full rounded-2xl" />
-                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                        Planning surfaces today's activity, previous events, and the calendar view.
-                    </figcaption>
+                        alt="Outreach Today home showing today’s focus, quick actions for routine activities, and shortcuts to planned events"
+                        class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">The module starts with “Today” because outreach work is executed in the moment, not searched in long menus. Quick actions let teams launch common routine activities immediately, while the featured planned event keeps scheduled work visible. This reduces missed reporting and makes the next best action obvious during field days.</figcaption>
                 </figure>
-
+            
                 <figure class="space-y-3">
                     <img loading="lazy" decoding="async" src="../../assets/samasta/Outreach%20activities/screen-display-2.png"
-                        alt="NCD screening summary with BP follow-up and diabetes follow-up forms" class="w-full rounded-2xl" />
-                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                        Screening outcomes flow into structured BP and diabetes follow-up capture.
-                    </figcaption>
-                </figure>
-
-                <figure class="space-y-3">
-                    <img loading="lazy" decoding="async" src="../../assets/samasta/Outreach%20activities/screen-display-3.png"
-                        alt="Wellness, training, and meeting activity forms with participants and photo uploads"
+                        alt="Planned events list showing upcoming, previous, and missed states with date, location, and activity type"
                         class="w-full rounded-2xl" />
-                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                        Routine activities collect details, participants, and photo evidence in one place.
-                    </figcaption>
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">Planned events use a consistent list pattern optimized for scanning: date/time, location, and activity type are visible without opening detail views. Upcoming, previous, and missed share the same structure so users learn one behavior. “Missed” is treated as a state to resolve and reschedule, not a hidden failure.</figcaption>
                 </figure>
-
+            
                 <figure class="space-y-3">
                     <img loading="lazy" decoding="async" src="../../assets/samasta/Outreach%20activities/screen-display-3.png"
-                        alt="Training and meeting activity forms with participant counts and photo attachments" class="w-full rounded-2xl" />
-                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">
-                        Field teams log training or meeting notes with participants and media.
-                    </figcaption>
+                        alt="Routine activity capture showing activity details, participant count, photo evidence upload, and screening outcomes linked to follow-up" class="w-full rounded-2xl" />
+                    <figcaption class="px-2 text-gray-600 dark:text-gray-400">Routine activity capture stays intentionally minimal while remaining reportable. Users record the activity type, where it happened, and participation, then attach a small set of photos as evidence when required. If the activity includes screening, outcomes immediately generate follow-up or referral actions, so outreach results land back into clinical continuity instead of disappearing.</figcaption>
                 </figure>
             </div>
         </section>
