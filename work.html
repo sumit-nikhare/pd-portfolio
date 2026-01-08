@@ -1,487 +1,749 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project works</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-  <link href="./src/output.css" rel="stylesheet">
-  <script src="./src/theme.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project works</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="./src/output.css" rel="stylesheet">
+    <script src="./src/theme.js" defer></script>
 </head>
-<body class="mx-4 lg:w-3/5 lg:mx-auto bg-gray-100 pt-4 space-y-6 text-gray-900 transition-colors duration-200 dark:bg-gray-950 dark:text-gray-100">
-  <!-- Ambient glassy glows -->
-  <div class="pointer-events-none fixed inset-0 -z-10">
-    <div
-      class="absolute -left-32 top-10 w-80 h-80 bg-gradient-to-br from-amber-200 via-white to-gray-100 opacity-60 blur-3xl dark:from-amber-400/60 dark:via-orange-400/15 dark:to-transparent dark:opacity-60">
-    </div>
-    <div
-      class="absolute right-0 -top-24 w-96 h-96 bg-gradient-to-br from-white via-gray-100 to-orange-200 opacity-60 blur-3xl dark:from-gray-900/80 dark:via-orange-400/15 dark:to-orange-400/45 dark:opacity-60">
-    </div>
-    <div
-      class="absolute left-1/3 bottom-0 w-96 h-96 bg-gradient-to-br from-orange-200 via-white to-gray-100 opacity-50 blur-3xl dark:from-orange-400/55 dark:via-amber-400/15 dark:to-transparent dark:opacity-60">
-    </div>
-  </div>
 
-  <header class="flex items-center justify-between">
-    <a href="./index.html" class="font-heading text-3xl font-semibold text-gray-900 dark:text-gray-100">
-      sumit.design
-    </a>
-    <nav class="flex items-center gap-4">
-      <a href="./work.html" class="nav-link" aria-current="page">Work</a>
-      <a href="./about.html" class="nav-link">About</a>
-    </nav>
-  </header>
-
-  <main class="min-h-[70vh] py-12 space-y-14">
-    <!-- Page hero -->
-    <section class="space-y-4">
-      <p class="text-sm uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400">Portfolio</p>
-      <div class="space-y-2">
-        <h1 class="text-5xl font-semibold">Project works</h1>
-        <p class="max-w-3xl text-gray-700 dark:text-gray-300">
-          A curated selection of projects focused on role-based, operational product design. I design modular workflows and permission-aware interfaces that stay
-          usable under real constraints like low connectivity, high task volume, and uneven training.
-        </p>
-      </div>
-    </section>
-
-    <!-- Company: Khushibaby -->
-    <section class="space-y-7">
-      <div class="space-y-2">
-        <h2 class="text-3xl font-semibold">Khushibaby</h2>
-        <p class="text-lg text-gray-700 dark:text-gray-200">UI/UX Designer – L3 · Jan 2023 – Present</p>
-      </div>
-
-      <div class="max-w-4xl space-y-4 text-gray-700 dark:text-gray-300">
-        <p>
-          I worked on multi-role public health systems used across PHC, SHC, and field settings. The design challenge was translating policy-driven responsibilities
-          into role-appropriate UI, while keeping patterns consistent across modules to reduce relearning.
-        </p>
-        <p>
-          Across CHIP 2.0, Samasta, and CHO Soft, I treated RBAC as a first-class UI constraint (not just backend logic), standardized navigation and actions,
-          and reduced cognitive load for high-frequency workflows.
-        </p>
-      </div>
-
-      <!-- Projects (small cards) -->
-      <div class="grid gap-4">
-        <!-- CHIP 2.0 -->
-        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
-          <div class="flex items-start gap-4">
-            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
-                <path d="M7 7h10v10H7V7Z" stroke="currentColor" stroke-width="1.6" />
-                <path d="M4 10V6a2 2 0 0 1 2-2h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                <path d="M20 14v4a2 2 0 0 1-2 2h-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-              </svg>
-            </div>
-
-            <div class="min-w-0 flex-1 space-y-2">
-              <div class="flex flex-wrap items-center justify-between gap-3">
-                <div>
-                  <h3 class="text-xl font-semibold">CHIP 2.0</h3>
-                  <p class="text-sm text-gray-600 dark:text-gray-400">Government platform redesign</p>
-                </div>
-                <a href="./work/chip-2.html" class="link-brand text-sm">View case study →</a>
-              </div>
-
-              <p class="text-sm text-gray-700 dark:text-gray-300">
-                Scalable redesign focused on RBAC-first navigation, modular patterns, and consistent workflows across programs.
-              </p>
-
-              <div class="space-y-1">
-                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400">More</p>
-                <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
-                  <a class="link-brand" href="./work/chip-2/homepage.html">Homepage</a>
-                  <a class="link-brand" href="./work/chip-2/profile.html">Profile</a>
-                  <a class="link-brand" href="./work/chip-2/onboarding.html">Onboarding</a>
-                  <a class="link-brand" href="./work/chip-2/abha.html">ABHA</a>
-                  <a class="link-brand" href="./work/chip-2/family-register.html">Family Register</a>
-                  <a class="link-brand" href="./work/chip-2/family-planning.html">Family Planning</a>
-                  <a class="link-brand" href="./work/chip-2/maternal-health.html">Maternal Health</a>
-                  <a class="link-brand" href="./work/chip-2/child-health.html">Child Health</a>
-                  <a class="link-brand" href="./work/chip-2/vhsnc-meeting.html">VHSNC Meeting</a>
-                  <a class="link-brand" href="./work/chip-2/sicklecell-imr-mmr.html">Sickle Cell / IMR / MMR</a>
-                  <a class="link-brand" href="./work/chip-2/gok-directory.html">GoK Directory</a>
-                  <a class="link-brand" href="./work/chip-2/death.html">Death</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Samasta -->
-        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
-          <div class="flex items-start gap-4">
-            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
-                <path d="M7 4h10a2 2 0 0 1 2 2v14H5V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6" />
-                <path d="M8 9h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                <path d="M8 13h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-              </svg>
-            </div>
-
-            <div class="min-w-0 flex-1 space-y-2">
-              <div class="flex flex-wrap items-center justify-between gap-3">
-                <div>
-                  <h3 class="text-xl font-semibold">Samasta</h3>
-                  <p class="text-sm text-gray-600 dark:text-gray-400">Facility app + admin dashboard</p>
-                </div>
-                <a href="./work/samasta.html" class="link-brand text-sm">View case study →</a>
-              </div>
-
-              <p class="text-sm text-gray-700 dark:text-gray-300">
-                PHC operations for registration, OPD, inventory, outreach, and admin management across users, facilities, and geography.
-              </p>
-
-              <div class="space-y-1">
-                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400">More</p>
-                <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
-                  <a class="link-brand" href="./work/samasta/registration.html">Registration</a>
-                  <a class="link-brand" href="./work/samasta/opd.html">OPD</a>
-                  <a class="link-brand" href="./work/samasta/inventory.html">Inventory</a>
-                  <a class="link-brand" href="./work/samasta/management.html">Management</a>
-                  <a class="link-brand" href="./work/samasta/outreach.html">Outreach</a>
-                  <a class="link-brand" href="./work/samasta/progress-stats.html">Progress Stats</a>
-                  <a class="link-brand" href="./work/samasta/facial-recognition.html">Facial Recognition</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- CHO Soft -->
-        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
-          <div class="flex items-start gap-4">
-            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
-                <path d="M12 3v18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                <path d="M3 12h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                <path d="M7 7h10v10H7V7Z" stroke="currentColor" stroke-width="1.6" />
-              </svg>
-            </div>
-
-            <div class="min-w-0 flex-1 space-y-2">
-              <div class="flex flex-wrap items-center justify-between gap-3">
-                <div>
-                  <h3 class="text-xl font-semibold">CHO Soft</h3>
-                  <p class="text-sm text-gray-600 dark:text-gray-400">Field + facility operations</p>
-                </div>
-                <a href="./work/cho-soft.html" class="link-brand text-sm">View case study →</a>
-              </div>
-
-              <p class="text-sm text-gray-700 dark:text-gray-300">
-                Role-based workflows for CHO and supervisory roles aligned to policy-defined task lists and facility constraints.
-              </p>
-
-              <div class="space-y-1">
-                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400">More</p>
-                <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
-                  <a class="link-brand" href="./work/cho-soft.html#ui">UI overview</a>
-                  <a class="link-brand" href="./work/cho-soft.html#rbac">RBAC</a>
-                  <a class="link-brand" href="./work/cho-soft.html#workflows">Workflows</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <div class="pt-1">
-          <a href="mailto:sumit.v.nikhare@gmail.com" class="inline-flex items-center gap-2 link-brand">
-            Request details
-            <span aria-hidden="true">→</span>
-          </a>
+<body
+    class="mx-4 lg:w-3/5 lg:mx-auto bg-gray-100 pt-4 space-y-6 text-gray-900 transition-colors duration-200 dark:bg-gray-950 dark:text-gray-100">
+    
+    <!-- Ambient glassy glows -->
+    <div class="pointer-events-none fixed inset-0 -z-10">
+        <div
+            class="absolute -left-32 top-10 w-80 h-80 bg-gradient-to-br from-amber-200 via-white to-gray-100 opacity-60 blur-3xl dark:from-amber-400/60 dark:via-orange-400/15 dark:to-transparent dark:opacity-60">
         </div>
-      </div>
-    </section>
-
-    <!-- Company: Independent / Client work -->
-    <section class="space-y-7">
-      <div class="space-y-2">
-        <h2 class="text-3xl font-semibold">Independent</h2>
-        <p class="text-lg text-gray-700 dark:text-gray-200">Selected product explorations and client work</p>
-      </div>
-
-      <div class="grid gap-4 sm:grid-cols-2">
-        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
-          <div class="flex items-start gap-4">
-            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
-                <path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="1.6" />
-                <path d="M8 10h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                <path d="M8 14h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-              </svg>
-            </div>
-            <div class="min-w-0 flex-1 space-y-1">
-              <div class="flex items-center justify-between gap-3">
-                <h3 class="text-lg font-semibold">Therabody PLP</h3>
-                <a class="link-brand text-sm" href="./work/therabody-plp.html">Open →</a>
-              </div>
-              <p class="text-sm text-gray-700 dark:text-gray-300">Product listing UX for discovery, comparison, and decision support.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
-          <div class="flex items-start gap-4">
-            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
-                <path d="M6 8h12v10H6V8Z" stroke="currentColor" stroke-width="1.6" />
-                <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-              </svg>
-            </div>
-            <div class="min-w-0 flex-1 space-y-1">
-              <div class="flex items-center justify-between gap-3">
-                <h3 class="text-lg font-semibold">Notify AI</h3>
-                <a class="link-brand text-sm" href="./work/notify-ai.html">Open →</a>
-              </div>
-              <p class="text-sm text-gray-700 dark:text-gray-300">Patterns for notification quality, control, and team-level governance.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
-          <div class="flex items-start gap-4">
-            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
-                <path d="M8 11h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                <path d="M7 7h10v14H7V7Z" stroke="currentColor" stroke-width="1.6" />
-                <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-              </svg>
-            </div>
-            <div class="min-w-0 flex-1 space-y-1">
-              <div class="flex items-center justify-between gap-3">
-                <h3 class="text-lg font-semibold">Password Manager</h3>
-                <a class="link-brand text-sm" href="./work/password-manager.html">Open →</a>
-              </div>
-              <p class="text-sm text-gray-700 dark:text-gray-300">Exploration of secure, low-friction credential workflows.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
-          <div class="flex items-start gap-4">
-            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
-                <path d="M6 20V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                <path d="M18 20V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                <path d="M6 12h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-              </svg>
-            </div>
-            <div class="min-w-0 flex-1 space-y-1">
-              <div class="flex items-center justify-between gap-3">
-                <h3 class="text-lg font-semibold">UX Animation</h3>
-                <a class="link-brand text-sm" href="./work/ux-animation.html">Open →</a>
-              </div>
-              <p class="text-sm text-gray-700 dark:text-gray-300">Micro-interactions and motion studies for clarity and feedback.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
-          <div class="flex items-start gap-4">
-            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
-                <path d="M4 9h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                <path d="M7 9V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                <path d="M6 9v11h12V9" stroke="currentColor" stroke-width="1.6" />
-              </svg>
-            </div>
-            <div class="min-w-0 flex-1 space-y-1">
-              <div class="flex items-center justify-between gap-3">
-                <h3 class="text-lg font-semibold">TARP</h3>
-                <a class="link-brand text-sm" href="./work/tarp.html">Open →</a>
-              </div>
-              <p class="text-sm text-gray-700 dark:text-gray-300">Workflow and information structuring for task-heavy operations.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
-          <div class="flex items-start gap-4">
-            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
-                <path d="M12 2l8 4v12l-8 4-8-4V6l8-4Z" stroke="currentColor" stroke-width="1.6" />
-                <path d="M12 6v16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                <path d="M4 6l8 4 8-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-              </svg>
-            </div>
-            <div class="min-w-0 flex-1 space-y-1">
-              <div class="flex items-center justify-between gap-3">
-                <h3 class="text-lg font-semibold">AI Enabled</h3>
-                <a class="link-brand text-sm" href="./work/ai-enabled.html">Open →</a>
-              </div>
-              <p class="text-sm text-gray-700 dark:text-gray-300">Interface concepts for assisted workflows and decision support.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="rounded-2xl border border-gray-200 bg-white/70 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/40">
-          <div class="flex items-start gap-4">
-            <div class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
-                <path d="M4 19V5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                <path d="M20 19V5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                <path d="M4 9h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                <path d="M7 19V9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                <path d="M17 19V9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-              </svg>
-            </div>
-            <div class="min-w-0 flex-1 space-y-1">
-              <div class="flex items-center justify-between gap-3">
-                <h3 class="text-lg font-semibold">Anarock</h3>
-                <a class="link-brand text-sm" href="./work/anarock.html">Open →</a>
-              </div>
-              <p class="text-sm text-gray-700 dark:text-gray-300">Product design work with emphasis on clarity and operational usability.</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <!-- divider -->
-  <hr class="border-t border-gray-300 dark:border-gray-700 my-12">
-
-  <!-- Footer -->
-  <footer class="w-full pb-10 space-y-8">
-    <div class="rounded-4xl border border-gray-200 bg-white p-6 md:p-10 dark:border-gray-800 dark:bg-gray-900">
-      <!-- Top row -->
-      <div class="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
-        <div>
-          <h2 class="text-4xl font-semibold text-gray-900 dark:text-gray-100">Let’s connect</h2>
-          <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
-            Open to product roles, freelance projects, and collaborations. If you want a walkthrough of any case
-            study, I’m happy to share details live.
-          </p>
-
-          <a href="mailto:sumit.v.nikhare@gmail.com"
-            class="mt-6 inline-flex items-center rounded-full border-2 border-gray-900 bg-white px-7 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-900 hover:text-white transition duration-300 dark:border-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-100 dark:hover:text-gray-900">
-            Let's Talk
-          </a>
+        <div
+            class="absolute right-0 -top-24 w-96 h-96 bg-gradient-to-br from-white via-gray-100 to-orange-200 opacity-60 blur-3xl dark:from-gray-900/80 dark:via-orange-400/15 dark:to-orange-400/45 dark:opacity-60">
         </div>
-
-        <!-- Logo -->
-        <div class="flex justify-start md:justify-end">
-          <span class="font-heading text-3xl font-semibold">sumit.design</span>
+        <div
+            class="absolute left-1/3 bottom-0 w-96 h-96 bg-gradient-to-br from-orange-200 via-white to-gray-100 opacity-50 blur-3xl dark:from-orange-400/55 dark:via-amber-400/15 dark:to-transparent dark:opacity-60">
         </div>
-      </div>
-
-      <!-- Bottom grid -->
-      <div class="mt-14 grid gap-12 md:grid-cols-3">
-
-        <!-- Navigation -->
-        <div>
-          <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Navigation</p>
-          <ul class="mt-5 space-y-3 text-sm text-gray-700 dark:text-gray-300">
-            <li><a href="./index.html" class="underline underline-offset-4">Home</a></li>
-            <li><a href="./about.html" class="link-brand">About</a></li>
-            <li><a href="./work.html" class="link-brand">Work</a></li>
-            <li><a href="./resume.html" class="link-brand">Resume</a></li>
-          </ul>
-        </div>
-
-        <!-- Case studies -->
-        <div>
-          <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Case studies</p>
-          <ul class="mt-5 space-y-3 text-sm text-gray-700 dark:text-gray-300">
-            <li><a href="./work/chip-2.html" class="link-brand">CHIP 2.0</a></li>
-            <li><a href="./work/samasta.html" class="link-brand">Samasta</a></li>
-            <li><a href="./work/cho-soft.html" class="link-brand">CHO Soft</a></li>
-            <li><a href="./work.html" class="link-brand">View All</a></li>
-          </ul>
-        </div>
-
-        <!-- Elsewhere -->
-        <div>
-          <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Elsewhere</p>
-
-          <div class="mt-5 space-y-2">
-
-            <!-- Card -->
-            <a href="https://www.linkedin.com/in/sumit-nikhare-482058215/" target="_blank" rel="noreferrer"
-              class="flex items-center justify-between rounded-2xl bg-gradient-to-r bg-violet-100 py-2 pl-2 pr-4 dark:bg-violet-900/30">
-              <div class="flex items-center gap-4">
-                <div class="grid h-12 w-12 place-items-center rounded-2xl bg-white/70 dark:bg-gray-900/60">
-                  <span class="text-sm font-semibold">in</span>
-                </div>
-                <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">LinkedIn</p>
-              </div>
-              <span class="text-gray-700 dark:text-gray-300">↗</span>
-            </a>
-
-            <!-- Card -->
-            <!-- <a href="mailto:sumit.v.nikhare@gmail.com"
-              class="flex items-center justify-between rounded-2xl bg-gradient-to-r bg-emerald-100 py-2 pl-2 pr-4 dark:bg-emerald-900/30">
-              <div class="flex items-center gap-4">
-                <div class="grid h-12 w-12 place-items-center rounded-2xl bg-white/70 dark:bg-gray-900/60">
-                  <span class="text-sm font-semibold">G</span>
-                </div>
-                <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Email</p>
-              </div>
-              <span class="text-gray-700 dark:text-gray-300">↗</span>
-            </a> -->
-
-            <!-- Card -->
-            <!-- <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"
-              class="flex items-center justify-between rounded-2xl bg-gradient-to-r bg-rose-100 py-2 pl-2 pr-4 dark:bg-rose-900/30">
-              <div class="flex items-center gap-4">
-                <div class="grid h-12 w-12 place-items-center rounded-2xl bg-white/70 dark:bg-gray-900/60">
-                  <span class="text-sm font-semibold">in</span>
-                </div>
-                <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Instagram</p>
-              </div>
-              <span class="text-gray-700 dark:text-gray-300">↗</span>
-            </a> -->
-
-          </div>
-        </div>
-
-      </div>
     </div>
 
-    <div class="flex flex-col space-y-4 items-center">
-
-
-      <div class="flex flex-col items-center gap-3">
-        <p class="text-center">© 2025 – sumit.design</p>
-
-        <button type="button" data-theme-toggle aria-pressed="false"
-          class="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-4 py-1 text-xs font-semibold text-slate-600 shadow-sm transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400">
-          <span class="text-xs font-semibold text-slate-800/90 dark:text-slate-500">Light</span>
-          <span
-            class="relative inline-flex h-7 w-14 items-center rounded-full bg-gradient-to-r from-sky-200 via-sky-300 to-sky-500 shadow-inner ring-1 ring-inset ring-white/40 transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 dark:ring-white/10">
-            <span
-              class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 dark:translate-x-7 dark:bg-slate-100">
-              <span
-                class="absolute -right-0.5 top-1 h-3 w-3 rounded-full bg-slate-900 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-            </span>
-            <span
-              class="absolute right-4 top-2 h-1.5 w-1.5 rounded-full bg-white/90 transition-opacity duration-300 dark:opacity-0"></span>
-            <span
-              class="absolute right-2 top-4 h-1 w-1 rounded-full bg-white/80 transition-opacity duration-300 dark:opacity-0"></span>
-            <span
-              class="absolute left-3 top-2 h-1 w-1 rounded-full bg-white/80 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-            <span
-              class="absolute left-6 top-4 h-1.5 w-1.5 rounded-full bg-white/70 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-            <span
-              class="absolute left-8 top-1 h-1 w-1 rounded-full bg-white/60 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
-          </span>
-          <span class="text-xs font-semibold text-slate-400 dark:text-slate-100">Dark</span>
-          <span data-theme-label class="sr-only">Light</span>
-          <span class="sr-only">Toggle color theme</span>
-        </button>
-      </div>
-
-      <p class="text-sm text-center md:text-right">
-        Implementation notes &amp; source ·
-        <a href="https://github.com/" target="_blank" rel="noreferrer" class="link-brand">
-          GitHub
+    <header class="flex items-center justify-between">
+        <a href="./index.html" class="font-heading text-3xl font-semibold text-gray-900 dark:text-gray-100">
+            sumit.design
         </a>
-      </p>
-    </div>
-  </footer>
+        <nav class="flex items-center gap-4">
+            <a href="./work.html" class="nav-link" aria-current="page">Work</a>
+            <a href="./about.html" class="nav-link">About</a>
+        </nav>
+    </header>
+
+    <main class="min-h-[70vh] py-12 space-y-14">
+
+        <!-- Page hero -->
+        <section class="space-y-4">
+            <p class="text-sm uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400">Portfolio</p>
+            <div class="space-y-2">
+                <h1 class="text-5xl font-semibold">Project works</h1>
+                <p class="text-gray-700 dark:text-gray-300">
+                    A curated selection of projects focused on role-based, operational product design. I design modular
+                    workflows
+                    and permission-aware interfaces that stay
+                    usable under real constraints like low connectivity, high task volume, and uneven training.
+                </p>
+            </div>
+        </section>
+
+        <!-- Company 1: Khushibaby -->
+        <section class="space-y-7">
+            <div class="space-y-2">
+                <h2 class="text-3xl font-semibold">Khushibaby</h2>
+                <p class="text-lg text-gray-700 dark:text-gray-200">UI/UX Designer – L3 · Jan 2023 – Present</p>
+            </div>
+
+            <div class="max-w-4xl space-y-4 text-gray-700 dark:text-gray-300">
+                <p>
+                    I worked on multi-role public health systems used across PHC, SHC, and field settings. The design
+                    challenge
+                    was translating policy-driven responsibilities
+                    into role-appropriate UI, while keeping patterns consistent across modules to reduce relearning.
+                </p>
+                <p>
+                    Across CHIP 2.0, Samasta, and CHO Soft, I treated RBAC as a first-class UI constraint (not just
+                    backend
+                    logic), standardized navigation and actions,
+                    and reduced cognitive load for high-frequency workflows.
+                </p>
+            </div>
+
+            <!-- Projects (homepage-style cards) -->
+            <div class="space-y-2 lg:space-y-4">
+                <!-- CHIP 2.0 -->
+                <div>
+                    <a href="./work/chip-2.html"
+                        class="group relative block overflow-hidden rounded-2xl
+                            bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                            transition duration-200 hover:shadow-md focus-visible:shadow-md
+                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                    
+                        <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
+                            <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
+                            group-hover:opacity-100 group-focus-visible:opacity-100">
+                            <span class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
+                            <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                            <span class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
+                        </div>
+                    
+                        <!-- Content above glow -->
+                        <div class="relative z-10 flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
+                            <div class="md:flex-1">
+                            <img loading="lazy" decoding="async"
+                                src="./assets/chip-2/demo-img-1080.png"
+                                alt="CHIP 2.0 case study preview"
+                                class="w-full h-auto object-cover rounded-xl border border-orange-100/70 bg-gray-200 dark:border-orange-400/20 dark:bg-gray-800"
+                            />
+                            </div>
+                            
+                            <div class="md:flex-1 space-y-4">
+                                <div class="space-y-4">
+                                    <div>
+                                        <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700 dark:bg-gray-800 dark:text-gray-200">
+                                            Public Health Platform
+                                        </span>
+                                        <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700 dark:bg-gray-800 dark:text-gray-200">
+                                            Modular System UX
+                                        </span>
+                                        <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700 dark:bg-gray-800 dark:text-gray-200">
+                                            RBAC + Design System
+                                        </span>
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100">CHIP 2.0</h3>
+                                        <p class="font-semibold text-gray-600 dark:text-gray-300">Designing a modular platform for program operations across roles, facilities, and workflows</p>
+                                    </div>
+
+                                    <p class="text-sm text-gray-700 dark:text-gray-300">A unified platform for frontline and supervisory teams where navigation, visibility, and actions are shaped by role and posting. The work focused on scaling consistent patterns across modules, reducing role clutter, and making governance states (approval, posting, daily start) legible in the UI.</p>
+                                </div>
+                            
+                            
+                                <!-- Button + Read Time -->
+                                <div class="space-x-4">
+                                    <span class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg font-semibold text-gray-700 bg-gray-100 mt-2 dark:text-gray-200 dark:bg-gray-800
+                                        transition-colors duration-200
+                                        group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
+                                        View Details
+                                    </span>
+                                    <span class="text-gray-600 dark:text-gray-400">10 min read</span>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Samasta -->
+                <div>
+                    <a href="./work/samasta.html"
+                        class="group relative block overflow-hidden rounded-2xl
+                            bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                            transition duration-200 hover:shadow-md focus-visible:shadow-md
+                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                    
+                        <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
+                            <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
+                            group-hover:opacity-100 group-focus-visible:opacity-100">
+                            <span class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
+                            <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                            <span class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
+                        </div>
+                    
+                        <!-- Content above glow -->
+                        <div class="relative z-10 flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
+                            <div class="md:flex-1">
+                            <img loading="lazy" decoding="async"
+                                src="./assets/chip-2/demo-img-1080.png"
+                                alt="Samasta case study preview"
+                                class="w-full h-auto object-cover rounded-xl border border-orange-100/70 bg-gray-200 dark:border-orange-400/20 dark:bg-gray-800"
+                            />
+                            </div>
+                            
+                            <div class="md:flex-1 space-y-4">
+                                <div class="space-y-4">
+                                    <div>
+                                        <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700 dark:bg-gray-800 dark:text-gray-200">
+                                            Mobile + Dashboard
+                                        </span>
+                                        <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700 dark:bg-gray-800 dark:text-gray-200">
+                                            Field Operations
+                                        </span>
+                                        <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700 dark:bg-gray-800 dark:text-gray-200">
+                                            Case Study
+                                        </span>
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100">Samasta</h3>
+                                        <p class="font-semibold text-gray-600 dark:text-gray-300">Designing an end-to-end workflow bundle for field follow-ups, facility coordination, and reporting</p>
+                                    </div>
+
+                                    <p class="text-sm text-gray-700 dark:text-gray-300">A product bundle that connects field execution with supervisory visibility. The UI work emphasized fast capture on mobile, clear task state, and predictable review patterns on the dashboard, so teams can coordinate work without re-learning the system across contexts.</p>
+                                </div>
+                            
+                            
+                                <!-- Button + Read Time -->
+                                <div class="space-x-4">
+                                    <span class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg font-semibold text-gray-700 bg-gray-100 mt-2 dark:text-gray-200 dark:bg-gray-800
+                                        transition-colors duration-200
+                                        group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
+                                        View Details
+                                    </span>
+                                    <span class="text-gray-600 dark:text-gray-400">8 min read</span>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </a>
+                </div>
+
+                <!-- CHO Soft -->
+                <div>
+                    <a href="./work/cho-soft.html"
+                        class="group relative block overflow-hidden rounded-2xl
+                            bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                            transition duration-200 hover:shadow-md focus-visible:shadow-md
+                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                    
+                        <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
+                            <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
+                            group-hover:opacity-100 group-focus-visible:opacity-100">
+                            <span class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
+                            <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                            <span class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
+                        </div>
+                    
+                        <!-- Content above glow -->
+                        <div class="relative z-10 flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
+                            <div class="md:flex-1">
+                            <img loading="lazy" decoding="async"
+                                src="./assets/cho-soft/project-thumbnail.png"
+                                alt="CHO Soft case study preview"
+                                class="w-full h-auto object-cover rounded-xl"
+                            />
+                            </div>
+                            
+                            <div class="md:flex-1 space-y-4">
+                                <div class="space-y-4">
+                                    <div>
+                                        <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700 dark:bg-gray-800 dark:text-gray-200">
+                                            Facility Workflow
+                                        </span>
+                                        <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700 dark:bg-gray-800 dark:text-gray-200">
+                                            CHIP 2 Extension
+                                        </span>
+                                        <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700 dark:bg-gray-800 dark:text-gray-200">
+                                            Role-based Tool
+                                        </span>
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100">CHO Soft</h3>
+                                        <p class="font-semibold text-gray-600 dark:text-gray-300">Designing a CHO-focused product layer for SHC operations within CHIP 2.0</p>
+                                    </div>
+                                    
+                                    <p class="text-sm text-gray-700 dark:text-gray-300">A focused workflow product for Community Health Officers where mandatory, policy-defined tasks need to be completed consistently in real conditions. The design work prioritized step clarity, reduced action ambiguity across CHO and supervisory roles, and made status and handoffs explicit so facility teams can track completion without manual follow-up.</p>
+                                </div>
+                            
+                            
+                                <!-- Button + Read Time -->
+                                <div class="space-x-4">
+                                    <span class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg font-semibold text-gray-700 bg-gray-100 mt-2 dark:text-gray-200 dark:bg-gray-800
+                                        transition-colors duration-200
+                                        group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
+                                        View Details
+                                    </span>
+                                    <span class="text-gray-600 dark:text-gray-400">7 min read</span>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </a>
+                </div>
+
+                <!-- AI Enabled -->
+                <div>
+                    <a href="./work/cho-soft.html"
+                        class="group relative block overflow-hidden rounded-2xl
+                            bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                            transition duration-200 hover:shadow-md focus-visible:shadow-md
+                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+                    
+                        <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
+                            <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
+                            group-hover:opacity-100 group-focus-visible:opacity-100">
+                            <span class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
+                            <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                            <span class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
+                        </div>
+                    
+                        <!-- Content above glow -->
+                        <div class="relative z-10 flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
+                            <div class="md:flex-1">
+                            <img loading="lazy" decoding="async"
+                                src="./assets/cho-soft/project-thumbnail.png"
+                                alt="CHO Soft case study preview"
+                                class="w-full h-auto object-cover rounded-xl"
+                            />
+                            </div>
+                            
+                            <div class="md:flex-1 space-y-4">
+                                <div class="space-y-4">
+                                    <div>
+                                        <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700 dark:bg-gray-800 dark:text-gray-200">
+                                            Facility Workflow
+                                        </span>
+                                        <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700 dark:bg-gray-800 dark:text-gray-200">
+                                            CHIP 2 Extension
+                                        </span>
+                                        <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700 dark:bg-gray-800 dark:text-gray-200">
+                                            Role-based Tool
+                                        </span>
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100">CHO Soft</h3>
+                                        <p class="font-semibold text-gray-600 dark:text-gray-300">Designing a CHO-focused product layer for SHC operations within CHIP 2.0</p>
+                                    </div>
+                                    
+                                    <p class="text-sm text-gray-700 dark:text-gray-300">A focused workflow product for Community Health Officers where mandatory, policy-defined tasks need to be completed consistently in real conditions. The design work prioritized step clarity, reduced action ambiguity across CHO and supervisory roles, and made status and handoffs explicit so facility teams can track completion without manual follow-up.</p>
+                                </div>
+                            
+                            
+                                <!-- Button + Read Time -->
+                                <div class="space-x-4">
+                                    <span class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg font-semibold text-gray-700 bg-gray-100 mt-2 dark:text-gray-200 dark:bg-gray-800
+                                        transition-colors duration-200
+                                        group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
+                                        View Details
+                                    </span>
+                                    <span class="text-gray-600 dark:text-gray-400">7 min read</span>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-4">
+                <a href="mailto:sumit.v.nikhare@gmail.com" class="inline-flex items-center gap-2 link-brand">
+                    Request details
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Company 2: Permute Solutions -->
+        <section class="space-y-7">
+            <div class="space-y-2">
+                <h2 class="text-3xl font-semibold">Permute Solutions</h2>
+                <p class="text-lg text-gray-700 dark:text-gray-200">Associate UI/UX Designer · Jan 2022 – Nov 2022</p>
+            </div>
+
+            <div class="max-w-4xl space-y-4 text-gray-700 dark:text-gray-300">
+                <p>
+                    I worked on task-heavy product surfaces where information density and workflow clarity mattered more
+                    than
+                    visual novelty.
+                    The focus was making frequent actions faster, reducing ambiguity, and keeping layouts stable under
+                    change.
+                </p>
+            </div>
+
+            <div class="grid gap-4">
+                <!-- TARP (index-style card, icon-only) -->
+                <div>
+                    <a href="./work/tarp.html"
+                        class="group relative block overflow-hidden rounded-2xl
+                            bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                            transition duration-200 hover:shadow-md focus-visible:shadow-md
+                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+
+                        <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
+                        <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
+                            group-hover:opacity-100 group-focus-visible:opacity-100">
+                            <span class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
+                            <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                            <span class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
+                        </div>
+
+                        <!-- Content above glow -->
+                        <div class="relative z-10 flex items-start gap-4">
+                            <div class="shrink-0">
+                                <div class="grid h-14 w-14 place-items-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6">
+                                        <path d="M7 4h10a2 2 0 0 1 2 2v14H5V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6" />
+                                        <path d="M8 9h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                        <path d="M8 13h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                        <path d="M8 17h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="min-w-0 space-y-2">
+                                <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100">TARP</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">Workflow and information structuring for task-heavy operations.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Anarock (index-style card, icon-only) -->
+                <div>
+                    <a href="./work/anarock.html"
+                        class="group relative block overflow-hidden rounded-2xl
+                            bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                            transition duration-200 hover:shadow-md focus-visible:shadow-md
+                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+
+                        <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
+                        <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
+                            group-hover:opacity-100 group-focus-visible:opacity-100">
+                            <span class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
+                            <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                            <span class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
+                        </div>
+
+                        <!-- Content above glow -->
+                        <div class="relative z-10 flex items-start gap-4">
+                            <div class="shrink-0">
+                                <div class="grid h-14 w-14 place-items-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6">
+                                        <path d="M5 20V9a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v11H5Z" stroke="currentColor" stroke-width="1.6" />
+                                        <path d="M8 20V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v15" stroke="currentColor" stroke-width="1.6" />
+                                        <path d="M10 10h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                        <path d="M10 13h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="min-w-0 space-y-2">
+                                <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100">Anarock</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">Product design work with emphasis on clarity and operational usability.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company 3: Personal & Freelance -->
+        <section class="space-y-7">
+            <div class="space-y-2">
+                <h2 class="text-3xl font-semibold">Personal &amp; Freelance</h2>
+                <p class="text-lg text-gray-700 dark:text-gray-200">Selected explorations and independent work</p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+                <!-- Therabody PLP (index-style card, icon-only) -->
+                <div>
+                    <a href="./work/therabody-plp.html"
+                        class="group relative block overflow-hidden rounded-2xl
+                            bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                            transition duration-200 hover:shadow-md focus-visible:shadow-md
+                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+
+                        <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
+                        <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
+                            group-hover:opacity-100 group-focus-visible:opacity-100">
+                            <span class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
+                            <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                            <span class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
+                        </div>
+
+                        <!-- Content above glow -->
+                        <div class="relative z-10 flex items-start gap-4">
+                            <div class="shrink-0">
+                                <div class="grid h-14 w-14 place-items-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6">
+                                        <path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="1.6" />
+                                        <path d="M8 10h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                        <path d="M8 14h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="min-w-0 space-y-2">
+                                <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100">Therabody PLP</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">Product listing UX for discovery, comparison, and decision support.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Notify AI (index-style card, icon-only) -->
+                <div>
+                    <a href="./work/notify-ai.html"
+                        class="group relative block overflow-hidden rounded-2xl
+                            bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                            transition duration-200 hover:shadow-md focus-visible:shadow-md
+                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+
+                        <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
+                        <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
+                            group-hover:opacity-100 group-focus-visible:opacity-100">
+                            <span class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
+                            <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                            <span class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
+                        </div>
+
+                        <!-- Content above glow -->
+                        <div class="relative z-10 flex items-start gap-4">
+                            <div class="shrink-0">
+                                <div class="grid h-14 w-14 place-items-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6">
+                                        <path d="M12 22a2 2 0 0 0 2-2H10a2 2 0 0 0 2 2Z" stroke="currentColor" stroke-width="1.6" />
+                                        <path d="M18 16V11a6 6 0 1 0-12 0v5l-2 2h16l-2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+                                        <path d="M9.5 4.5 8 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                        <path d="M14.5 4.5 16 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="min-w-0 space-y-2">
+                                <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100">Notify AI</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">Patterns for notification quality, control, and team-level governance.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Password Manager (index-style card, icon-only) -->
+                <div>
+                    <a href="./work/password-manager.html"
+                        class="group relative block overflow-hidden rounded-2xl
+                            bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                            transition duration-200 hover:shadow-md focus-visible:shadow-md
+                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+
+                        <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
+                        <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
+                            group-hover:opacity-100 group-focus-visible:opacity-100">
+                            <span class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
+                            <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                            <span class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
+                        </div>
+
+                        <!-- Content above glow -->
+                        <div class="relative z-10 flex items-start gap-4">
+                            <div class="shrink-0">
+                                <div class="grid h-14 w-14 place-items-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6">
+                                        <path d="M7 10V8a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                        <path d="M6 10h12v10H6V10Z" stroke="currentColor" stroke-width="1.6" />
+                                        <path d="M12 14v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="min-w-0 space-y-2">
+                                <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100">Password Manager</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">Exploration of secure, low-friction credential workflows.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- UX Animation (index-style card, icon-only) -->
+                <div>
+                    <a href="./work/ux-animation.html"
+                        class="group relative block overflow-hidden rounded-2xl
+                            bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                            transition duration-200 hover:shadow-md focus-visible:shadow-md
+                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+
+                        <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
+                        <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
+                            group-hover:opacity-100 group-focus-visible:opacity-100">
+                            <span class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
+                            <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                            <span class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
+                        </div>
+
+                        <!-- Content above glow -->
+                        <div class="relative z-10 flex items-start gap-4">
+                            <div class="shrink-0">
+                                <div class="grid h-14 w-14 place-items-center rounded-xl border border-gray-200 bg-white text-gray-700 dark:border-gray-800 dark:bg-gray-950/40 dark:text-gray-200" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6">
+                                        <path d="M6 20V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                        <path d="M18 20V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                        <path d="M6 12h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                        <path d="M9 9.5h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                        <path d="M13 14.5h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="min-w-0 space-y-2">
+                                <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100">UX Animation</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">Micro-interactions and motion studies for clarity and feedback.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- divider -->
+    <hr class="border-t border-gray-300 dark:border-gray-700 my-12">
+
+    <!-- Footer -->
+    <footer class="w-full pb-10 space-y-8">
+        <div class="rounded-4xl border border-gray-200 bg-white p-6 md:p-10 dark:border-gray-800 dark:bg-gray-900">
+            <!-- Top row -->
+            <div class="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+                <div>
+                    <h2 class="text-4xl font-semibold text-gray-900 dark:text-gray-100">Let’s connect</h2>
+                    <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                        Open to product roles, freelance projects, and collaborations. If you want a walkthrough of any
+                        case
+                        study, I’m happy to share details live.
+                    </p>
+
+                    <a href="mailto:sumit.v.nikhare@gmail.com"
+                        class="mt-6 inline-flex items-center rounded-full border-2 border-gray-900 bg-white px-7 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-900 hover:text-white transition duration-300 dark:border-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-100 dark:hover:text-gray-900">
+                        Let's Talk
+                    </a>
+                </div>
+
+                <!-- Logo -->
+                <div class="flex justify-start md:justify-end">
+                    <span class="font-heading text-3xl font-semibold">sumit.design</span>
+                </div>
+            </div>
+
+            <!-- Bottom grid -->
+            <div class="mt-14 grid gap-12 md:grid-cols-3">
+
+                <!-- Navigation -->
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Navigation</p>
+                    <ul class="mt-5 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li><a href="./index.html" class="underline underline-offset-4">Home</a></li>
+                        <li><a href="./about.html" class="link-brand">About</a></li>
+                        <li><a href="./work.html" class="link-brand">Work</a></li>
+                        <li><a href="./resume.html" class="link-brand">Resume</a></li>
+                    </ul>
+                </div>
+
+                <!-- Case studies -->
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Case studies</p>
+                    <ul class="mt-5 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li><a href="./work/chip-2.html" class="link-brand">CHIP 2.0</a></li>
+                        <li><a href="./work/samasta.html" class="link-brand">Samasta</a></li>
+                        <li><a href="./work/cho-soft.html" class="link-brand">CHO Soft</a></li>
+                        <li><a href="./work.html" class="link-brand">View All</a></li>
+                    </ul>
+                </div>
+
+                <!-- Elsewhere -->
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Elsewhere</p>
+
+                    <div class="mt-5 space-y-2">
+
+                        <!-- Card -->
+                        <a href="https://www.linkedin.com/in/sumit-nikhare-482058215/" target="_blank" rel="noreferrer"
+                            class="flex items-center justify-between rounded-2xl bg-gradient-to-r bg-violet-100 py-2 pl-2 pr-4 dark:bg-violet-900/30">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="grid h-12 w-12 place-items-center rounded-2xl bg-white/70 dark:bg-gray-900/60">
+                                    <span class="text-sm font-semibold">in</span>
+                                </div>
+                                <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">LinkedIn</p>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">↗</span>
+                        </a>
+
+                        <!-- Card -->
+                        <!-- <a href="mailto:sumit.v.nikhare@gmail.com"
+                            class="flex items-center justify-between rounded-2xl bg-gradient-to-r bg-emerald-100 py-2 pl-2 pr-4 dark:bg-emerald-900/30">
+                            <div class="flex items-center gap-4">
+                                <div class="grid h-12 w-12 place-items-center rounded-2xl bg-white/70 dark:bg-gray-900/60">
+                                    <span class="text-sm font-semibold">G</span>
+                                </div>
+                                <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Email</p>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">↗</span>
+                        </a> -->
+
+                        <!-- Card -->
+                        <!-- <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"
+                            class="flex items-center justify-between rounded-2xl bg-gradient-to-r bg-rose-100 py-2 pl-2 pr-4 dark:bg-rose-900/30">
+                            <div class="flex items-center gap-4">
+                                <div class="grid h-12 w-12 place-items-center rounded-2xl bg-white/70 dark:bg-gray-900/60">
+                                    <span class="text-sm font-semibold">in</span>
+                                </div>
+                                <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Instagram</p>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">↗</span>
+                        </a> -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="flex flex-col space-y-4 items-center">
+
+
+            <div class="flex flex-col items-center gap-3">
+                <p class="text-center">© 2025 – sumit.design</p>
+
+                <button type="button" data-theme-toggle aria-pressed="false"
+                    class="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-4 py-1 text-xs font-semibold text-slate-600 shadow-sm transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400">
+                    <span class="text-xs font-semibold text-slate-800/90 dark:text-slate-500">Light</span>
+                    <span
+                        class="relative inline-flex h-7 w-14 items-center rounded-full bg-gradient-to-r from-sky-200 via-sky-300 to-sky-500 shadow-inner ring-1 ring-inset ring-white/40 transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 dark:ring-white/10">
+                        <span
+                            class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 dark:translate-x-7 dark:bg-slate-100">
+                            <span
+                                class="absolute -right-0.5 top-1 h-3 w-3 rounded-full bg-slate-900 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        </span>
+                        <span
+                            class="absolute right-4 top-2 h-1.5 w-1.5 rounded-full bg-white/90 transition-opacity duration-300 dark:opacity-0"></span>
+                        <span
+                            class="absolute right-2 top-4 h-1 w-1 rounded-full bg-white/80 transition-opacity duration-300 dark:opacity-0"></span>
+                        <span
+                            class="absolute left-3 top-2 h-1 w-1 rounded-full bg-white/80 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        <span
+                            class="absolute left-6 top-4 h-1.5 w-1.5 rounded-full bg-white/70 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                        <span
+                            class="absolute left-8 top-1 h-1 w-1 rounded-full bg-white/60 opacity-0 transition-opacity duration-300 dark:opacity-100"></span>
+                    </span>
+                    <span class="text-xs font-semibold text-slate-400 dark:text-slate-100">Dark</span>
+                    <span data-theme-label class="sr-only">Light</span>
+                    <span class="sr-only">Toggle color theme</span>
+                </button>
+            </div>
+
+            <p class="text-sm text-center md:text-right">
+                Implementation notes &amp; source ·
+                <a href="https://github.com/" target="_blank" rel="noreferrer" class="link-brand">
+                    GitHub
+                </a>
+            </p>
+        </div>
+    </footer>
 </body>
+
 </html>
