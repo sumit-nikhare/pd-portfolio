@@ -121,39 +121,6 @@
         </nav>
     </header>
 
-    <!-- Warning Banner -->
-    <div data-alert role="alert" aria-live="polite"
-        class="w-full rounded-3xl border border-[#F2C14E] bg-[#FFF6DF] px-5 py-4 dark:border-amber-400/70 dark:bg-amber-950/40">
-        <div class="flex items-start gap-4">
-            <!-- Icon -->
-            <div
-                class="mt-0.5 grid h-12 w-12 flex-shrink-0 place-items-center rounded-full bg-[#F2C14E] dark:bg-amber-400/80">
-                <svg class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M12 7v6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
-                    <path d="M12 17h.01" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
-                </svg>
-            </div>
-
-            <!-- Content -->
-            <div class="min-w-0 flex-1">
-                <p class="text-lg font-extrabold text-[#1F1F1F] dark:text-gray-100">Case Study Note</p>
-
-                <p class="mt-1 text-base text-[#6B6B6B] dark:text-gray-300">
-                    This page contains representative alert patterns from the CHIP 2.0 system. Content is illustrative.
-                </p>
-
-                <div class="mt-3 flex items-center gap-4">
-                    <a href="#layout-e" class="relative text-sm link-brand
-                            after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-current
-                            after:origin-left after:scale-x-0 hover:after:scale-x-100
-                            after:transition-transform after:duration-200">
-                        View system patterns
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Hero -->
     <section id="hero" class="w-full pt-12 pb-8 space-y-8">
         <div class="grid gap-10 lg:grid-cols-12 lg:items-start">
@@ -264,242 +231,574 @@
     <!-- divider -->
     <hr class="border-t border-gray-300 dark:border-gray-700">
 
+    <!-- Impact at a glance -->
+    <section aria-label="Impact at a glance" class="mt-6">
+        <div class="flex items-center justify-between gap-3">
+            <h2 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">Impact at a glance</h2>
+            <span
+                class="text-xs rounded-full bg-white/70 dark:bg-gray-900/40 px-2 py-1 text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-200 dark:ring-gray-700">Estimates</span>
+        </div>
+    
+        <!-- Metric tiles -->
+        <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    
+            <!-- Tile 01 -->
+            <div class="rounded-3xl bg-white/70 dark:bg-gray-900/40 p-6 text-center">
+                <div class="flex items-center justify-center">
+                    <div
+                        class="grid h-10 w-10 place-items-center rounded-full bg-amber-100/70 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
+                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M12 8v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M21 12a9 9 0 1 1-9-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                </div>
+                <p class="mt-6 text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100">~15–30%</p>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Less time spent updating OPD records</p>
+                <p class="mt-3 text-xs text-gray-500 dark:text-gray-400">Proxy: fewer screens and fewer backtracks per
+                    encounter</p>
+            </div>
+    
+            <!-- Tile 02 -->
+            <div class="rounded-3xl bg-white/70 dark:bg-gray-900/40 p-6 text-center">
+                <div class="flex items-center justify-center">
+                    <div
+                        class="grid h-10 w-10 place-items-center rounded-full bg-emerald-100/70 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300">
+                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+                <p class="mt-6 text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100">~20–35%</p>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Fewer handoff delays across roles</p>
+                <p class="mt-3 text-xs text-gray-500 dark:text-gray-400">Proxy: fewer “who owns this” loops and pending
+                    items</p>
+            </div>
+    
+            <!-- Tile 03 -->
+            <div class="rounded-3xl bg-white/70 dark:bg-gray-900/40 p-6 text-center">
+                <div class="flex items-center justify-center">
+                    <div
+                        class="grid h-10 w-10 place-items-center rounded-full bg-sky-100/70 text-sky-700 dark:bg-sky-500/15 dark:text-sky-300">
+                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M9 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M9 16h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M7 4h10a2 2 0 0 1 2 2v14l-3-2-3 2-3-2-3 2V6a2 2 0 0 1 2-2Z" stroke="currentColor"
+                                stroke-width="2" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+                <p class="mt-6 text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100">~10–20%</p>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Less duplicate writing and cleaner records</p>
+                <p class="mt-3 text-xs text-gray-500 dark:text-gray-400">Proxy: more complete submissions, fewer register
+                    re-entries
+                </p>
+            </div>
+    
+        </div>
+    
+        <!-- Qualitative -->
+        <div class="mt-4 grid gap-4 sm:grid-cols-2">
+    
+            <div class="rounded-3xl bg-white/70 dark:bg-gray-900/40 p-6">
+                <div class="flex items-start gap-3">
+                    <div
+                        class="grid h-10 w-10 place-items-center rounded-full bg-amber-100/70 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
+                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M22 12a10 10 0 1 1-10-10" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-base font-semibold text-gray-900 dark:text-gray-100">Smoother OPD flow</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Task-based navigation reduced back-and-forth
+                            during interruptions.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="rounded-3xl bg-white/70 dark:bg-gray-900/40 p-6">
+                <div class="flex items-start gap-3">
+                    <div
+                        class="grid h-10 w-10 place-items-center rounded-full bg-sky-100/70 text-sky-700 dark:bg-sky-500/15 dark:text-sky-300">
+                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M8 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M4 7h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                            <path d="M8 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M4 12h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                            <path d="M8 17h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M4 17h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-base font-semibold text-gray-900 dark:text-gray-100">Clearer ownership</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Explicit handoff states reduced “who should do
+                            this next?” confusion.</p>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    
+        <p class="mt-3 text-xs text-gray-500 dark:text-gray-400">Metrics are estimates/proxies where verified analytics were
+            unavailable.</p>
+    </section>
+
+    <!-- divider -->
+    <hr class="border-t border-gray-300 dark:border-gray-700">
+
+    <!-- TL;DR Summary (collapsible) -->
+    <section aria-label="TL;DR summary" class="mt-6">
+        <div data-tldr-card role="button" tabindex="0" aria-expanded="false"
+            class="group relative overflow-hidden rounded-3xl bg-white/70 dark:bg-gray-900/40 px-8 py-8 dark:ring-gray-700 cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+            <div aria-hidden="true"
+                class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <span
+                    class="absolute -top-20 -right-20 h-56 w-56 rounded-full bg-gradient-to-br from-amber-200 via-white to-transparent blur-3xl dark:from-amber-400/20 dark:via-amber-300/10"></span>
+                <span
+                    class="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-gradient-to-tr from-orange-200 via-white to-transparent blur-3xl dark:from-orange-400/20 dark:via-orange-300/10"></span>
+            </div>
+    
+            <div class="relative flex items-center justify-between gap-6">
+                <div class="space-y-1">
+                    <h2 class="text-xl font-semibold leading-snug text-gray-900 dark:text-gray-100">Skimmable summary for
+                        recruiters</h2>
+                    <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">Click to expand/collapse. Details
+                        continue below.</p>
+                </div>
+    
+                <div class="shrink-0">
+                    <span data-tldr-icon
+                        class="grid h-12 w-12 place-items-center rounded-full bg-white/80 dark:bg-gray-950/40 ring-1 ring-inset ring-gray-200 dark:ring-gray-700 text-gray-900 dark:text-gray-100 shadow-sm transition-all duration-300 group-hover:shadow-md">
+                        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M12 5v14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+    
+            <div data-tldr-content aria-hidden="true" class="overflow-hidden" style="height:0px;">
+                <div data-tldr-inner class="space-y-4 pt-6 ">
+    
+                    <div
+                        class="rounded-2xl bg-white/60 dark:bg-gray-950/25 p-5 ring-1 ring-inset ring-gray-200/70 dark:ring-gray-800">
+                        <div class="flex items-start gap-3">
+                            <span
+                                class="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-amber-100/70 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
+                                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M12 8v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M21 12a9 9 0 1 1-9-9" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </span>
+                            <div class="min-w-0">
+                                <p class="text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                                    Problem</p>
+                                <p class="mt-1 text-sm leading-relaxed text-gray-700 dark:text-gray-300">Facility workflows
+                                    were fragmented across registers and handoffs, causing delays and duplication.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="grid gap-4 md:grid-cols-2">
+                        <div
+                            class="rounded-2xl bg-white/60 dark:bg-gray-950/25 p-5 ring-1 ring-inset ring-gray-200/70 dark:ring-gray-800">
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="grid h-9 w-9 place-items-center rounded-xl bg-violet-100/70 text-violet-700 dark:bg-violet-500/15 dark:text-violet-300">
+                                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                        <path d="M12 3l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V7l7-4Z" stroke="currentColor"
+                                            stroke-width="2" stroke-linejoin="round" />
+                                        <path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">What I did</p>
+                            </div>
+    
+                            <ul class="mt-4 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                                <li class="flex gap-3">
+                                    <svg class="mt-0.5 h-5 w-5 shrink-0 text-gray-600 dark:text-gray-300"
+                                        viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                        <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span>Designed role-aligned navigation and queues so ownership stays visible across OPD,
+                                        dispensing, and follow-ups.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <svg class="mt-0.5 h-5 w-5 shrink-0 text-gray-600 dark:text-gray-300"
+                                        viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                        <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span>Standardized facility workflows with reusable patterns, explicit states, and
+                                        duplicate-safe identity/search.</span>
+                                </li>
+                            </ul>
+                        </div>
+    
+                        <div
+                            class="rounded-2xl bg-white/60 dark:bg-gray-950/25 p-5 ring-1 ring-inset ring-gray-200/70 dark:ring-gray-800">
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="grid h-9 w-9 place-items-center rounded-xl bg-emerald-100/70 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300">
+                                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                        <path d="M6 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                        <path d="M12 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                        <path d="M18 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                </span>
+                                <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Key outcomes</p>
+                            </div>
+    
+                            <ul class="mt-4 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                                <li class="flex gap-3">
+                                    <svg class="mt-0.5 h-5 w-5 shrink-0 text-gray-600 dark:text-gray-300"
+                                        viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                        <path d="M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                        <path d="M12 8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                    <span>Clearer handoff states reduced delays and made pending work easier to
+                                        track.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <svg class="mt-0.5 h-5 w-5 shrink-0 text-gray-600 dark:text-gray-300"
+                                        viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                        <path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M12 21a9 9 0 1 0-9-9 9 9 0 0 0 9 9Z" stroke="currentColor"
+                                            stroke-width="2" />
+                                    </svg>
+                                    <span>More consistent patterns reduced training dependency and duplicate writing across
+                                        roles.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- divider -->
+    <hr class="border-t border-gray-300 dark:border-gray-700">
+
     <!-- Content with sticky side index -->
     <section class="pt-8">
         <div class="container mx-auto">
-
+    
             <div class="grid lg:grid-cols-6 gap-8 lg:gap-12">
                 <div class="lg:col-span-4 space-y-12">
-
+    
                     <!-- Layout A: Problem -->
                     <section id="layout-a" data-section class="scroll-mt-24 space-y-8">
-                    
+    
                         <div class="space-y-3">
                             <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Problem</p>
-                            <h2 class="text-3xl font-semibold">Day-to-day facility work is multi-role, high-volume, and permission-sensitive
+                            <h2 class="text-3xl font-semibold">Day-to-day facility work is multi-role, high-volume, and
+                                permission-sensitive
                             </h2>
                         </div>
-                    
+    
                         <p class="text-gray-700 dark:text-gray-300">
-                            Samasta was designed for PHC-level operations where multiple roles touch the same beneficiary record and where
-                            task ownership shifts across registration, OPD, dispensing, inventory movement, and outreach follow-ups.
-                            The core challenge was building workflows that stay fast for frontline use while remaining governed by role
+                            Samasta was designed for PHC-level operations where multiple roles touch the same beneficiary
+                            record and where
+                            task ownership shifts across registration, OPD, dispensing, inventory movement, and outreach
+                            follow-ups.
+                            The core challenge was building workflows that stay fast for frontline use while remaining
+                            governed by role
                             responsibilities.
                         </p>
-                    
+    
                         <div class="space-y-4">
                             <h2 class="text-xl text-gray-900 dark:text-gray-100 font-semibold">Key design challenges</h2>
-                    
+    
                             <ul class="space-y-6 text-gray-700 dark:text-gray-300">
                                 <li class="space-y-2">
-                                    <p class="font-semibold text-gray-900 dark:text-gray-100">Role-based responsibility in shared workflows
+                                    <p class="font-semibold text-gray-900 dark:text-gray-100">Role-based responsibility in
+                                        shared workflows
                                     </p>
-                                    <p>Different staff members contribute to one service journey. The UI needed clear boundaries between
+                                    <p>Different staff members contribute to one service journey. The UI needed clear
+                                        boundaries between
                                         view, edit, and accountable actions.</p>
                                 </li>
-                    
+    
                                 <li class="space-y-2">
-                                    <p class="font-semibold text-gray-900 dark:text-gray-100">Fast identity and correct handoffs</p>
-                                    <p>Identity is the front door. The system needed quick search and a biometric option with explicit
+                                    <p class="font-semibold text-gray-900 dark:text-gray-100">Fast identity and correct
+                                        handoffs</p>
+                                    <p>Identity is the front door. The system needed quick search and a biometric option
+                                        with explicit
                                         consent and reliable fallbacks.</p>
                                 </li>
-                    
+    
                                 <li class="space-y-2">
-                                    <p class="font-semibold text-gray-900 dark:text-gray-100">Operational truth for medicines and supplies
+                                    <p class="font-semibold text-gray-900 dark:text-gray-100">Operational truth for
+                                        medicines and supplies
                                     </p>
-                                    <p>Inventory isn’t a report. It directly affects prescribing and dispensing. The interface needed
+                                    <p>Inventory isn’t a report. It directly affects prescribing and dispensing. The
+                                        interface needed
                                         ledger-grade traceability for inward/outward/issued movements.</p>
                                 </li>
-                    
+    
                                 <li class="space-y-2">
-                                    <p class="font-semibold text-gray-900 dark:text-gray-100">Connectivity and device constraints are
+                                    <p class="font-semibold text-gray-900 dark:text-gray-100">Connectivity and device
+                                        constraints are
                                         normal, not edge cases</p>
-                                    <p>Workflows had to behave predictably under unstable connectivity and on low-end devices, without
+                                    <p>Workflows had to behave predictably under unstable connectivity and on low-end
+                                        devices, without
                                         creating silent data loss or duplicate work.</p>
                                 </li>
-                    
+    
                                 <li class="space-y-2">
-                                    <p class="font-semibold text-gray-900 dark:text-gray-100">Minimal training dependency</p>
-                                    <p>Consistency across modules and predictable patterns mattered more than novel UI. Every screen had to
+                                    <p class="font-semibold text-gray-900 dark:text-gray-100">Minimal training dependency
+                                    </p>
+                                    <p>Consistency across modules and predictable patterns mattered more than novel UI.
+                                        Every screen had to
                                         be learnable through repetition.</p>
                                 </li>
                             </ul>
                         </div>
-                    
+    
                         <p class="font-semibold text-gray-900 dark:text-gray-100">
-                            The design focus was to keep workflows <span class="underline-offset-4 underline">role-aligned</span>,
+                            The design focus was to keep workflows <span
+                                class="underline-offset-4 underline">role-aligned</span>,
                             <span class="underline-offset-4 underline">auditable where needed</span>, and
                             <span class="underline-offset-4 underline">fast under real constraints</span>.
                         </p>
-                    
+    
                     </section>
 
+                    <!-- divider -->
+                    <hr class="border-t border-gray-300 dark:border-gray-700">
+    
                     <!-- Layout A-1: Research Summary -->
                     <section id="layout-a-research" data-section class="scroll-mt-24 space-y-8">
-                        <div class="mt-10 pt-8 border-t border-gray-200/60 dark:border-gray-700">
-
+    
                             <div class="space-y-2">
-                                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Research Summary</p>
-                                <h2 class="text-xl md:text-2xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">Clarified daily ops, handoffs, and ownership across PHC workflows</h2>
+                                <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Research
+                                    Summary</p>
+                                <h2
+                                    class="text-xl md:text-2xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">
+                                    Clarified daily ops, handoffs, and ownership across PHC workflows</h2>
                                 <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                                    Research focused on PHC doctors, nurses, and admin staff (including facility managers where relevant) across OPD and day-to-day facility workflows. Work is interruption-heavy, with constant handoffs between roles, shared devices, and pressure to move queues fast while keeping records clean. The biggest pain points were fragmented manual processes across registers and apps, unclear ownership during handoffs, and delays caused by duplication and tracking gaps. These insights guided the solution toward role clarity, task-based navigation, and standardized facility workflows that keep responsibility and status visible at every step.
+                                    Research focused on PHC doctors, nurses, and admin staff (including facility managers
+                                    where relevant) across OPD and day-to-day facility workflows. Work is
+                                    interruption-heavy, with constant handoffs between roles, shared devices, and pressure
+                                    to move queues fast while keeping records clean. The biggest pain points were fragmented
+                                    manual processes across registers and apps, unclear ownership during handoffs, and
+                                    delays caused by duplication and tracking gaps. These insights guided the solution
+                                    toward role clarity, task-based navigation, and standardized facility workflows that
+                                    keep responsibility and status visible at every step.
                                 </p>
                             </div>
-
+    
                             <div class="mt-6">
                                 <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Methods</h3>
                                 <ul class="mt-3 list-disc pl-5 space-y-1 text-gray-600 dark:text-gray-300">
-                                    <li>Stakeholder interviews to align on governance, reporting expectations, and operational constraints</li>
-                                    <li>Contextual inquiry and shadowing in OPD to observe interruptions, handoffs, and real-time workarounds</li>
-                                    <li>Workflow walkthroughs with facility staff to map end-to-end service journeys and ownership breaks</li>
-                                    <li>Usability tests on prototypes to validate task clarity, speed, and error prevention</li>
-                                    <li>Artifact and data review (registers/forms, existing records/logs) to identify duplication and tracking gaps</li>
+                                    <li>Stakeholder interviews to align on governance, reporting expectations, and
+                                        operational constraints</li>
+                                    <li>Contextual inquiry and shadowing in OPD to observe interruptions, handoffs, and
+                                        real-time workarounds</li>
+                                    <li>Workflow walkthroughs with facility staff to map end-to-end service journeys and
+                                        ownership breaks</li>
+                                    <li>Usability tests on prototypes to validate task clarity, speed, and error prevention
+                                    </li>
+                                    <li>Artifact and data review (registers/forms, existing records/logs) to identify
+                                        duplication and tracking gaps</li>
                                 </ul>
-
-                                <blockquote class="mt-4 rounded-xl border border-gray-200 bg-gray-50 p-4 text-gray-700 border-l-4 border-l-gray-300 dark:border-gray-700 dark:bg-gray-900/40 dark:text-gray-200">
+    
+                                <blockquote
+                                    class="mt-4 rounded-xl border border-gray-200 bg-gray-50 p-4 text-gray-700 border-l-4 border-l-gray-300 dark:border-gray-700 dark:bg-gray-900/40 dark:text-gray-200">
                                     “We waste time handing off, and then nobody knows who owns it.”
                                 </blockquote>
                             </div>
-
+    
                             <div>
-                                <h3 class="text-lg font-semibold mt-6 text-gray-900 dark:text-gray-100">How insights shaped the design</h3>
+                                <h3 class="text-lg font-semibold mt-6 text-gray-900 dark:text-gray-100">How insights shaped
+                                    the design</h3>
                                 <p class="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">
-                                    I treated facility operations as a shared system, not isolated screens, and designed around predictable ownership and state. The goal was to reduce manual back-and-forth, make work queue-driven, and ensure every role can see what’s pending, blocked, or completed without chasing updates.
+                                    I treated facility operations as a shared system, not isolated screens, and designed
+                                    around predictable ownership and state. The goal was to reduce manual back-and-forth,
+                                    make work queue-driven, and ensure every role can see what’s pending, blocked, or
+                                    completed without chasing updates.
                                 </p>
                                 <ul class="mt-4 space-y-2 text-gray-700 dark:text-gray-300">
-                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Fragmented manual processes</span> → standardized encounter flows and reusable form patterns that replace register-to-app translation.</li>
-                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Unclear ownership at handoffs</span> → role-based queues, explicit responsibility labels, and handoff states (pending/received/completed).</li>
-                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Delays from duplication and tracking gaps</span> → single-record continuity, duplicate-safe search, and audit-friendly activity timelines for follow-through.</li>
+                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Fragmented manual
+                                            processes</span> → standardized encounter flows and reusable form patterns that
+                                        replace register-to-app translation.</li>
+                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Unclear ownership at
+                                            handoffs</span> → role-based queues, explicit responsibility labels, and handoff
+                                        states (pending/received/completed).</li>
+                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Delays from duplication
+                                            and tracking gaps</span> → single-record continuity, duplicate-safe search, and
+                                        audit-friendly activity timelines for follow-through.</li>
                                 </ul>
                             </div>
-
-                        </div>
                     </section>
-
+    
                     <!-- Divider -->
-                    <div class="border-t border-gray-300 dark:border-gray-700"></div>
-
+                    <hr class="border-t border-gray-300 dark:border-gray-700">
+    
                     <!-- Layout B: My Role -->
                     <section id="layout-b" data-section class="scroll-mt-24 space-y-8">
-                    
+    
                         <div class="space-y-3">
                             <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">My Role</p>
                             <h2 class="text-3xl font-semibold">Senior UI/UX Designer (L3)</h2>
                         </div>
-                    
+    
                         <p class="text-base text-gray-700 dark:text-gray-300">
-                            I led the end-to-end product design for Samasta across the facility app and dashboard, translating PHC workflows
+                            I led the end-to-end product design for Samasta across the facility app and dashboard,
+                            translating PHC workflows
                             and
-                            role responsibilities into a scalable, consistent interface. I worked closely with engineering, PM, and program
+                            role responsibilities into a scalable, consistent interface. I worked closely with engineering,
+                            PM, and program
                             operations
                             to align the experience with deployment constraints and governance needs.
                         </p>
-                    
+    
                         <div class="space-y-4">
-                            <h2 class="text-xl text-gray-800 dark:text-gray-200 font-semibold">My responsibilities included:</h2>
+                            <h2 class="text-xl text-gray-800 dark:text-gray-200 font-semibold">My responsibilities included:
+                            </h2>
                             <ul class="space-y-3 text-gray-700 dark:text-gray-300">
-                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">System IA and workflow architecture</span>
-                                    — structured cross-module flows (identity → OPD → inventory/dispense → outreach) to reduce handoff
+                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">System IA and workflow
+                                        architecture</span>
+                                    — structured cross-module flows (identity → OPD → inventory/dispense → outreach) to
+                                    reduce handoff
                                     ambiguity.</li>
-                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Design system and reusable patterns</span>
-                                    — defined shared components and interaction rules for mobile and web to keep modules consistent.</li>
-                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Role-based UX mapping (RBAC as UX)</span> —
-                                    ensured navigation, visibility, and actions matched role responsibilities, not just backend permissions.
+                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Design system and reusable
+                                        patterns</span>
+                                    — defined shared components and interaction rules for mobile and web to keep modules
+                                    consistent.</li>
+                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Role-based UX mapping (RBAC
+                                        as UX)</span> —
+                                    ensured navigation, visibility, and actions matched role responsibilities, not just
+                                    backend permissions.
                                 </li>
-                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Cross-platform design</span> — facility app
+                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Cross-platform
+                                        design</span> — facility app
                                     patterns and dashboard structures designed for heavy operational use.</li>
-                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Engineering collaboration</span> —
-                                    partnered with devs to keep UI behavior, permissions, and edge-case handling aligned in implementation.
+                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Engineering
+                                        collaboration</span> —
+                                    partnered with devs to keep UI behavior, permissions, and edge-case handling aligned in
+                                    implementation.
                                 </li>
-                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Constraint-driven decisions</span> —
-                                    optimized flows for throughput, shared devices, and connectivity variability typical to PHC settings.
+                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Constraint-driven
+                                        decisions</span> —
+                                    optimized flows for throughput, shared devices, and connectivity variability typical to
+                                    PHC settings.
                                 </li>
                             </ul>
                         </div>
-                    
+    
                         <p class="font-semibold text-gray-900 dark:text-gray-100">
-                            I owned experience quality across modules, so the platform could evolve without fragmenting patterns or
+                            I owned experience quality across modules, so the platform could evolve without fragmenting
+                            patterns or
                             increasing training burden.
                         </p>
-                    
+    
                     </section>
-
+    
                     <!-- Divider -->
-                    <div class="border-t border-gray-300 dark:border-gray-700"></div>
-
+                    <hr class="border-t border-gray-300 dark:border-gray-700">
+    
                     <!-- Layout C: Users & Operational Context -->
                     <section id="layout-c" data-section class="scroll-mt-24 space-y-8">
-                    
+    
                         <div class="space-y-3">
-                            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Users & Operational Context</p>
+                            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Users &
+                                Operational Context</p>
                             <h2 class="text-3xl font-semibold">PHC ecosystem with shared ownership across roles</h2>
                         </div>
-                    
+    
                         <p class="text-gray-700 dark:text-gray-300">
-                            Samasta supports PHC and sub-center workflows where service delivery depends on fast coordination across roles.
+                            Samasta supports PHC and sub-center workflows where service delivery depends on fast
+                            coordination across roles.
                             Users differ not only in access, but in responsibilities, frequency of use, and accountability.
                         </p>
-                    
+    
                         <div class="space-y-4">
                             <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Primary user groups</h3>
-                    
+    
                             <div
                                 class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
                                 <h4 class="font-semibold text-gray-900 dark:text-gray-100">Facility users (PHC)</h4>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Daily operational work: registration, OPD services, lab workflows, dispensing, and stock visibility.
+                                    Daily operational work: registration, OPD services, lab workflows, dispensing, and stock
+                                    visibility.
                                 </p>
                                 <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Medical Officer (MO)</span>: clinical
+                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Medical Officer
+                                            (MO)</span>: clinical
                                         review, OPD decisions, approvals where governance requires it.</li>
-                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Staff Nurse</span>: triage support,
+                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Staff Nurse</span>:
+                                        triage support,
                                         visit support tasks, follow-up coordination.</li>
-                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Lab Technician</span>: diagnostics
+                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Lab Technician</span>:
+                                        diagnostics
                                         workflow, results capture and traceability.</li>
-                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Pharmacist</span>: dispensing flow and
+                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">Pharmacist</span>:
+                                        dispensing flow and
                                         accountability on issued medicines.</li>
                                 </ul>
-                                <p class="font-semibold text-gray-900 dark:text-gray-100">Needs: speed, clarity, low error rate, predictable
+                                <p class="font-semibold text-gray-900 dark:text-gray-100">Needs: speed, clarity, low error
+                                    rate, predictable
                                     navigation.</p>
                             </div>
-                    
+    
                             <div
                                 class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
                                 <h4 class="font-semibold text-gray-900 dark:text-gray-100">Sub-center users (SHC)</h4>
-                                <p class="text-gray-700 dark:text-gray-300">Local service delivery and coordination with field workers.</p>
+                                <p class="text-gray-700 dark:text-gray-300">Local service delivery and coordination with
+                                    field workers.</p>
                                 <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">CHO</span>: service delivery and
+                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">CHO</span>: service
+                                        delivery and
                                         coordination across SHC flows.</li>
-                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">ANM</span>: maternal/child health
+                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">ANM</span>:
+                                        maternal/child health
                                         workflows and follow-ups.</li>
                                 </ul>
                                 <p class="font-semibold text-gray-900 dark:text-gray-100">Needs: task-focused flows, clear
                                     eligibility/state, minimal backtracking.</p>
                             </div>
-                    
+    
                             <div
                                 class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
                                 <h4 class="font-semibold text-gray-900 dark:text-gray-100">Field users (Village)</h4>
-                                <p class="text-gray-700 dark:text-gray-300">Field data capture and household-level follow-up execution via a
+                                <p class="text-gray-700 dark:text-gray-300">Field data capture and household-level follow-up
+                                    execution via a
                                     field app.</p>
                                 <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">ASHA</span>: beneficiary data creation,
+                                    <li><span class="font-semibold text-gray-900 dark:text-gray-100">ASHA</span>:
+                                        beneficiary data creation,
                                         household visits, outreach follow-ups.</li>
                                 </ul>
-                                <p class="font-semibold text-gray-900 dark:text-gray-100">Needs: quick capture, offline tolerance, and
+                                <p class="font-semibold text-gray-900 dark:text-gray-100">Needs: quick capture, offline
+                                    tolerance, and
                                     resumable workflows.</p>
                             </div>
-                    
+    
                             <div
                                 class="p-5 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 space-y-4 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60">
                                 <h4 class="font-semibold text-gray-900 dark:text-gray-100">Admin and oversight users</h4>
-                                <p class="text-gray-700 dark:text-gray-300">Configuration and visibility: manage users, facilities,
+                                <p class="text-gray-700 dark:text-gray-300">Configuration and visibility: manage users,
+                                    facilities,
                                     geography, and view operational stats.</p>
-                                <p class="font-semibold text-gray-900 dark:text-gray-100">Needs: reliable filters, safe operations, and
+                                <p class="font-semibold text-gray-900 dark:text-gray-100">Needs: reliable filters, safe
+                                    operations, and
                                     clear accountability.</p>
                             </div>
                         </div>
-                    
+    
                         <div class="space-y-4">
                             <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Operational realities</h3>
                             <ul class="pl-2 list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
@@ -510,7 +809,7 @@
                                 <li>Sensitive identity and demographic data requiring careful UI boundaries</li>
                             </ul>
                         </div>
-                    
+    
                         <div class="space-y-4">
                             <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Design implications</h3>
                             <ul class="pl-2 list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
@@ -520,93 +819,109 @@
                                 <li>Explicit feedback for permissions, failures, and connectivity states</li>
                             </ul>
                         </div>
-                    
+    
                     </section>
-
+    
                     <!-- Divider -->
                     <div class="border-t border-gray-300 dark:border-gray-700"></div>
-
+    
                     <!-- Layout D: Design Approach -->
                     <section id="layout-d" data-section class="space-y-8 scroll-mt-24">
-                    
+    
                         <div class="space-y-3">
-                            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300 mb-1">Design Approach</p>
+                            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300 mb-1">Design
+                                Approach</p>
                             <h2 class="text-3xl font-semibold">Role-aligned workflows, not isolated screens</h2>
                         </div>
-                    
+    
                         <p class="text-gray-700 dark:text-gray-300">
                             The Samasta experience was designed as a connected system across facility and field contexts.
-                            The goal was to keep daily workflows fast for frontline users, while ensuring governance and accountability
+                            The goal was to keep daily workflows fast for frontline users, while ensuring governance and
+                            accountability
                             where actions carry operational risk.
                         </p>
-                    
+    
                         <div class="space-y-8">
                             <div class="space-y-2">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">System-first IA</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Designed around shared entities and handoffs: Beneficiary → Visit/Encounter → Services → Transactions
+                                    Designed around shared entities and handoffs: Beneficiary → Visit/Encounter → Services →
+                                    Transactions
                                     (dispense, inward/outward, follow-ups).
                                 </p>
                             </div>
-                    
+    
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Role-first navigation</h3>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Role-first navigation
+                                </h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Navigation and actions are shaped by responsibilities, so users see only what they can act on and what
+                                    Navigation and actions are shaped by responsibilities, so users see only what they can
+                                    act on and what
                                     they need to complete their tasks.
                                 </p>
                             </div>
-                    
+    
                             <div class="space-y-2">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Handoff visibility</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Used explicit states (pending/received/issued/completed) so ownership doesn’t disappear between roles
+                                    Used explicit states (pending/received/issued/completed) so ownership doesn’t disappear
+                                    between roles
                                     and shifts.
                                 </p>
                             </div>
-                    
+    
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Reuse over reinvention</h3>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Reuse over reinvention
+                                </h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Standardized list patterns, status tabs, action sheets, confirmations, and empty/offline states to
+                                    Standardized list patterns, status tabs, action sheets, confirmations, and empty/offline
+                                    states to
                                     reduce cognitive load and speed up delivery.
                                 </p>
                             </div>
-                    
+    
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Constraint-driven decisions</h3>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Constraint-driven
+                                    decisions</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Designed for throughput, shared devices, connectivity variability, and repetitive data entry without
+                                    Designed for throughput, shared devices, connectivity variability, and repetitive data
+                                    entry without
                                     breaking user trust.
                                 </p>
                             </div>
                         </div>
-                    
+    
                         <p class="font-semibold text-gray-900 dark:text-gray-100">
-                            The result is a platform where modules feel consistent, responsibilities remain clear, and the system stays
+                            The result is a platform where modules feel consistent, responsibilities remain clear, and the
+                            system stays
                             usable under real operating conditions.
                         </p>
-                    
+    
                     </section>
-
+    
                     <!-- Divider -->
-                    <div class="border-t border-gray-300 dark:border-gray-700"></div>
+                    <div class="border-t border-gray-300 dark:border-gray-700">
 
+                    </div>
+    
                     <!-- Layout E: Design system in practice -->
                     <section id="layout-e" data-section class="space-y-8 scroll-mt-24">
-                    
+    
                         <div class="space-y-3">
-                            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300 mb-1">Design System in Practice
+                            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300 mb-1">Design
+                                System in Practice
                             </p>
                             <h2 class="text-3xl font-semibold">Reusable patterns for heavy operational work</h2>
                         </div>
-                    
+    
                         <p class="text-gray-700 dark:text-gray-300">
-                            Samasta needed consistency across mobile and web while supporting different roles and data density.
-                            The design system focused on predictable interaction rules that scale across modules, not one-off screen
+                            Samasta needed consistency across mobile and web while supporting different roles and data
+                            density.
+                            The design system focused on predictable interaction rules that scale across modules, not
+                            one-off screen
                             styling.
                         </p>
-                    
+    
                         <div class="space-y-8">
                             <div class="space-y-2">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Status-as-navigation</h3>
@@ -614,584 +929,680 @@
                                     Used tabs and status buckets so users can triage quickly without deep filter dependency.
                                 </p>
                             </div>
-                    
+    
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Governed actions via explicit entry
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Governed actions via
+                                    explicit entry
                                     points</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Grouped sensitive actions behind clear affordances (menus, action sheets, confirmations) to reduce
+                                    Grouped sensitive actions behind clear affordances (menus, action sheets, confirmations)
+                                    to reduce
                                     accidental edits.
                                 </p>
                             </div>
-                    
+    
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Audit-friendly detail views</h3>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Audit-friendly detail
+                                    views</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Where accountability matters (inventory movements, issued medicines), detail screens include traceable
+                                    Where accountability matters (inventory movements, issued medicines), detail screens
+                                    include traceable
                                     metadata and consistent logs/ledgers.
                                 </p>
                             </div>
-                    
+    
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Offline + failure state patterns</h3>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Offline + failure state
+                                    patterns</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Standardized empty states, loading, permission blocks, and connectivity messaging so users always know
+                                    Standardized empty states, loading, permission blocks, and connectivity messaging so
+                                    users always know
                                     what happened and what to do next.
                                 </p>
                             </div>
-                    
+    
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Cross-platform consistency</h3>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Cross-platform
+                                    consistency</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Kept core components and interaction rules consistent while allowing density and layout to adapt for
+                                    Kept core components and interaction rules consistent while allowing density and layout
+                                    to adapt for
                                     dashboard use.
                                 </p>
                             </div>
                         </div>
-                    
+    
                         <p class="font-semibold text-gray-900 dark:text-gray-100">
-                            The system reduced relearning across modules and made it easier to ship additional workflows without fragmenting
+                            The system reduced relearning across modules and made it easier to ship additional workflows
+                            without fragmenting
                             the experience.
                         </p>
-                    
+    
                     </section>
-
+    
                     <!-- Divider -->
                     <div class="border-t border-gray-300 dark:border-gray-700"></div>
-
+    
                     <!-- Layout F: RBAC as UX -->
                     <section id="layout-f" data-section class="space-y-8 scroll-mt-24">
-                    
+    
                         <div class="space-y-1">
-                            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300 mb-1">RBAC as a UX Problem</p>
+                            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300 mb-1">RBAC as a
+                                UX Problem</p>
                             <h2 class="text-3xl font-semibold">Designing visibility and actions around responsibilities</h2>
                         </div>
-                    
+    
                         <p class="text-gray-700 dark:text-gray-300">
-                            In Samasta, role-based access isn’t just a backend rule. It affects navigation, what appears on lists, which
+                            In Samasta, role-based access isn’t just a backend rule. It affects navigation, what appears on
+                            lists, which
                             actions are available,
                             and which steps require confirmation. RBAC was treated as a first-class design constraint.
                         </p>
-                    
+    
                         <div class="space-y-8">
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">View vs action boundaries</h3>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">View vs action boundaries
+                                </h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Users may view shared records, but only specific roles can perform accountable actions like closing OPD,
+                                    Users may view shared records, but only specific roles can perform accountable actions
+                                    like closing OPD,
                                     issuing medicines, accepting inward,
                                     issuing outward, or enrolling biometrics.
                                 </p>
                             </div>
-                    
+    
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Permission-aware UI feedback</h3>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Permission-aware UI
+                                    feedback</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    When actions are restricted, the UI avoids silent failures by removing controls or providing contextual
+                                    When actions are restricted, the UI avoids silent failures by removing controls or
+                                    providing contextual
                                     explanation tied to role and context.
                                 </p>
                             </div>
-                    
+    
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Auditability for high-risk actions</h3>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Auditability for
+                                    high-risk actions</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Inventory movement and identity actions produce traceable records so accountability survives across
+                                    Inventory movement and identity actions produce traceable records so accountability
+                                    survives across
                                     shifts and handoffs.
                                 </p>
                             </div>
-                    
+    
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Consistency across modules</h3>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Consistency across
+                                    modules</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    The same role rules behave consistently across identity, OPD, inventory, and outreach flows, reducing
+                                    The same role rules behave consistently across identity, OPD, inventory, and outreach
+                                    flows, reducing
                                     training dependency.
                                 </p>
                             </div>
                         </div>
-                    
+    
                         <p class="font-semibold text-gray-900 dark:text-gray-100">
-                            RBAC became a usability feature: it reduces clutter for frontline users and makes governance explicit for
+                            RBAC became a usability feature: it reduces clutter for frontline users and makes governance
+                            explicit for
                             operational actions.
                         </p>
-                    
+    
                     </section>
-
+    
                     <!-- Divider -->
                     <div class="border-t border-gray-300 dark:border-gray-700"></div>
-
+    
                     <!-- Layout G: Constraints & Tradeoffs -->
                     <section id="layout-g" data-section class="space-y-8 scroll-mt-24">
-                    
+    
                         <div class="space-y-3">
-                            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Constraints & Tradeoffs</p>
+                            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Constraints &
+                                Tradeoffs</p>
                             <h2 class="text-3xl font-semibold">Designing for real operating conditions</h2>
                         </div>
-                    
+    
                         <p class="text-gray-700 dark:text-gray-300">
-                            Samasta was designed for environments where constraints are routine: connectivity varies, devices are shared,
+                            Samasta was designed for environments where constraints are routine: connectivity varies,
+                            devices are shared,
                             and staff operate under time pressure.
                             These realities shaped tradeoffs across modules.
                         </p>
-                    
+    
                         <div class="space-y-8">
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Connectivity variability</h3>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Connectivity variability
+                                </h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Some workflows can tolerate sync delays; others require online validation (for example, certain identity
+                                    Some workflows can tolerate sync delays; others require online validation (for example,
+                                    certain identity
                                     lookups).
                                     The UI must make this boundary visible.
                                 </p>
-                                <p class="text-sm text-gray-800 dark:text-gray-200"><span class="font-semibold">Tradeoff:</span> Prefer
+                                <p class="text-sm text-gray-800 dark:text-gray-200"><span
+                                        class="font-semibold">Tradeoff:</span> Prefer
                                     predictable states and recovery paths over hidden retries.</p>
                             </div>
-                    
+    
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Low-end device performance</h3>
-                                <p class="text-gray-700 dark:text-gray-300">Operational screens must stay lightweight and responsive.</p>
-                                <p class="text-sm text-gray-800 dark:text-gray-200"><span class="font-semibold">Tradeoff:</span>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Low-end device
+                                    performance</h3>
+                                <p class="text-gray-700 dark:text-gray-300">Operational screens must stay lightweight and
+                                    responsive.</p>
+                                <p class="text-sm text-gray-800 dark:text-gray-200"><span
+                                        class="font-semibold">Tradeoff:</span>
                                     Conservative UI density and fewer heavy visual treatments.</p>
                             </div>
-                    
+    
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Shared devices and handoffs</h3>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Shared devices and
+                                    handoffs</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Work shifts between staff and roles; the system must keep task state and accountability clear.
+                                    Work shifts between staff and roles; the system must keep task state and accountability
+                                    clear.
                                 </p>
-                                <p class="text-sm text-gray-800 dark:text-gray-200"><span class="font-semibold">Tradeoff:</span> More
+                                <p class="text-sm text-gray-800 dark:text-gray-200"><span
+                                        class="font-semibold">Tradeoff:</span> More
                                     explicit states and confirmations, less implicit automation.</p>
                             </div>
-                    
+    
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Sensitive identity and demographic data
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Sensitive identity and
+                                    demographic data
                                 </h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Biometric and identity flows require explicit consent, clear opt-out paths, and safe fallbacks.
+                                    Biometric and identity flows require explicit consent, clear opt-out paths, and safe
+                                    fallbacks.
                                 </p>
-                                <p class="text-sm text-gray-800 dark:text-gray-200"><span class="font-semibold">Tradeoff:</span> Added
+                                <p class="text-sm text-gray-800 dark:text-gray-200"><span
+                                        class="font-semibold">Tradeoff:</span> Added
                                     gating steps for trust and compliance.</p>
                             </div>
-                    
+    
                             <div class="space-y-2">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Training realities</h3>
-                                <p class="text-gray-700 dark:text-gray-300">Many users learn systems through repetition, not manuals.</p>
-                                <p class="text-sm text-gray-800 dark:text-gray-200"><span class="font-semibold">Tradeoff:</span> Prioritized
+                                <p class="text-gray-700 dark:text-gray-300">Many users learn systems through repetition, not
+                                    manuals.</p>
+                                <p class="text-sm text-gray-800 dark:text-gray-200"><span
+                                        class="font-semibold">Tradeoff:</span> Prioritized
                                     consistent patterns over role-specific reinventions.</p>
                             </div>
                         </div>
-                    
+    
                         <p class="font-semibold text-gray-900 dark:text-gray-100">
-                            Constraints were treated as design inputs, not exceptions, so the platform stays usable during daily facility
+                            Constraints were treated as design inputs, not exceptions, so the platform stays usable during
+                            daily facility
                             operations.
                         </p>
-                    
+    
                     </section>
-
+    
                     <!-- Divider -->
                     <div class="border-t border-gray-300 dark:border-gray-700"></div>
-
+    
                     <!-- Layout H: Modules -->
                     <section id="layout-modules" data-section class="space-y-8 scroll-mt-24">
-                    
+    
                         <div class="space-y-3">
                             <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Modules</p>
                             <h2 class="text-3xl font-semibold">Modules across the Facility App and Admin Dashboard</h2>
                         </div>
-
+    
                         <p class="text-gray-700 dark:text-gray-300">
-                            Samasta is shipped as a <span class="font-semibold text-gray-900 dark:text-gray-100">Facility App</span> for day-to-day service delivery and a
-                            <span class="font-semibold text-gray-900 dark:text-gray-100">Dashboard</span> for oversight and system administration.
+                            Samasta is shipped as a <span class="font-semibold text-gray-900 dark:text-gray-100">Facility
+                                App</span> for day-to-day service delivery and a
+                            <span class="font-semibold text-gray-900 dark:text-gray-100">Dashboard</span> for oversight and
+                            system administration.
                             The Facility App covers identity, OPD, stock movements, and outreach capture.
-                            The Dashboard covers operational stats, reports, attendance visibility, and admin management (users, facilities, and geography).
-                            Each module page below documents the system decisions, role boundaries, and patterns that keep the experience consistent at scale.
+                            The Dashboard covers operational stats, reports, attendance visibility, and admin management
+                            (users, facilities, and geography).
+                            Each module page below documents the system decisions, role boundaries, and patterns that keep
+                            the experience consistent at scale.
                         </p>
-                    
+    
                         <div class="space-y-4">
-                    
+    
                             <!-- Beneficiary Registration -->
                             <a href="./samasta/registration.html"
                                 class="group relative block overflow-hidden rounded-2xl
-                                    bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
-                                    transition duration-200 hover:shadow-md focus-visible:shadow-md
-                                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
-                            
+                                        bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                                        transition duration-200 hover:shadow-md focus-visible:shadow-md
+                                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+    
                                 <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
                                 <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
-                                    group-hover:opacity-100 group-focus-visible:opacity-100">
+                                        group-hover:opacity-100 group-focus-visible:opacity-100">
                                     <span
                                         class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
-                                    <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                                    <span
+                                        class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
                                     <span
                                         class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
                                 </div>
-                            
+    
                                 <!-- Content above glow -->
                                 <div class="relative z-10 space-y-4">
-                                    <img loading="lazy" decoding="async" src="../assets/samasta/Beneficiary registration/module-thumbnail.png"
+                                    <img loading="lazy" decoding="async"
+                                        src="../assets/samasta/Beneficiary registration/module-thumbnail.png"
                                         alt="Onboarding (Login, Registration) placeholder"
                                         class="w-full h-auto object-cover" />
-                            
+    
                                     <div class="space-y-2">
-                                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Facility App</p>
-                                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Beneficiary Registration</h3>
-                            
+                                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                                            Facility App</p>
+                                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Beneficiary
+                                            Registration</h3>
+    
                                         <p class="text-gray-700 dark:text-gray-300">
-                                            A fast identity entry and search flow for PHC/SHC teams. Supports dedupe-friendly registration, basic household context, and quick retrieval so OPD and outreach work starts from the right record.
+                                            A fast identity entry and search flow for PHC/SHC teams. Supports
+                                            dedupe-friendly registration, basic household context, and quick retrieval so
+                                            OPD and outreach work starts from the right record.
                                         </p>
                                     </div>
-                            
-                            
+    
+    
                                     <!-- Less emphasis “button” (since card is clickable) -->
                                     <span
                                         class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900
-                                            transition-colors duration-200
-                                            group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
+                                                transition-colors duration-200
+                                                group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
                                         View Details
                                     </span>
                                 </div>
                             </a>
-                    
+    
                             <!-- Facial Recognition -->
                             <a href="./samasta/facial-recognition.html"
                                 class="group relative block overflow-hidden rounded-2xl
-                                    bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
-                                    transition duration-200 hover:shadow-md focus-visible:shadow-md
-                                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
-                            
+                                        bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                                        transition duration-200 hover:shadow-md focus-visible:shadow-md
+                                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+    
                                 <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
                                 <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
-                                    group-hover:opacity-100 group-focus-visible:opacity-100">
+                                        group-hover:opacity-100 group-focus-visible:opacity-100">
                                     <span
                                         class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
-                                    <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                                    <span
+                                        class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
                                     <span
                                         class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
                                 </div>
-                            
+    
                                 <!-- Content above glow -->
                                 <div class="relative z-10 space-y-4">
-                                    <img loading="lazy" decoding="async" src="../assets/samasta/Facial recognition/module-thumbnail.png"
+                                    <img loading="lazy" decoding="async"
+                                        src="../assets/samasta/Facial recognition/module-thumbnail.png"
                                         alt="Onboarding (Login, Registration) placeholder"
                                         class="w-full h-auto object-cover rounded-xl" />
-                            
+    
                                     <div class="space-y-2">
-                                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Facility App</p>
-                                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Facial Recognition</h3>
-                            
+                                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                                            Facility App</p>
+                                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Facial
+                                            Recognition</h3>
+    
                                         <p class="text-gray-700 dark:text-gray-300">
-                                            Role-gated biometric assist for faster identification at the facility. Designed around explicit consent, reliable fallbacks, and clear match confidence so staff can proceed without blocking service delivery.
+                                            Role-gated biometric assist for faster identification at the facility. Designed
+                                            around explicit consent, reliable fallbacks, and clear match confidence so staff
+                                            can proceed without blocking service delivery.
                                         </p>
                                     </div>
-                            
-                            
+    
+    
                                     <!-- Less emphasis “button” (since card is clickable) -->
                                     <span
                                         class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900
-                                            transition-colors duration-200
-                                            group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
+                                                transition-colors duration-200
+                                                group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
                                         View Details
                                     </span>
                                 </div>
                             </a>
-
+    
                             <!-- OPD Services -->
                             <a href="./samasta/opd.html"
                                 class="group relative block overflow-hidden rounded-2xl
-                                    bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
-                                    transition duration-200 hover:shadow-md focus-visible:shadow-md
-                                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
-                            
+                                        bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                                        transition duration-200 hover:shadow-md focus-visible:shadow-md
+                                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+    
                                 <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
                                 <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
-                                    group-hover:opacity-100 group-focus-visible:opacity-100">
+                                        group-hover:opacity-100 group-focus-visible:opacity-100">
                                     <span
                                         class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
-                                    <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                                    <span
+                                        class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
                                     <span
                                         class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
                                 </div>
-                            
+    
                                 <!-- Content above glow -->
                                 <div class="relative z-10 space-y-4">
-                                    <img loading="lazy" decoding="async" src="../assets/samasta/OPD services/module-thumbnail.png"
+                                    <img loading="lazy" decoding="async"
+                                        src="../assets/samasta/OPD services/module-thumbnail.png"
                                         alt="Onboarding (Login, Registration) placeholder"
                                         class="w-full h-auto object-cover rounded-xl" />
-                            
+    
                                     <div class="space-y-2">
-                                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Facility App</p>
-                                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">OPD Services</h3>
-                            
+                                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                                            Facility App</p>
+                                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">OPD Services
+                                        </h3>
+    
                                         <p class="text-gray-700 dark:text-gray-300">
-                                            The core clinical workflow: triage and vitals, consultation, labs, prescriptions, and visit closure. Built for high-volume queues with role-based handoffs and predictable states across staff.
+                                            The core clinical workflow: triage and vitals, consultation, labs,
+                                            prescriptions, and visit closure. Built for high-volume queues with role-based
+                                            handoffs and predictable states across staff.
                                         </p>
                                     </div>
-                            
-                            
+    
+    
                                     <!-- Less emphasis “button” (since card is clickable) -->
                                     <span
                                         class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900
-                                            transition-colors duration-200
-                                            group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
+                                                transition-colors duration-200
+                                                group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
                                         View Details
                                     </span>
                                 </div>
                             </a>
-
+    
                             <!-- Inventory -->
                             <a href="./samasta/inventory.html"
                                 class="group relative block overflow-hidden rounded-2xl
-                                    bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
-                                    transition duration-200 hover:shadow-md focus-visible:shadow-md
-                                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
-                            
+                                        bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                                        transition duration-200 hover:shadow-md focus-visible:shadow-md
+                                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+    
                                 <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
                                 <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
-                                    group-hover:opacity-100 group-focus-visible:opacity-100">
+                                        group-hover:opacity-100 group-focus-visible:opacity-100">
                                     <span
                                         class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
-                                    <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                                    <span
+                                        class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
                                     <span
                                         class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
                                 </div>
-                            
+    
                                 <!-- Content above glow -->
                                 <div class="relative z-10 space-y-4">
-                                    <img loading="lazy" decoding="async" src="../assets/samasta/Inventory/module-thumbnail.png"
+                                    <img loading="lazy" decoding="async"
+                                        src="../assets/samasta/Inventory/module-thumbnail.png"
                                         alt="Onboarding (Login, Registration) placeholder"
                                         class="w-full h-auto object-cover rounded-xl" />
-                            
+    
                                     <div class="space-y-2">
-                                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Facility App</p>
+                                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                                            Facility App</p>
                                         <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Inventory</h3>
-                            
+    
                                         <p class="text-gray-700 dark:text-gray-300">
-                                            Ledger-style stock operations for medicines and supplies: inward, outward, issue/dispense linkage, and stock position. Optimized for accountability (who moved what, when) without slowing daily work.
+                                            Ledger-style stock operations for medicines and supplies: inward, outward,
+                                            issue/dispense linkage, and stock position. Optimized for accountability (who
+                                            moved what, when) without slowing daily work.
                                         </p>
                                     </div>
-                            
-                            
+    
+    
                                     <!-- Less emphasis “button” (since card is clickable) -->
                                     <span
                                         class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900
-                                            transition-colors duration-200
-                                            group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
+                                                transition-colors duration-200
+                                                group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
                                         View Details
                                     </span>
                                 </div>
                             </a>
-
+    
                             <!-- Outreach Activities -->
                             <a href="./samasta/outreach.html"
                                 class="group relative block overflow-hidden rounded-2xl
-                                    bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
-                                    transition duration-200 hover:shadow-md focus-visible:shadow-md
-                                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
-                            
+                                        bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                                        transition duration-200 hover:shadow-md focus-visible:shadow-md
+                                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+    
                                 <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
                                 <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
-                                    group-hover:opacity-100 group-focus-visible:opacity-100">
+                                        group-hover:opacity-100 group-focus-visible:opacity-100">
                                     <span
                                         class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
-                                    <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                                    <span
+                                        class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
                                     <span
                                         class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
                                 </div>
-                            
+    
                                 <!-- Content above glow -->
                                 <div class="relative z-10 space-y-4">
-                                    <img loading="lazy" decoding="async" src="../assets/samasta/Outreach activities/module-thumbnail.png"
+                                    <img loading="lazy" decoding="async"
+                                        src="../assets/samasta/Outreach activities/module-thumbnail.png"
                                         alt="Onboarding (Login, Registration) placeholder"
                                         class="w-full h-auto object-cover rounded-xl" />
-                            
+    
                                     <div class="space-y-2">
-                                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Facility App</p>
-                                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Outreach Activities</h3>
-                            
+                                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                                            Facility App</p>
+                                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Outreach
+                                            Activities</h3>
+    
                                         <p class="text-gray-700 dark:text-gray-300">
-                                            Structured capture of planned events and routine activities (including screenings). Records participation and outcomes, and links results into follow-ups and referrals so outreach doesn’t end as “activity done.”
+                                            Structured capture of planned events and routine activities (including
+                                            screenings). Records participation and outcomes, and links results into
+                                            follow-ups and referrals so outreach doesn’t end as “activity done.”
                                         </p>
                                     </div>
-                            
-                            
+    
+    
                                     <!-- Less emphasis “button” (since card is clickable) -->
                                     <span
                                         class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900
-                                            transition-colors duration-200
-                                            group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
+                                                transition-colors duration-200
+                                                group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
                                         View Details
                                     </span>
                                 </div>
                             </a>
-
+    
                             <!-- Dashbaord - Admin + Stats -->
                             <a href="./samasta/management.html"
                                 class="group relative block overflow-hidden rounded-2xl
-                                    bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
-                                    transition duration-200 hover:shadow-md focus-visible:shadow-md
-                                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
-                            
+                                        bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60
+                                        transition duration-200 hover:shadow-md focus-visible:shadow-md
+                                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950">
+    
                                 <!-- Ambient “glassy glow” blobs (no gradients, clipped inside card) -->
                                 <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
-                                    group-hover:opacity-100 group-focus-visible:opacity-100">
+                                        group-hover:opacity-100 group-focus-visible:opacity-100">
                                     <span
                                         class="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-2xl dark:bg-amber-500/15"></span>
-                                    <span class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
+                                    <span
+                                        class="absolute right-10 top-6 h-44 w-44 rounded-full bg-gray-200/70 blur-2xl dark:bg-gray-700/40"></span>
                                     <span
                                         class="absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-orange-200/45 blur-2xl dark:bg-orange-500/15"></span>
                                 </div>
-                            
+    
                                 <!-- Content above glow -->
                                 <div class="relative z-10 space-y-4">
                                     <img loading="lazy" decoding="async" src="../assets/chip-2/demo-img.png"
                                         alt="Onboarding (Login, Registration) placeholder"
                                         class="w-full h-auto object-cover rounded-xl" />
-                            
+    
                                     <div class="space-y-2">
-                                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Dashboard</p>
-                                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Dashboard &amp; Admin Management</h3>
-                            
+                                        <p class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                                            Dashboard</p>
+                                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Dashboard &amp;
+                                            Admin Management</h3>
+    
                                         <p class="text-gray-700 dark:text-gray-300">
-                                            Oversight and governance layer for deployments: OPD stats and reports, attendance visibility, and admin controls for users, facilities, and geography. Designed for drill-down by hierarchy with safe, permissioned edits.
+                                            Oversight and governance layer for deployments: OPD stats and reports,
+                                            attendance visibility, and admin controls for users, facilities, and geography.
+                                            Designed for drill-down by hierarchy with safe, permissioned edits.
                                         </p>
                                     </div>
-                            
-                            
+    
+    
                                     <!-- Less emphasis “button” (since card is clickable) -->
                                     <span
                                         class="inline-flex items-center justify-center px-3 py-1.5 rounded-lg font-semibold text-black dark:text-gray-100 bg-gray-100 dark:bg-gray-900
-                                            transition-colors duration-200
-                                            group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
+                                                transition-colors duration-200
+                                                group-hover:bg-gray-300 group-focus-visible:bg-gray-400 dark:group-hover:bg-gray-700 dark:group-focus-visible:bg-gray-700">
                                         View Details
                                     </span>
                                 </div>
                             </a>
-                    
+    
                         </div>
                     </section>
-
+    
                     <!-- Divider -->
                     <div class="border-t border-gray-300 dark:border-gray-700"></div>
-
+    
                     <!-- Layout I: Impact -->
                     <section id="layout-i" data-section class="space-y-8 scroll-mt-24">
-                    
+    
                         <div class="space-y-3">
                             <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Impact</p>
                             <h2 class="text-3xl font-semibold">Clearer ownership, safer actions, faster daily workflows</h2>
                         </div>
-                    
+    
                         <p class="text-gray-700 dark:text-gray-300">
-                            Samasta’s impact is primarily operational: it supports day-to-day execution with role-aligned visibility and
+                            Samasta’s impact is primarily operational: it supports day-to-day execution with role-aligned
+                            visibility and
                             reduces ambiguity at handoff points across identity, OPD, and inventory workflows.
                         </p>
-                    
+    
                         <div class="space-y-8">
-                    
+    
                             <div class="space-y-2">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Operational impact</h3>
                                 <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                                    <li>Faster beneficiary entry through multiple search modes and a biometric option with explicit consent
+                                    <li>Faster beneficiary entry through multiple search modes and a biometric option with
+                                        explicit consent
                                         and fallbacks.</li>
-                                    <li>Better continuity between facility and field work through structured follow-ups and outreach
+                                    <li>Better continuity between facility and field work through structured follow-ups and
+                                        outreach
                                         handoffs.</li>
-                                    <li>More accountable stock movement through inward/outward/issued traceability and consistent states.
+                                    <li>More accountable stock movement through inward/outward/issued traceability and
+                                        consistent states.
                                     </li>
                                 </ul>
                             </div>
-                    
+    
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">User experience impact</h3>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">User experience impact
+                                </h3>
                                 <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
                                     <li>Reduced cognitive load through consistent patterns across modules.</li>
                                     <li>Clearer guardrails for permissions and sensitive actions.</li>
-                                    <li>More predictable behavior under connectivity constraints through explicit failure states.</li>
+                                    <li>More predictable behavior under connectivity constraints through explicit failure
+                                        states.</li>
                                 </ul>
                             </div>
-                    
+    
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Product and delivery impact</h3>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Product and delivery
+                                    impact</h3>
                                 <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
                                     <li>Reusable patterns reduced rework as additional workflows and modules evolved.</li>
-                                    <li>Shared UI rules made handoffs between engineering and design clearer for permission and state
+                                    <li>Shared UI rules made handoffs between engineering and design clearer for permission
+                                        and state
                                         handling.</li>
                                 </ul>
                             </div>
-                    
+    
                         </div>
-                    
+    
                         <p class="font-semibold text-gray-900 dark:text-gray-100">
-                            The system is structured to grow in features without fragmenting behavior, keeping the experience stable across
+                            The system is structured to grow in features without fragmenting behavior, keeping the
+                            experience stable across
                             roles.
                         </p>
-                    
+    
                     </section>
-
+    
                     <!-- Divider -->
                     <div class="border-t border-gray-300 dark:border-gray-700"></div>
-
+    
                     <!-- Layout J: What’s Next -->
                     <section id="layout-j" data-section class="space-y-8 scroll-mt-24">
-                    
+    
                         <div class="space-y-3">
                             <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">What’s Next</p>
                             <h2 class="text-3xl font-semibold">Extending the platform without breaking patterns</h2>
                         </div>
-                    
+    
                         <p class="text-gray-700 dark:text-gray-300">
-                            Samasta was designed as a modular system where new workflows can be added without rewriting navigation,
+                            Samasta was designed as a modular system where new workflows can be added without rewriting
+                            navigation,
                             permission rules,
-                            or interaction patterns. The next evolution is less about adding features and more about strengthening
+                            or interaction patterns. The next evolution is less about adding features and more about
+                            strengthening
                             governance and operational clarity at scale.
                         </p>
-                    
+    
                         <div class="space-y-6">
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Tighten role-action governance</h3>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Tighten role-action
+                                    governance</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Expand action-level guardrails and audit trails for high-risk operations (inventory adjustments,
+                                    Expand action-level guardrails and audit trails for high-risk operations (inventory
+                                    adjustments,
                                     biometric changes, encounter closure),
                                     so accountability remains clear across shifts and facilities.
                                 </p>
                             </div>
-                    
+    
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Improve exception-led oversight</h3>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Improve exception-led
+                                    oversight</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Push dashboard patterns toward exception queues (stock-outs, pending inward, incomplete encounters,
+                                    Push dashboard patterns toward exception queues (stock-outs, pending inward, incomplete
+                                    encounters,
                                     overdue follow-ups),
                                     so supervisors spend less time filtering and more time resolving.
                                 </p>
                             </div>
-                    
+    
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Make offline boundaries explicit</h3>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Make offline boundaries
+                                    explicit</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Standardize offline capability by workflow (offline OK / hybrid / online required), and reflect it in UI
+                                    Standardize offline capability by workflow (offline OK / hybrid / online required), and
+                                    reflect it in UI
                                     copy, save states,
                                     and recovery paths to reduce uncertainty during connectivity drops.
                                 </p>
                             </div>
-                    
+    
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Keep modules consistent as they grow</h3>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Keep modules consistent
+                                    as they grow</h3>
                                 <p class="text-gray-700 dark:text-gray-300">
-                                    Continue investing in shared components, patterns, and UI rules so module teams don’t diverge.
+                                    Continue investing in shared components, patterns, and UI rules so module teams don’t
+                                    diverge.
                                     Consistency is the actual scaling strategy.
                                 </p>
                             </div>
                         </div>
-                    
+    
                         <p class="font-semibold text-gray-900 dark:text-gray-100">
-                            The goal is to scale Samasta’s capability while keeping the experience predictable for frontline users and
+                            The goal is to scale Samasta’s capability while keeping the experience predictable for frontline
+                            users and
                             governed for oversight roles.
                         </p>
-                    
+    
                     </section>
                 </div>
-
+    
                 <!-- Sticky Side Index -->
                 <aside class="lg:col-span-2">
                     <div class="sticky top-24 space-y-4">
-                        <p class="text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">On this page</p>
-                
+                        <p class="text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">On this page
+                        </p>
+    
                         <nav data-side-index aria-label="Case study sections"
                             class="rounded-2xl border border-gray-200/70 bg-white/70 p-4 shadow-sm backdrop-blur dark:border-gray-800/70 dark:bg-gray-900/50">
                             <ul class="space-y-1 text-sm">
@@ -1262,6 +1673,63 @@
             </div>
         </div>
     </section>
+
+    <!-- divider -->
+    <hr class="border-t border-gray-300 dark:border-gray-700 my-12">
+
+    <div class="grid gap-4 md:grid-cols-2 items-stretch">
+    
+        <!-- Previous -->
+        <a href="../work/chip-2.html"
+            class="group relative block overflow-hidden rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 transition duration-200 hover:shadow-md focus-visible:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950 md:col-start-1 md:col-span-1">
+    
+            <div aria-hidden="true"
+                class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                <span
+                    class="absolute -top-20 -right-20 h-56 w-56 rounded-full bg-gradient-to-br from-amber-200 via-white to-transparent blur-3xl dark:from-amber-400/20 dark:via-amber-300/10"></span>
+                <span
+                    class="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-gradient-to-tr from-orange-200 via-white to-transparent blur-3xl dark:from-orange-400/20 dark:via-orange-300/10"></span>
+            </div>
+    
+            <div class="relative flex items-start justify-between gap-4">
+                <div class="min-w-0 space-y-2">
+                    <p class="text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">Previous</p>
+                    <p class="truncate text-lg font-semibold text-gray-900 dark:text-gray-100">CHIP 2.0</p>
+                    <p class="line-clamp-2 text-sm text-gray-600 dark:text-gray-300">Role-aware workflows and offline-safe
+                        patterns across public health programs.</p>
+                </div>
+                <span
+                    class="shrink-0 rounded-full bg-white/70 px-3 py-2 text-gray-700 ring-1 ring-inset ring-gray-200 transition group-hover:-translate-x-0.5 dark:bg-gray-950/30 dark:text-gray-300 dark:ring-gray-700"
+                    aria-hidden="true">&larr;</span>
+            </div>
+        </a>
+    
+        <!-- Next -->
+        <a href="../work/cho-soft.html"
+            class="group relative block overflow-hidden rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur p-5 space-y-3 dark:bg-gray-900/80 md:dark:bg-gray-900/60 transition duration-200 hover:shadow-md focus-visible:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 dark:focus-visible:ring-amber-400/50 dark:focus-visible:ring-offset-gray-950 md:col-start-2 md:col-span-1">
+    
+            <div aria-hidden="true"
+                class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                <span
+                    class="absolute -top-20 -right-20 h-56 w-56 rounded-full bg-gradient-to-br from-amber-200 via-white to-transparent blur-3xl dark:from-amber-400/20 dark:via-amber-300/10"></span>
+                <span
+                    class="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-gradient-to-tr from-orange-200 via-white to-transparent blur-3xl dark:from-orange-400/20 dark:via-orange-300/10"></span>
+            </div>
+    
+            <div class="relative flex items-start justify-between gap-4">
+                <span
+                    class="shrink-0 rounded-full bg-white/70 px-3 py-2 text-gray-700 ring-1 ring-inset ring-gray-200 transition group-hover:translate-x-0.5 dark:bg-gray-950/30 dark:text-gray-300 dark:ring-gray-700"
+                    aria-hidden="true">&rarr;</span>
+                <div class="min-w-0 space-y-2 text-right">
+                    <p class="text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">Next</p>
+                    <p class="truncate text-lg font-semibold text-gray-900 dark:text-gray-100">CHO Soft</p>
+                    <p class="line-clamp-2 text-sm text-gray-600 dark:text-gray-300">Mobile + dashboard experience for
+                        community health workflows and supervision.</p>
+                </div>
+            </div>
+        </a>
+    
+    </div>
 
     <!-- divider -->
     <hr class="border-t border-gray-300 dark:border-gray-700 my-12">
@@ -1590,6 +2058,50 @@
                     requestAnimationFrame(update);
                 }
             }, { passive: true });
+        })();
+    </script>
+
+    <!-- TL;DR Card Toggle -->
+    <script>
+        (function () {
+            const card = document.querySelector('[data-tldr-card]');
+            const content = document.querySelector('[data-tldr-content]');
+            const inner = document.querySelector('[data-tldr-inner]');
+            const iconWrap = document.querySelector('[data-tldr-icon]');
+            if (!card || !content || !inner) return;
+
+            function setExpanded(isOpen) {
+                card.setAttribute('aria-expanded', String(isOpen));
+                content.setAttribute('aria-hidden', String(!isOpen));
+                if (isOpen) {
+                    content.style.height = inner.scrollHeight + 'px';
+                } else {
+                    content.style.height = '0px';
+                }
+                if (iconWrap) {
+                    iconWrap.style.transform = isOpen ? 'rotate(45deg)' : 'rotate(0deg)';
+                }
+            }
+
+            setExpanded(false);
+
+            card.addEventListener('click', () => {
+                const open = card.getAttribute('aria-expanded') === 'true';
+                setExpanded(!open);
+            });
+
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const open = card.getAttribute('aria-expanded') === 'true';
+                    setExpanded(!open);
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                const open = card.getAttribute('aria-expanded') === 'true';
+                if (open) content.style.height = inner.scrollHeight + 'px';
+            });
         })();
     </script>
 
