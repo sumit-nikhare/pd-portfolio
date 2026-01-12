@@ -548,6 +548,50 @@
                     <!-- Divider -->
                     <div class="border-t border-gray-300 dark:border-gray-700"></div>
 
+                    <!-- Layout: Research Summary -->
+                    <section id="layout-research" data-section class="scroll-mt-24 space-y-8">
+
+                        <div class="space-y-3">
+                            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Research Summary</p>
+                            <h2 class="text-3xl font-semibold">Aligning monitoring, explainability, and governed follow-up under real review pressure</h2>
+                        </div>
+
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                            Research focused on the people who run review meetings and carry follow-through: state/district/block health officials, program owners, MIS/data teams, and operations/comms admins. Across high-stakes review cycles, teams needed fast cross-program comparisons under time pressure, with inconsistent data freshness and mixed device/connectivity environments. The biggest pain points were fragmented workflows across exports and tools, and low trust in rankings and drilldowns when inputs, time windows, or definitions were unclear. Insights pushed the design toward a single navigation spine (Indicator × Geography × Time), explicit RBAC boundaries, explainability cues, and “monitoring → action” workflows with auditable trails.
+                        </p>
+
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Methods</h3>
+                            <ul class="pl-2 list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                                <li>Interviews with program stakeholders and review meeting participants</li>
+                                <li>Workflow walkthroughs of monthly/quarterly review cycles and escalation steps</li>
+                                <li>Contextual inquiry/shadowing with ops teams executing follow-ups (letters/comms/surveys)</li>
+                                <li>Usability testing on prototypes for drilldowns, exports, and action flows</li>
+                                <li>Review of MIS known issues and support tickets (filters, definitions, and export pain)</li>
+                            </ul>
+
+                            <blockquote class="mt-4 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-4 text-gray-700 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60 dark:text-gray-300 border-l-4 border-l-amber-200/70 dark:border-l-amber-500/25">
+                                <span class="font-semibold text-gray-900 dark:text-gray-100">“</span>Every meeting ends in exports and filters, but I can’t tell what action happened.<span class="font-semibold text-gray-900 dark:text-gray-100">”</span>
+                            </blockquote>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">How insights shaped the design</h3>
+                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                The design needed to reduce debate and rework during reviews by making comparisons consistent and decisions defensible. Instead of adding more dashboard surfaces, the focus shifted to a repeatable evidence path that stays within scope and turns insights into governed, trackable follow-up.
+                            </p>
+                            <ul class="pl-2 list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Low trust in ranks</span> → visible time windows, definitions, and explainable inputs on ranking and drilldown views</li>
+                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Fragmented follow-up</span> → governed templates + audit trails tied to the selected indicator and geography</li>
+                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">RBAC confusion</span> → scope-first visibility + permission-safe actions with explanatory states (not silent failures)</li>
+                            </ul>
+                        </div>
+
+                    </section>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-300 dark:border-gray-700"></div>
+
                     <!-- Layout B: My Role -->
                     <section id="layout-b" data-section class="scroll-mt-24 space-y-8">
 
@@ -1387,6 +1431,12 @@
                                     <a href="#layout-a"
                                         class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800/60 dark:hover:text-gray-100">
                                         Problem
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#layout-research"
+                                        class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800/60 dark:hover:text-gray-100">
+                                        Research Summary
                                     </a>
                                 </li>
                                 <li>

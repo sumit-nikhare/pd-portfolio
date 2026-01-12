@@ -543,6 +543,50 @@
                     <!-- Divider -->
                     <div class="border-t border-gray-300 dark:border-gray-700"></div>
 
+                    <!-- Layout: Research Summary -->
+                    <section id="layout-research-summary" data-section class="scroll-mt-24 space-y-8">
+
+                        <div class="space-y-3">
+                            <p class="text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-gray-300">Research Summary</p>
+                            <h2 class="text-3xl font-semibold">Making monthly incentive cycles role-clear, policy-legible, and proof-complete</h2>
+                        </div>
+
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                            Research centered on the roles that touch the same monthly claim: CHOs entering activities and proofs, MO/MOIC verifying against thresholds, and BCMO approving and initiating payment, with program ops and policy reviewers influencing the rules. Work happens under monthly deadlines with policy thresholds, mandatory proof uploads, and low-end devices with unstable connectivity across SHC/PHC settings. The biggest pain points were unclear ownership and editability as claims moved across states, and repeated rework caused by missing proofs or policy ambiguity discovered late in the cycle. Insights shifted the direction toward a state-driven workflow, RBAC expressed in visible UI boundaries, completeness gates, structured rejection reasons with rejected-only resubmission, and guarded irreversible payment initiation.
+                        </p>
+
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Methods</h3>
+                            <ul class="pl-2 list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                                <li>Interviews with CHO and verification staff, plus supervisory and ops stakeholders</li>
+                                <li>Workflow walkthroughs of the monthly claim cycle (draft → submit → verify/reject → approve → payment initiated)</li>
+                                <li>Contextual inquiry/shadowing during claim preparation, proof capture, and verification</li>
+                                <li>Usability testing on prototypes with a focus on proof upload and correction loops</li>
+                                <li>Review of policy documents and operational feedback (escalations/support patterns)</li>
+                            </ul>
+
+                            <blockquote class="mt-4 rounded-2xl bg-white/80 md:bg-white/60 backdrop-blur-0 md:backdrop-blur border border-white/40 p-4 text-gray-700 dark:bg-gray-900/80 md:dark:bg-gray-900/60 dark:border-gray-800/60 dark:text-gray-300">
+                                <span class="inline-block border-l-4 border-l-amber-200/70 dark:border-l-amber-500/25 pl-3">I keep fixing the same claim, because proofs or reasons aren’t clear.</span>
+                            </blockquote>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">How insights shaped the design</h3>
+                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                The workflow needed to stay fast for CHOs while remaining review-safe and audit-ready for verification and payment. Design decisions focused on making state, ownership, and policy constraints visible at the moment of action so corrections are actionable and handoffs stay predictable.
+                            </p>
+                            <ul class="pl-2 list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Role confusion across states</span> → explicit state labels, action visibility by role, and locked fields once submitted</li>
+                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Missing proofs discovered late</span> → completeness gates, mandatory proof rules, and clear upload state feedback on low connectivity</li>
+                                <li><span class="font-semibold text-gray-900 dark:text-gray-100">Rejection churn</span> → rejected-only resubmission, structured reasons, and a stable audit trail across the monthly cycle</li>
+                            </ul>
+                        </div>
+
+                    </section>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-300 dark:border-gray-700"></div>
+
                     <!-- Layout B: My Role -->
                     <section id="layout-b" data-section class="scroll-mt-24 space-y-8">
                     
@@ -1191,6 +1235,12 @@
                                     <a href="#layout-a"
                                         class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800/60 dark:hover:text-gray-100">
                                         Problem
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#layout-research-summary"
+                                        class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800/60 dark:hover:text-gray-100">
+                                        Research Summary
                                     </a>
                                 </li>
                                 <li>
