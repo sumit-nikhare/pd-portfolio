@@ -55,6 +55,19 @@
     searchQuery: ""
   };
 
+  const TASK_FILTER_OPTIONS = [
+    { value: "all", label: "All" },
+    { value: "today", label: "Due today" },
+    { value: "overdue", label: "Overdue" },
+    { value: "nodue", label: "No due date" }
+  ];
+
+  const TASK_SORT_OPTIONS = [
+    { value: "created", label: "Sort: newest" },
+    { value: "due", label: "Sort: due time" },
+    { value: "title", label: "Sort: title" }
+  ];
+
   // ---------- State ----------
   let activeTab = "tasks"; // "tasks" | "jobs"
 
@@ -105,8 +118,10 @@
     btn.title = title;
     btn.setAttribute("aria-label", title);
     btn.className = [
-      "h-9 w-9 inline-flex items-center justify-center rounded-lg border",
-      danger ? "border-red-300/30 bg-red-500/10 hover:bg-red-500/15" : "border-slate-700 bg-slate-900/40 hover:bg-slate-900/60",
+      "h-9 w-9 inline-flex items-center justify-center rounded-lg border transition",
+      danger
+        ? "border-red-300/30 bg-red-500/10 hover:bg-red-500/20 hover:border-red-300/60 hover:shadow-sm"
+        : "border-slate-700 bg-slate-900/40 hover:bg-slate-900/70 hover:border-slate-500 hover:shadow-sm",
       "active:translate-y-px"
     ].join(" ");
     btn.innerHTML = svg;
@@ -551,7 +566,7 @@
       <div class="flex items-center justify-between gap-3">
         <div class="text-xs text-slate-400 font-bold uppercase tracking-wide">${task ? `Edit ${task.code}` : "New task"}</div>
         <button id="closeForm" type="button"
-          class="rounded-lg border border-slate-700 bg-slate-900/40 px-3 py-2 text-xs font-extrabold hover:bg-slate-900/60 active:translate-y-px">
+          class="rounded-lg border border-slate-700 bg-slate-900/40 px-3 py-2 text-xs font-extrabold transition hover:bg-slate-900/70 hover:border-slate-500 hover:shadow-sm active:translate-y-px">
           Close
         </button>
       </div>
@@ -579,7 +594,7 @@
 
       <div class="mt-3 flex justify-end">
         <button id="saveForm" type="button"
-          class="rounded-lg border border-slate-700 bg-slate-900/40 px-4 py-2 text-sm font-extrabold hover:bg-slate-900/60 active:translate-y-px">
+          class="rounded-lg border border-slate-700 bg-slate-900/40 px-4 py-2 text-sm font-extrabold transition hover:bg-slate-900/70 hover:border-slate-500 hover:shadow-sm active:translate-y-px">
           Save
         </button>
       </div>
@@ -596,6 +611,13 @@
     fEnd.value = utcMsToIstInput(task?.endUtcMs ?? null);
 
     close.addEventListener("click", closeForm);
+
+    fTitle.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        save.click();
+      }
+    });
 
     save.addEventListener("click", () => {
       const title = (fTitle.value || "").trim();
@@ -648,6 +670,26 @@
     "Ghosted"
   ];
 
+  const JOB_SORT_OPTIONS = [
+    { value: "applied", label: "Sort: applied date" },
+    { value: "followup", label: "Sort: follow-up" },
+    { value: "company", label: "Sort: company" }
+  ];
+
+  function getJobFilterOptions() {
+    const base = [
+      { value: "all", label: "All jobs" },
+      { value: "followup:today", label: "Follow-up today" },
+      { value: "followup:overdue", label: "Follow-up overdue" },
+      { value: "followup:nodue", label: "No follow-up" }
+    ];
+    const statusFilters = JOB_STATUSES.map(status => ({
+      value: `status:${status}`,
+      label: `Status: ${status}`
+    }));
+    return base.concat(statusFilters);
+  }
+
   function jobStatusPill(status) {
     const map = {
       Wishlist: "border-slate-700/70 bg-slate-900/40 text-slate-200",
@@ -667,7 +709,7 @@
       <div class="flex items-center justify-between gap-3">
         <div class="text-xs text-slate-400 font-bold uppercase tracking-wide">${job ? `Edit ${job.code}` : "New job application"}</div>
         <button id="closeForm" type="button"
-          class="rounded-lg border border-slate-700 bg-slate-900/40 px-3 py-2 text-xs font-extrabold hover:bg-slate-900/60 active:translate-y-px">
+          class="rounded-lg border border-slate-700 bg-slate-900/40 px-3 py-2 text-xs font-extrabold transition hover:bg-slate-900/70 hover:border-slate-500 hover:shadow-sm active:translate-y-px">
           Close
         </button>
       </div>
@@ -724,7 +766,7 @@
 
       <div class="mt-3 flex justify-end">
         <button id="saveForm" type="button"
-          class="rounded-lg border border-slate-700 bg-slate-900/40 px-4 py-2 text-sm font-extrabold hover:bg-slate-900/60 active:translate-y-px">
+          class="rounded-lg border border-slate-700 bg-slate-900/40 px-4 py-2 text-sm font-extrabold transition hover:bg-slate-900/70 hover:border-slate-500 hover:shadow-sm active:translate-y-px">
           Save
         </button>
       </div>
@@ -750,6 +792,13 @@
     jNotes.value = job?.notes || "";
 
     close.addEventListener("click", closeForm);
+
+    fTitle.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        save.click();
+      }
+    });
 
     save.addEventListener("click", () => {
       const company = (jCompany.value || "").trim();
@@ -802,14 +851,17 @@
 
   // ---------- Render ----------
   function setTabUI() {
-    const activeClass = "bg-slate-950/70 border border-slate-700 text-slate-100";
-    const idleClass = "text-slate-300";
+    const activeClass = "bg-slate-900/70 border border-amber-200/40 text-amber-100 shadow-lg";
+    const idleClass = "text-slate-300 border border-transparent";
 
-    tabTasks.className = tabTasks.className.replace(activeClass, "").replace(idleClass, "");
-    tabJobs.className = tabJobs.className.replace(activeClass, "").replace(idleClass, "");
+    const activeClasses = activeClass.split(" ");
+    const idleClasses = idleClass.split(" ");
 
-    tabTasks.classList.add("rounded-full", "px-4", "py-2", "text-sm", "font-extrabold", "hover:bg-slate-950/50");
-    tabJobs.classList.add("rounded-full", "px-4", "py-2", "text-sm", "font-extrabold", "hover:bg-slate-950/50");
+    tabTasks.classList.remove(...activeClasses, ...idleClasses);
+    tabJobs.classList.remove(...activeClasses, ...idleClasses);
+
+    tabTasks.classList.add("rounded-full", "px-4", "py-2", "text-sm", "font-extrabold", "transition", "hover:bg-slate-950/50", "hover:border-slate-600");
+    tabJobs.classList.add("rounded-full", "px-4", "py-2", "text-sm", "font-extrabold", "transition", "hover:bg-slate-950/50", "hover:border-slate-600");
 
     if (activeTab === "tasks") {
       tabTasks.classList.add(...activeClass.split(" "));
@@ -842,14 +894,35 @@
     scheduleSave();
   }
 
+  function buildSelectOptions(select, options) {
+    select.innerHTML = options.map(opt => `<option value="${opt.value}">${opt.label}</option>`).join("");
+  }
+
+  function syncToolbarOptions() {
+    const filterOptions = activeTab === "tasks" ? TASK_FILTER_OPTIONS : getJobFilterOptions();
+    const sortOptions = activeTab === "tasks" ? TASK_SORT_OPTIONS : JOB_SORT_OPTIONS;
+
+    buildSelectOptions(filterSelect, filterOptions);
+    buildSelectOptions(sortSelect, sortOptions);
+
+    const filterValues = new Set(filterOptions.map(opt => opt.value));
+    if (!filterValues.has(filterMode)) filterMode = "all";
+
+    const sortValues = new Set(sortOptions.map(opt => opt.value));
+    const fallbackSort = activeTab === "tasks" ? "created" : "applied";
+    if (!sortValues.has(sortMode)) sortMode = fallbackSort;
+
+    filterSelect.value = filterMode;
+    sortSelect.value = sortMode;
+  }
+
   function loadTabState(which) {
     const ui = loadUI(which);
     showCompleted = ui.showCompleted ?? true;
     filterMode = ui.filterMode ?? "all";
     sortMode = ui.sortMode ?? "created";
     searchQuery = ui.searchQuery ?? "";
-    filterSelect.value = filterMode;
-    sortSelect.value = sortMode;
+    syncToolbarOptions();
     searchBox.value = searchQuery;
   }
 
@@ -858,10 +931,23 @@
 
     const nowMs = Date.now();
 
-    // for jobs: interpret "due" as next follow-up date; for tasks: end date
     if (filterMode !== "all") {
       visible = visible.filter(x => {
-        const due = activeTab === "tasks" ? (x.endUtcMs ?? null) : (x.nextUtcMs ?? null);
+        if (activeTab === "jobs") {
+          if (filterMode.startsWith("status:")) {
+            const status = filterMode.slice(7);
+            return (x.status || "") === status;
+          }
+
+          const due = x.nextUtcMs ?? null;
+          if (filterMode === "followup:nodue") return due == null;
+          if (due == null) return false;
+          if (filterMode === "followup:overdue") return due < nowMs && !x.done;
+          if (filterMode === "followup:today") return istYmd(due) === istYmd(nowMs);
+          return true;
+        }
+
+        const due = x.endUtcMs ?? null;
         if (filterMode === "nodue") return due == null;
         if (due == null) return false;
         if (filterMode === "overdue") return due < nowMs && !x.done;
@@ -890,21 +976,41 @@
     }
 
     // sort
-    if (sortMode === "title") {
-      visible = [...visible].sort((a, b) => {
-        const at = activeTab === "tasks" ? (a.title || "") : `${a.company || ""} ${a.role || ""}`;
-        const bt = activeTab === "tasks" ? (b.title || "") : `${b.company || ""} ${b.role || ""}`;
-        return at.localeCompare(bt);
-      });
-    } else if (sortMode === "due") {
-      visible = [...visible].sort((a, b) => {
-        const ad = activeTab === "tasks" ? (a.endUtcMs ?? Infinity) : (a.nextUtcMs ?? Infinity);
-        const bd = activeTab === "tasks" ? (b.endUtcMs ?? Infinity) : (b.nextUtcMs ?? Infinity);
-        return ad - bd;
-      });
+    if (activeTab === "tasks") {
+      if (sortMode === "title") {
+        visible = [...visible].sort((a, b) => (a.title || "").localeCompare(b.title || ""));
+      } else if (sortMode === "due") {
+        visible = [...visible].sort((a, b) => {
+          const ad = a.endUtcMs ?? Infinity;
+          const bd = b.endUtcMs ?? Infinity;
+          return ad - bd;
+        });
+      } else {
+        // created: keep current order (newest first)
+        visible = [...visible];
+      }
     } else {
-      // created: keep current order (newest first)
-      visible = [...visible];
+      if (sortMode === "company") {
+        visible = [...visible].sort((a, b) => {
+          const at = `${a.company || ""} ${a.role || ""}`.trim();
+          const bt = `${b.company || ""} ${b.role || ""}`.trim();
+          return at.localeCompare(bt);
+        });
+      } else if (sortMode === "followup") {
+        visible = [...visible].sort((a, b) => {
+          const ad = a.nextUtcMs ?? Infinity;
+          const bd = b.nextUtcMs ?? Infinity;
+          return ad - bd;
+        });
+      } else if (sortMode === "applied") {
+        visible = [...visible].sort((a, b) => {
+          const ad = a.appliedUtcMs ?? -Infinity;
+          const bd = b.appliedUtcMs ?? -Infinity;
+          return bd - ad;
+        });
+      } else {
+        visible = [...visible];
+      }
     }
 
     return visible;
@@ -1079,7 +1185,7 @@
 
       const add = document.createElement("button");
       add.type = "button";
-      add.className = "rounded-xl border border-slate-700 bg-slate-900/40 px-4 py-2 text-sm font-extrabold hover:bg-slate-900/60 active:translate-y-px whitespace-nowrap";
+      add.className = "rounded-xl border border-slate-700 bg-slate-900/40 px-4 py-2 text-sm font-extrabold transition hover:bg-slate-900/70 hover:border-slate-500 hover:shadow-sm active:translate-y-px whitespace-nowrap";
       add.textContent = "Add subtask";
 
       const doAdd = () => {
@@ -1283,7 +1389,7 @@
 
       const add = document.createElement("button");
       add.type = "button";
-      add.className = "rounded-xl border border-slate-700 bg-slate-900/40 px-4 py-2 text-sm font-extrabold hover:bg-slate-900/60 active:translate-y-px whitespace-nowrap";
+      add.className = "rounded-xl border border-slate-700 bg-slate-900/40 px-4 py-2 text-sm font-extrabold transition hover:bg-slate-900/70 hover:border-slate-500 hover:shadow-sm active:translate-y-px whitespace-nowrap";
       add.textContent = "Add follow-up";
 
       const doAdd = () => {
